@@ -1,0 +1,56 @@
+\input{univ.sty}
+
+\begin{document}
+
+\section{Аналіз похибок заокруглення}
+	
+\subsection{Види похибок}
+
+Нехай необхідно розв'язати рівняння \begin{equation} \label{eq:au=f} Au = f. \end{equation}
+
+Неточно задані вхідні дані призводять до рівняння \begin{equation} \label{eq:au=f 2} \tilde A \tilde u = \tilde f.\end{equation}
+
+Назвемо $\delta_1 = u - \tilde u$ \textit{незсувною похибкою}.\\
+
+Застосування методу розв'язання \LaReF{eq:au=f 2} призводить до рівняння \begin{equation} \label{eq:au=f 3} \tilde A_h \tilde u_h = \tilde f_h, \end{equation} де $h > 0$ -- малий параметр. Назвемо $\delta_2 = \tilde u - \tilde u_h$ \textit{похибкою методу}.\\
+
+Реалізація методу на ЕОМ привоздить до рівняння \begin{equation} \label{eq:au=f 4} \tilde A_h^\star \tilde u_h^\star = \tilde f_h^\star. \end{equation} 
+
+Назвемо $\delta_3 = \tilde u_h - \tilde u_h^\star$ \textit{похибкою заокруглення}. \\
+
+Назвемо $\delta = u - \tilde u_h^\star = \delta_1 + \delta_2 + \delta_3$ \textit{повною похибкою}.
+
+\begin{definition}
+	Кажуть, що задача \LaReF{eq:au=f} \textit{коректна}, якщо 
+	\begin{enumerate}
+		\item $\forall f\in F$ $\exists! u\in U$;
+		\item задача \LaReF{eq:au=f} \textit{стійка}, тобто \[\forall \epsilon > 0 \ws \exists \delta > 0 \ws \forall f: \left\|A-\tilde A\right\|<\delta, \left\|f-\tilde f\right\|<\delta \Rightarrow \left\|u-\tilde u\right\|<\epsilon.\]
+	\end{enumerate}
+\end{definition}
+
+Якщо задача \LaReF{eq:au=f} некоректна, то або розв'язок її не існує, або він не єдиний, або він нестійкий, тобто \[\exists \epsilon > 0 \ws \forall \delta > 0 \ws \exists f: \left\|A-\tilde A\right\|<\delta, \left\|f-\tilde f\right\|<\delta, \left\|u-\tilde u\right\|>\epsilon.\]
+
+\textit{Абсолютна похибка} $\Delta x\le |x-x^\star|$.\\
+
+\textit{Відносна похибка} $\delta x\le \dfrac{\Delta x}{|x|}$ або $\dfrac{\Delta x}{|x^\star|}$.\\
+
+\textit{Значущими цифрами} називаються всі цифри,починаючи з першої ненульової зліва.\\ 
+
+\textit{Вірна цифра} -- це значуща, якщо абсолютна похибка за рахунок відкидання всіх молодших розрядів не перевищує одиниці розряду цієї цифри. Тобто, якщо $x^\star = \overline{\alpha_n\ldots\alpha_0}.\overline{\alpha_{-1}\ldots\alpha_{-p}}$, то $a_{-p}$ -- вірна, якщо $\Delta x\le 10^{-p}$ (інколи беруть $\Delta x\le q\cdots 10^{-p}$, $1/2\le w<1$, наприклад $w=0.55$).
+
+\subsection{Підрахунок похибок в ЕОМ}
+
+Обчислимо відносну похибку заокруглення числа $x$ на ЕОМ з плавоючою комою. У системі числення з осоновою $\beta$ число $x$ представляється у вигляді \begin{equation} \label{eq:x-beta-basis} x=\pm\left(\alpha_1\beta^{-1}+\alpha_2\beta^{-2}+\ldots+\alpha_t\beta^{-t}+\ldots\right)\beta^p, \end{equation} де $0\le\alpha_k<\beta$, $\alpha_1\ne0$, $k=1,2,\ldots$\\
+
+Якщо в ЕОМ $t$ розрядыв, то при выдкиданны молодших розрядыв ми оперуэмо з наближеним значенням \[x^\star = \pm\left(\alpha_1\beta^{-1}+\alpha_2\beta^{-2}+\ldots+\alpha_t\beta^{-t}\right)\beta^p\] і, відповідно, похибка заокруглення $x-x^\star = \pm \beta^p\left(\alpha_{t+1}\beta^{-t-1}+\ldots\right)$. Її можна оцінити так: \[|x-x^\star|\le \beta^{p-t-1}(\beta-1)(1+\beta^{-1}+\ldots)\le \beta^{p-t-1}(\beta - 1)\dfrac1{1-\beta^{-1}}=\beta^{p-t}.\]
+
+Враховуючи, що $\alpha_1\ne 0$?, маємо $|x|\ge \beta^p\beta^{-1}=\beta{p-1}$. Звідси остаточно \[\delta x\le \dfrac{\beta^{p-t}}{\beta^{p-1}}=\beta^{-t+1}.\]
+
+При точніших способах заокруглення можна отримати оцінку $\delta x\le \beta^{-t+1}/2=\epsilon$. Число $\epsilon$ називаєтсья \textit{машинним іпсилон}. Наприклад, для $\beta=2$, $t=24$, $\epsilon=2^{-24}\approx 10^{-7}$. 
+
+\subsection{Обчислення похибок обчислення значення функції}
+
+% TODO: convert subsection 1.3. Підрахунок похибок обчислення значення функції from ..\univ\c3s1\чмо лекції.pdf to .tex and paste here
+
+
+\end{document}
