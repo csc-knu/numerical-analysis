@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.17)  2 SEP 2018 09:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.17)  2 SEP 2018 09:57
 entering extended mode
 **"./1. Error Analysis.tex"
 ("1. Error Analysis.tex"
@@ -610,32 +610,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
 [1
 
-{C:/Users/NikitaSkybytskyi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] 
-[2] ("1. Error Analysis.aux") ) 
+{C:/Users/NikitaSkybytskyi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+
+ []
+
+[2] [3] ("1. Error Analysis.aux") ) 
 Here is how much of TeX's memory you used:
- 4276 strings out of 492973
- 55743 string characters out of 3135899
- 139755 words of memory out of 3000000
- 8056 multiletter control sequences out of 15000+200000
+ 4281 strings out of 492973
+ 55759 string characters out of 3135899
+ 143780 words of memory out of 3000000
+ 8061 multiletter control sequences out of 15000+200000
  15631 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,5n,31p,674b,354s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk> <C:\Users\NikitaSkybytskyi\A
-ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.pk> <C:\Users
-\NikitaSkybytskyi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lar
-m1200.pk> <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\l
-h\lh-t2a\dpi600\labx1440.pk> <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1728.pk><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "1. Error Analysis.pdf" (2 pages, 128688 bytes).
+ <C:\Users\NikitaSkybytskyi\AppData\Local\Mi
+KTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk> <C:\Users\NikitaSkybytsk
+yi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.pk> <C:\U
+sers\NikitaSkybytskyi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600
+\larm1200.pk> <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\lh\lh-t2a\dpi600\labx1440.pk> <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTe
+X\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1728.pk><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on "1. Error Analysis.pdf" (3 pages, 141981 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
+ 216 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

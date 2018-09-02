@@ -50,6 +50,24 @@
 
 \subsection{Обчислення похибок обчислення значення функції}
 
+Нехай задана функція $y=f(x_1,\ldots,x_n)\in C^{(1)}(\Omega)$. Необхідно обчислити її значення при наближеному значенні агрументів $\vec x^\star = \left(x_1^\star,\ldots,x_n^\star\right)$, де $\left|x_i-x_i^\star\right|\le\Delta x_i$ та оцінити похибку обчислення значення функції $y^\star = f\left(x_1^\star,\ldots,x_n^\star\right)$.\\
+
+ Маємо \[\left|y-y^\star\right|=\left|f(\vec x)-f(\vec x^\star)\right|=\left|\Sum_{i=1}^n \dfrac{\partial f}{\partial x_i}(\vec \xi)(x_i-x_i^\star)\right|\le \Sum_{i=1}^n B_i\cdots \Delta x_i,\] де $B_i=\Max_{\vec x\in U} \left|\dfrac{\partial f}{\partial x_i}(\vec x)\right|$, $U=\left\{\vec x=(x_1,\ldots,x_n):\left|x_i-x_i^\star\right|\le\Delta x_i, i=1,\ldots,n\right\}\subset\Omega$.\\
+
+ Отже, з точністю до величин першого порядку малості по $\Delta x=\Max_i \Delta x_i$, $\Delta y=|y-y^\star|\prec \Sum_{i=1}^n b_i\cdots \Delta x_i$, де $b_i=\left|\dfrac{\partial f}{\partial x_i}\left(\vec x^\star\right)\right|$ і ``$\prec$'' означає \textit{приблизно менше}.\\
+
+Розглянемо похибки арифметичних операцій.
+\begin{enumerate}
+	\item Сума: $y=x_1+x_2$, $x_1,x_2>0$, $\Delta y\le \Delta x_1+\Delta x_2$, $\delta y=\dfrac{\Delta y}{y}=\dfrac{\Delta y}{x_1+x_2}\le \dfrac{\Delta x_1 + \Delta x_2}{x_1+x_2}\le\max(\delta x_1,\delta x_2)$.
+	\item Різниця: $y=x_1-x_2$, $x_1>x_2>0$, $\Delta y\le \Delta x_1+\Delta x_2$, $\delta y=\dfrac{\Delta y}{y}=\dfrac{\Delta y}{x_1-x_2}\le\dfrac{\Delta x_1+\Delta x_2}{x_1-x_2}=\dfrac{x_1\delta x_1+x_2\delta x_2}{x_1-x_2}$. \\ Як бачимо, при близьких аргументах зростає відносна похибка.
+	\item Добуток: $y=x_1\cdot x_2$, $x_1,x_2>0$, $\Delta y=x_1\Delta x_2+x_2\Delta x_1+\Delta x_1\Delta x_2\prec x_1\Delta x_2+x_2\Delta x_1$, $\delta y=\dfrac{\Delta y}{y}=\dfrac{\Delta y}{x_1x_2}\prec\dfrac{x_1\Delta x_2+x_2\Delta x_1}{x_1x_2}=\dfrac{\Delta x_1}{x_1}+\dfrac{\Delta x_2}{x_2}=\delta x_1+\delta x_2$.
+	\item Частка: $y=\dfrac{x_1}{x_2}$, $x_1,x_2>0$, $\Delta y=\dfrac{x_2\Delta x_1-x_1\Delta x_2}{x_2(x_2+\Delta x_2)}<\dfrac{x_2\Delta x_1+x_1\Delta x_2}{x_2(x_2+\Delta x_2)}\prec \dfrac{x_2\Delta x_1+x_1\Delta x_2}{x_2^2}$, $\delta y=\dfrac{\Delta y}{y}=\dfrac{x_2\Delta y}{x_1}\prec \dfrac{x_2\Delta x_1+x_1\Delta x_2}{x_1x_2}=\dfrac{\Delta x_1}{x_1}+\dfrac{\Delta x_2}{x_2}=\delta x_1+\delta x_2$. \\ Як бачимо, при малих $x_2$ зростає абсолютна похибка.
+\end{enumerate}
+
+\textit{Пряма задача} аналізу похибок: обчислення $\Delta y$, $\delta y$ за заданими $\Delta x_i,i=1,\ldots,n$.\\
+
+\textit{Обернена задача}: знаходження $\Delta x_i, i=1,\ldots,n$ за заданими  $\Delta y$, $\delta y$. Якщо $n>1$ маємо одну умову $\Sum_{i=1}^n b_i\Delta x_i<\epsilon$ на багато невідомих $\Delta x_i$. Зазвичай вибирають їх із однієї з умов \[\forall i: b_i\Delta x_i<\epsilon/n \quad \text{або} \quad \forall i: \Delta x_i<\epsilon/B,\quad \text{де} \ws B=\Sum_{i=1}^n b_i.\]
+ 
 % TODO: convert subsection 1.3. Підрахунок похибок обчислення значення функції from ..\univ\c3s1\чмо лекції.pdf to .tex and paste here
 
 
