@@ -1,3 +1,6 @@
+import functools
+import types
+import math
 import os
 
 version = os.environ['version']
@@ -105,3 +108,51 @@ class NonlinearEquationSolver(EquationSolver):
     @property
     def solution(self) -> float:
         raise NotImplementedError('NonlinearEquationSolver.solution not implemented')
+
+
+def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, options: str='') -> float:
+    """
+    :param f: function to find the root of
+    :param a: (hopefully) left endpoint
+    :param b: (hopefully) right endpoint
+    :param eps: allowed error
+    :param options: string of options, can include the following:
+        -s to Swap endpoints if necessary
+        -i to pre-calculate number of Iterations
+        -m to Memorize already calculated values of a function
+    :return: root of f on [a,b] if any
+    """
+    if b < a:
+        if '-s' in options:
+            a, b = b, a
+        else:
+            raise ValueError(f'b = {b} < {a} = a')
+
+    if '-m' in options:
+        f = functools.lru_cache(maxsize=3)(f)
+
+    if f(a) * f(b) > 0:
+        raise ValueError(f'f(a) * f(b) = f({a}) * f({b}) = {f(a) * f(b)} > 0')
+
+    def step():
+        nonlocal a, b
+        xi = (a + b) / 2
+        if f(xi) * f(a) < 0:
+            b = xi
+        elif f(xi) * f(b) < 0:
+            a = xi
+        else:
+            return xi
+
+    if '-i' in options:
+        for i in range(math.ceil(math.log2((b - a) / eps)) + 1):
+            s = step()
+            if s is not None:
+                return s
+    else:
+        while b - a > 2 * eps:
+            s = step()
+            if s is not None:
+                return s
+
+    return (a + b) / 2

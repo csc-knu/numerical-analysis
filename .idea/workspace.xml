@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb677a10-0839-484c-b0a1-34cbc9b92866" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/error-analysis-tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/error_analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/divide-in-two-tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1. Error Analysis.log" beforeDir="false" afterPath="$PROJECT_DIR$/1. Error Analysis.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1. Error Analysis.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/1. Error Analysis.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nonlinear-equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/nonlinear_equations.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,84 +18,65 @@
     <session id="357222437">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="log" value="3" />
-          <entry key="py" value="2" />
+          <entry key="log" value="5" />
+          <entry key="py" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Log" value="3" />
-          <entry key="Python" value="2" />
+          <entry key="Log" value="5" />
+          <entry key="Python" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="1" />
-          <entry key="py" value="7197" />
+          <entry key="dummy" value="2" />
+          <entry key="py" value="9827" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="7197" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="9827" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nonlinear-equations.py">
+        <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="336">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
               <folding>
-                <marker date="1535843146244" expanded="true" signature="865:1439" ph="..." />
-                <marker date="1535843146244" expanded="true" signature="1165:1201" ph="..." />
-                <marker date="1535843146244" expanded="true" signature="1828:1874" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/error_analysis.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="177" column="56" selection-start-line="177" selection-start-column="56" selection-end-line="177" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <marker date="1535891703783" expanded="true" signature="132:327" ph="..." />
-                <marker date="1535891703783" expanded="true" signature="347:825" ph="..." />
-                <marker date="1535891703783" expanded="true" signature="1102:1108" ph="..." />
-                <marker date="1535891703783" expanded="true" signature="1102:1122" ph="..." />
-                <marker date="1535891703783" expanded="true" signature="1923:2234" ph="..." />
-                <marker date="1535891703783" expanded="true" signature="2592:2596" ph="..." />
-                <marker date="1535891703783" expanded="true" signature="5488:5704" ph="..." />
+                <element signature="e#0#16#0" expanded="true" />
+                <marker date="1535920386244" expanded="true" signature="907:1481" ph="..." />
+                <marker date="1535920386244" expanded="true" signature="1207:1243" ph="..." />
+                <marker date="1535920386244" expanded="true" signature="1870:1916" ph="..." />
+                <marker date="1535920386244" expanded="true" signature="3892:4398" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/error-analysis-tests.py">
+        <entry file="file://$PROJECT_DIR$/divide-in-two-tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="407" column="49" selection-start-line="407" selection-start-column="47" selection-end-line="407" selection-end-column="49" />
+            <state relative-caret-position="192">
+              <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1535891845263" expanded="true" signature="2388:2507" ph="..." />
-                <marker date="1535891845263" expanded="true" signature="2536:2690" ph="..." />
-                <marker date="1535891845263" expanded="true" signature="2877:2878" ph="..." />
-                <marker date="1535891845263" expanded="true" signature="5127:10163" ph="..." />
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1535920528757" expanded="true" signature="515:599" ph="..." />
+                <marker date="1535920528757" expanded="true" signature="844:881" ph="..." />
               </folding>
             </state>
           </provider>
@@ -123,10 +106,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/nonlinear-equations.py" />
         <option value="$PROJECT_DIR$/error-analysis.py" />
         <option value="$PROJECT_DIR$/error_analysis.py" />
         <option value="$PROJECT_DIR$/error-analysis-tests.py" />
+        <option value="$PROJECT_DIR$/nonlinear-equations.py" />
+        <option value="$PROJECT_DIR$/nonlinear_equations.py" />
+        <option value="$PROJECT_DIR$/divide-in-two-tests.py" />
       </list>
     </option>
   </component>
@@ -140,7 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,10 +136,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/error-analysis-tests.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/divide-in-two-tests.py" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -169,7 +154,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Divide In Two Unit Tests">
+    <configuration name="Divide In Two Unit Tests" type="tests" factoryName="Unittests">
+      <output_file path="$PROJECT_DIR$/divide-in-two-tests.log" is_save="true" />
+      <module name="numerical-analysis" />
+      <option name="INTERPRETER_OPTIONS" value="-v" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="version" value="dev" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/divide-in-two-tests.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Error Analysis Unit Tests" type="tests" factoryName="Unittests">
       <output_file path="error-analysis-tests.log" is_save="true" />
       <module name="numerical-analysis" />
@@ -189,6 +193,10 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python tests.Error Analysis Unit Tests" />
+      <item itemvalue="Python tests.Divide In Two Unit Tests" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -204,53 +212,53 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 22m 08s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 18m 56s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 22m 41s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 24m 13s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 23m 25s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 27m 11s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 32m 00s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 27m 38s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 35m 04s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 29m 24s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 35m 37s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 33m 06s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 35m 50s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 33m 24s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 36m 43s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 35m 28s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 37m 13s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 35m 53s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.02 at 15h 37m 25s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 37m 13s.xml">
+      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.10800843" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10800843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32952183" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32952183" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -284,25 +292,24 @@
     <entry file="file://$PROJECT_DIR$/1. Error Analysis.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/nonlinear-equations.py">
+    <entry file="file://$PROJECT_DIR$/error-analysis-tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="501">
+          <caret line="417" lean-forward="true" selection-start-line="417" selection-end-line="417" />
           <folding>
-            <marker date="1535843146244" expanded="true" signature="865:1439" ph="..." />
-            <marker date="1535843146244" expanded="true" signature="1165:1201" ph="..." />
-            <marker date="1535843146244" expanded="true" signature="1828:1874" ph="..." />
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1535891845263" expanded="true" signature="2388:2507" ph="..." />
+            <marker date="1535891845263" expanded="true" signature="2536:2690" ph="..." />
+            <marker date="1535891845263" expanded="true" signature="2877:2878" ph="..." />
+            <marker date="1535891845263" expanded="true" signature="5127:10163" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error-analysis-tests.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/error_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
-          <caret line="177" column="56" selection-start-line="177" selection-start-column="56" selection-end-line="177" selection-end-column="56" />
+          <caret line="177" column="4" selection-start-line="177" selection-end-line="178" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <marker date="1535891703783" expanded="true" signature="132:327" ph="..." />
@@ -311,21 +318,42 @@
             <marker date="1535891703783" expanded="true" signature="1102:1122" ph="..." />
             <marker date="1535891703783" expanded="true" signature="1923:2234" ph="..." />
             <marker date="1535891703783" expanded="true" signature="2592:2596" ph="..." />
-            <marker date="1535891703783" expanded="true" signature="5488:5704" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error-analysis-tests.py">
+    <entry file="file://$PROJECT_DIR$/error-analysis-tests.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="407" column="49" selection-start-line="407" selection-start-column="47" selection-end-line="407" selection-end-column="49" />
+        <state relative-caret-position="336">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1535891845263" expanded="true" signature="2388:2507" ph="..." />
-            <marker date="1535891845263" expanded="true" signature="2536:2690" ph="..." />
-            <marker date="1535891845263" expanded="true" signature="2877:2878" ph="..." />
-            <marker date="1535891845263" expanded="true" signature="5127:10163" ph="..." />
+            <element signature="e#0#16#0" expanded="true" />
+            <marker date="1535920386244" expanded="true" signature="907:1481" ph="..." />
+            <marker date="1535920386244" expanded="true" signature="1207:1243" ph="..." />
+            <marker date="1535920386244" expanded="true" signature="1870:1916" ph="..." />
+            <marker date="1535920386244" expanded="true" signature="3892:4398" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divide-in-two-tests.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="510">
+          <caret line="630" lean-forward="true" selection-start-line="630" selection-end-line="630" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divide-in-two-tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1535920528757" expanded="true" signature="515:599" ph="..." />
+            <marker date="1535920528757" expanded="true" signature="844:881" ph="..." />
           </folding>
         </state>
       </provider>
