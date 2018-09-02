@@ -1,0 +1,720 @@
+import _frozen_importlib # frozen
+import _imp # builtin
+import sys # builtin
+import '_warnings' # <class '_frozen_importlib.BuiltinImporter'>
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+import '_frozen_importlib_external' # <class '_frozen_importlib.FrozenImporter'>
+import '_io' # <class '_frozen_importlib.BuiltinImporter'>
+import 'marshal' # <class '_frozen_importlib.BuiltinImporter'>
+import 'nt' # <class '_frozen_importlib.BuiltinImporter'>
+import _thread # previously loaded ('_thread')
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import _weakref # previously loaded ('_weakref')
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+import 'winreg' # <class '_frozen_importlib.BuiltinImporter'>
+# installing zipimport hook
+import 'zipimport' # <class '_frozen_importlib.BuiltinImporter'>
+# installed zipimport hook
+# C:\ProgramData\Anaconda3\lib\encodings\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\__init__.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\__init__.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\codecs.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\codecs.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\codecs.cpython-36.pyc'
+import '_codecs' # <class '_frozen_importlib.BuiltinImporter'>
+import 'codecs' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C866D860>
+# C:\ProgramData\Anaconda3\lib\encodings\__pycache__\aliases.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\aliases.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\aliases.cpython-36.pyc'
+import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8A974A8>
+import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C865DE80>
+# C:\ProgramData\Anaconda3\lib\encodings\__pycache__\utf_8.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\utf_8.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\utf_8.cpython-36.pyc'
+import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AA8518>
+import '_signal' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\ProgramData\Anaconda3\lib\encodings\__pycache__\latin_1.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\latin_1.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\latin_1.cpython-36.pyc'
+import 'encodings.latin_1' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AA8978>
+# C:\ProgramData\Anaconda3\lib\__pycache__\io.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\io.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\io.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\abc.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\abc.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\_weakrefset.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_weakrefset.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_weakrefset.cpython-36.pyc'
+import '_weakrefset' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AAF898>
+import 'abc' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AA8EF0>
+import 'io' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AA8B38>
+# C:\ProgramData\Anaconda3\lib\__pycache__\site.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\site.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\site.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\os.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\os.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\os.cpython-36.pyc'
+import 'errno' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\ProgramData\Anaconda3\lib\__pycache__\stat.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\stat.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\stat.cpython-36.pyc'
+import '_stat' # <class '_frozen_importlib.BuiltinImporter'>
+import 'stat' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AD4518>
+# C:\ProgramData\Anaconda3\lib\__pycache__\ntpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\ntpath.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\ntpath.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\genericpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\genericpath.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\genericpath.cpython-36.pyc'
+import 'genericpath' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AE2400>
+import 'ntpath' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AD4BA8>
+# C:\ProgramData\Anaconda3\lib\__pycache__\_collections_abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_collections_abc.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_collections_abc.cpython-36.pyc'
+import '_collections_abc' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AE29B0>
+import 'os' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AC34E0>
+# C:\ProgramData\Anaconda3\lib\__pycache__\_sitebuiltins.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_sitebuiltins.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_sitebuiltins.cpython-36.pyc'
+import '_sitebuiltins' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AC38D0>
+# C:\ProgramData\Anaconda3\lib\__pycache__\sysconfig.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sysconfig.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sysconfig.cpython-36.pyc'
+import 'sysconfig' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8AC3DA0>
+# C:\ProgramData\Anaconda3\lib\__pycache__\_bootlocale.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_bootlocale.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_bootlocale.cpython-36.pyc'
+import '_locale' # <class '_frozen_importlib.BuiltinImporter'>
+import '_bootlocale' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C1D240>
+# C:\ProgramData\Anaconda3\lib\encodings\__pycache__\cp1251.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\cp1251.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\cp1251.cpython-36.pyc'
+import 'encodings.cp1251' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C1D6A0>
+# C:\ProgramData\Anaconda3\lib\__pycache__\types.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\types.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\types.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\functools.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\functools.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\functools.cpython-36.pyc'
+import '_functools' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\ProgramData\Anaconda3\lib\collections\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\collections\__init__.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\collections\\__pycache__\\__init__.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\operator.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\operator.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\operator.cpython-36.pyc'
+import '_operator' # <class '_frozen_importlib.BuiltinImporter'>
+import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C52A20>
+# C:\ProgramData\Anaconda3\lib\__pycache__\keyword.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\keyword.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\keyword.cpython-36.pyc'
+import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C5DC88>
+# C:\ProgramData\Anaconda3\lib\__pycache__\heapq.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\heapq.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\heapq.cpython-36.pyc'
+import '_heapq' # <class '_frozen_importlib.BuiltinImporter'>
+import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C624E0>
+import 'itertools' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\ProgramData\Anaconda3\lib\__pycache__\reprlib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\reprlib.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\reprlib.cpython-36.pyc'
+import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C5D198>
+import '_collections' # <class '_frozen_importlib.BuiltinImporter'>
+import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C3A198>
+# C:\ProgramData\Anaconda3\lib\__pycache__\weakref.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\weakref.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\weakref.cpython-36.pyc'
+import 'weakref' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C3A588>
+import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C26940>
+# C:\ProgramData\Anaconda3\lib\collections\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\collections\abc.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\collections\\__pycache__\\abc.cpython-36.pyc'
+import 'collections.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C2C6D8>
+import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C1DBE0>
+# C:\ProgramData\Anaconda3\lib\importlib\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\__init__.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\__init__.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\warnings.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\warnings.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\warnings.cpython-36.pyc'
+import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C2C5F8>
+import 'importlib' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8C1DD68>
+# C:\ProgramData\Anaconda3\lib\importlib\__pycache__\util.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\util.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\util.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\importlib\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\abc.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\abc.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\importlib\__pycache__\machinery.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\machinery.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\machinery.cpython-36.pyc'
+import 'importlib.machinery' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8D8DEB8>
+import 'importlib.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8D8D7F0>
+# C:\ProgramData\Anaconda3\lib\__pycache__\contextlib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\contextlib.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\contextlib.cpython-36.pyc'
+import 'contextlib' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8D9B8D0>
+import 'importlib.util' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8D849E8>
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
+# destroy google
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
+# destroy google
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
+# destroy google
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google\cloud
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
+# destroy google
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
+# destroy google
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google\logging
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\mpl_toolkits
+# possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
+# destroy google
+import 'site' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8ABF198>
+Python 3.6.5 |Anaconda, Inc.| (default, Mar 29 2018, 13:32:41) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+# bytecode is stale for 'unittest'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\__init__.py
+# bytecode is stale for 'unittest.result'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\result.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\traceback.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\traceback.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\traceback.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\linecache.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\linecache.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\linecache.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\tokenize.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\tokenize.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\tokenize.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\re.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\re.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\re.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\enum.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\enum.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\enum.cpython-36.pyc'
+import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E0E898>
+# C:\ProgramData\Anaconda3\lib\__pycache__\sre_compile.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sre_compile.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_compile.cpython-36.pyc'
+import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\ProgramData\Anaconda3\lib\__pycache__\sre_parse.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sre_parse.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_parse.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\sre_constants.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sre_constants.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_constants.cpython-36.pyc'
+import 'sre_constants' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E37128>
+import 'sre_parse' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E27908>
+import 'sre_compile' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E1BBA8>
+# C:\ProgramData\Anaconda3\lib\__pycache__\copyreg.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\copyreg.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\copyreg.cpython-36.pyc'
+import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E41128>
+import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E0B908>
+# C:\ProgramData\Anaconda3\lib\__pycache__\token.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\token.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\token.cpython-36.pyc'
+import 'token' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E41400>
+import 'tokenize' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8DFFD30>
+import 'linecache' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8DFF9B0>
+import 'traceback' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8DF1908>
+# bytecode is stale for 'unittest.util'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\util.py
+import 'unittest.util' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E02828>
+import 'unittest.result' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8DEFFD0>
+# bytecode is stale for 'unittest.case'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\case.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\difflib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\difflib.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\difflib.cpython-36.pyc'
+import 'difflib' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C9039358>
+# C:\ProgramData\Anaconda3\lib\logging\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\logging\__init__.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\logging\\__pycache__\\__init__.cpython-36.pyc'
+import 'time' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\ProgramData\Anaconda3\lib\__pycache__\string.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\string.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\string.cpython-36.pyc'
+import '_string' # <class '_frozen_importlib.BuiltinImporter'>
+import 'string' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C9063E48>
+# C:\ProgramData\Anaconda3\lib\__pycache__\threading.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\threading.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\threading.cpython-36.pyc'
+import 'threading' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8FF16D8>
+import 'atexit' # <class '_frozen_importlib.BuiltinImporter'>
+import 'logging' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C904E400>
+# C:\ProgramData\Anaconda3\lib\__pycache__\pprint.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\pprint.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\pprint.cpython-36.pyc'
+import 'pprint' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C900E9E8>
+import 'unittest.case' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8DFFBE0>
+# bytecode is stale for 'unittest.suite'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\suite.py
+import 'unittest.suite' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C9035160>
+# bytecode is stale for 'unittest.loader'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\loader.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\fnmatch.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\fnmatch.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\fnmatch.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\posixpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\posixpath.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\posixpath.cpython-36.pyc'
+import 'posixpath' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E78E80>
+import 'fnmatch' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E78A20>
+import 'unittest.loader' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C9028DD8>
+# bytecode is stale for 'unittest.main'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\main.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\argparse.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\argparse.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\argparse.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\copy.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\copy.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\copy.cpython-36.pyc'
+import 'copy' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EA1E48>
+# C:\ProgramData\Anaconda3\lib\__pycache__\textwrap.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\textwrap.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\textwrap.cpython-36.pyc'
+import 'textwrap' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EAB2B0>
+# C:\ProgramData\Anaconda3\lib\__pycache__\gettext.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\gettext.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\gettext.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\locale.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\locale.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\locale.cpython-36.pyc'
+import 'locale' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8F3F5C0>
+# C:\ProgramData\Anaconda3\lib\__pycache__\struct.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\struct.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\struct.cpython-36.pyc'
+import '_struct' # <class '_frozen_importlib.BuiltinImporter'>
+import 'struct' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8F54390>
+import 'gettext' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EAB400>
+import 'argparse' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E7C9B0>
+# bytecode is stale for 'unittest.runner'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\runner.py
+# bytecode is stale for 'unittest.signals'
+# code object from C:\ProgramData\Anaconda3\lib\unittest\signals.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\signal.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\signal.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\signal.cpython-36.pyc'
+import 'signal' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EFDC50>
+import 'unittest.signals' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EFD0F0>
+import 'unittest.runner' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8F54DD8>
+import 'unittest.main' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E7C6A0>
+import 'unittest' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8DB5748>
+# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\_jb_runner_tools.py
+# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\_jb_utils.py
+import '_jb_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EFDBA8>
+# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\__init__.py
+import 'teamcity' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EB2278>
+# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\messages.py
+import 'teamcity.messages' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EB2390>
+import '_jb_runner_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8E78CC0>
+# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\unittestpy.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\datetime.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\datetime.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\datetime.cpython-36.pyc'
+import 'math' # <class '_frozen_importlib.BuiltinImporter'>
+import '_datetime' # <class '_frozen_importlib.BuiltinImporter'>
+import 'datetime' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EBEA58>
+# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\common.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\inspect.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\inspect.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\inspect.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\ast.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\ast.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\ast.cpython-36.pyc'
+import '_ast' # <class '_frozen_importlib.BuiltinImporter'>
+import 'ast' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EDABA8>
+# C:\ProgramData\Anaconda3\lib\__pycache__\dis.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\dis.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\dis.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\opcode.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\opcode.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\opcode.cpython-36.pyc'
+import '_opcode' # <class '_frozen_importlib.BuiltinImporter'>
+import 'opcode' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8F20588>
+import 'dis' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8F1E9E8>
+import 'inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EB88D0>
+import 'teamcity.common' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EBEC88>
+# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\diff_tools.py
+import 'teamcity.diff_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EB8828>
+import 'teamcity.unittestpy' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8EB2668>
+##teamcity[enteredTheMatrix timestamp='2018-09-02T15:38:42.081']
+Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/Desktop/numerical-analysis/error-analysis-tests.py in C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis
+
+# code object from C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis\error-analysis-tests.py
+# code object from C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis\error_analysis.py
+import 'error_analysis' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8F7DD68>
+import 'error-analysis-tests' # <_frozen_importlib_external.SourceFileLoader object at 0x00000203C8F9C2B0>
+##teamcity[testCount timestamp='2018-09-02T15:38:42.091' count='48']
+##teamcity[testSuiteStarted timestamp='2018-09-02T15:38:42.092' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests' name='error-analysis-tests' nodeId='1' parentNodeId='0']
+##teamcity[testSuiteStarted timestamp='2018-09-02T15:38:42.092' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError' name='TestAbsoluteError' nodeId='2' parentNodeId='1']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.092' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_cons_add_var' name='test_cons_add_var' nodeId='3' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.092' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_cons_add_var' name='test_cons_add_var' nodeId='3' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.093' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_cons_mul_var' name='test_cons_mul_var' nodeId='4' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.093' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_cons_mul_var' name='test_cons_mul_var' nodeId='4' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.093' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_cons_sub_var' name='test_cons_sub_var' nodeId='5' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.094' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_cons_sub_var' name='test_cons_sub_var' nodeId='5' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.094' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_add_const' name='test_const_add_const' nodeId='6' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.094' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_add_const' name='test_const_add_const' nodeId='6' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.094' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_div_const' name='test_const_div_const' nodeId='7' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.094' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_div_const' name='test_const_div_const' nodeId='7' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.095' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_div_var' name='test_const_div_var' nodeId='8' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.095' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_div_var' name='test_const_div_var' nodeId='8' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.095' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_mul_const' name='test_const_mul_const' nodeId='9' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.095' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_mul_const' name='test_const_mul_const' nodeId='9' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.096' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_sub_const' name='test_const_sub_const' nodeId='10' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.096' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_const_sub_const' name='test_const_sub_const' nodeId='10' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.096' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_custom' name='test_custom' nodeId='11' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.096' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_custom' name='test_custom' nodeId='11' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.096' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_mul_div_wrong_args' name='test_mul_div_wrong_args' nodeId='12' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.097' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_mul_div_wrong_args' name='test_mul_div_wrong_args' nodeId='12' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.097' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_parenthesises_add' name='test_parenthesises_add' nodeId='13' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.097' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_parenthesises_add' name='test_parenthesises_add' nodeId='13' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.097' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_parenthesises_div' name='test_parenthesises_div' nodeId='14' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.098' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_parenthesises_div' name='test_parenthesises_div' nodeId='14' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.099' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_parenthesises_mul' name='test_parenthesises_mul' nodeId='15' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.099' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_parenthesises_mul' name='test_parenthesises_mul' nodeId='15' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.099' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_parenthesises_sub' name='test_parenthesises_sub' nodeId='16' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.100' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_parenthesises_sub' name='test_parenthesises_sub' nodeId='16' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.100' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_add_const' name='test_var_add_const' nodeId='17' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.100' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_add_const' name='test_var_add_const' nodeId='17' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.100' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_add_var' name='test_var_add_var' nodeId='18' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.101' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_add_var' name='test_var_add_var' nodeId='18' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.101' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_div_const' name='test_var_div_const' nodeId='19' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.101' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_div_const' name='test_var_div_const' nodeId='19' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.101' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_div_var' name='test_var_div_var' nodeId='20' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.102' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_div_var' name='test_var_div_var' nodeId='20' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.102' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_mul_const' name='test_var_mul_const' nodeId='21' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.102' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_mul_const' name='test_var_mul_const' nodeId='21' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.102' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_mul_var' name='test_var_mul_var' nodeId='22' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.103' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_mul_var' name='test_var_mul_var' nodeId='22' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.103' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_sub_const' name='test_var_sub_const' nodeId='23' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.103' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_sub_const' name='test_var_sub_const' nodeId='23' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.103' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_sub_var' name='test_var_sub_var' nodeId='24' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.104' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_var_sub_var' name='test_var_sub_var' nodeId='24' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.104' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_wrong_parenthesises' name='test_wrong_parenthesises' nodeId='25' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.104' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_wrong_parenthesises' name='test_wrong_parenthesises' nodeId='25' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.104' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_wrong_symbols' name='test_wrong_symbols' nodeId='26' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.105' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError.test_wrong_symbols' name='test_wrong_symbols' nodeId='26' parentNodeId='2']
+##teamcity[testSuiteFinished timestamp='2018-09-02T15:38:42.105' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteError' name='TestAbsoluteError' nodeId='2' parentNodeId='1']
+##teamcity[testSuiteStarted timestamp='2018-09-02T15:38:42.105' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper' name='TestAbsoluteErrorAnswerWrapper' nodeId='27' parentNodeId='1']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.105' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_cons_add_var' name='test_cons_add_var' nodeId='28' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.106' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_cons_add_var' name='test_cons_add_var' nodeId='28' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.106' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_cons_mul_var' name='test_cons_mul_var' nodeId='29' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.107' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_cons_mul_var' name='test_cons_mul_var' nodeId='29' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.107' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_cons_sub_var' name='test_cons_sub_var' nodeId='30' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.108' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_cons_sub_var' name='test_cons_sub_var' nodeId='30' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.108' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_add_const' name='test_const_add_const' nodeId='31' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.109' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_add_const' name='test_const_add_const' nodeId='31' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.109' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_div_const' name='test_const_div_const' nodeId='32' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.110' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_div_const' name='test_const_div_const' nodeId='32' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.110' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_div_var' name='test_const_div_var' nodeId='33' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.111' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_div_var' name='test_const_div_var' nodeId='33' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.111' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_mul_const' name='test_const_mul_const' nodeId='34' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.111' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_mul_const' name='test_const_mul_const' nodeId='34' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.112' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_sub_const' name='test_const_sub_const' nodeId='35' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.112' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_const_sub_const' name='test_const_sub_const' nodeId='35' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.113' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_custom' name='test_custom' nodeId='36' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.113' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_custom' name='test_custom' nodeId='36' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.113' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_mul_div_wrong_args' name='test_mul_div_wrong_args' nodeId='37' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.114' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_mul_div_wrong_args' name='test_mul_div_wrong_args' nodeId='37' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.114' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_parenthesises_add' name='test_parenthesises_add' nodeId='38' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.114' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_parenthesises_add' name='test_parenthesises_add' nodeId='38' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.115' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_parenthesises_div' name='test_parenthesises_div' nodeId='39' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.115' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_parenthesises_div' name='test_parenthesises_div' nodeId='39' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.115' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_parenthesises_mul' name='test_parenthesises_mul' nodeId='40' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.116' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_parenthesises_mul' name='test_parenthesises_mul' nodeId='40' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.116' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_parenthesises_sub' name='test_parenthesises_sub' nodeId='41' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.117' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_parenthesises_sub' name='test_parenthesises_sub' nodeId='41' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.117' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_add_const' name='test_var_add_const' nodeId='42' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.117' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_add_const' name='test_var_add_const' nodeId='42' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.117' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_add_var' name='test_var_add_var' nodeId='43' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.118' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_add_var' name='test_var_add_var' nodeId='43' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.118' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_div_const' name='test_var_div_const' nodeId='44' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.118' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_div_const' name='test_var_div_const' nodeId='44' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.118' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_div_var' name='test_var_div_var' nodeId='45' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.119' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_div_var' name='test_var_div_var' nodeId='45' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.119' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_mul_const' name='test_var_mul_const' nodeId='46' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.119' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_mul_const' name='test_var_mul_const' nodeId='46' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.120' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_mul_var' name='test_var_mul_var' nodeId='47' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.120' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_mul_var' name='test_var_mul_var' nodeId='47' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.120' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_sub_const' name='test_var_sub_const' nodeId='48' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.120' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_sub_const' name='test_var_sub_const' nodeId='48' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.121' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_sub_var' name='test_var_sub_var' nodeId='49' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.121' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_var_sub_var' name='test_var_sub_var' nodeId='49' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.121' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_wrong_parenthesises' name='test_wrong_parenthesises' nodeId='50' parentNodeId='27']
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.121' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_wrong_parenthesises' name='test_wrong_parenthesises' nodeId='50' parentNodeId='27']
+##teamcity[testStarted timestamp='2018-09-02T15:38:42.122' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_wrong_symbols' name='test_wrong_symbols' nodeId='51' parentNodeId='27']
+
+
+##teamcity[testFinished timestamp='2018-09-02T15:38:42.122' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper.test_wrong_symbols' name='test_wrong_symbols' nodeId='51' parentNodeId='27']
+Ran 48 tests in 0.031s
+
+OK
+##teamcity[testSuiteFinished timestamp='2018-09-02T15:38:42.122' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests.TestAbsoluteErrorAnswerWrapper' name='TestAbsoluteErrorAnswerWrapper' nodeId='27' parentNodeId='1']
+##teamcity[testSuiteFinished timestamp='2018-09-02T15:38:42.122' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://error-analysis-tests' name='error-analysis-tests' nodeId='1' parentNodeId='0']
+# clear builtins._
+# clear sys.path
+# clear sys.argv
+# clear sys.ps1
+# clear sys.ps2
+# clear sys.last_type
+# clear sys.last_value
+# clear sys.last_traceback
+# clear sys.path_hooks
+# clear sys.path_importer_cache
+# clear sys.meta_path
+# clear sys.__interactivehook__
+# clear sys.flags
+# clear sys.float_info
+# restore sys.stdin
+# restore sys.stdout
+# restore sys.stderr
+# cleanup[2] removing builtins
+# cleanup[2] removing sys
+# cleanup[2] removing _frozen_importlib
+# cleanup[2] removing _imp
+# cleanup[2] removing _warnings
+# cleanup[2] removing _thread
+# cleanup[2] removing _weakref
+# cleanup[2] removing _frozen_importlib_external
+# cleanup[2] removing _io
+# cleanup[2] removing marshal
+# cleanup[2] removing nt
+# cleanup[2] removing winreg
+# cleanup[2] removing zipimport
+# cleanup[2] removing encodings
+# cleanup[2] removing codecs
+# cleanup[2] removing _codecs
+# cleanup[2] removing encodings.aliases
+# cleanup[2] removing encodings.utf_8
+# cleanup[2] removing _signal
+# cleanup[2] removing __main__
+# cleanup[2] removing encodings.latin_1
+# cleanup[2] removing io
+# cleanup[2] removing abc
+# cleanup[2] removing _weakrefset
+# destroy _weakrefset
+# cleanup[2] removing site
+# destroy site
+# cleanup[2] removing os
+# cleanup[2] removing errno
+# cleanup[2] removing stat
+# cleanup[2] removing _stat
+# cleanup[2] removing ntpath
+# cleanup[2] removing genericpath
+# cleanup[2] removing os.path
+# cleanup[2] removing _collections_abc
+# cleanup[2] removing _sitebuiltins
+# cleanup[2] removing sysconfig
+# destroy sysconfig
+# cleanup[2] removing _bootlocale
+# destroy _bootlocale
+# cleanup[2] removing _locale
+# cleanup[2] removing encodings.cp1251
+# cleanup[2] removing types
+# cleanup[2] removing functools
+# cleanup[2] removing _functools
+# cleanup[2] removing collections
+# cleanup[2] removing operator
+# destroy operator
+# cleanup[2] removing _operator
+# cleanup[2] removing keyword
+# destroy keyword
+# cleanup[2] removing heapq
+# cleanup[2] removing _heapq
+# cleanup[2] removing itertools
+# cleanup[2] removing reprlib
+# destroy reprlib
+# cleanup[2] removing _collections
+# cleanup[2] removing weakref
+# cleanup[2] removing collections.abc
+# cleanup[2] removing importlib
+# cleanup[2] removing importlib._bootstrap
+# cleanup[2] removing importlib._bootstrap_external
+# cleanup[2] removing warnings
+# cleanup[2] removing importlib.util
+# cleanup[2] removing importlib.abc
+# cleanup[2] removing importlib.machinery
+# cleanup[2] removing contextlib
+# cleanup[2] removing google
+# destroy google
+# cleanup[2] removing google.cloud
+# destroy google.cloud
+# cleanup[2] removing google.logging
+# destroy google.logging
+# cleanup[2] removing mpl_toolkits
+# destroy mpl_toolkits
+# cleanup[2] removing sphinxcontrib
+# destroy sphinxcontrib
+# cleanup[2] removing unittest
+# cleanup[2] removing unittest.result
+# cleanup[2] removing traceback
+# cleanup[2] removing linecache
+# cleanup[2] removing tokenize
+# cleanup[2] removing re
+# cleanup[2] removing enum
+# cleanup[2] removing sre_compile
+# cleanup[2] removing _sre
+# cleanup[2] removing sre_parse
+# cleanup[2] removing sre_constants
+# destroy sre_constants
+# cleanup[2] removing copyreg
+# cleanup[2] removing token
+# cleanup[2] removing unittest.util
+# cleanup[2] removing unittest.case
+# cleanup[2] removing difflib
+# cleanup[2] removing logging
+# cleanup[2] removing time
+# cleanup[2] removing string
+# destroy string
+# cleanup[2] removing _string
+# cleanup[2] removing threading
+# cleanup[2] removing atexit
+# cleanup[2] removing pprint
+# cleanup[2] removing unittest.suite
+# cleanup[2] removing unittest.loader
+# cleanup[2] removing fnmatch
+# cleanup[2] removing posixpath
+# cleanup[2] removing unittest.main
+# destroy unittest.main
+# cleanup[2] removing argparse
+# cleanup[2] removing copy
+# cleanup[2] removing textwrap
+# cleanup[2] removing gettext
+# destroy gettext
+# cleanup[2] removing locale
+# cleanup[2] removing struct
+# cleanup[2] removing _struct
+# cleanup[2] removing unittest.runner
+# cleanup[2] removing unittest.signals
+# cleanup[2] removing signal
+# cleanup[2] removing _jb_runner_tools
+# destroy _jb_runner_tools
+# cleanup[2] removing _jb_utils
+# cleanup[2] removing teamcity
+# destroy teamcity
+# cleanup[2] removing teamcity.messages
+# cleanup[2] removing teamcity.unittestpy
+# cleanup[2] removing datetime
+# cleanup[2] removing math
+# cleanup[2] removing _datetime
+# cleanup[2] removing teamcity.common
+# cleanup[2] removing inspect
+# cleanup[2] removing ast
+# cleanup[2] removing _ast
+# cleanup[2] removing dis
+# cleanup[2] removing opcode
+# destroy opcode
+# cleanup[2] removing _opcode
+# cleanup[2] removing teamcity.diff_tools
+# cleanup[2] removing error-analysis-tests
+# destroy error-analysis-tests
+# cleanup[2] removing error_analysis
+# destroy error_analysis
+# destroy _ast
+# destroy _datetime
+# destroy zipimport
+# destroy _sitebuiltins
+# destroy teamcity.common
+# destroy teamcity.diff_tools
+# destroy math
+# cleanup[3] wiping _frozen_importlib
+# cleanup[3] wiping _imp
+# cleanup[3] wiping _warnings
+# cleanup[3] wiping _thread
+# cleanup[3] wiping _weakref
+# cleanup[3] wiping _frozen_importlib_external
+# cleanup[3] wiping _io
+# cleanup[3] wiping marshal
+# destroy marshal
+# cleanup[3] wiping nt
+# cleanup[3] wiping winreg
+# destroy winreg
+# cleanup[3] wiping encodings
+# destroy encodings.aliases
+# destroy encodings.utf_8
+# destroy encodings.latin_1
+# destroy encodings.cp1251
+# cleanup[3] wiping codecs
+# cleanup[3] wiping _codecs
+# cleanup[3] wiping _signal
+# cleanup[3] wiping __main__
+# destroy teamcity.unittestpy
+# cleanup[3] wiping io
+# cleanup[3] wiping abc
+# cleanup[3] wiping os
+# destroy errno
+# destroy ntpath
+# cleanup[3] wiping stat
+# cleanup[3] wiping _stat
+# destroy _stat
+# cleanup[3] wiping genericpath
+# cleanup[3] wiping _collections_abc
+# cleanup[3] wiping _locale
+# cleanup[3] wiping types
+# cleanup[3] wiping functools
+# cleanup[3] wiping _functools
+# cleanup[3] wiping collections
+# destroy heapq
+# destroy collections.abc
+# cleanup[3] wiping _operator
+# cleanup[3] wiping _heapq
+# cleanup[3] wiping itertools
+# cleanup[3] wiping _collections
+# destroy _collections
+# cleanup[3] wiping weakref
+# cleanup[3] wiping importlib
+# destroy importlib.util
+# cleanup[3] wiping importlib._bootstrap
+# cleanup[3] wiping importlib._bootstrap_external
+# cleanup[3] wiping warnings
+# destroy _warnings
+# cleanup[3] wiping importlib.abc
+# destroy _frozen_importlib_external
+# destroy importlib.machinery
+# cleanup[3] wiping contextlib
+# destroy _collections_abc
+# cleanup[3] wiping unittest
+# destroy unittest.signals
+# cleanup[3] wiping unittest.result
+# cleanup[3] wiping traceback
+# cleanup[3] wiping linecache
+# cleanup[3] wiping tokenize
+# destroy io
+# cleanup[3] wiping re
+# destroy sre_compile
+# destroy copyreg
+# cleanup[3] wiping enum
+# destroy _operator
+# destroy _functools
+# cleanup[3] wiping _sre
+# cleanup[3] wiping sre_parse
+# cleanup[3] wiping token
+# cleanup[3] wiping unittest.util
+# cleanup[3] wiping unittest.case
+# destroy difflib
+# destroy logging
+# destroy contextlib
+# cleanup[3] wiping time
+# cleanup[3] wiping _string
+# cleanup[3] wiping threading
+# cleanup[3] wiping atexit
+# cleanup[3] wiping pprint
+# cleanup[3] wiping unittest.suite
+# cleanup[3] wiping unittest.loader
+# destroy unittest.case
+# destroy unittest.suite
+# destroy unittest.util
+# cleanup[3] wiping fnmatch
+# destroy posixpath
+# cleanup[3] wiping argparse
+# destroy textwrap
+# cleanup[3] wiping copy
+# cleanup[3] wiping locale
+# destroy encodings
+# destroy _locale
+# cleanup[3] wiping struct
+# cleanup[3] wiping _struct
+# destroy _struct
+# cleanup[3] wiping unittest.runner
+# destroy unittest.result
+# cleanup[3] wiping signal
+# destroy _signal
+# cleanup[3] wiping _jb_utils
+# destroy fnmatch
+# cleanup[3] wiping teamcity.messages
+# cleanup[3] wiping datetime
+# cleanup[3] wiping inspect
+# destroy abc
+# destroy ast
+# destroy dis
+# destroy enum
+# destroy importlib
+# destroy itertools
+# destroy linecache
+# destroy tokenize
+# destroy token
+# cleanup[3] wiping _opcode
+# cleanup[3] wiping sys
+# cleanup[3] wiping builtins
+# destroy nt
+# destroy datetime
+# destroy _jb_utils
+# destroy teamcity.messages
+# destroy argparse
+# destroy unittest.loader
+# destroy unittest.runner
+# destroy inspect
+# destroy pprint
+# destroy unittest
+# destroy signal
+# destroy _sre
+# destroy sre_parse
+# destroy locale
+# destroy copy
+# destroy struct
+# destroy _opcode
+# destroy _thread
+# destroy stat
+# destroy genericpath
+# destroy _heapq
+# destroy os
+# destroy io
+# destroy traceback
+# destroy weakref
+# destroy collections
+# destroy threading
+# destroy _weakref
+# destroy atexit
+# destroy _imp
+# destroy importlib.abc
+# destroy functools
+# destroy types
+# destroy warnings
+# destroy time
+# destroy _string
+# destroy re
+# destroy _frozen_importlib
