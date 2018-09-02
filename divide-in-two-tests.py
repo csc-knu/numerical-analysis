@@ -12,6 +12,28 @@ class DivideInTwoTestCase(unittest.TestCase):
         self.assertAlmostEqual(dit(f, a, b, 1e-5, '-s'), ans, delta=1e-5)
         self.assertAlmostEqual(dit(f, a, b, 1e-7, '-s'), ans, delta=1e-7)
 
+    def test_no_s_option(self):
+        def f(x):
+            return x ** 2 - 2
+        a, b = 2, 0
+        with self.assertRaises(ValueError):
+            dit(f, a, b, 1e-3)
+        with self.assertRaises(ValueError):
+            dit(f, a, b, 1e-5)
+        with self.assertRaises(ValueError):
+            dit(f, a, b, 1e-7)
+
+    def test_endpoints_product(self):
+        def f(x):
+            return x ** 2
+        a, b = 1, 2
+        with self.assertRaises(ValueError):
+            dit(f, a, b, 1e-3)
+        with self.assertRaises(ValueError):
+            dit(f, a, b, 1e-5)
+        with self.assertRaises(ValueError):
+            dit(f, a, b, 1e-7)
+
     def test_square_root(self):
         def f(x):
             return x**2 - 2
