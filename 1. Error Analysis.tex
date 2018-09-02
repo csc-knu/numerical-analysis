@@ -14,7 +14,7 @@
 
 Застосування методу розв'язання \LaReF{eq:au=f 2} призводить до рівняння \begin{equation} \label{eq:au=f 3} \tilde A_h \tilde u_h = \tilde f_h, \end{equation} де $h > 0$ -- малий параметр. Назвемо $\delta_2 = \tilde u - \tilde u_h$ \textit{похибкою методу}.\\
 
-Реалізація методу на ЕОМ привоздить до рівняння \begin{equation} \label{eq:au=f 4} \tilde A_h^\star \tilde u_h^\star = \tilde f_h^\star. \end{equation} 
+Реалізація методу на ЕОМ призводить до рівняння \begin{equation} \label{eq:au=f 4} \tilde A_h^\star \tilde u_h^\star = \tilde f_h^\star. \end{equation} 
 
 Назвемо $\delta_3 = \tilde u_h - \tilde u_h^\star$ \textit{похибкою заокруглення}. \\
 
@@ -40,11 +40,11 @@
 
 \subsection{Підрахунок похибок в ЕОМ}
 
-Обчислимо відносну похибку заокруглення числа $x$ на ЕОМ з плавоючою комою. У системі числення з осоновою $\beta$ число $x$ представляється у вигляді \begin{equation} \label{eq:x-beta-basis} x=\pm\left(\alpha_1\beta^{-1}+\alpha_2\beta^{-2}+\ldots+\alpha_t\beta^{-t}+\ldots\right)\beta^p, \end{equation} де $0\le\alpha_k<\beta$, $\alpha_1\ne0$, $k=1,2,\ldots$\\
+Обчислимо відносну похибку заокруглення числа $x$ на ЕОМ з плавоючою комою. У системі числення з основою $\beta$ число $x$ представляється у вигляді \begin{equation} \label{eq:x-beta-basis} x=\pm\left(\alpha_1\beta^{-1}+\alpha_2\beta^{-2}+\ldots+\alpha_t\beta^{-t}+\ldots\right)\beta^p, \end{equation} де $0\le\alpha_k<\beta$, $\alpha_1\ne0$, $k=1,2,\ldots$\\
 
-Якщо в ЕОМ $t$ розрядыв, то при выдкиданны молодших розрядыв ми оперуэмо з наближеним значенням \[x^\star = \pm\left(\alpha_1\beta^{-1}+\alpha_2\beta^{-2}+\ldots+\alpha_t\beta^{-t}\right)\beta^p\] і, відповідно, похибка заокруглення $x-x^\star = \pm \beta^p\left(\alpha_{t+1}\beta^{-t-1}+\ldots\right)$. Її можна оцінити так: \[|x-x^\star|\le \beta^{p-t-1}(\beta-1)(1+\beta^{-1}+\ldots)\le \beta^{p-t-1}(\beta - 1)\dfrac1{1-\beta^{-1}}=\beta^{p-t}.\]
+Якщо в ЕОМ $t$ розрядів, то при відкиданні молодших розрядів ми оперуємо з наближеним значенням \[x^\star = \pm\left(\alpha_1\beta^{-1}+\alpha_2\beta^{-2}+\ldots+\alpha_t\beta^{-t}\right)\beta^p\] і, відповідно, похибка заокруглення $x-x^\star = \pm \beta^p\left(\alpha_{t+1}\beta^{-t-1}+\ldots\right)$. Її можна оцінити так: \[|x-x^\star|\le \beta^{p-t-1}(\beta-1)(1+\beta^{-1}+\ldots)\le \beta^{p-t-1}(\beta - 1)\dfrac1{1-\beta^{-1}}=\beta^{p-t}.\]
 
-Враховуючи, що $\alpha_1\ne 0$?, маємо $|x|\ge \beta^p\beta^{-1}=\beta{p-1}$. Звідси остаточно \[\delta x\le \dfrac{\beta^{p-t}}{\beta^{p-1}}=\beta^{-t+1}.\]
+Враховуючи, що $\alpha_1\ne 0$, маємо $|x|\ge \beta^p\beta^{-1}=\beta^{p-1}$. Звідси остаточно \[\delta x\le \dfrac{\beta^{p-t}}{\beta^{p-1}}=\beta^{-t+1}.\]
 
 При точніших способах заокруглення можна отримати оцінку $\delta x\le \beta^{-t+1}/2=\epsilon$. Число $\epsilon$ називаєтсья \textit{машинним іпсилон}. Наприклад, для $\beta=2$, $t=24$, $\epsilon=2^{-24}\approx 10^{-7}$. 
 
