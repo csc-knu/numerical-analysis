@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.17)  2 SEP 2018 23:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.17)  4 SEP 2018 11:49
 entering extended mode
 **"./2. Solving nonlinear equations.tex"
 ("2. Solving nonlinear equations.tex"
@@ -441,10 +441,152 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip50
 \dth@everypar=\toks28
 )
-\c@problem=\count114
-\c@definition=\count115
-)
-("2. Solving nonlinear equations.aux"
+\c@theorem=\count114
+\c@problem=\count115
+\c@definition=\count116
+
+! Undefined control sequence.
+<recently read> \renewtheorem 
+                              
+l.14 \renewtheorem
+                  {proof}{Доведення}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{p
+                    roof}{Доведення}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Command \CYRD unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{Д
+                            оведення}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \cyro unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{До
+                              ведення}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \cyrv unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{Дов
+                                едення}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \cyre unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{Дове
+                                  дення}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \cyrd unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{Довед
+                                    ення}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \cyre unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{Доведе
+                                      ння}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \cyrn unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{Доведен
+                                        ня}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \cyrn unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{Доведенн
+                                          я}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \cyrya unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \renewtheorem{proof}{Доведення
+                                            }
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\c@side_comment=\count117
+) ("2. Solving nonlinear equations.aux"
 LaTeX Font Info:    Try loading font information for T2A+cmr on input line 3.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\cyrillic\t2acmr.fd"
@@ -505,16 +647,16 @@ LaTeX Font Info:    ... okay on input line 3.
 (C:\Users\NikitaSkybytskyi\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf
 .mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
+\scratchcounter=\count118
 \scratchdimen=\dimen132
 \scratchbox=\box54
-\nofMPsegments=\count117
-\nofMParguments=\count118
+\nofMPsegments=\count119
+\nofMParguments=\count120
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count119
+\MPscratchCnt=\count121
 \MPscratchDim=\dimen133
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
 \everyMPtoPDFconversion=\toks30
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -593,32 +735,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+Overfull \vbox (180.53737pt too high) has occurred while \output is active []
+
+
 [1
 
-{C:/Users/NikitaSkybytskyi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] 
-("2. Solving nonlinear equations.aux") ) 
+{C:/Users/NikitaSkybytskyi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (921.9027pt too wide) detected at line 55
+\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[]\
+OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 '\OT1/cm
+r/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   \OML/cmm/m/i
+t/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12
+ j\OML/cmm/m/it/12 '[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/cmr/m/n/12 )(\O
+ML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )\OMS
+/cmsy/m/n/12 j  [] \OML/cmm/m/it/12 [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]
+ \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT
+1/cmr/m/n/12 ) \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )\OML/cmm
+/m/it/12 ;  \OT1/cmr/m/n/12 0 \OML/cmm/m/it/12 < [] < \OT1/cmr/m/n/12 1[]  \OM
+S/cmsy/m/n/12  j\OML/cmm/m/it/12 '[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 []\OT1/
+cmr/m/n/12 )\OMS/cmsy/m/n/12 j  j\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/
+cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j  \OML/cmm/m/it/12 q\OMS/cmsy/m/n/12 j\OML/cm
+m/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j \OT1/cm
+r/m/n/12 = [] = \OML/cmm/m/it/12 q[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 x[] \OMS
+/cmsy/m/n/12   \OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j[] j\OML/cmm/m/it/12 x[] \
+OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 = \OMS
+/cmsy/m/n/12 j\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[] \OT1
+/cmr/m/n/12 + [] + \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[]
+\OMS/cmsy/m/n/12 j  j\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 
+x[]\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 + [] + \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12
+ x[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j  []   \OT1/cmr
+/m/n/12 (\OML/cmm/m/it/12 q[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 q[] \OT1/cmr/m
+/n/12 + [] + \OML/cmm/m/it/12 q[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j\OML/cmm/m/
+it/12 x[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 j \OT1/cmr/m/
+n/12 = []\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/cmm/m/i
+t/12 x\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 0\OMS/cmsy/m/n/12 j []
+ []
+
+[2] ("2. Solving nonlinear equations.aux")
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4273 strings out of 492973
- 55802 string characters out of 3135899
- 136764 words of memory out of 3000000
- 8056 multiletter control sequences out of 15000+200000
- 13206 words of font info for 38 fonts, out of 3000000 for 9000
+ 4308 strings out of 492973
+ 56196 string characters out of 3135899
+ 139981 words of memory out of 3000000
+ 8090 multiletter control sequences out of 15000+200000
+ 14025 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,4n,31p,1141b,354s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\NikitaSkybytskyi\AppData\Loc
-al\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk> <C:\Users\NikitaSky
-bytskyi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk> 
+ 41i,11n,31p,1141b,354s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2
+a\dpi600\labx1200.pk> <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk> <C:\Users\NikitaSkybytskyi\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk> <C:\Users\NikitaSky
+bytskyi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1200.pk> 
 <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\d
-pi600\lati1200.pk> <C:\Users\NikitaSkybytskyi\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\lh\lh-t2a\dpi600\labx1728.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "2. Solving nonlinear equations.pdf" (1 page, 95392 bytes).
+pi600\labx1728.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb>
+Output written on "2. Solving nonlinear equations.pdf" (2 pages, 137539 bytes).
+
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
+ 199 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

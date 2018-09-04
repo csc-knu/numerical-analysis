@@ -25,4 +25,46 @@
 	
 	Переваги методу: простота, надійність. Недоліки методу: низька швидкість збіжності, метод не узагальнюється на системи.
 	
+	\subsection{Метод простої ітерації}
+	
+	Спочатку рівняння \begin{equation} \label{eq:f(x)=0 2} f(x) = 0 \end{equation}] замінюється еквівалентним \begin{equation} \label{eq:x=phi(x)} x=\phi(x). \end{equation} 
+	
+	Ітераційний процес має вигляд \begin{equation} \label{eq:xn=phi(xn)} x_{n+1}=\phi(x_n), \quad n=0,1,\ldots \end{equation} 
+	
+	Початкове наближення $x_0$ задається. \\
+	
+	Для збіжності велике значення має вибір функції $\phi(x)$. Перший спосіб заміни рівняння полягає у відділенні змінної з якогось члена рівняння. Більш продуктивним є перехід від рівняння \LaReF{eq:f(x)=0 2} до \LaReF{eq:x=phi(x)} з функцією $\phi(x)=x+\tau(x)f(x)$, де $\tau(x)$ -- знакостала функція на тому відрізку, де шукаємо корінь.\\
+	
+	Кажуть, що ітераційний метод \textit{збігається}, якщо $\lim_{k\to\infty} x_k=\bar x$.\\
+	
+	Далі $U_r=\{x:|x-a|\le r\}$ відрізок довжини $2r$ з серединою в точці $a$. З'ясуємо умови, при яких збігається метод простої ітерації.\\
+	
+	\begin{theorem}
+	\label{th:1}
+	Якщо $\Max_{x\in[a,b]=U_r} |\phi'(x)|\le q<1$, то метод простої ітерації збігається і має місце оцінка \begin{equation} \label{eq:simple-iteration-convergence-bound} |x_n-\bar x|\le \dfrac{q^n}{1-q}|x_0-x_1|\le\dfrac{q^n}{1-q}(b-a) \end{equation}
+	\end{theorem}
+
+	\begin{proof} Нехай $x_{k+1},x_k\in U_r$. Тоді
+	\begin{equation}
+	\label{eq:2.4}
+	|x_k-x_{k-1}|=|\phi(x_k)-\phi(x_{k-1})=|\phi'(\xi_k)(x_k-x_{k-1})|\le \\
+	\xi_k=x_k+\theta_k(x_{k+1})-x_k), \quad 0<\theta_k<1\\
+	\le |\phi'(\xi_k)|\cdot|x_k-x_{k-1}|\le q|x_k-x_{k-1}|=\cdots=q^k|x_1-x_0|\\
+	|x_{k+p}-x_k|=|x_{k+p}-x_{k+p-1}+\cdots+x_{k+1}-x_k|\le |x_{k+p}-x_{k+p-1}|+\cdots+|x_{k+1}-x_k|\le\\
+	\le (q^{k+p-1}+q^{k+p-2}+\cdots+q^k)|x_1-x_0|=\dfrac{q^k-q^{k+p-1}}{1-q}|x_1-x|0|\xrightarrow[k\to\infty]0
+	\end{equation}
+	
+	Бачимо, що $\{x_k\}$ -- фундаментальна послідовність, а тому збіжна. При $p\to\infty$ в \LaReF{eq:2.4} отримуємо \LaReF{eq:simple-iteration-convergence-bound}.
+	\end{proof}
+	
+	Визначимо кількість ітерацій для досягнення точності $\epsilon$. З оцінки в \ref{th:1} отримуємо \[x_n-\bar x|\le \dfrac{q^n}{1-q}(b-a)<\epsilon\Rightarrow n(\epsilon)=n\ge \left[\dfrac{\ln \left(\dfrac{\epsilon(1-q)}{b-a)}\right)}{\ln q}\right]+1.\]
+	
+	Практично ітераційний процес зупиняємо при $|x_n-x_{n-1}|<\epsilon$, але ця умов не гарантуэ $|x_n-\bar x|<\epsilon$.
+	
+	\begin{side_comment}
+		Умова збіжності методу може бути замінена на умову Ліпщиця \[|\phi(x)-\phi(y)|\le q|x-y|, \quad 0<q<.1\]
+	\end{side_comment}
+
+	Переваги методу: простота, при $q<1/2$ метод збігається швидше ніж метод ділення навпіл, метод узагальнюєтсья на системи. Недоліки методу: при $q>1/2$ збігається повільніше ніж метод ділення навпіл, виникають труднощі при звдеені $f(x)=0$ до $\phi(x)=x$.
+	
 \end{document}

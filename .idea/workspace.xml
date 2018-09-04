@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb677a10-0839-484c-b0a1-34cbc9b92866" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/divide-in-two-tests.log" beforeDir="false" afterPath="$PROJECT_DIR$/divide-in-two-tests.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/divide-in-two-tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/divide-in-two-tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.aux" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.log" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.tex" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nonlinear_equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/nonlinear_equations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/univ.sty" beforeDir="false" afterPath="$PROJECT_DIR$/univ.sty" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +21,7 @@
     <session id="357222437">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="3" />
@@ -46,30 +52,52 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-761361995">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1529" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1529" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="146" selection-start-line="146" selection-end-line="146" />
+            <state relative-caret-position="809">
+              <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1535920386244" expanded="true" signature="907:1481" ph="..." />
-                <marker date="1535920386244" expanded="true" signature="1207:1243" ph="..." />
-                <marker date="1535920386244" expanded="true" signature="1870:1916" ph="..." />
-                <marker date="1535920386244" expanded="true" signature="3892:4398" ph="..." />
+                <marker date="1536043944400" expanded="true" signature="907:1481" ph="..." />
+                <marker date="1536043944400" expanded="true" signature="1207:1243" ph="..." />
+                <marker date="1536043944400" expanded="true" signature="1870:1916" ph="..." />
+                <marker date="1536043944400" expanded="true" signature="3892:4398" ph="..." />
+                <marker date="1536043944400" expanded="true" signature="4881:4886" ph="..." />
+                <marker date="1536043944400" expanded="true" signature="5934:5939" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/divide-in-two-tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="752">
+              <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <marker date="1535920978951" expanded="true" signature="829:1124" ph="..." />
@@ -108,12 +136,12 @@
         <option value="$PROJECT_DIR$/error_analysis.py" />
         <option value="$PROJECT_DIR$/error-analysis-tests.py" />
         <option value="$PROJECT_DIR$/nonlinear-equations.py" />
-        <option value="$PROJECT_DIR$/nonlinear_equations.py" />
         <option value="$PROJECT_DIR$/divide-in-two-tests.py" />
+        <option value="$PROJECT_DIR$/nonlinear_equations.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1087" />
@@ -138,7 +166,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/divide-in-two-tests.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -242,15 +270,15 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10800843" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21901709" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32952183" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -294,13 +322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
           <caret line="417" lean-forward="true" selection-start-line="417" selection-end-line="417" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1535891845263" expanded="true" signature="2388:2507" ph="..." />
-            <marker date="1535891845263" expanded="true" signature="2536:2690" ph="..." />
-            <marker date="1535891845263" expanded="true" signature="2877:2878" ph="..." />
-            <marker date="1535891845263" expanded="true" signature="5127:10163" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -308,15 +329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="177" column="4" selection-start-line="177" selection-end-line="178" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1535891703783" expanded="true" signature="132:327" ph="..." />
-            <marker date="1535891703783" expanded="true" signature="347:825" ph="..." />
-            <marker date="1535891703783" expanded="true" signature="1102:1108" ph="..." />
-            <marker date="1535891703783" expanded="true" signature="1102:1122" ph="..." />
-            <marker date="1535891703783" expanded="true" signature="1923:2234" ph="..." />
-            <marker date="1535891703783" expanded="true" signature="2592:2596" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -332,22 +344,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        <state relative-caret-position="809">
+          <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1535920386244" expanded="true" signature="907:1481" ph="..." />
-            <marker date="1535920386244" expanded="true" signature="1207:1243" ph="..." />
-            <marker date="1535920386244" expanded="true" signature="1870:1916" ph="..." />
-            <marker date="1535920386244" expanded="true" signature="3892:4398" ph="..." />
+            <marker date="1536043944400" expanded="true" signature="907:1481" ph="..." />
+            <marker date="1536043944400" expanded="true" signature="1207:1243" ph="..." />
+            <marker date="1536043944400" expanded="true" signature="1870:1916" ph="..." />
+            <marker date="1536043944400" expanded="true" signature="3892:4398" ph="..." />
+            <marker date="1536043944400" expanded="true" signature="4881:4886" ph="..." />
+            <marker date="1536043944400" expanded="true" signature="5934:5939" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/divide-in-two-tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="752">
+          <caret line="49" column="67" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <marker date="1535920978951" expanded="true" signature="829:1124" ph="..." />

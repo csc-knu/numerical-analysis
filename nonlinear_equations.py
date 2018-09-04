@@ -156,3 +156,53 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
                 return s
 
     return (a + b) / 2
+
+
+def simple_iterate(f: types.FunctionType, x0: float, a: float, b:float, eps: float=1e-5,
+                   tau: types.FunctionType=lambda x: x, options: str='') -> float:
+    """
+    :param f: function to find the root of
+    :param a: (hopefully) left endpoint
+    :param b: (hopefully) right endpoint
+    :param x0: starting point
+    :param eps: allowed error
+    :param tau: function of constant sigh on [a, b]
+    :param options: string of options, can include the following:
+        -p1 to use 1st type of phi: phi(x) = f(x) + x
+        -p2 to use second type of phi: phi(x) = x + tau(x) * f(z)
+        -m to Memorize already calculated values of a function
+        -s to Safety checks that xi stays in [a, b] and a < b
+    :return: root of f on [a,b] if any
+    """
+    if '-p1' in options and '-p2' in options:
+        raise ValueError('Cannot use both choices of phi simultaneously.')
+
+    if '-p1' not in options and '-p2' not in options:
+        raise ValueError('Choice of phi not specified in options parameter.')
+
+    if '-s' in options:
+        if a >= b:
+            raise ValueError('Invalid boundaries, a > b.')
+
+        if  x0 < a or x0 > b:
+            raise ValueError('Starting point not in [a, b].')
+
+    phi = None
+
+    if '-p1' in options:
+        phi = lambda x: f(x) + x
+
+    if '-p2' in options:
+        phi = lambda x: f(x) * tau(x) + x
+
+    if '-s' in options:
+        phi = lambda x: phi(x) < a if x < a else (phi(x) > b if x > b else phi(x))
+
+    if '-m' in options:
+        phi = functools.lru_cache(maxsize=128)(phi)
+
+    xi = x0
+    while abs(phi(xi) - xi) >= eps:
+        xi = phi(xi)
+
+    return phi(xi)
