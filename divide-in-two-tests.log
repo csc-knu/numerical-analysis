@@ -21,27 +21,27 @@ import 'zipimport' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\codecs.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\codecs.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\codecs.cpython-36.pyc'
 import '_codecs' # <class '_frozen_importlib.BuiltinImporter'>
-import 'codecs' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B67AE860>
+import 'codecs' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0D9E860>
 # C:\ProgramData\Anaconda3\lib\encodings\__pycache__\aliases.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\aliases.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\aliases.cpython-36.pyc'
-import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6BE74A8>
-import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B679DE80>
+import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DC74A8>
+import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0D8DE80>
 # C:\ProgramData\Anaconda3\lib\encodings\__pycache__\utf_8.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\utf_8.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\utf_8.cpython-36.pyc'
-import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6BF8518>
+import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DD8518>
 import '_signal' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\encodings\__pycache__\latin_1.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\latin_1.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\latin_1.cpython-36.pyc'
-import 'encodings.latin_1' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6BF8978>
+import 'encodings.latin_1' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DD8978>
 # C:\ProgramData\Anaconda3\lib\__pycache__\io.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\io.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\io.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\abc.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\abc.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\_weakrefset.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_weakrefset.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_weakrefset.cpython-36.pyc'
-import '_weakrefset' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C01898>
-import 'abc' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6BF8EF0>
-import 'io' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6BF8B38>
+import '_weakrefset' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DE1898>
+import 'abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DD8EF0>
+import 'io' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DD8B38>
 # C:\ProgramData\Anaconda3\lib\__pycache__\site.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\site.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\site.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\os.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\os.py
@@ -50,30 +50,30 @@ import 'errno' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\stat.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\stat.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\stat.cpython-36.pyc'
 import '_stat' # <class '_frozen_importlib.BuiltinImporter'>
-import 'stat' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C24518>
+import 'stat' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0E04518>
 # C:\ProgramData\Anaconda3\lib\__pycache__\ntpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\ntpath.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\ntpath.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\genericpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\genericpath.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\genericpath.cpython-36.pyc'
-import 'genericpath' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C32400>
-import 'ntpath' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C24BA8>
+import 'genericpath' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0E12400>
+import 'ntpath' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0E04BA8>
 # C:\ProgramData\Anaconda3\lib\__pycache__\_collections_abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_collections_abc.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_collections_abc.cpython-36.pyc'
-import '_collections_abc' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C329B0>
-import 'os' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C134E0>
+import '_collections_abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0E129B0>
+import 'os' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DF34E0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\_sitebuiltins.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_sitebuiltins.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_sitebuiltins.cpython-36.pyc'
-import '_sitebuiltins' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C138D0>
+import '_sitebuiltins' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DF38D0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\sysconfig.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sysconfig.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sysconfig.cpython-36.pyc'
-import 'sysconfig' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C13DA0>
+import 'sysconfig' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DF3DA0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\_bootlocale.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_bootlocale.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_bootlocale.cpython-36.pyc'
 import '_locale' # <class '_frozen_importlib.BuiltinImporter'>
-import '_bootlocale' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D6D208>
+import '_bootlocale' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DBD208>
 # C:\ProgramData\Anaconda3\lib\encodings\__pycache__\cp1251.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\cp1251.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\cp1251.cpython-36.pyc'
-import 'encodings.cp1251' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D6D5F8>
+import 'encodings.cp1251' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DBD5F8>
 # C:\ProgramData\Anaconda3\lib\__pycache__\types.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\types.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\types.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\functools.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\functools.py
@@ -84,46 +84,46 @@ import '_functools' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\operator.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\operator.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\operator.cpython-36.pyc'
 import '_operator' # <class '_frozen_importlib.BuiltinImporter'>
-import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6DA49B0>
+import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DF49B0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\keyword.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\keyword.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\keyword.cpython-36.pyc'
-import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6DADC18>
+import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DFDC18>
 # C:\ProgramData\Anaconda3\lib\__pycache__\heapq.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\heapq.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\heapq.cpython-36.pyc'
 import '_heapq' # <class '_frozen_importlib.BuiltinImporter'>
-import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6DB2470>
+import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2E02470>
 import 'itertools' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\reprlib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\reprlib.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\reprlib.cpython-36.pyc'
-import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6DAD128>
+import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DFD128>
 import '_collections' # <class '_frozen_importlib.BuiltinImporter'>
-import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D8C128>
+import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DDC128>
 # C:\ProgramData\Anaconda3\lib\__pycache__\weakref.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\weakref.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\weakref.cpython-36.pyc'
-import 'weakref' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D8C518>
-import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D778D0>
+import 'weakref' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DDC518>
+import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DC78D0>
 # C:\ProgramData\Anaconda3\lib\collections\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\collections\abc.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\collections\\__pycache__\\abc.cpython-36.pyc'
-import 'collections.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D7C668>
-import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D6DB70>
+import 'collections.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DCC668>
+import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DBDB70>
 # C:\ProgramData\Anaconda3\lib\importlib\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\__init__.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\__init__.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\warnings.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\warnings.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\warnings.cpython-36.pyc'
-import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D7C588>
-import 'importlib' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6D6DCF8>
+import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DCC588>
+import 'importlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2DBDCF8>
 # C:\ProgramData\Anaconda3\lib\importlib\__pycache__\util.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\util.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\util.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\importlib\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\abc.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\abc.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\importlib\__pycache__\machinery.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\machinery.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\machinery.cpython-36.pyc'
-import 'importlib.machinery' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6EE3E48>
-import 'importlib.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6EE3780>
+import 'importlib.machinery' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F32E48>
+import 'importlib.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F32780>
 # C:\ProgramData\Anaconda3\lib\__pycache__\contextlib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\contextlib.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\contextlib.cpython-36.pyc'
-import 'contextlib' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6EEC898>
-import 'importlib.util' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6ED5978>
+import 'contextlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F3C860>
+import 'importlib.util' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F25978>
 # possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
 # possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
 # destroy google
@@ -140,7 +140,7 @@ import 'importlib.util' # <_frozen_importlib_external.SourceFileLoader object at
 # possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\mpl_toolkits
 # possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
 # destroy google
-import 'site' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6C0F198>
+import 'site' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D0DEF198>
 Python 3.6.5 |Anaconda, Inc.| (default, Mar 29 2018, 13:32:41) [MSC v.1900 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 # bytecode is stale for 'unittest'
@@ -157,7 +157,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\re.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\enum.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\enum.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\enum.cpython-36.pyc'
-import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F5E828>
+import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2FAE828>
 # C:\ProgramData\Anaconda3\lib\__pycache__\sre_compile.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sre_compile.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_compile.cpython-36.pyc'
 import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
@@ -165,150 +165,138 @@ import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_parse.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\sre_constants.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sre_constants.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_constants.cpython-36.pyc'
-import 'sre_constants' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F870B8>
-import 'sre_parse' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F77898>
-import 'sre_compile' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F6CB38>
+import 'sre_constants' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2FD70B8>
+import 'sre_parse' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2FC7898>
+import 'sre_compile' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2FBCB38>
 # C:\ProgramData\Anaconda3\lib\__pycache__\copyreg.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\copyreg.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\copyreg.cpython-36.pyc'
-import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F910B8>
-import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F5B898>
+import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2FE10B8>
+import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2FAC898>
 # C:\ProgramData\Anaconda3\lib\__pycache__\token.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\token.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\token.cpython-36.pyc'
-import 'token' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F91390>
-import 'tokenize' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F4FCC0>
-import 'linecache' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F4F940>
-import 'traceback' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F42898>
+import 'token' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2FE1390>
+import 'tokenize' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F9FCC0>
+import 'linecache' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F9F940>
+import 'traceback' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F92898>
 # bytecode is stale for 'unittest.util'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\util.py
-import 'unittest.util' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F527B8>
-import 'unittest.result' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F3FF98>
+import 'unittest.util' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2FA27B8>
+import 'unittest.result' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F8FF98>
 # bytecode is stale for 'unittest.case'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\case.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\difflib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\difflib.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\difflib.cpython-36.pyc'
-import 'difflib' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B7189358>
+import 'difflib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D31D9358>
 # C:\ProgramData\Anaconda3\lib\logging\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\logging\__init__.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\logging\\__pycache__\\__init__.cpython-36.pyc'
 import 'time' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\string.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\string.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\string.cpython-36.pyc'
 import '_string' # <class '_frozen_importlib.BuiltinImporter'>
-import 'string' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B71B5E48>
+import 'string' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3205E48>
 # C:\ProgramData\Anaconda3\lib\__pycache__\threading.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\threading.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\threading.cpython-36.pyc'
-import 'threading' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B71416D8>
+import 'threading' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D31916D8>
 import 'atexit' # <class '_frozen_importlib.BuiltinImporter'>
-import 'logging' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B71A1400>
+import 'logging' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D31F1400>
 # C:\ProgramData\Anaconda3\lib\__pycache__\pprint.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\pprint.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\pprint.cpython-36.pyc'
-import 'pprint' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B715E9E8>
-import 'unittest.case' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F4FB70>
+import 'pprint' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D31AE9E8>
+import 'unittest.case' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F9FB70>
 # bytecode is stale for 'unittest.suite'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\suite.py
-import 'unittest.suite' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B7186160>
+import 'unittest.suite' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D31DF160>
 # bytecode is stale for 'unittest.loader'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\loader.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\fnmatch.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\fnmatch.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\fnmatch.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\posixpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\posixpath.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\posixpath.cpython-36.pyc'
-import 'posixpath' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B7009E80>
-import 'fnmatch' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B7009A20>
-import 'unittest.loader' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B7179DD8>
+import 'posixpath' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3059E80>
+import 'fnmatch' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3059A20>
+import 'unittest.loader' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D31C9DD8>
 # bytecode is stale for 'unittest.main'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\main.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\argparse.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\argparse.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\argparse.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\copy.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\copy.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\copy.cpython-36.pyc'
-import 'copy' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B7032E48>
+import 'copy' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3082E48>
 # C:\ProgramData\Anaconda3\lib\__pycache__\textwrap.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\textwrap.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\textwrap.cpython-36.pyc'
-import 'textwrap' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B703D2B0>
+import 'textwrap' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D308D2B0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\gettext.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\gettext.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\gettext.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\locale.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\locale.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\locale.cpython-36.pyc'
-import 'locale' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B708D5C0>
+import 'locale' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D30DD5C0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\struct.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\struct.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\struct.cpython-36.pyc'
 import '_struct' # <class '_frozen_importlib.BuiltinImporter'>
-import 'struct' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B70A5390>
-import 'gettext' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B703D400>
-import 'argparse' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B700C9B0>
+import 'struct' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D30F5390>
+import 'gettext' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D308D400>
+import 'argparse' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D305D9B0>
 # bytecode is stale for 'unittest.runner'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\runner.py
 # bytecode is stale for 'unittest.signals'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\signals.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\signal.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\signal.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\signal.cpython-36.pyc'
-import 'signal' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B704DC50>
-import 'unittest.signals' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B704D0F0>
-import 'unittest.runner' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B70A5DD8>
-import 'unittest.main' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B700C6A0>
-import 'unittest' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6F06710>
+import 'signal' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D309DC50>
+import 'unittest.signals' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D309D0F0>
+import 'unittest.runner' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D30F5DD8>
+import 'unittest.main' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D305D6A0>
+import 'unittest' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D2F566D8>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\_jb_runner_tools.py
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\_jb_utils.py
-import '_jb_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B704DBA8>
+import '_jb_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D309DBA8>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\__init__.py
-import 'teamcity' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6FC3278>
+import 'teamcity' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3013278>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\messages.py
-import 'teamcity.messages' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6FC3390>
-import '_jb_runner_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B7009CC0>
+import 'teamcity.messages' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3013390>
+import '_jb_runner_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3059CC0>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\unittestpy.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\datetime.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\datetime.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\datetime.cpython-36.pyc'
 import 'math' # <class '_frozen_importlib.BuiltinImporter'>
 import '_datetime' # <class '_frozen_importlib.BuiltinImporter'>
-import 'datetime' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6FD0A58>
+import 'datetime' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3020A58>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\common.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\inspect.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\inspect.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\inspect.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\ast.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\ast.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\ast.cpython-36.pyc'
 import '_ast' # <class '_frozen_importlib.BuiltinImporter'>
-import 'ast' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6FEEBA8>
+import 'ast' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D303EBA8>
 # C:\ProgramData\Anaconda3\lib\__pycache__\dis.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\dis.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\dis.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\opcode.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\opcode.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\opcode.cpython-36.pyc'
 import '_opcode' # <class '_frozen_importlib.BuiltinImporter'>
-import 'opcode' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B7072588>
-import 'dis' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B706D9E8>
-##teamcity[enteredTheMatrix timestamp='2018-09-02T23:42:59.089']
-Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/Desktop/numerical-analysis/divide-in-two-tests.py in C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis
-
-import 'inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6FD68D0>
-import 'teamcity.common' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6FD0C88>
+import 'opcode' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D30C2588>
+import 'dis' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D30BD9E8>
+import 'inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D30288D0>
+import 'teamcity.common' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3020C88>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\diff_tools.py
-import 'teamcity.diff_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6FD6828>
-import 'teamcity.unittestpy' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B6FC3668>
-# code object from C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis\divide-in-two-tests.py
-# code object from C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis\nonlinear_equations.py
-import 'nonlinear_equations' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B70C2780>
-import 'divide-in-two-tests' # <_frozen_importlib_external.SourceFileLoader object at 0x00000299B70C2240>
-##teamcity[testCount timestamp='2018-09-02T23:42:59.092' count='6']
-##teamcity[testSuiteStarted timestamp='2018-09-02T23:42:59.092' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests' name='divide-in-two-tests' nodeId='1' parentNodeId='0']
-##teamcity[testSuiteStarted timestamp='2018-09-02T23:42:59.093' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase' name='DivideInTwoTestCase' nodeId='2' parentNodeId='1']
-##teamcity[testStarted timestamp='2018-09-02T23:42:59.093' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_endpoints_product' name='test_endpoints_product' nodeId='3' parentNodeId='2']
-##teamcity[testFinished timestamp='2018-09-02T23:42:59.093' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_endpoints_product' name='test_endpoints_product' nodeId='3' parentNodeId='2']
-##teamcity[testStarted timestamp='2018-09-02T23:42:59.093' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_epsilon' name='test_epsilon' nodeId='4' parentNodeId='2']
-##teamcity[testFinished timestamp='2018-09-02T23:42:59.093' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_epsilon' name='test_epsilon' nodeId='4' parentNodeId='2']
-##teamcity[testStarted timestamp='2018-09-02T23:42:59.093' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_no_s_option' name='test_no_s_option' nodeId='5' parentNodeId='2']
-##teamcity[testFinished timestamp='2018-09-02T23:42:59.093' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_no_s_option' name='test_no_s_option' nodeId='5' parentNodeId='2']
-##teamcity[testStarted timestamp='2018-09-02T23:42:59.094' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_qubic_root' name='test_qubic_root' nodeId='6' parentNodeId='2']
-##teamcity[testFinished timestamp='2018-09-02T23:42:59.094' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_qubic_root' name='test_qubic_root' nodeId='6' parentNodeId='2']
-##teamcity[testStarted timestamp='2018-09-02T23:42:59.094' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_s_option' name='test_s_option' nodeId='7' parentNodeId='2']
-##teamcity[testFinished timestamp='2018-09-02T23:42:59.094' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_s_option' name='test_s_option' nodeId='7' parentNodeId='2']
-##teamcity[testStarted timestamp='2018-09-02T23:42:59.094' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_square_root' name='test_square_root' nodeId='8' parentNodeId='2']
-##teamcity[testFinished timestamp='2018-09-02T23:42:59.094' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_square_root' name='test_square_root' nodeId='8' parentNodeId='2']
-##teamcity[testSuiteFinished timestamp='2018-09-02T23:42:59.094' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase' name='DivideInTwoTestCase' nodeId='2' parentNodeId='1']
-##teamcity[testSuiteFinished timestamp='2018-09-02T23:42:59.094' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\numerical-analysis>://divide-in-two-tests' name='divide-in-two-tests' nodeId='1' parentNodeId='0']
+import 'teamcity.diff_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3028828>
+import 'teamcity.unittestpy' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3013668>
+##teamcity[enteredTheMatrix timestamp='2018-09-04T19:51:37.124']
+Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/Desktop/univ-numerical-analysis/divide-in-two-tests.py in C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis
+
+# code object from C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis\divide-in-two-tests.py
+# code object from C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis\nonlinear_equations.py
+import 'nonlinear_equations' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D31167B8>
+import 'divide-in-two-tests' # <_frozen_importlib_external.SourceFileLoader object at 0x000001F7D3116278>
 
 
-Ran 6 tests in 0.002s
+Ran 6 tests in 0.003s
 
 OK
+##teamcity[testCount timestamp='2018-09-04T19:51:37.150' count='6']
+##teamcity[testSuiteStarted timestamp='2018-09-04T19:51:37.151' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests' name='divide-in-two-tests' nodeId='1' parentNodeId='0']
+##teamcity[testSuiteStarted timestamp='2018-09-04T19:51:37.151' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase' name='DivideInTwoTestCase' nodeId='2' parentNodeId='1']
+##teamcity[testStarted timestamp='2018-09-04T19:51:37.151' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_endpoints_product' name='test_endpoints_product' nodeId='3' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-04T19:51:37.152' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_endpoints_product' name='test_endpoints_product' nodeId='3' parentNodeId='2']
 # clear builtins._
 # clear sys.path
 # clear sys.argv
@@ -316,6 +304,7 @@ OK
 # clear sys.ps2
 # clear sys.last_type
 # clear sys.last_value
+##teamcity[testStarted timestamp='2018-09-04T19:51:37.152' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_epsilon' name='test_epsilon' nodeId='4' parentNodeId='2']
 # clear sys.last_traceback
 # clear sys.path_hooks
 # clear sys.path_importer_cache
@@ -334,6 +323,7 @@ OK
 # cleanup[2] removing _thread
 # cleanup[2] removing _weakref
 # cleanup[2] removing _frozen_importlib_external
+##teamcity[testFinished timestamp='2018-09-04T19:51:37.152' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_epsilon' name='test_epsilon' nodeId='4' parentNodeId='2']
 # cleanup[2] removing _io
 # cleanup[2] removing marshal
 # cleanup[2] removing nt
@@ -346,6 +336,7 @@ OK
 # cleanup[2] removing encodings.utf_8
 # cleanup[2] removing _signal
 # cleanup[2] removing __main__
+##teamcity[testStarted timestamp='2018-09-04T19:51:37.152' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_no_s_option' name='test_no_s_option' nodeId='5' parentNodeId='2']
 # cleanup[2] removing encodings.latin_1
 # cleanup[2] removing io
 # cleanup[2] removing abc
@@ -360,6 +351,7 @@ OK
 # cleanup[2] removing ntpath
 # cleanup[2] removing genericpath
 # cleanup[2] removing os.path
+##teamcity[testFinished timestamp='2018-09-04T19:51:37.153' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_no_s_option' name='test_no_s_option' nodeId='5' parentNodeId='2']
 # cleanup[2] removing _collections_abc
 # cleanup[2] removing _sitebuiltins
 # cleanup[2] removing sysconfig
@@ -374,6 +366,7 @@ OK
 # cleanup[2] removing collections
 # cleanup[2] removing operator
 # destroy operator
+##teamcity[testStarted timestamp='2018-09-04T19:51:37.153' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_qubic_root' name='test_qubic_root' nodeId='6' parentNodeId='2']
 # cleanup[2] removing _operator
 # cleanup[2] removing keyword
 # destroy keyword
@@ -387,6 +380,7 @@ OK
 # cleanup[2] removing collections.abc
 # cleanup[2] removing importlib
 # cleanup[2] removing importlib._bootstrap
+##teamcity[testFinished timestamp='2018-09-04T19:51:37.153' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_qubic_root' name='test_qubic_root' nodeId='6' parentNodeId='2']
 # cleanup[2] removing importlib._bootstrap_external
 # cleanup[2] removing warnings
 # cleanup[2] removing importlib.util
@@ -400,6 +394,7 @@ OK
 # cleanup[2] removing google.logging
 # destroy google.logging
 # cleanup[2] removing mpl_toolkits
+##teamcity[testStarted timestamp='2018-09-04T19:51:37.153' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_s_option' name='test_s_option' nodeId='7' parentNodeId='2']
 # destroy mpl_toolkits
 # cleanup[2] removing sphinxcontrib
 # destroy sphinxcontrib
@@ -412,6 +407,7 @@ OK
 # cleanup[2] removing enum
 # cleanup[2] removing sre_compile
 # cleanup[2] removing _sre
+##teamcity[testFinished timestamp='2018-09-04T19:51:37.153' duration='0' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_s_option' name='test_s_option' nodeId='7' parentNodeId='2']
 # cleanup[2] removing sre_parse
 # cleanup[2] removing sre_constants
 # destroy sre_constants
@@ -422,6 +418,7 @@ OK
 # cleanup[2] removing difflib
 # cleanup[2] removing logging
 # cleanup[2] removing time
+##teamcity[testStarted timestamp='2018-09-04T19:51:37.153' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_square_root' name='test_square_root' nodeId='8' parentNodeId='2']
 # cleanup[2] removing string
 # destroy string
 # cleanup[2] removing _string
@@ -439,6 +436,7 @@ OK
 # cleanup[2] removing textwrap
 # cleanup[2] removing gettext
 # destroy gettext
+##teamcity[testFinished timestamp='2018-09-04T19:51:37.154' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase.test_square_root' name='test_square_root' nodeId='8' parentNodeId='2']
 # cleanup[2] removing locale
 # cleanup[2] removing struct
 # cleanup[2] removing _struct
@@ -475,6 +473,7 @@ OK
 # destroy teamcity.common
 # destroy teamcity.diff_tools
 # destroy math
+##teamcity[testSuiteFinished timestamp='2018-09-04T19:51:37.154' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests.DivideInTwoTestCase' name='DivideInTwoTestCase' nodeId='2' parentNodeId='1']
 # cleanup[3] wiping _frozen_importlib
 # cleanup[3] wiping _imp
 # cleanup[3] wiping _warnings
@@ -484,6 +483,7 @@ OK
 # cleanup[3] wiping _io
 # cleanup[3] wiping marshal
 # destroy marshal
+##teamcity[testSuiteFinished timestamp='2018-09-04T19:51:37.154' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ-numerical-analysis>://divide-in-two-tests' name='divide-in-two-tests' nodeId='1' parentNodeId='0']
 # cleanup[3] wiping nt
 # cleanup[3] wiping winreg
 # destroy winreg
