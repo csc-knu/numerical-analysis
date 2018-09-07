@@ -224,3 +224,157 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
     return phi(xi)
 
 
+def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
+             eps: float = 1e-5, tau: float = 1, options: str = '') -> float:
+    """
+    :param f: function to find the root of
+    :param a: (hopefully) left endpoint
+    :param b: (hopefully) right endpoint
+    :param x0: starting point
+    :param eps: allowed error
+    :param tau: constant
+    :param options: string of options, can include the following:
+        -m to Memorize already calculated values of a function
+        -s to Safety checks that xi stays in [a, b] and a < b
+    :return: root of f on [a, b] if any
+    """
+    if '-s' in options:
+        if a >= b:
+            raise ValueError('Invalid boundaries, a >= b.')
+
+        if x0 < a or x0 > b:
+            raise ValueError('Starting point not in [a, b].')
+
+    def phi(x):
+        return tau * f(x) + x
+
+    if '-s' in options:
+        def threshold(func, local_a, local_b):
+
+            @functools.wraps(func)
+            def thr(*args, **kwargs):
+                if f(*args, **kwargs) < local_a:
+                    return local_a
+
+                if f(*args, **kwargs) > local_b:
+                    return local_b
+
+                return f(*args, **kwargs)
+
+            return thr
+
+        phi = threshold(phi, a, b)
+
+    if '-m' in options:
+        phi = functools.lru_cache(maxsize=128)(phi)
+
+    xi = x0
+    while abs(phi(xi) - xi) >= eps:
+        xi = phi(xi)
+
+    return phi(xi)
+
+
+def newton(f: types.FunctionType, d: types.FunctionType, x0: float,
+           a: float, b: float, eps: float = 1e-5, options: str = '') -> float:
+    """
+    :param f: Function to find the root of
+    :param d: Derivative of f
+    :param a: (hopefully) left endpoint
+    :param b: (hopefully) right endpoint
+    :param x0: starting point
+    :param eps: allowed error
+    :param options: string of options, can include the following:
+        -m to Memorize already calculated values of a function
+        -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
+    :return: root of f on [a, b] if any
+    """
+    if '-s' in options:
+        if a >= b:
+            raise ValueError('Invalid boundaries, a >= b.')
+
+        if x0 < a or x0 > b:
+            raise ValueError('Starting point not in [a, b].')
+
+    def local_next(x):
+        return x - f(x) / d(x)
+
+    if '-m' in options:
+        local_next = functools.lru_cache(maxsize=128)(local_next)
+    
+    xi = x0
+    while abs(local_next(xi) - xi) >= eps:
+        xi = local_next(xi)
+
+    return local_next(xi)
+
+
+def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: float,
+                    eps: float = 1e-5, options: str = '') -> float:
+    """
+    :param f: Function to find the root of
+    :param dx0: Derivative of f at x0
+    :param a: (hopefully) left endpoint
+    :param b: (hopefully) right endpoint
+    :param x0: starting point
+    :param eps: allowed error
+    :param options: string of options, can include the following:
+        -m to Memorize already calculated values of a function
+        -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
+    :return: root of f on [a, b] if any
+    """
+    if '-s' in options:
+        if a >= b:
+            raise ValueError('Invalid boundaries, a >= b.')
+
+        if x0 < a or x0 > b:
+            raise ValueError('Starting point not in [a, b].')
+
+    def local_next(x):
+        return x - f(x) / dx0
+
+    if '-m' in options:
+        local_next = functools.lru_cache(maxsize=128)(local_next)
+
+    xi = x0
+    while abs(local_next(xi) - xi) >= eps:
+        xi = local_next(xi)
+
+    return local_next(xi)
+
+
+def метод_січних(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
+                 eps: float = 1e-5, options: str = '') -> float:
+    """
+    :param f: Function to find the root of
+    :param a: (hopefully) left endpoint
+    :param b: (hopefully) right endpoint
+    :param x0: starting point
+    :param x1: second point
+    :param eps: allowed error
+    :param options: string of options, can include the following:
+        -m to Memorize already calculated values of a function
+        -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
+    :return: root of f on [a, b] if any
+    """
+    if '-s' in options:
+        if a >= b:
+            raise ValueError('Invalid boundaries, a >= b.')
+
+        if x0 < a or x0 > b:
+            raise ValueError('Starting point not in [a, b].')
+
+    if '-m' in options:
+        f = functools.lru_cache(maxsize=128)(f)
+
+    def local_next(now, prev):
+        return now - (now - prev) / (f(now) - f(prev)) * f(now), now
+
+    if '-m' in options:
+        local_next = functools.lru_cache(maxsize=128)(local_next)
+
+    now, prev = x1, x0
+    while abs(local_next(now)[0] - now) >= eps:
+        now, prev = local_next(now, prev)
+
+    return local_next(now)[0]
