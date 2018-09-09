@@ -199,19 +199,19 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float,
         if x0 < a or x0 > b:
             raise ValueError('Starting point not in [a, b].')
 
-    def local_next(x):
+    def step(x):
         return x - f(x) / d(x)
 
     if '-m' in options:
-        local_next = functools.lru_cache(maxsize=128)(local_next)
+        step = functools.lru_cache(maxsize=128)(step)
     
     xi = x0
-    while abs(local_next(xi) - xi) >= eps:
+    while abs(step(xi) - xi) >= eps:
         if '-l' in options:
             print(f'{xi:10.10f}')
-        xi = local_next(xi)
+        xi = step(xi)
 
-    return local_next(xi)
+    return step(xi)
 
 
 def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: float,
@@ -236,19 +236,19 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
         if x0 < a or x0 > b:
             raise ValueError('Starting point not in [a, b].')
 
-    def local_next(x):
+    def step(x):
         return x - f(x) / dx0
 
     if '-m' in options:
-        local_next = functools.lru_cache(maxsize=128)(local_next)
+        step = functools.lru_cache(maxsize=128)(step)
 
     xi = x0
-    while abs(local_next(xi) - xi) >= eps:
+    while abs(step(xi) - xi) >= eps:
         if '-l' in options:
             print(f'{xi:10.10f}')
-        xi = local_next(xi)
+        xi = step(xi)
 
-    return local_next(xi)
+    return step(xi)
 
 
 def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
@@ -276,16 +276,14 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
     if '-m' in options:
         f = functools.lru_cache(maxsize=128)(f)
 
-    def local_next(local_now: float, local_prev: float) -> (float, float):
-        return local_now - (local_now - local_prev) / (f(local_now) - f(local_prev)) * f(local_now), local_now
-
-    if '-m' in options:
-        local_next = functools.lru_cache(maxsize=128)(local_next)
+    def step():
+        nonlocal now, prev
+        now, prev = now - (now - prev) / (f(now) - f(prev)) * f(now), now
 
     now, prev = x1, x0
-    while abs(local_next(now, prev)[0] - now) >= eps:
+    while abs(now - prev) >= eps:
         if '-l' in options:
             print(f'{now:10.10f}')
-        now, prev = local_next(now, prev)
+        step()
 
-    return local_next(now)[0]
+    return now
