@@ -68,28 +68,26 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
     if f(a) * f(b) > 0:
         raise ValueError(f'f(a) * f(b) = f({a}) * f({b}) = {f(a) * f(b)} > 0')
 
-    def step():
+    def step(x):
         nonlocal a, b
-        xi = (a + b) / 2
         if '-l':
-            print(f'{xi:10.10f}')
-        if f(xi) * f(a) < 0:
-            b = xi
-        elif f(xi) * f(b) < 0:
-            a = xi
+            print(f'{x:10.10f}')
+        if f(x) * f(a) < 0:
+            b = x
+        elif f(x) * f(b) < 0:
+            a = x
         else:
-            return xi
+            return x
 
+    xi = (a + b) / 2
     if '-i' in options:
         for i in range(math.ceil(math.log2((b - a) / eps)) + 1):
-            s = step()
-            if s is not None:
-                return s
+            if step(xi) is not None:
+                return xi
     else:
         while b - a > 2 * eps:
-            s = step()
-            if s is not None:
-                return s
+            if step(xi) is not None:
+                return xi
 
     return (a + b) / 2
 

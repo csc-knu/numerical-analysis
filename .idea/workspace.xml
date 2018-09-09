@@ -95,14 +95,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2229" />
-          <entry key="txt" value="75" />
+          <entry key="py" value="2293" />
+          <entry key="txt" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="75" />
-          <entry key="Python" value="2229" />
+          <entry key="PLAIN_TEXT" value="114" />
+          <entry key="Python" value="2293" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -124,17 +124,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="288" column="22" lean-forward="true" selection-start-line="288" selection-start-column="22" selection-end-line="288" selection-end-column="22" />
+            <state relative-caret-position="532">
+              <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1536475723223" expanded="true" signature="147:152" ph="..." />
-                <marker date="1536475723223" expanded="true" signature="312:317" ph="..." />
-                <marker date="1536475723223" expanded="true" signature="532:930" ph="..." />
-                <marker date="1536475723223" expanded="true" signature="1527:2036" ph="..." />
-                <marker date="1536475723223" expanded="true" signature="2539:2544" ph="..." />
-                <marker date="1536475723223" expanded="true" signature="4592:4613" ph="..." />
-                <marker date="1536475723223" expanded="true" signature="5062:5063" ph="..." />
+                <marker date="1536475964529" expanded="true" signature="147:152" ph="..." />
+                <marker date="1536475964529" expanded="true" signature="312:317" ph="..." />
+                <marker date="1536475964529" expanded="true" signature="532:930" ph="..." />
+                <marker date="1536475964529" expanded="true" signature="1461:1940" ph="..." />
+                <marker date="1536475964529" expanded="true" signature="2434:2439" ph="..." />
+                <marker date="1536475964529" expanded="true" signature="4487:4508" ph="..." />
+                <marker date="1536475964529" expanded="true" signature="4957:4958" ph="..." />
               </folding>
             </state>
           </provider>
@@ -404,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536475141925</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="threshold function wrapper, refactoring">
+      <created>1536475818860</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1536475818860</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -490,7 +497,8 @@
     <MESSAGE value="relaxate, newton, modified_newton, метод_січних methods added" />
     <MESSAGE value="large commit, lots of code" />
     <MESSAGE value="exception classes and safety check function" />
-    <option name="LAST_COMMIT_MESSAGE" value="exception classes and safety check function" />
+    <MESSAGE value="threshold function wrapper, refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="threshold function wrapper, refactoring" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1. Error Analysis.log">
@@ -574,17 +582,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="288" column="22" lean-forward="true" selection-start-line="288" selection-start-column="22" selection-end-line="288" selection-end-column="22" />
+        <state relative-caret-position="532">
+          <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1536475723223" expanded="true" signature="147:152" ph="..." />
-            <marker date="1536475723223" expanded="true" signature="312:317" ph="..." />
-            <marker date="1536475723223" expanded="true" signature="532:930" ph="..." />
-            <marker date="1536475723223" expanded="true" signature="1527:2036" ph="..." />
-            <marker date="1536475723223" expanded="true" signature="2539:2544" ph="..." />
-            <marker date="1536475723223" expanded="true" signature="4592:4613" ph="..." />
-            <marker date="1536475723223" expanded="true" signature="5062:5063" ph="..." />
+            <marker date="1536475964529" expanded="true" signature="147:152" ph="..." />
+            <marker date="1536475964529" expanded="true" signature="312:317" ph="..." />
+            <marker date="1536475964529" expanded="true" signature="532:930" ph="..." />
+            <marker date="1536475964529" expanded="true" signature="1461:1940" ph="..." />
+            <marker date="1536475964529" expanded="true" signature="2434:2439" ph="..." />
+            <marker date="1536475964529" expanded="true" signature="4487:4508" ph="..." />
+            <marker date="1536475964529" expanded="true" signature="4957:4958" ph="..." />
           </folding>
         </state>
       </provider>
