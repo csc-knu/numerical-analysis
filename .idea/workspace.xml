@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb677a10-0839-484c-b0a1-34cbc9b92866" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/NikitaSkybytskyi.xml" afterDir="false" />
+    <list default="true" id="fb677a10-0839-484c-b0a1-34cbc9b92866" name="Default Changelist" comment="more tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nonlinear_equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/nonlinear_equations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/divide_in_two.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/modified_newton.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/newton.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/relaxate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/secant.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/simple_iterate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,26 +96,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2624" />
-          <entry key="txt" value="215" />
+          <entry key="py" value="3386" />
+          <entry key="txt" value="226" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="215" />
-          <entry key="Python" value="2624" />
+          <entry key="PLAIN_TEXT" value="226" />
+          <entry key="Python" value="3386" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="logs" value="1" />
-          <entry key="py" value="11" />
+          <entry key="py" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="11" />
+          <entry key="Python" value="12" />
         </counts>
       </usages-collector>
     </session>
@@ -132,10 +125,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+            <state relative-caret-position="304">
+              <caret line="264" column="4" selection-start-line="264" selection-start-column="4" selection-end-line="264" selection-end-column="4" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
                 <marker date="1536476762305" expanded="true" signature="279:284" ph="..." />
                 <marker date="1536476762305" expanded="true" signature="444:449" ph="..." />
                 <marker date="1536476762305" expanded="true" signature="664:1062" ph="..." />
@@ -151,10 +143,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="591">
+              <caret line="295" column="14" selection-start-line="295" selection-start-column="14" selection-end-line="295" selection-end-column="14" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
+                <marker date="1536478468460" expanded="true" signature="3849:3884" ph="..." />
+                <marker date="1536478468460" expanded="true" signature="4136:4174" ph="..." />
+                <marker date="1536478468460" expanded="true" signature="4425:4466" ph="..." />
+                <marker date="1536478468460" expanded="true" signature="4714:4757" ph="..." />
+                <marker date="1536478468460" expanded="true" signature="5000:5067" ph="..." />
               </folding>
             </state>
           </provider>
@@ -176,6 +173,9 @@
       <find>p2</find>
       <find>phi</find>
       <find>dit</find>
+      <find>di</find>
+      <find>r</find>
+      <find>si</find>
     </findStrings>
     <replaceStrings>
       <replace>s</replace>
@@ -183,6 +183,11 @@
       <replace>t</replace>
       <replace>next</replace>
       <replace>d</replace>
+      <replace>di</replace>
+      <replace>si</replace>
+      <replace>r</replace>
+      <replace>n</replace>
+      <replace>sit</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -239,7 +244,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/secant.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -258,30 +263,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Divide In Two Unit Tests">
-    <configuration name="Divide In Two Unit Tests" type="tests" factoryName="Unittests">
-      <output_file path="$PROJECT_DIR$/logs/divide_in_two.logs" is_save="true" />
+  <component name="RunManager">
+    <configuration name="Nonlinear Equations Unit Tests" type="tests" factoryName="Unittests">
+      <output_file path="$PROJECT_DIR$/logs.log" is_save="true" />
       <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="-v -u" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="version" value="dev" />
-      </envs>
-      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/divide_in_two.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Modified Newton" type="tests" factoryName="Unittests">
-      <output_file path="$PROJECT_DIR$/logs/modified_newton.log" is_save="true" />
-      <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="-u -v" />
+      <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -290,82 +276,10 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/modified_newton.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Newton Unit Tests" type="tests" factoryName="Unittests">
-      <output_file path="$PROJECT_DIR$/logs/newton.log" is_save="true" />
-      <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="-u -v" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/newton.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Relaxate Unit Tests" type="tests" factoryName="Unittests">
-      <output_file path="$PROJECT_DIR$/logs/relaxate.log" is_save="true" />
-      <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="-u -v" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/relaxate.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Secant Unit Tests" type="tests" factoryName="Unittests">
-      <output_file path="$PROJECT_DIR$/logs/secant.log" is_save="true" />
-      <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="-u -v" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/secant.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Simple Iterate Unit Tests" type="tests" factoryName="Unittests">
-      <output_file path="$PROJECT_DIR$/logs/simple_iterate.log" is_save="true" />
-      <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="-u -v" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/simple_iterate.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python tests.Divide In Two Unit Tests" />
-      <item itemvalue="Python tests.Simple Iterate Unit Tests" />
-      <item itemvalue="Python tests.Relaxate Unit Tests" />
-      <item itemvalue="Python tests.Newton Unit Tests" />
-      <item itemvalue="Python tests.Modified Newton" />
-      <item itemvalue="Python tests.Secant Unit Tests" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -448,13 +362,24 @@
       <option name="project" value="LOCAL" />
       <updated>1536476443381</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="tests">
+      <created>1536477091239</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1536477091239</updated>
+    </task>
+    <task id="LOCAL-00012" summary="more tests">
+      <created>1536478434383</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1536478434383</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.09 at 08h 46m 05s.xml">
-      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
-    </history-entry>
     <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.09 at 08h 49m 44s.xml">
       <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
@@ -482,6 +407,9 @@
     <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.09 at 10h 10m 55s.xml">
       <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
+    <history-entry file="Nonlinear_Equations_Unit_Tests - 2018.09.09 at 10h 12m 26s.xml">
+      <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -492,7 +420,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3253638" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3253638" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -538,7 +466,9 @@
     <MESSAGE value="step in divide_in_two modified" />
     <MESSAGE value="-t and -m options swapped where needed" />
     <MESSAGE value="bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
+    <MESSAGE value="tests" />
+    <MESSAGE value="more tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="more tests" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1. Error Analysis.log">
@@ -606,10 +536,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+        <state relative-caret-position="304">
+          <caret line="264" column="4" selection-start-line="264" selection-start-column="4" selection-end-line="264" selection-end-column="4" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
             <marker date="1536476762305" expanded="true" signature="279:284" ph="..." />
             <marker date="1536476762305" expanded="true" signature="444:449" ph="..." />
             <marker date="1536476762305" expanded="true" signature="664:1062" ph="..." />
@@ -623,10 +552,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="591">
+          <caret line="295" column="14" selection-start-line="295" selection-start-column="14" selection-end-line="295" selection-end-column="14" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+            <marker date="1536478468460" expanded="true" signature="3849:3884" ph="..." />
+            <marker date="1536478468460" expanded="true" signature="4136:4174" ph="..." />
+            <marker date="1536478468460" expanded="true" signature="4425:4466" ph="..." />
+            <marker date="1536478468460" expanded="true" signature="4714:4757" ph="..." />
+            <marker date="1536478468460" expanded="true" signature="5000:5067" ph="..." />
           </folding>
         </state>
       </provider>
