@@ -164,11 +164,11 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     def phi(x):
         return tau * f(x) + x
 
-    if '-m' in options:
-        phi = functools.lru_cache(maxsize=128)(phi)
-
     if '-t' in options:
         phi = threshold(phi, a, b)
+
+    if '-m' in options:
+        phi = functools.lru_cache(maxsize=128)(phi)
 
     xi = x0
     while abs(phi(xi) - xi) >= eps:
@@ -201,11 +201,11 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
     def step(x):
         return x - f(x) / d(x)
 
-    if '-m' in options:
-        step = functools.lru_cache(maxsize=128)(step)
-
     if '-t' in options:
         step = threshold(step, a, b)
+
+    if '-m' in options:
+        step = functools.lru_cache(maxsize=128)(step)
 
     xi = x0
     while abs(step(xi) - xi) >= eps:
@@ -238,11 +238,11 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     def step(x):
         return x - f(x) / dx0
 
-    if '-m' in options:
-        step = functools.lru_cache(maxsize=128)(step)
-
     if '-t' in options:
         step = threshold(step, a, b)
+
+    if '-m' in options:
+        step = functools.lru_cache(maxsize=128)(step)
 
     xi = x0
     while abs(step(xi) - xi) >= eps:
