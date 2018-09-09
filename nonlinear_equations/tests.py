@@ -1,7 +1,7 @@
 import unittest
 import math
 
-from nonlinear_equations import divide_in_two as dit, simple_iterate as sit, \
+from nonlinear_equations.main import divide_in_two as dit, simple_iterate as sit, \
     relaxate as rel, newton as net, modified_newton as mne, secant as sec
 
 
