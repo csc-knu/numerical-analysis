@@ -1,6 +1,6 @@
 import unittest
 
-from error_analysis import absolute_error as ae, absolute_error_answer_wrapper as aeaw
+from error_analysis.tests import absolute_error as ae, absolute_error_answer_wrapper as aeaw
 
 
 class TestAbsoluteError(unittest.TestCase):
