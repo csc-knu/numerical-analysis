@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb677a10-0839-484c-b0a1-34cbc9b92866" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nonlinear_equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/nonlinear_equations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nonlinear_equations/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/nonlinear_equations/logs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nonlinear_equations/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/nonlinear_equations/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,35 +86,39 @@
     <session id="1887933368">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3784" />
-          <entry key="txt" value="256" />
+          <entry key="dummy" value="13" />
+          <entry key="py" value="3804" />
+          <entry key="txt" value="339" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="256" />
-          <entry key="Python" value="3784" />
+          <entry key="PLAIN_TEXT" value="352" />
+          <entry key="Python" value="3804" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="log" value="1" />
           <entry key="logs" value="1" />
           <entry key="py" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Log" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="12" />
         </counts>
@@ -123,44 +127,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nonlinear_equations/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="265" column="54" selection-start-line="265" selection-start-column="54" selection-end-line="265" selection-end-column="54" />
+            <state relative-caret-position="280">
+              <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
               <folding>
-                <marker date="1536479802502" expanded="true" signature="279:284" ph="..." />
-                <marker date="1536479802502" expanded="true" signature="444:449" ph="..." />
-                <marker date="1536479802502" expanded="true" signature="664:1062" ph="..." />
-                <marker date="1536479802502" expanded="true" signature="1593:2066" ph="..." />
-                <marker date="1536479802502" expanded="true" signature="2484:2489" ph="..." />
-                <marker date="1536479802502" expanded="true" signature="4528:4549" ph="..." />
-                <marker date="1536479802502" expanded="true" signature="4998:4999" ph="..." />
+                <element signature="e#132#148#0" expanded="true" />
+                <marker date="1536481063015" expanded="true" signature="279:284" ph="..." />
+                <marker date="1536481063015" expanded="true" signature="444:449" ph="..." />
+                <marker date="1536481063015" expanded="true" signature="664:1062" ph="..." />
+                <marker date="1536481063015" expanded="true" signature="1593:2016" ph="..." />
+                <marker date="1536481063015" expanded="true" signature="2554:2559" ph="..." />
+                <marker date="1536481063015" expanded="true" signature="4600:4621" ph="..." />
+                <marker date="1536481063015" expanded="true" signature="5072:5073" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nonlinear_equations/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="144">
+              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1536479689301" expanded="true" signature="1505:1543" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="1799:1837" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="2092:2129" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="2381:2412" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="2658:2691" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="4247:4282" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="4534:4572" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="4823:4864" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="5112:5155" ph="..." />
-                <marker date="1536479689301" expanded="true" signature="5400:5467" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="1510:1548" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="1804:1842" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="2097:2134" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="2386:2417" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="2663:2696" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="4252:4287" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="4539:4577" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="4828:4869" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="5117:5160" ph="..." />
+                <marker date="1536479886405" expanded="true" signature="5405:5472" ph="..." />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nonlinear_equations/logs.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider" />
         </entry>
       </file>
     </leaf>
@@ -219,8 +229,10 @@
         <option value="$PROJECT_DIR$/tests/modified_newton.py" />
         <option value="$PROJECT_DIR$/tests/secant.py" />
         <option value="$PROJECT_DIR$/tests/divide_in_two.py" />
-        <option value="$PROJECT_DIR$/tests.py" />
         <option value="$PROJECT_DIR$/nonlinear_equations.py" />
+        <option value="$PROJECT_DIR$/tests.py" />
+        <option value="$PROJECT_DIR$/nonlinear_equations/tests.py" />
+        <option value="$PROJECT_DIR$/nonlinear_equations/main.py" />
       </list>
     </option>
   </component>
@@ -235,7 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,16 +254,27 @@
               <item name="numerical-analysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="numerical-analysis" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="numerical-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="numerical-analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="nonlinear_equations" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/tests.py" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\error_analysis" />
+      <recent name="C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\nonlinear_equations" />
+      <recent name="C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\LaTeX" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\tests" />
     </key>
@@ -269,11 +291,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Nonlinear Equations Unit Tests">
+  <component name="RunManager">
     <configuration name="Nonlinear Equations Unit Tests" type="tests" factoryName="Unittests">
-      <output_file path="$PROJECT_DIR$/logs.log" is_save="true" />
+      <output_file path="$PROJECT_DIR$/nonlinear_equations/logs.log" is_save="true" />
       <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_OPTIONS" value="-u -v -W -q -b" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -286,47 +308,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for nonlinear_equations.tests.SecantTestCase.test_cos" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;nonlinear_equations.tests.SecantTestCase.test_cos&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for nonlinear_equations.tests.SecantTestCase.test_quadratic" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;nonlinear_equations.tests.SecantTestCase.test_quadratic&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python tests.Nonlinear Equations Unit Tests" />
-      <item itemvalue="Python tests.pytest for nonlinear_equations.tests.SecantTestCase.test_cos" />
-      <item itemvalue="Python tests.pytest for nonlinear_equations.tests.SecantTestCase.test_quadratic" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python tests.pytest for nonlinear_equations.tests.SecantTestCase.test_quadratic" />
-        <item itemvalue="Python tests.pytest for nonlinear_equations.tests.SecantTestCase.test_cos" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -437,19 +418,31 @@
       <option name="project" value="LOCAL" />
       <updated>1536478592902</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="finished unit testing">
+      <created>1536479822394</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1536479822394</updated>
+    </task>
+    <task id="LOCAL-00016" summary="changed directory structure">
+      <created>1536479903049</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1536479903049</updated>
+    </task>
+    <task id="LOCAL-00017" summary="logs updated from last testing">
+      <created>1536480034653</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1536480034653</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nonlinear_Equations_Unit_Tests - 2018.09.09 at 10h 52m 04s.xml">
-      <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nonlinear_Equations_Unit_Tests - 2018.09.09 at 10h 52m 17s.xml">
-      <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_tests_SecantTestCase_test_cos - 2018.09.09 at 10h 52m 25s.xml">
-      <configuration name="pytest for tests.SecantTestCase.test_cos" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nonlinear_Equations_Unit_Tests - 2018.09.09 at 10h 53m 14s.xml">
       <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
     </history-entry>
@@ -469,6 +462,15 @@
       <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
     </history-entry>
     <history-entry file="Nonlinear_Equations_Unit_Tests - 2018.09.09 at 10h 56m 42s.xml">
+      <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nonlinear_Equations_Unit_Tests - 2018.09.09 at 10h 59m 49s.xml">
+      <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nonlinear_Equations_Unit_Tests - 2018.09.09 at 11h 00m 12s.xml">
+      <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nonlinear_Equations_Unit_Tests - 2018.09.09 at 11h 03m 26s.xml">
       <configuration name="Nonlinear Equations Unit Tests" configurationId="tests" />
     </history-entry>
   </component>
@@ -531,20 +533,23 @@
     <MESSAGE value="more tests" />
     <MESSAGE value="removed unused params" />
     <MESSAGE value="phi tau 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="phi tau 1" />
+    <MESSAGE value="finished unit testing" />
+    <MESSAGE value="changed directory structure" />
+    <MESSAGE value="logs updated from last testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="logs updated from last testing" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/1. Error Analysis.log">
+    <entry file="file://$PROJECT_DIR$/LaTeX/1. Error Analysis.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/error_analysis.py">
+    <entry file="file://$PROJECT_DIR$/error_analysis/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="141" column="19" lean-forward="true" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error-analysis-tests.log">
+    <entry file="file://$PROJECT_DIR$/error_analysis/logs.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/functools.pyi">
@@ -556,7 +561,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/divide-in-two-tests.log" />
     <entry file="file://$PROJECT_DIR$/simple-iterate-tests.py" />
-    <entry file="file://$PROJECT_DIR$/error-analysis-tests.py">
+    <entry file="file://$PROJECT_DIR$/error_analysis/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="809">
           <caret line="417" lean-forward="true" selection-start-line="417" selection-end-line="417" />
@@ -564,71 +569,50 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/divide-in-two-tests.py" />
-    <entry file="file://$PROJECT_DIR$/logs/divide_in_two.logs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
-          <caret line="1071" lean-forward="true" selection-start-line="1071" selection-end-line="1071" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/simple_iterate.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/relaxate.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/newton.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/modified_newton.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/secant.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/divide_in_two.logs" />
+    <entry file="file://$PROJECT_DIR$/tests/simple_iterate.py" />
+    <entry file="file://$PROJECT_DIR$/tests/relaxate.py" />
+    <entry file="file://$PROJECT_DIR$/tests/newton.py" />
+    <entry file="file://$PROJECT_DIR$/tests/modified_newton.py" />
+    <entry file="file://$PROJECT_DIR$/tests/secant.py" />
     <entry file="file://$PROJECT_DIR$/лаба2.py" />
-    <entry file="file://$PROJECT_DIR$/tests/divide_in_two.py">
+    <entry file="file://$PROJECT_DIR$/tests/divide_in_two.py" />
+    <entry file="file://$PROJECT_DIR$/nonlinear_equations/logs.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nonlinear_equations/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="67" selection-start-line="67" selection-end-line="88" selection-end-column="65" />
+        <state relative-caret-position="144">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+            <marker date="1536479886405" expanded="true" signature="1510:1548" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="1804:1842" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="2097:2134" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="2386:2417" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="2663:2696" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="4252:4287" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="4539:4577" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="4828:4869" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="5117:5160" ph="..." />
+            <marker date="1536479886405" expanded="true" signature="5405:5472" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
+    <entry file="file://$PROJECT_DIR$/nonlinear_equations/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="265" column="54" selection-start-line="265" selection-start-column="54" selection-end-line="265" selection-end-column="54" />
+        <state relative-caret-position="280">
+          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
           <folding>
-            <marker date="1536479802502" expanded="true" signature="279:284" ph="..." />
-            <marker date="1536479802502" expanded="true" signature="444:449" ph="..." />
-            <marker date="1536479802502" expanded="true" signature="664:1062" ph="..." />
-            <marker date="1536479802502" expanded="true" signature="1593:2066" ph="..." />
-            <marker date="1536479802502" expanded="true" signature="2484:2489" ph="..." />
-            <marker date="1536479802502" expanded="true" signature="4528:4549" ph="..." />
-            <marker date="1536479802502" expanded="true" signature="4998:4999" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1536479689301" expanded="true" signature="1505:1543" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="1799:1837" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="2092:2129" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="2381:2412" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="2658:2691" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="4247:4282" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="4534:4572" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="4823:4864" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="5112:5155" ph="..." />
-            <marker date="1536479689301" expanded="true" signature="5400:5467" ph="..." />
+            <element signature="e#132#148#0" expanded="true" />
+            <marker date="1536481063015" expanded="true" signature="279:284" ph="..." />
+            <marker date="1536481063015" expanded="true" signature="444:449" ph="..." />
+            <marker date="1536481063015" expanded="true" signature="664:1062" ph="..." />
+            <marker date="1536481063015" expanded="true" signature="1593:2016" ph="..." />
+            <marker date="1536481063015" expanded="true" signature="2554:2559" ph="..." />
+            <marker date="1536481063015" expanded="true" signature="4600:4621" ph="..." />
+            <marker date="1536481063015" expanded="true" signature="5072:5073" ph="..." />
           </folding>
         </state>
       </provider>

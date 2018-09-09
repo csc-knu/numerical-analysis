@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Sep  9 11:04:45 2018
+
+@author: Nikita Skybytskyi, OM-3
+
+Solving Nonlinear Equations Unit Tests
+"""
+
 import unittest
 import math
 

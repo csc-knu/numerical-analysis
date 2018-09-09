@@ -79,8 +79,6 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
 
     def step(x):
         nonlocal a, b
-        if '-l':
-            print(f'{x:10.10f}')
 
         if f(x) * f(a) <= 0:
             b = x
@@ -93,9 +91,15 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
 
     if '-i' in options:
         for i in range(math.ceil(math.log2((b - a) / eps)) + 1):
+            if '-l':
+                print(f'{xi:10.10f}')
+
             xi = step(xi)
     else:
         while b - a > 2 * eps:
+            if '-l':
+                print(f'{xi:10.10f}')
+
             xi = step(xi)
 
     return (a + b) / 2
@@ -143,9 +147,11 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
         phi = functools.lru_cache(maxsize=128)(phi)
 
     xi = x0
+
     while abs(phi(xi) - xi) >= eps:
         if '-l' in options:
             print(f'{xi:10.10f}')
+
         xi = phi(xi)
 
     return phi(xi)
@@ -180,9 +186,11 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
         phi = functools.lru_cache(maxsize=128)(phi)
 
     xi = x0
+
     while abs(phi(xi) - xi) >= eps:
         if '-l' in options:
             print(f'{xi:10.10f}')
+
         xi = phi(xi)
 
     return phi(xi)
@@ -217,9 +225,11 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
         step = functools.lru_cache(maxsize=128)(step)
 
     xi = x0
+
     while abs(step(xi) - xi) >= eps:
         if '-l' in options:
             print(f'{xi:10.10f}')
+
         xi = step(xi)
 
     return step(xi)
@@ -254,9 +264,11 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
         step = functools.lru_cache(maxsize=128)(step)
 
     xi = x0
+
     while abs(step(xi) - xi) >= eps:
         if '-l' in options:
             print(f'{xi:10.10f}')
+
         xi = step(xi)
 
     return step(xi)
@@ -286,14 +298,18 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
 
     def step(local_now):
         nonlocal prev
+
         local_next = local_now - (local_now - prev) / (f(local_now) - f(prev)) * f(local_now)
         prev = local_now
+
         return local_next
 
     now, prev = x1, x0
+
     while abs(now - prev) >= eps:
         if '-l' in options:
             print(f'{now:10.10f}')
+
         now = step(now)
 
     return now
