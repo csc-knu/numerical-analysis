@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Sep  9 10:05:30 2018
+
+@author: Nikita Skybytskyi, OM-3
+
+Solving Nonlinear Equations
+"""
+
 import functools
 import types
 import math
