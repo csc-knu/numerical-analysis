@@ -25,8 +25,24 @@ class StartingPointError(ValueError):
 def safety_check(a: float, b: float, x0: float):
     if a >= b:
         raise BoundariesError(a, b)
+
     if x0 < a or x0 > b:
         raise StartingPointError(a, b, x0)
+
+
+def threshold(func, low, high):
+
+    @functools.wraps(func)
+    def thr(*args, **kwargs):
+        if func(*args, **kwargs) < low:
+            return low
+
+        if func(*args, **kwargs) > high:
+            return high
+
+        return func(*args, **kwargs)
+
+    return thr
 
 
 def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, options: str='-s -m -i -l') -> float:
@@ -36,10 +52,10 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
     :param b: (hopefully) right endpoint
     :param eps: allowed error
     :param options: string of options, can include the following:
-        -s to Safety checks that xi stays in [a, b] and a < b
         -i to pre-calculate number of Iterations
-        -m to Memorize already calculated values of a function
-        -l to Log the iterations
+        -m to Memorize functions
+        -l to Log the execution
+        -s to Safety check
     :return: root of f on [a,b] if any
     """
     if '-s' in options:
@@ -79,7 +95,7 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
 
 
 def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: float=1e-5,
-                   tau: types.FunctionType=lambda x: x, options: str='-1 -m -s -l') -> float:
+                   tau: types.FunctionType=lambda x: x, options: str='-1 -m -s -l -t -tau') -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
@@ -89,10 +105,11 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
     :param tau: function of constant sigh on [a, b]
     :param options: string of options, can include the following:
         -1 to use 1st type of phi: phi(x) = f(x) + x
-        -t to use tau in construction of phi: phi(x) = x + tau(x) * f(z)
-        -m to Memorize already calculated values of a function
-        -s to Safety checks that xi stays in [a, b] and a < b
+        -tau to use tau in construction of phi: phi(x) = x + tau(x) * f(z)
+        -m to Memorize functions
         -l to Log the execution
+        -s to Safety check
+        -t to Threshold functions
     :return: root of f on [a,b] if any
     """
     if '-1' in options and '-t' in options:
@@ -107,28 +124,12 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
     phi = None
 
     if '-1' in options:
-        def phi(x):
-            return f(x) + x
+        phi = lambda x: f(x) * tau(x) + x
+
+    if '-tau' in options:
+        phi = lambda x: f(x) * tau(x) + x
 
     if '-t' in options:
-        def phi(x):
-            return f(x) * tau(x) + x
-
-    if '-s' in options:
-        def threshold(func, local_a, local_b):
-
-            @functools.wraps(func)
-            def thr(*args, **kwargs):
-                if f(*args, **kwargs) < local_a:
-                    return local_a
-
-                if f(*args, **kwargs) > local_b:
-                    return local_b
-
-                return f(*args, **kwargs)
-
-            return thr
-
         phi = threshold(phi, a, b)
 
     if '-m' in options:
@@ -144,7 +145,7 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
 
 
 def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
-             eps: float = 1e-5, tau: float = 1, options: str = '-m -s -l') -> float:
+             eps: float = 1e-5, tau: float = 1, options: str = '-m -s -l -t') -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
@@ -153,9 +154,10 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     :param eps: allowed error
     :param tau: constant
     :param options: string of options, can include the following:
-        -m to Memorize already calculated values of a function
-        -s to Safety checks that xi stays in [a, b] and a < b
+        -m to Memorize functions
         -l to Log the execution
+        -s to Safety check
+        -t to Threshold functions
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
@@ -164,25 +166,11 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     def phi(x):
         return tau * f(x) + x
 
-    if '-s' in options:
-        def threshold(func, local_a, local_b):
-
-            @functools.wraps(func)
-            def thr(*args, **kwargs):
-                if f(*args, **kwargs) < local_a:
-                    return local_a
-
-                if f(*args, **kwargs) > local_b:
-                    return local_b
-
-                return f(*args, **kwargs)
-
-            return thr
-
-        phi = threshold(phi, a, b)
-
     if '-m' in options:
         phi = functools.lru_cache(maxsize=128)(phi)
+
+    if '-t' in options:
+        phi = threshold(phi, a, b)
 
     xi = x0
     while abs(phi(xi) - xi) >= eps:
@@ -194,7 +182,7 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
 
 
 def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b: float,
-           eps: float = 1e-5, options: str = '-m -s -l') -> float:
+           eps: float = 1e-5, options: str = '-m -s -l -t') -> float:
     """
     :param f: Function to find the root of
     :param d: Derivative of f
@@ -203,9 +191,10 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
     :param x0: starting point
     :param eps: allowed error
     :param options: string of options, can include the following:
-        -m to Memorize already calculated values of a function
-        -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
+        -m to Memorize functions
         -l to Log the execution
+        -s to Safety check
+        -t to Threshold functions
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
@@ -216,7 +205,10 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
 
     if '-m' in options:
         step = functools.lru_cache(maxsize=128)(step)
-    
+
+    if '-t' in options:
+        step = threshold(step, a, b)
+
     xi = x0
     while abs(step(xi) - xi) >= eps:
         if '-l' in options:
@@ -236,9 +228,10 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     :param x0: starting point
     :param eps: allowed error
     :param options: string of options, can include the following:
-        -m to Memorize already calculated values of a function
+        -m to Memorize functions
         -l to Log the execution
-        -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
+        -s to Safety check
+        -t to Threshold functions
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
@@ -250,6 +243,9 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     if '-m' in options:
         step = functools.lru_cache(maxsize=128)(step)
 
+    if '-t' in options:
+        step = threshold(step, a, b)
+
     xi = x0
     while abs(step(xi) - xi) >= eps:
         if '-l' in options:
@@ -260,7 +256,7 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
 
 
 def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
-           eps: float = 1e-5, options: str = '-m -l -s') -> float:
+           eps: float = 1e-5, options: str = '-m -l -s -t') -> float:
     """
     :param f: Function to find the root of
     :param a: (hopefully) left endpoint
@@ -269,25 +265,32 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
     :param x1: second point
     :param eps: allowed error
     :param options: string of options, can include the following:
-        -m to Memorize already calculated values of a function
+        -m to Memorize functions
         -l to Log the execution
-        -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
+        -s to Safety check
+        -t to Threshold functions
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
         safety_check(a, b, x0)
+        safety_check(a, b, x1)
 
     if '-m' in options:
         f = functools.lru_cache(maxsize=128)(f)
 
-    def step():
-        nonlocal now, prev
-        now, prev = now - (now - prev) / (f(now) - f(prev)) * f(now), now
+    def step(now):
+        nonlocal prev
+        next = now - (now - prev) / (f(now) - f(prev)) * f(now)
+        prev = now
+        return next
+
+    if '-t' in options:
+        step = threshold(step, a, b)
 
     now, prev = x1, x0
     while abs(now - prev) >= eps:
         if '-l' in options:
             print(f'{now:10.10f}')
-        step()
+        step(now)
 
     return now
