@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb677a10-0839-484c-b0a1-34cbc9b92866" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/simple-iterate-tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/divide_in_two.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/divide-in-two-tests.log" beforeDir="false" afterPath="$PROJECT_DIR$/divide-in-two-tests.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.aux" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.log" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/2. Solving nonlinear equations.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2. Solving nonlinear equations.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/divide-in-two-tests.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/divide-in-two-tests.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nonlinear_equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/nonlinear_equations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/univ.sty" beforeDir="false" afterPath="$PROJECT_DIR$/univ.sty" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,71 +58,89 @@
     <session id="-761361995">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="5" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2383" />
-          <entry key="txt" value="30" />
+          <entry key="py" value="3250" />
+          <entry key="txt" value="93" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="30" />
-          <entry key="Python" value="2383" />
+          <entry key="PLAIN_TEXT" value="93" />
+          <entry key="Python" value="3250" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="log" value="2" />
-          <entry key="py" value="6" />
+          <entry key="py" value="7" />
           <entry key="pyi" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Log" value="2" />
-          <entry key="Python" value="6" />
+          <entry key="Python" value="7" />
           <entry key="PythonStub" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1887933368">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1394" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1394" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="logs" value="1" />
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="873">
-              <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+            <state relative-caret-position="76">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1536100461953" expanded="true" signature="907:1481" ph="..." />
-                <marker date="1536100461953" expanded="true" signature="1207:1243" ph="..." />
-                <marker date="1536100461953" expanded="true" signature="1870:1916" ph="..." />
-                <marker date="1536100461953" expanded="true" signature="3892:4398" ph="..." />
-                <marker date="1536100461953" expanded="true" signature="4882:4887" ph="..." />
-                <marker date="1536100461953" expanded="true" signature="5997:6010" ph="..." />
-                <marker date="1536100461953" expanded="true" signature="6253:6479" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/simple-iterate-tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1536122046990" expanded="true" signature="618:628" ph="..." />
-                <marker date="1536122046990" expanded="true" signature="1511:1518" ph="..." />
-                <marker date="1536122046990" expanded="true" signature="1543:1550" ph="..." />
+                <marker date="1536473107088" expanded="true" signature="621:1178" ph="..." />
+                <marker date="1536473107088" expanded="true" signature="1673:1678" ph="..." />
+                <marker date="1536473107088" expanded="true" signature="2820:2833" ph="..." />
+                <marker date="1536473107088" expanded="true" signature="3076:3302" ph="..." />
+                <marker date="1536473107088" expanded="true" signature="4440:4461" ph="..." />
+                <marker date="1536473107088" expanded="true" signature="5265:5266" ph="..." />
               </folding>
             </state>
           </provider>
@@ -126,6 +151,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="Python Unit Test" />
       </list>
     </option>
@@ -134,11 +160,15 @@
     <findStrings>
       <find>ae</find>
       <find>p2</find>
+      <find>phi</find>
+      <find>dit</find>
     </findStrings>
     <replaceStrings>
       <replace>s</replace>
       <replace>aeaw</replace>
       <replace>t</replace>
+      <replace>next</replace>
+      <replace>d</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -152,13 +182,15 @@
         <option value="$PROJECT_DIR$/nonlinear-equations.py" />
         <option value="$PROJECT_DIR$/divide-in-two-tests.py" />
         <option value="$PROJECT_DIR$/error_analysis.py" />
-        <option value="$PROJECT_DIR$/nonlinear_equations.py" />
         <option value="$PROJECT_DIR$/simple-iterate-tests.py" />
+        <option value="$PROJECT_DIR$/tests/divide_in_two.py" />
+        <option value="$PROJECT_DIR$/nonlinear_equations.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="134" />
+    <option name="y" value="-15" />
     <option name="width" value="974" />
     <option name="height" value="1087" />
   </component>
@@ -171,8 +203,18 @@
         <subPane>
           <expand>
             <path>
-              <item name="univ-numerical-analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="univ-numerical-analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="numerical-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="numerical-analysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="numerical-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="numerical-analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="numerical-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="numerical-analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -182,7 +224,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/simple-iterate-tests.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/divide_in_two.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\tests" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -196,11 +243,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Simple Iterate Unit Tests">
+  <component name="RunManager" selected="Python tests.Divide In Two Unit Tests">
     <configuration name="Divide In Two Unit Tests" type="tests" factoryName="Unittests">
-      <output_file path="$PROJECT_DIR$/divide-in-two-tests.log" is_save="true" />
+      <output_file path="$PROJECT_DIR$/logs/divide_in_two.logs" is_save="true" />
       <module name="numerical-analysis" />
-      <option name="INTERPRETER_OPTIONS" value="-v" />
+      <option name="INTERPRETER_OPTIONS" value="-v -u" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="version" value="dev" />
@@ -212,7 +259,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/divide-in-two-tests.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/divide_in_two.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -254,11 +301,32 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="numerical-analysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;divide_in_two.DivideInTwoTestCase.test_no_m_option&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python tests.Error Analysis Unit Tests" />
       <item itemvalue="Python tests.Simple Iterate Unit Tests" />
       <item itemvalue="Python tests.Divide In Two Unit Tests" />
+      <item itemvalue="Python tests.pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -278,51 +346,65 @@
       <option name="project" value="LOCAL" />
       <updated>1536052339050</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="simple iterate: threshold decorator added">
+      <created>1536136200334</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536136200334</updated>
+    </task>
+    <task id="LOCAL-00003" summary="relaxate, newton, modified_newton, метод_січних methods added">
+      <created>1536312891795</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1536312891795</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 33m 24s.xml">
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.09 at 01h 27m 25s.xml">
       <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 35m 28s.xml">
+    <history-entry file="pytest_for_divide_in_two_DivideInTwoTestCase_test_no_m_option - 2018.09.09 at 01h 29m 23s.xml">
+      <configuration name="pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_divide_in_two_DivideInTwoTestCase_test_no_m_option - 2018.09.09 at 01h 29m 40s.xml">
+      <configuration name="pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_divide_in_two_DivideInTwoTestCase_test_no_m_option - 2018.09.09 at 01h 29m 45s.xml">
+      <configuration name="pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_divide_in_two_DivideInTwoTestCase_test_no_m_option - 2018.09.09 at 01h 30m 00s.xml">
+      <configuration name="pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_divide_in_two_DivideInTwoTestCase_test_no_m_option - 2018.09.09 at 01h 30m 14s.xml">
+      <configuration name="pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_divide_in_two_DivideInTwoTestCase_test_no_m_option - 2018.09.09 at 08h 45m 28s.xml">
+      <configuration name="pytest for divide_in_two.DivideInTwoTestCase.test_no_m_option" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.09 at 08h 46m 05s.xml">
       <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 35m 53s.xml">
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.09 at 08h 49m 44s.xml">
       <configuration name="Divide In Two Unit Tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 37m 13s.xml">
+    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.09 at 08h 54m 30s.xml">
       <configuration name="Divide In Two Unit Tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 42m 19s.xml">
-      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.02 at 23h 42m 59s.xml">
-      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Divide_In_Two_Unit_Tests - 2018.09.04 at 19h 51m 37s.xml">
-      <configuration name="Divide In Two Unit Tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Error_Analysis_Unit_Tests - 2018.09.04 at 19h 52m 13s.xml">
-      <configuration name="Error Analysis Unit Tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Simple_Iterate_Unit_Tests - 2018.09.05 at 01h 38m 59s.xml">
-      <configuration name="Simple Iterate Unit Tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Simple_Iterate_Unit_Tests - 2018.09.05 at 01h 39m 59s.xml">
-      <configuration name="Simple Iterate Unit Tests" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1087" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3301282" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12592202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32640332" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3253638" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -336,18 +418,18 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10800843" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12592202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3253638" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32952183" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -360,7 +442,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2. Solving nonlinear equations" />
-    <option name="LAST_COMMIT_MESSAGE" value="2. Solving nonlinear equations" />
+    <MESSAGE value="simple iterate: threshold decorator added" />
+    <MESSAGE value="relaxate, newton, modified_newton, метод_січних methods added" />
+    <option name="LAST_COMMIT_MESSAGE" value="relaxate, newton, modified_newton, метод_січних methods added" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1. Error Analysis.log">
@@ -370,13 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="141" column="19" lean-forward="true" selection-start-line="141" selection-start-column="19" selection-end-line="141" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/error-analysis-tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="369" lean-forward="true" selection-start-line="369" selection-end-line="369" />
         </state>
       </provider>
     </entry>
@@ -390,46 +467,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/divide-in-two-tests.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="754">
-          <caret line="630" lean-forward="true" selection-start-line="630" selection-end-line="630" />
+    <entry file="file://$PROJECT_DIR$/divide-in-two-tests.log" />
+    <entry file="file://$PROJECT_DIR$/simple-iterate-tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="62" column="37" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/divide-in-two-tests.py">
+    <entry file="file://$PROJECT_DIR$/error-analysis-tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="809">
+          <caret line="417" lean-forward="true" selection-start-line="417" selection-end-line="417" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divide-in-two-tests.py" />
+    <entry file="file://$PROJECT_DIR$/logs/divide_in_two.logs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="1071" lean-forward="true" selection-start-line="1071" selection-end-line="1071" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/divide_in_two.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1536472264320" expanded="true" signature="82:84" ph="..." />
+            <marker date="1536472264320" expanded="true" signature="868:945" ph="..." />
+            <marker date="1536472264320" expanded="true" signature="1701:2004" ph="..." />
+            <marker date="1536472264320" expanded="true" signature="2512:2604" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nonlinear_equations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="873">
-          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1536100461953" expanded="true" signature="907:1481" ph="..." />
-            <marker date="1536100461953" expanded="true" signature="1207:1243" ph="..." />
-            <marker date="1536100461953" expanded="true" signature="1870:1916" ph="..." />
-            <marker date="1536100461953" expanded="true" signature="3892:4398" ph="..." />
-            <marker date="1536100461953" expanded="true" signature="4882:4887" ph="..." />
-            <marker date="1536100461953" expanded="true" signature="5997:6010" ph="..." />
-            <marker date="1536100461953" expanded="true" signature="6253:6479" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple-iterate-tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1536122046990" expanded="true" signature="618:628" ph="..." />
-            <marker date="1536122046990" expanded="true" signature="1511:1518" ph="..." />
-            <marker date="1536122046990" expanded="true" signature="1543:1550" ph="..." />
+            <marker date="1536473107088" expanded="true" signature="621:1178" ph="..." />
+            <marker date="1536473107088" expanded="true" signature="1673:1678" ph="..." />
+            <marker date="1536473107088" expanded="true" signature="2820:2833" ph="..." />
+            <marker date="1536473107088" expanded="true" signature="3076:3302" ph="..." />
+            <marker date="1536473107088" expanded="true" signature="4440:4461" ph="..." />
+            <marker date="1536473107088" expanded="true" signature="5265:5266" ph="..." />
           </folding>
         </state>
       </provider>

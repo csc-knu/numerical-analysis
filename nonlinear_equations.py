@@ -1,116 +1,9 @@
 import functools
 import types
 import math
-import os
-
-version = os.environ['version']
-develop, production = version == 'dev', version == 'prod'
 
 
-class Function:
-    def __init__(self, local_function):  # local_ not to shadow built-in name function
-        if production:
-            raise NotImplementedError('Function.__init__ not implemented')
-        if develop:
-            self._function = local_function
-
-    @property
-    def function(self):
-        return self._function
-
-
-class NonlinearFunction(Function):
-    def __init__(self, nonlinear_function):
-        if production:
-            raise NotImplementedError('NonlinearFunction.__init__ not implemented')
-        if develop:
-            Function.__init__(self, nonlinear_function)
-            self._nonlinear_function = nonlinear_function
-
-    @property
-    def nonlinear_function(self):
-        return self._nonlinear_function
-
-
-class Equation:
-    def __init__(self, local_function):  # local_ not to shadow built-in name function
-        if production:
-            raise NotImplementedError('Equation.__init__ not implemented')
-        if develop:
-            self._function = local_function
-
-    @property
-    def function(self) -> Function:
-        return self._function
-
-    def solve(self) -> float:
-        if production:
-            raise NotImplementedError('Equation.solve not implemented')
-        if develop:
-            equation_solver = EquationSolver(self)
-            return equation_solver.solution
-
-
-class NonlinearEquation(Equation):
-    def __init__(self, nonlinear_function):
-        if production:
-            raise NotImplementedError('NonlinearEquation.__init__ not implemented')
-        if develop:
-            Equation.__init__(self, nonlinear_function)
-            self._nonlinear_function = nonlinear_function
-
-    @property
-    def nonlinear_function(self) -> NonlinearFunction:
-        return self._nonlinear_function
-
-    def solve(self) -> float:
-        if production:
-            raise NotImplementedError('NonlinearEquation.solve not implemented')
-        if develop:
-            nonlinear_equation_solver = NonlinearEquationSolver(self)
-            return nonlinear_equation_solver.solution
-
-
-class Solver:
-    def __init__(self):
-        raise NotImplementedError('Solver.__init__ not implemented')
-
-
-class EquationSolver(Solver):
-    def __init__(self, equation):
-        if production:
-            raise NotImplementedError('EquationSolver.__init__ not implemented')
-        if develop:
-            Solver.__init__(self)
-            self._equation = equation
-
-    @property
-    def equation(self) -> Equation:
-        return self._equation
-
-    @property
-    def solution(self) -> float:
-        raise NotImplementedError('EquationSolver.solution not implemented')
-
-
-class NonlinearEquationSolver(EquationSolver):
-    def __init__(self, nonlinear_equation):
-        if production:
-            raise NotImplementedError('NonlinearEquationSolver.__init__ not implemented')
-        if develop:
-            EquationSolver.__init__(self, nonlinear_equation)
-            self._nonlinear_equation = nonlinear_equation
-
-    @property
-    def nonlinear_equation(self) -> NonlinearEquation:
-        return self._nonlinear_equation
-
-    @property
-    def solution(self) -> float:
-        raise NotImplementedError('NonlinearEquationSolver.solution not implemented')
-
-
-def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, options: str='') -> float:
+def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, options: str='-s -m -i -l') -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
@@ -120,6 +13,7 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
         -s to Swap endpoints if necessary
         -i to pre-calculate number of Iterations
         -m to Memorize already calculated values of a function
+        -l to Log the iterations
     :return: root of f on [a,b] if any
     """
     if b < a:
@@ -137,6 +31,8 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
     def step():
         nonlocal a, b
         xi = (a + b) / 2
+        if '-l':
+            print(f'{xi:10.10f}')
         if f(xi) * f(a) < 0:
             b = xi
         elif f(xi) * f(b) < 0:
@@ -159,7 +55,7 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
 
 
 def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: float=1e-5,
-                   tau: types.FunctionType=lambda x: x, options: str='') -> float:
+                   tau: types.FunctionType=lambda x: x, options: str='-1 -m -s -l') -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
@@ -172,6 +68,7 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
         -t to use tau in construction of phi: phi(x) = x + tau(x) * f(z)
         -m to Memorize already calculated values of a function
         -s to Safety checks that xi stays in [a, b] and a < b
+        -l to Log the execution
     :return: root of f on [a,b] if any
     """
     if '-1' in options and '-t' in options:
@@ -219,13 +116,15 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
 
     xi = x0
     while abs(phi(xi) - xi) >= eps:
+        if '-l' in options:
+            print(f'{xi:10.10f}')
         xi = phi(xi)
 
     return phi(xi)
 
 
 def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
-             eps: float = 1e-5, tau: float = 1, options: str = '') -> float:
+             eps: float = 1e-5, tau: float = 1, options: str = '-m -s -l') -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
@@ -236,6 +135,7 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     :param options: string of options, can include the following:
         -m to Memorize already calculated values of a function
         -s to Safety checks that xi stays in [a, b] and a < b
+        -l to Log the execution
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
@@ -270,13 +170,15 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
 
     xi = x0
     while abs(phi(xi) - xi) >= eps:
+        if '-l' in options:
+            print(f'{xi:10.10f}')
         xi = phi(xi)
 
     return phi(xi)
 
 
 def newton(f: types.FunctionType, d: types.FunctionType, x0: float,
-           a: float, b: float, eps: float = 1e-5, options: str = '') -> float:
+           a: float, b: float, eps: float = 1e-5, options: str = '-m -s -l') -> float:
     """
     :param f: Function to find the root of
     :param d: Derivative of f
@@ -287,6 +189,7 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float,
     :param options: string of options, can include the following:
         -m to Memorize already calculated values of a function
         -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
+        -l to Log the execution
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
@@ -304,13 +207,15 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float,
     
     xi = x0
     while abs(local_next(xi) - xi) >= eps:
+        if '-l' in options:
+            print(f'{xi:10.10f}')
         xi = local_next(xi)
 
     return local_next(xi)
 
 
 def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: float,
-                    eps: float = 1e-5, options: str = '') -> float:
+                    eps: float = 1e-5, options: str = '-m -l -s') -> float:
     """
     :param f: Function to find the root of
     :param dx0: Derivative of f at x0
@@ -320,6 +225,7 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     :param eps: allowed error
     :param options: string of options, can include the following:
         -m to Memorize already calculated values of a function
+        -l to Log the execution
         -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
     :return: root of f on [a, b] if any
     """
@@ -338,13 +244,15 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
 
     xi = x0
     while abs(local_next(xi) - xi) >= eps:
+        if '-l' in options:
+            print(f'{xi:10.10f}')
         xi = local_next(xi)
 
     return local_next(xi)
 
 
-def метод_січних(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
-                 eps: float = 1e-5, options: str = '') -> float:
+def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
+           eps: float = 1e-5, options: str = '-m -l -s') -> float:
     """
     :param f: Function to find the root of
     :param a: (hopefully) left endpoint
@@ -354,6 +262,7 @@ def метод_січних(f: types.FunctionType, x0: float, x1: float, a: floa
     :param eps: allowed error
     :param options: string of options, can include the following:
         -m to Memorize already calculated values of a function
+        -l to Log the execution
         -s to Safety checks that xi stays in [a, b] and a < b and f(a) * f(b) < 0, etc.
     :return: root of f on [a, b] if any
     """
@@ -367,14 +276,16 @@ def метод_січних(f: types.FunctionType, x0: float, x1: float, a: floa
     if '-m' in options:
         f = functools.lru_cache(maxsize=128)(f)
 
-    def local_next(now, prev):
-        return now - (now - prev) / (f(now) - f(prev)) * f(now), now
+    def local_next(local_now: float, local_prev: float) -> (float, float):
+        return local_now - (local_now - local_prev) / (f(local_now) - f(local_prev)) * f(local_now), local_now
 
     if '-m' in options:
         local_next = functools.lru_cache(maxsize=128)(local_next)
 
     now, prev = x1, x0
-    while abs(local_next(now)[0] - now) >= eps:
+    while abs(local_next(now, prev)[0] - now) >= eps:
+        if '-l' in options:
+            print(f'{now:10.10f}')
         now, prev = local_next(now, prev)
 
     return local_next(now)[0]
