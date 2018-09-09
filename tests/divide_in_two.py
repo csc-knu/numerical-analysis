@@ -55,9 +55,6 @@ class DivideInTwoTestCase(unittest.TestCase):
     def test_step_right(self):
         self.assertEqual(True, False)
 
-    def test_step_return(self):
-        self.assertEqual(True, False)
-
     def test_i_option(self):
         self.assertEqual(True, False)
 

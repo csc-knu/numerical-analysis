@@ -72,22 +72,22 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
         nonlocal a, b
         if '-l':
             print(f'{x:10.10f}')
-        if f(x) * f(a) < 0:
+
+        if f(x) * f(a) <= 0:
             b = x
-        elif f(x) * f(b) < 0:
+        if f(x) * f(b) <= 0:
             a = x
-        else:
-            return x
+
+        return (a + b) / 2
 
     xi = (a + b) / 2
+
     if '-i' in options:
         for i in range(math.ceil(math.log2((b - a) / eps)) + 1):
-            if step(xi) is not None:
-                return xi
+            xi = step(xi)
     else:
         while b - a > 2 * eps:
-            if step(xi) is not None:
-                return xi
+            xi = step(xi)
 
     return (a + b) / 2
 
@@ -276,11 +276,11 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
     if '-m' in options:
         f = functools.lru_cache(maxsize=128)(f)
 
-    def step(now):
+    def step(local_now):
         nonlocal prev
-        next = now - (now - prev) / (f(now) - f(prev)) * f(now)
-        prev = now
-        return next
+        local_next = local_now - (local_now - prev) / (f(local_now) - f(prev)) * f(local_now)
+        prev = local_now
+        return local_next
 
     if '-t' in options:
         step = threshold(step, a, b)
