@@ -57,46 +57,61 @@ class SimpleIterateTestCase(unittest.TestCase):
         def f(x):
             return x**2 - 2
 
-        a, b, ans = 0, 2, math.sqrt(2)
+        def tau(x):
+            return -0.2 * x
+
+        x0, a, b, ans = 1, 0, 2, math.sqrt(2)
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(sit(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(sit(f, x0, a, b, eps, tau), ans, delta=eps)
 
     def test_qubic(self):
         def f(x):
             return x**3 - 2
 
-        a, b, ans = 0, 2, 2 ** (1/3)
+        def tau(x):
+            return -0.1 * x
+
+        x0, a, b, ans = 1, 0, 2, 2 ** (1/3)
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(sit(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(sit(f, x0, a, b, eps, tau), ans, delta=eps)
 
     def test_sin(self):
         def f(x):
             return math.sin(x)
 
-        a, b, ans = 3, 4, math.pi
+        def tau(x):
+            return 0.2 * x
+
+        x0, a, b, ans = 3, 3, 4, math.pi
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(sit(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(sit(f, x0, a, b, eps, tau), ans, delta=eps)
 
     def test_cos(self):
         def f(x):
             return math.cos(x)
 
-        a, b, ans = 0, 2, math.pi / 2
+        def tau(x):
+            return x
+
+        x0, a, b, ans = 1, 0, 2, math.pi / 2
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(sit(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(sit(f, x0, a, b, eps, tau), ans, delta=eps)
 
     def test_lab(self):
         def f():
             return ...
 
-        a, b, ans = ..., ..., ...
+        def tau():
+            return ...
+
+        x0, a, b, ans = ..., ..., ..., ...
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(sit(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(sit(f, x0, a, b, eps, tau), ans, delta=eps)
 
 
 class RelaxateTestCase(unittest.TestCase):
@@ -104,43 +119,43 @@ class RelaxateTestCase(unittest.TestCase):
         def f(x):
             return x**2 - 2
 
-        a, b, ans = 0, 2, math.sqrt(2)
+        x0, a, b, ans, tau = 1, 1, 2, math.sqrt(2), -0.2
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(rel(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(rel(f, x0, a, b, eps, tau), ans, delta=eps)
 
     def test_qubic(self):
         def f(x):
             return x**3 - 2
 
-        a, b, ans = 0, 2, 2 ** (1/3)
+        x0, a, b, ans, tau = 2, 0, 2, 2 ** (1/3), -0.1
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(rel(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(rel(f, x0, a, b, eps, tau), ans, delta=eps)
 
     def test_sin(self):
         def f(x):
             return math.sin(x)
 
-        a, b, ans = 3, 4, math.pi
+        x0, a, b, ans = 3, 3, 4, math.pi
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(rel(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(rel(f, x0, a, b, eps), ans, delta=eps)
 
     def test_cos(self):
         def f(x):
             return math.cos(x)
 
-        a, b, ans = 0, 2, math.pi / 2
+        x0, a, b, ans = 0, 0, 2, math.pi / 2
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(rel(f, a, b, eps), ans, delta=eps)
+            self.assertAlmostEqual(rel(f, x0, a, b, eps), ans, delta=eps)
 
     def test_lab(self):
         def f():
             return ...
 
-        a, b, ans = ..., ..., ...
+        x0, a, b, ans = ..., ..., ..., ...
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
             self.assertAlmostEqual(rel(f, a, b, eps), ans, delta=eps)
@@ -190,7 +205,7 @@ class NewtonTestCase(unittest.TestCase):
         def d(x):
             return - math.sin(x)
 
-        x0, a, b, ans = 0, 0, 2, math.pi / 2
+        x0, a, b, ans = 0.01, 0, 2, math.pi / 2
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
             self.assertAlmostEqual(net(f, d, x0, a, b, eps), ans, delta=eps)
@@ -260,7 +275,7 @@ class SecantTestCase(unittest.TestCase):
         def f(x):
             return x**2 - 2
 
-        x0, x1, a, b, ans = 0, 1, 0, 2, math.sqrt(2)
+        x0, x1, a, b, ans = 0.5, 1, 0, 2, math.sqrt(2)
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
             self.assertAlmostEqual(sec(f, x0, x1, a, b, eps), ans, delta=eps)
@@ -287,7 +302,7 @@ class SecantTestCase(unittest.TestCase):
         def f(x):
             return math.cos(x)
 
-        x0, x1, a, b, ans = 0, 1, 0, 2, math.pi / 2
+        x0, x1, a, b, ans = 0.01, 1, 0, 2, math.pi / 2
 
         for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
             self.assertAlmostEqual(sec(f, x0, x1, a, b, eps), ans, delta=eps)

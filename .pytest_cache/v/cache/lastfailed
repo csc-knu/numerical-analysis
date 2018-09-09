@@ -1,0 +1,4 @@
+{
+  "tests.py::SecantTestCase::test_cos": true,
+  "tests.py::SecantTestCase::test_quadratic": true
+}

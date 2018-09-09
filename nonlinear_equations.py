@@ -102,7 +102,7 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
 
 
 def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: float=1e-5,
-                   tau: types.FunctionType=lambda x: x, options: str='-1 -m -s -l -t -tau') -> float:
+                   tau: types.FunctionType=lambda x: x, options: str='-m -s -l -t -tau') -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
@@ -263,7 +263,7 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
 
 
 def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
-           eps: float = 1e-5, options: str = '-m -l -s -t') -> float:
+           eps: float = 1e-5, options: str = '-m -l -s') -> float:
     """
     :param f: Function to find the root of
     :param a: (hopefully) left endpoint
@@ -275,7 +275,6 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
         -m to Memorize functions
         -l to Log the execution
         -s to Safety check
-        -t to Threshold functions
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
@@ -291,13 +290,10 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
         prev = local_now
         return local_next
 
-    if '-t' in options:
-        step = threshold(step, a, b)
-
     now, prev = x1, x0
     while abs(now - prev) >= eps:
         if '-l' in options:
             print(f'{now:10.10f}')
-        step(now)
+        now = step(now)
 
     return now
