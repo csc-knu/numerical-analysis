@@ -131,7 +131,7 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
     phi = None
 
     if '-1' in options:
-        phi = lambda x: f(x) * tau(x) + x
+        phi = lambda x: f(x) + x
 
     if '-tau' in options:
         phi = lambda x: f(x) * tau(x) + x
