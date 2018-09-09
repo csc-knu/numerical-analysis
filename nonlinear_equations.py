@@ -3,6 +3,32 @@ import types
 import math
 
 
+class BoundariesError(ValueError):
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def __str__(self):
+        return f'Invalid boundaries, a = {self.a} >= {self.b} = b.'
+
+
+class StartingPointError(ValueError):
+    def __init__(self, a, b, x0):
+        self.a = a
+        self.b = b
+        self.x0 = x0
+
+    def __str__(self):
+        return f'Starting point x0 = {self.x0} not in [a, b] = [{self.a}, {self.b}].'
+
+
+def safety_check(a: float, b: float, x0: float):
+    if a >= b:
+        raise BoundariesError(a, b)
+    if x0 < a or x0 > b:
+        raise StartingPointError(a, b, x0)
+
+
 def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, options: str='-s -m -i -l') -> float:
     """
     :param f: function to find the root of
@@ -10,17 +36,15 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
     :param b: (hopefully) right endpoint
     :param eps: allowed error
     :param options: string of options, can include the following:
-        -s to Swap endpoints if necessary
+        -s to Safety checks that xi stays in [a, b] and a < b
         -i to pre-calculate number of Iterations
         -m to Memorize already calculated values of a function
         -l to Log the iterations
     :return: root of f on [a,b] if any
     """
-    if b < a:
-        if '-s' in options:
-            a, b = b, a
-        else:
-            raise ValueError(f'b = {b} < {a} = a')
+    if '-s' in options:
+        if a >= b:
+            raise BoundariesError(a, b)
 
     if '-m' in options:
         f = functools.lru_cache(maxsize=3)(f)
@@ -78,11 +102,7 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
         raise ValueError('Choice of phi not specified in options parameter.')
 
     if '-s' in options:
-        if a >= b:
-            raise ValueError('Invalid boundaries, a >= b.')
-
-        if x0 < a or x0 > b:
-            raise ValueError('Starting point not in [a, b].')
+        safety_check(a, b, x0)
 
     phi = None
 
@@ -139,11 +159,7 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
-        if a >= b:
-            raise ValueError('Invalid boundaries, a >= b.')
-
-        if x0 < a or x0 > b:
-            raise ValueError('Starting point not in [a, b].')
+        safety_check(a, b, x0)
 
     def phi(x):
         return tau * f(x) + x
@@ -177,8 +193,8 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     return phi(xi)
 
 
-def newton(f: types.FunctionType, d: types.FunctionType, x0: float,
-           a: float, b: float, eps: float = 1e-5, options: str = '-m -s -l') -> float:
+def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b: float,
+           eps: float = 1e-5, options: str = '-m -s -l') -> float:
     """
     :param f: Function to find the root of
     :param d: Derivative of f
@@ -193,11 +209,7 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float,
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
-        if a >= b:
-            raise ValueError('Invalid boundaries, a >= b.')
-
-        if x0 < a or x0 > b:
-            raise ValueError('Starting point not in [a, b].')
+        safety_check(a, b, x0)
 
     def step(x):
         return x - f(x) / d(x)
@@ -230,11 +242,7 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
-        if a >= b:
-            raise ValueError('Invalid boundaries, a >= b.')
-
-        if x0 < a or x0 > b:
-            raise ValueError('Starting point not in [a, b].')
+        safety_check(a, b, x0)
 
     def step(x):
         return x - f(x) / dx0
@@ -267,11 +275,7 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
     :return: root of f on [a, b] if any
     """
     if '-s' in options:
-        if a >= b:
-            raise ValueError('Invalid boundaries, a >= b.')
-
-        if x0 < a or x0 > b:
-            raise ValueError('Starting point not in [a, b].')
+        safety_check(a, b, x0)
 
     if '-m' in options:
         f = functools.lru_cache(maxsize=128)(f)
