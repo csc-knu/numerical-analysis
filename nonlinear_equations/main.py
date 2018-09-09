@@ -72,7 +72,7 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
             raise BoundariesError(a, b)
 
     if '-m' in options:
-        f = functools.lru_cache(maxsize=3)(f)
+        f = functools.lru_cache(maxsize=128)(f)
 
     if f(a) * f(b) > 0:
         raise ValueError(f'f(a) * f(b) = f({a}) * f({b}) = {f(a) * f(b)} > 0')
@@ -132,13 +132,12 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
     if '-s' in options:
         safety_check(a, b, x0)
 
-    phi = None
+    def phi(x):
+        if '-1' in options:
+            return f(x) + x
 
-    if '-1' in options:
-        phi = lambda x: f(x) + x
-
-    if '-tau' in options:
-        phi = lambda x: f(x) * tau(x) + x
+        if '-tau' in options:
+            return f(x) * tau(x) + x
 
     if '-t' in options:
         phi = threshold(phi, a, b)
