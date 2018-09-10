@@ -21,27 +21,27 @@ import 'zipimport' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\codecs.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\codecs.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\codecs.cpython-36.pyc'
 import '_codecs' # <class '_frozen_importlib.BuiltinImporter'>
-import 'codecs' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1CD6C898>
+import 'codecs' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DD7C898>
 # C:\ProgramData\Anaconda3\lib\encodings\__pycache__\aliases.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\aliases.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\aliases.cpython-36.pyc'
-import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1B84E0>
-import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1CD5DEB8>
+import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDB84E0>
+import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DD6DEB8>
 # C:\ProgramData\Anaconda3\lib\encodings\__pycache__\utf_8.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\utf_8.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\utf_8.cpython-36.pyc'
-import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1C8550>
+import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDC8550>
 import '_signal' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\encodings\__pycache__\latin_1.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\latin_1.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\latin_1.cpython-36.pyc'
-import 'encodings.latin_1' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1C89B0>
+import 'encodings.latin_1' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDC89B0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\io.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\io.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\io.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\abc.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\abc.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\_weakrefset.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_weakrefset.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_weakrefset.cpython-36.pyc'
-import '_weakrefset' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1CF8D0>
-import 'abc' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1C8F28>
-import 'io' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1C8B70>
+import '_weakrefset' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDCF8D0>
+import 'abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDC8F28>
+import 'io' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDC8B70>
 # C:\ProgramData\Anaconda3\lib\__pycache__\warnings.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\warnings.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\warnings.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\re.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\re.py
@@ -57,33 +57,33 @@ import '_functools' # <class '_frozen_importlib.BuiltinImporter'>
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\collections\\__pycache__\\__init__.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\_collections_abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_collections_abc.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_collections_abc.cpython-36.pyc'
-import '_collections_abc' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2312B0>
+import '_collections_abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FCC12B0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\operator.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\operator.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\operator.cpython-36.pyc'
 import '_operator' # <class '_frozen_importlib.BuiltinImporter'>
-import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2460B8>
+import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FCD60B8>
 # C:\ProgramData\Anaconda3\lib\__pycache__\keyword.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\keyword.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\keyword.cpython-36.pyc'
-import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D26E470>
+import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FCFE470>
 # C:\ProgramData\Anaconda3\lib\__pycache__\heapq.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\heapq.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\heapq.cpython-36.pyc'
 import '_heapq' # <class '_frozen_importlib.BuiltinImporter'>
-import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D26ECF8>
+import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FCFECF8>
 import 'itertools' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\reprlib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\reprlib.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\reprlib.cpython-36.pyc'
-import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D278320>
+import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD08320>
 import '_collections' # <class '_frozen_importlib.BuiltinImporter'>
-import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D20E8D0>
+import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FC9E8D0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\weakref.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\weakref.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\weakref.cpython-36.pyc'
-import 'weakref' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D20ECF8>
-import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1FCFD0>
+import 'weakref' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FC9ECF8>
+import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FC8CFD0>
 # C:\ProgramData\Anaconda3\lib\collections\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\collections\abc.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\collections\\__pycache__\\abc.cpython-36.pyc'
-import 'collections.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D204DD8>
-import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1FC2B0>
-import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1EE198>
+import 'collections.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FC94DD8>
+import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FC8C2B0>
+import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FC7E198>
 # C:\ProgramData\Anaconda3\lib\__pycache__\sre_compile.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sre_compile.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_compile.cpython-36.pyc'
 import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
@@ -91,16 +91,16 @@ import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_parse.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\sre_constants.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sre_constants.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sre_constants.cpython-36.pyc'
-import 'sre_constants' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2A9630>
-import 'sre_parse' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2A6198>
-import 'sre_compile' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D204C50>
+import 'sre_constants' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD39630>
+import 'sre_parse' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD36198>
+import 'sre_compile' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FC94C50>
 import '_locale' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\copyreg.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\copyreg.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\copyreg.cpython-36.pyc'
-import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2B69B0>
-import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1DFE80>
+import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD469B0>
+import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDDFE80>
 Invalid -W option ignored: invalid action: '-q'
-import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1DF198>
+import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDDF198>
 # C:\ProgramData\Anaconda3\lib\__pycache__\site.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\site.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\site.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\os.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\os.py
@@ -109,41 +109,41 @@ import 'errno' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\stat.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\stat.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\stat.cpython-36.pyc'
 import '_stat' # <class '_frozen_importlib.BuiltinImporter'>
-import 'stat' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2D0A90>
+import 'stat' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD60A90>
 # C:\ProgramData\Anaconda3\lib\__pycache__\ntpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\ntpath.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\ntpath.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\genericpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\genericpath.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\genericpath.cpython-36.pyc'
-import 'genericpath' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2DA6A0>
-import 'ntpath' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2D5828>
-import 'os' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2BDB38>
+import 'genericpath' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD6A6A0>
+import 'ntpath' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD65828>
+import 'os' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD4DB38>
 # C:\ProgramData\Anaconda3\lib\__pycache__\_sitebuiltins.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_sitebuiltins.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_sitebuiltins.cpython-36.pyc'
-import '_sitebuiltins' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2BDF98>
+import '_sitebuiltins' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD4DF98>
 # C:\ProgramData\Anaconda3\lib\__pycache__\sysconfig.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\sysconfig.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\sysconfig.cpython-36.pyc'
-import 'sysconfig' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D2C4390>
+import 'sysconfig' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FD54390>
 # C:\ProgramData\Anaconda3\lib\__pycache__\_bootlocale.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_bootlocale.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_bootlocale.cpython-36.pyc'
-import '_bootlocale' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D3EBE80>
+import '_bootlocale' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FE7BE80>
 # C:\ProgramData\Anaconda3\lib\encodings\__pycache__\cp1251.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\encodings\cp1251.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\encodings\\__pycache__\\cp1251.cpython-36.pyc'
-import 'encodings.cp1251' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D3F4080>
+import 'encodings.cp1251' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FE84080>
 # C:\ProgramData\Anaconda3\lib\importlib\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\__init__.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\__init__.cpython-36.pyc'
-import 'importlib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D3F46A0>
+import 'importlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FE846A0>
 # C:\ProgramData\Anaconda3\lib\importlib\__pycache__\util.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\util.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\util.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\importlib\__pycache__\abc.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\abc.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\abc.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\importlib\__pycache__\machinery.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\importlib\machinery.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\importlib\\__pycache__\\machinery.cpython-36.pyc'
-import 'importlib.machinery' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D3FB9E8>
-import 'importlib.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D3FB320>
+import 'importlib.machinery' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FE8B9E8>
+import 'importlib.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FE8B320>
 # C:\ProgramData\Anaconda3\lib\__pycache__\contextlib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\contextlib.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\contextlib.cpython-36.pyc'
-import 'contextlib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D4086A0>
-import 'importlib.util' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D3F4A58>
+import 'contextlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FE986A0>
+import 'importlib.util' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FE84A58>
 # possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
 # possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
 # destroy google
@@ -160,7 +160,7 @@ import 'importlib.util' # <_frozen_importlib_external.SourceFileLoader object at
 # possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\mpl_toolkits
 # possible namespace for C:\ProgramData\Anaconda3\lib\site-packages\google
 # destroy google
-import 'site' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D1DF908>
+import 'site' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9DDDF908>
 Python 3.6.5 |Anaconda, Inc.| (default, Mar 29 2018, 13:32:41) [MSC v.1900 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 # bytecode is stale for 'unittest'
@@ -175,123 +175,485 @@ Type "help", "copyright", "credits" or "license" for more information.
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\tokenize.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\token.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\token.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\token.cpython-36.pyc'
-import 'token' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5AB358>
-import 'tokenize' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D59CA20>
-import 'linecache' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D59C710>
-import 'traceback' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D54F668>
+import 'token' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA003B358>
+import 'tokenize' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA002CA20>
+import 'linecache' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA002C710>
+import 'traceback' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFDF668>
 # bytecode is stale for 'unittest.util'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\util.py
-import 'unittest.util' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5A2438>
-import 'unittest.result' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D54AD68>
+import 'unittest.util' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0032438>
+import 'unittest.result' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFDAD68>
 # bytecode is stale for 'unittest.case'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\case.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\difflib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\difflib.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\difflib.cpython-36.pyc'
-import 'difflib' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D75C358>
+import 'difflib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA01EC358>
 # C:\ProgramData\Anaconda3\lib\logging\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\logging\__init__.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\logging\\__pycache__\\__init__.cpython-36.pyc'
 import 'time' # <class '_frozen_importlib.BuiltinImporter'>
 # C:\ProgramData\Anaconda3\lib\__pycache__\string.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\string.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\string.cpython-36.pyc'
 import '_string' # <class '_frozen_importlib.BuiltinImporter'>
-import 'string' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D786E48>
+import 'string' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0216E48>
 # C:\ProgramData\Anaconda3\lib\__pycache__\threading.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\threading.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\threading.cpython-36.pyc'
-import 'threading' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D7136D8>
+import 'threading' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA01A36D8>
 import 'atexit' # <class '_frozen_importlib.BuiltinImporter'>
-import 'logging' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D771400>
+import 'logging' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0201400>
 # C:\ProgramData\Anaconda3\lib\__pycache__\pprint.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\pprint.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\pprint.cpython-36.pyc'
-import 'pprint' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D72E9E8>
-import 'unittest.case' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D54FE80>
+import 'pprint' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA01BE9E8>
+import 'unittest.case' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFDFE80>
 # bytecode is stale for 'unittest.suite'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\suite.py
-import 'unittest.suite' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D758160>
+import 'unittest.suite' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA01E8160>
 # bytecode is stale for 'unittest.loader'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\loader.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\fnmatch.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\fnmatch.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\fnmatch.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\posixpath.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\posixpath.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\posixpath.cpython-36.pyc'
-import 'posixpath' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D55CE80>
-import 'fnmatch' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D55CA20>
-import 'unittest.loader' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D747DD8>
+import 'posixpath' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFECE80>
+import 'fnmatch' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFECA20>
+import 'unittest.loader' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA01D7DD8>
 # bytecode is stale for 'unittest.main'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\main.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\argparse.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\argparse.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\argparse.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\copy.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\copy.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\copy.cpython-36.pyc'
-import 'copy' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D583E48>
+import 'copy' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0013E48>
 # C:\ProgramData\Anaconda3\lib\__pycache__\textwrap.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\textwrap.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\textwrap.cpython-36.pyc'
-import 'textwrap' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D58B2B0>
+import 'textwrap' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA001B2B0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\gettext.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\gettext.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\gettext.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\locale.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\locale.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\locale.cpython-36.pyc'
-import 'locale' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D65E5C0>
+import 'locale' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA00EE5C0>
 # C:\ProgramData\Anaconda3\lib\__pycache__\struct.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\struct.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\struct.cpython-36.pyc'
 import '_struct' # <class '_frozen_importlib.BuiltinImporter'>
-import 'struct' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D677390>
-import 'gettext' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D58B400>
-import 'argparse' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D55F9B0>
+import 'struct' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0107390>
+import 'gettext' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA001B400>
+import 'argparse' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFEF9B0>
 # bytecode is stale for 'unittest.runner'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\runner.py
 # bytecode is stale for 'unittest.signals'
 # code object from C:\ProgramData\Anaconda3\lib\unittest\signals.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\signal.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\signal.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\signal.cpython-36.pyc'
-import 'signal' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D61EC50>
-import 'unittest.signals' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D61E0F0>
-import 'unittest.runner' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D677DD8>
-import 'unittest.main' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D55F6A0>
-import 'unittest' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D514518>
+import 'signal' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA00AEC50>
+import 'unittest.signals' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA00AE0F0>
+import 'unittest.runner' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0107DD8>
+import 'unittest.main' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFEF6A0>
+import 'unittest' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFA4518>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\_jb_runner_tools.py
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\_jb_utils.py
-import '_jb_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D61EBA8>
+import '_jb_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA00AEBA8>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\__init__.py
-import 'teamcity' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5D6278>
+import 'teamcity' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0066278>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\messages.py
-import 'teamcity.messages' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5D6390>
-import '_jb_runner_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D55CCC0>
+import 'teamcity.messages' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0066390>
+import '_jb_runner_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001AD9FFECCC0>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\unittestpy.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\datetime.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\datetime.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\datetime.cpython-36.pyc'
 import 'math' # <class '_frozen_importlib.BuiltinImporter'>
 import '_datetime' # <class '_frozen_importlib.BuiltinImporter'>
-import 'datetime' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5E3A58>
+import 'datetime' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0073A58>
 # code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\common.py
 # C:\ProgramData\Anaconda3\lib\__pycache__\inspect.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\inspect.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\inspect.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\ast.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\ast.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\ast.cpython-36.pyc'
 import '_ast' # <class '_frozen_importlib.BuiltinImporter'>
-import 'ast' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5FFBA8>
+import 'ast' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA008FBA8>
 # C:\ProgramData\Anaconda3\lib\__pycache__\dis.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\dis.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\dis.cpython-36.pyc'
 # C:\ProgramData\Anaconda3\lib\__pycache__\opcode.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\opcode.py
 # code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\opcode.cpython-36.pyc'
 import '_opcode' # <class '_frozen_importlib.BuiltinImporter'>
-import 'opcode' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D642588>
-import 'dis' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D63F9E8>
-import 'inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5DB8D0>
-import 'teamcity.common' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5E3C88>
-# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\diff_tools.py
-import 'teamcity.diff_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5DB828>
-import 'teamcity.unittestpy' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D5D6668>
-# code object from C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems\tests.py
-import 'tests' # <_frozen_importlib_external.SourceFileLoader object at 0x0000024D1D691278>
-
-
-Ran 1 test in 0.002s
-
-FAILED (failures=1)
-##teamcity[enteredTheMatrix timestamp='2018-09-09T18:29:47.990']
+import 'opcode' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA00D2588>
+import 'dis' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA00CF9E8>
+##teamcity[enteredTheMatrix timestamp='2018-09-10T08:48:12.667']
 Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/Desktop/univ/3c1s/numerical-analysis/linear_systems/tests.py in C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems
 
-##teamcity[testCount timestamp='2018-09-09T18:29:47.992' count='1']
+import 'inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA006B8D0>
+import 'teamcity.common' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0073C88>
+# code object from C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\diff_tools.py
+import 'teamcity.diff_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA006B828>
+import 'teamcity.unittestpy' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0066668>
+# code object from C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems\tests.py
+# bytecode is stale for 'numpy'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\__init__.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\__future__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\__future__.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\__future__.cpython-36.pyc'
+import '__future__' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0121BE0>
+# bytecode is stale for 'numpy._globals'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\_globals.py
+import 'numpy._globals' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA012E4E0>
+# bytecode is stale for 'numpy.__config__'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\__config__.py
+import 'numpy.__config__' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0121CF8>
+# bytecode is stale for 'numpy.version'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\version.py
+import 'numpy.version' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA013A7B8>
+# bytecode is stale for 'numpy._import_tools'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\_import_tools.py
+import 'numpy._import_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA013A828>
+# bytecode is stale for 'numpy.add_newdocs'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\add_newdocs.py
+# bytecode is stale for 'numpy.lib'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\__init__.py
+# bytecode is stale for 'numpy.lib.info'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\info.py
+import 'numpy.lib.info' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA045BCF8>
+# bytecode is stale for 'numpy.lib.type_check'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\type_check.py
+# bytecode is stale for 'numpy.core'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\__init__.py
+# bytecode is stale for 'numpy.core.info'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\info.py
+import 'numpy.core.info' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA051EEB8>
+# extension module 'numpy.core.multiarray' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\core\\multiarray.cp36-win_amd64.pyd'
+# extension module 'numpy.core.multiarray' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\core\\multiarray.cp36-win_amd64.pyd'
+import 'numpy.core.multiarray' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA05250B8>
+# extension module 'numpy.core.umath' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\core\\umath.cp36-win_amd64.pyd'
+# extension module 'numpy.core.umath' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\core\\umath.cp36-win_amd64.pyd'
+import 'numpy.core.umath' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0530358>
+# bytecode is stale for 'numpy.core._internal'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\_internal.py
+# bytecode is stale for 'numpy.compat'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\compat\__init__.py
+# bytecode is stale for 'numpy.compat._inspect'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\compat\_inspect.py
+import 'numpy.compat._inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA04A7EF0>
+# bytecode is stale for 'numpy.compat.py3k'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\compat\py3k.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\pathlib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\pathlib.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\pathlib.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\urllib\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\urllib\__init__.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\urllib\\__pycache__\\__init__.cpython-36.pyc'
+import 'urllib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0512AC8>
+# C:\ProgramData\Anaconda3\lib\urllib\__pycache__\parse.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\urllib\parse.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\urllib\\__pycache__\\parse.cpython-36.pyc'
+import 'urllib.parse' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0512C88>
+import 'pathlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA050A710>
+import 'numpy.compat.py3k' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA050A5C0>
+import 'numpy.compat' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA04A7438>
+# C:\ProgramData\Anaconda3\lib\ctypes\__pycache__\__init__.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\ctypes\__init__.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\ctypes\\__pycache__\\__init__.cpython-36.pyc'
+# extension module '_ctypes' loaded from 'C:\\ProgramData\\Anaconda3\\DLLs\\_ctypes.pyd'
+# extension module '_ctypes' executed from 'C:\\ProgramData\\Anaconda3\\DLLs\\_ctypes.pyd'
+import '_ctypes' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA054DD30>
+# C:\ProgramData\Anaconda3\lib\ctypes\__pycache__\_endian.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\ctypes\_endian.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\ctypes\\__pycache__\\_endian.cpython-36.pyc'
+import 'ctypes._endian' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0557EF0>
+import 'ctypes' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA04A77B8>
+# bytecode is stale for 'numpy.core.numerictypes'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\numerictypes.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\numbers.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\numbers.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\numbers.cpython-36.pyc'
+import 'numbers' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA054D2E8>
+import 'numpy.core.numerictypes' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA050E0F0>
+import 'numpy.core._internal' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0530A90>
+# bytecode is stale for 'numpy.core.numeric'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\numeric.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\pickle.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\pickle.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\pickle.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\_compat_pickle.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_compat_pickle.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_compat_pickle.cpython-36.pyc'
+import '_compat_pickle' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0599400>
+import '_pickle' # <class '_frozen_importlib.BuiltinImporter'>
+import 'pickle' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA04CEFD0>
+# bytecode is stale for 'numpy.core.fromnumeric'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\fromnumeric.py
+# bytecode is stale for 'numpy.core._methods'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\_methods.py
+import 'numpy.core._methods' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0465160>
+import 'numpy.core.fromnumeric' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0599160>
+# bytecode is stale for 'numpy.core.arrayprint'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\arrayprint.py
+import 'numpy.core.arrayprint' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0465080>
+import 'numpy.core.numeric' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA059EE10>
+# bytecode is stale for 'numpy.core.defchararray'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\defchararray.py
+import 'numpy.core.defchararray' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0640128>
+# bytecode is stale for 'numpy.core.records'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\records.py
+import 'numpy.core.records' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05B3CC0>
+# bytecode is stale for 'numpy.core.memmap'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\memmap.py
+import 'numpy.core.memmap' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0A93240>
+# bytecode is stale for 'numpy.core.function_base'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\function_base.py
+import 'numpy.core.function_base' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0470E48>
+# bytecode is stale for 'numpy.core.machar'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\machar.py
+import 'numpy.core.machar' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA048DD30>
+# bytecode is stale for 'numpy.core.getlimits'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\getlimits.py
+import 'numpy.core.getlimits' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA065B3C8>
+# bytecode is stale for 'numpy.core.shape_base'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\shape_base.py
+import 'numpy.core.shape_base' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA065B8D0>
+# bytecode is stale for 'numpy.core.einsumfunc'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\einsumfunc.py
+import 'numpy.core.einsumfunc' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA065BA58>
+# bytecode is stale for 'numpy.testing'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\testing\__init__.py
+# bytecode is stale for 'numpy.testing.decorators'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\testing\decorators.py
+# bytecode is stale for 'numpy.testing.nose_tools'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\testing\nose_tools\__init__.py
+import 'numpy.testing.nose_tools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05DCC88>
+# bytecode is stale for 'numpy.testing.nose_tools.decorators'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\testing\nose_tools\decorators.py
+# bytecode is stale for 'numpy.testing.nose_tools.utils'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\testing\nose_tools\utils.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\shutil.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\shutil.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\shutil.cpython-36.pyc'
+import 'zlib' # <class '_frozen_importlib.BuiltinImporter'>
+# C:\ProgramData\Anaconda3\lib\__pycache__\bz2.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\bz2.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\bz2.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\_compression.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\_compression.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\_compression.cpython-36.pyc'
+import '_compression' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0AA6E48>
+# extension module '_bz2' loaded from 'C:\\ProgramData\\Anaconda3\\DLLs\\_bz2.pyd'
+# extension module '_bz2' executed from 'C:\\ProgramData\\Anaconda3\\DLLs\\_bz2.pyd'
+import '_bz2' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0AB37F0>
+import 'bz2' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0AA6550>
+# C:\ProgramData\Anaconda3\lib\__pycache__\lzma.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\lzma.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\lzma.cpython-36.pyc'
+# extension module '_lzma' loaded from 'C:\\ProgramData\\Anaconda3\\DLLs\\_lzma.pyd'
+# extension module '_lzma' executed from 'C:\\ProgramData\\Anaconda3\\DLLs\\_lzma.pyd'
+import '_lzma' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0AB4438>
+import 'lzma' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0AB39B0>
+import 'shutil' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B8D5F8>
+# C:\ProgramData\Anaconda3\lib\__pycache__\tempfile.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\tempfile.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\tempfile.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\random.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\random.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\random.cpython-36.pyc'
+# C:\ProgramData\Anaconda3\lib\__pycache__\hashlib.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\hashlib.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\hashlib.cpython-36.pyc'
+# extension module '_hashlib' loaded from 'C:\\ProgramData\\Anaconda3\\DLLs\\_hashlib.pyd'
+# extension module '_hashlib' executed from 'C:\\ProgramData\\Anaconda3\\DLLs\\_hashlib.pyd'
+import '_hashlib' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0B9C400>
+import '_blake2' # <class '_frozen_importlib.BuiltinImporter'>
+import '_sha3' # <class '_frozen_importlib.BuiltinImporter'>
+import 'hashlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B959E8>
+# C:\ProgramData\Anaconda3\lib\__pycache__\bisect.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\bisect.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\bisect.cpython-36.pyc'
+import '_bisect' # <class '_frozen_importlib.BuiltinImporter'>
+import 'bisect' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B95EF0>
+import '_random' # <class '_frozen_importlib.BuiltinImporter'>
+import 'random' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B932E8>
+import 'tempfile' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B8DD68>
+# bytecode is stale for 'numpy.lib.utils'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\utils.py
+import 'numpy.lib.utils' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B95898>
+import 'numpy.testing.nose_tools.utils' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0497B38>
+import 'numpy.testing.nose_tools.decorators' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05DCB70>
+import 'numpy.testing.decorators' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05DC780>
+# bytecode is stale for 'numpy.testing.nosetester'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\testing\nosetester.py
+# bytecode is stale for 'numpy.testing.nose_tools.nosetester'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\testing\nose_tools\nosetester.py
+import 'numpy.testing.nose_tools.nosetester' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0497A58>
+import 'numpy.testing.nosetester' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05DC400>
+# bytecode is stale for 'numpy.testing.utils'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\testing\utils.py
+import 'numpy.testing.utils' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0A9DB70>
+import 'numpy.testing' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05DC2B0>
+import 'numpy.core' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA051ADA0>
+# bytecode is stale for 'numpy.lib.ufunclike'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\ufunclike.py
+import 'numpy.lib.ufunclike' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA051A400>
+import 'numpy.lib.type_check' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA045BCC0>
+# bytecode is stale for 'numpy.lib.index_tricks'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\index_tricks.py
+# bytecode is stale for 'numpy.lib.function_base'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\function_base.py
+# bytecode is stale for 'numpy.lib.twodim_base'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\twodim_base.py
+import 'numpy.lib.twodim_base' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0E1C198>
+import 'numpy.lib.function_base' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA045BBE0>
+# bytecode is stale for 'numpy.matrixlib'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\matrixlib\__init__.py
+# bytecode is stale for 'numpy.matrixlib.defmatrix'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\matrixlib\defmatrix.py
+import 'numpy.matrixlib.defmatrix' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BB9C88>
+import 'numpy.matrixlib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BB9EB8>
+# bytecode is stale for 'numpy.lib.stride_tricks'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\stride_tricks.py
+import 'numpy.lib.stride_tricks' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BB9EF0>
+import 'numpy.lib.index_tricks' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA051A320>
+# bytecode is stale for 'numpy.lib.mixins'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\mixins.py
+import 'numpy.lib.mixins' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0E2DF98>
+# bytecode is stale for 'numpy.lib.nanfunctions'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\nanfunctions.py
+import 'numpy.lib.nanfunctions' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0E32358>
+# bytecode is stale for 'numpy.lib.shape_base'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\shape_base.py
+import 'numpy.lib.shape_base' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0E32400>
+# bytecode is stale for 'numpy.lib.scimath'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\scimath.py
+import 'numpy.lib.scimath' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0E32898>
+# bytecode is stale for 'numpy.lib.polynomial'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\polynomial.py
+# bytecode is stale for 'numpy.linalg'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\linalg\__init__.py
+# bytecode is stale for 'numpy.linalg.info'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\linalg\info.py
+import 'numpy.linalg.info' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05C68D0>
+# bytecode is stale for 'numpy.linalg.linalg'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\linalg\linalg.py
+# extension module 'numpy.linalg.lapack_lite' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\linalg\\lapack_lite.cp36-win_amd64.pyd'
+# extension module 'numpy.linalg.lapack_lite' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\linalg\\lapack_lite.cp36-win_amd64.pyd'
+import 'numpy.linalg.lapack_lite' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0BF95C0>
+# extension module 'numpy.linalg._umath_linalg' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\linalg\\_umath_linalg.cp36-win_amd64.pyd'
+# extension module 'numpy.linalg._umath_linalg' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\linalg\\_umath_linalg.cp36-win_amd64.pyd'
+import 'numpy.linalg._umath_linalg' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0BF97B8>
+import 'numpy.linalg.linalg' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05C6978>
+import 'numpy.linalg' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0E3E278>
+import 'numpy.lib.polynomial' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0E32860>
+# bytecode is stale for 'numpy.lib.arraysetops'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\arraysetops.py
+import 'numpy.lib.arraysetops' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0E38B00>
+# bytecode is stale for 'numpy.lib.npyio'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\npyio.py
+# bytecode is stale for 'numpy.lib.format'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\format.py
+import 'numpy.lib.format' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05E6470>
+# bytecode is stale for 'numpy.lib._datasource'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\_datasource.py
+import 'numpy.lib._datasource' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05E62B0>
+# bytecode is stale for 'numpy.lib._iotools'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\_iotools.py
+import 'numpy.lib._iotools' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BCFDD8>
+import 'numpy.lib.npyio' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA05C6B38>
+# bytecode is stale for 'numpy.lib.financial'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\financial.py
+# C:\ProgramData\Anaconda3\lib\__pycache__\decimal.cpython-36.pyc matches C:\ProgramData\Anaconda3\lib\decimal.py
+# code object from 'C:\\ProgramData\\Anaconda3\\lib\\__pycache__\\decimal.cpython-36.pyc'
+# extension module '_decimal' loaded from 'C:\\ProgramData\\Anaconda3\\DLLs\\_decimal.pyd'
+# extension module '_decimal' executed from 'C:\\ProgramData\\Anaconda3\\DLLs\\_decimal.pyd'
+import '_decimal' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0BC57B8>
+import 'decimal' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B04630>
+import 'numpy.lib.financial' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B04F28>
+# bytecode is stale for 'numpy.lib.arrayterator'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\arrayterator.py
+import 'numpy.lib.arrayterator' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0B04748>
+# bytecode is stale for 'numpy.lib.arraypad'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\arraypad.py
+import 'numpy.lib.arraypad' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BCDF28>
+# bytecode is stale for 'numpy.lib._version'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\lib\_version.py
+import 'numpy.lib._version' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BDE2B0>
+import 'numpy.lib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA045B588>
+import 'numpy.add_newdocs' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA013A898>
+# bytecode is stale for 'numpy._distributor_init'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\_distributor_init.py
+# extension module 'numpy._mklinit' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\_mklinit.cp36-win_amd64.pyd'
+# extension module 'numpy._mklinit' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\_mklinit.cp36-win_amd64.pyd'
+import 'numpy._mklinit' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0BC9EB8>
+import 'numpy._distributor_init' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA045B198>
+# bytecode is stale for 'numpy.fft'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\fft\__init__.py
+# bytecode is stale for 'numpy.fft.info'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\fft\info.py
+import 'numpy.fft.info' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BC9C88>
+# bytecode is stale for 'numpy.fft.fftpack'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\fft\fftpack.py
+# extension module 'numpy.fft.fftpack_lite' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\fft\\fftpack_lite.cp36-win_amd64.pyd'
+# extension module 'numpy.fft.fftpack_lite' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\fft\\fftpack_lite.cp36-win_amd64.pyd'
+import 'numpy.fft.fftpack_lite' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0BC99B0>
+# bytecode is stale for 'numpy.fft.helper'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\fft\helper.py
+import 'numpy.fft.helper' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0C8A898>
+import 'numpy.fft.fftpack' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BC9BA8>
+# bytecode is stale for 'mkl_fft'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\mkl_fft\__init__.py
+# extension module 'numpy.core.multiarray_tests' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\core\\multiarray_tests.cp36-win_amd64.pyd'
+# extension module 'numpy.core.multiarray_tests' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\core\\multiarray_tests.cp36-win_amd64.pyd'
+import 'numpy.core.multiarray_tests' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA043A048>
+# extension module 'mkl_fft._pydfti' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\mkl_fft\\_pydfti.cp36-win_amd64.pyd'
+# extension module 'mkl_fft._pydfti' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\mkl_fft\\_pydfti.cp36-win_amd64.pyd'
+import 'mkl_fft._pydfti' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0438128>
+import 'mkl_fft' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0C8AEB8>
+# bytecode is stale for 'mkl_fft._numpy_fft'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\mkl_fft\_numpy_fft.py
+import 'mkl_fft._numpy_fft' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0C8AE48>
+import 'numpy.fft' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0BC9278>
+# bytecode is stale for 'numpy.polynomial'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\__init__.py
+# bytecode is stale for 'numpy.polynomial.polynomial'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\polynomial.py
+# bytecode is stale for 'numpy.polynomial.polyutils'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\polyutils.py
+import 'numpy.polynomial.polyutils' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA043A9B0>
+# bytecode is stale for 'numpy.polynomial._polybase'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\_polybase.py
+import 'numpy.polynomial._polybase' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0C01F28>
+import 'numpy.polynomial.polynomial' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA043A400>
+# bytecode is stale for 'numpy.polynomial.chebyshev'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\chebyshev.py
+import 'numpy.polynomial.chebyshev' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0454E80>
+# bytecode is stale for 'numpy.polynomial.legendre'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\legendre.py
+import 'numpy.polynomial.legendre' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0CCA7F0>
+# bytecode is stale for 'numpy.polynomial.hermite'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\hermite.py
+import 'numpy.polynomial.hermite' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0645828>
+# bytecode is stale for 'numpy.polynomial.hermite_e'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\hermite_e.py
+import 'numpy.polynomial.hermite_e' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0649E10>
+# bytecode is stale for 'numpy.polynomial.laguerre'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\polynomial\laguerre.py
+import 'numpy.polynomial.laguerre' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA065F668>
+import 'numpy.polynomial' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0438F28>
+# bytecode is stale for 'numpy.random'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\random\__init__.py
+# bytecode is stale for 'numpy.random.info'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\random\info.py
+import 'numpy.random.info' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA065FE10>
+# extension module 'numpy.random.mtrand' loaded from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\random\\mtrand.cp36-win_amd64.pyd'
+# extension module 'numpy.random.mtrand' executed from 'C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\random\\mtrand.cp36-win_amd64.pyd'
+import 'numpy.random.mtrand' # <_frozen_importlib_external.ExtensionFileLoader object at 0x000001ADA0656C50>
+import 'numpy.random' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA065F9B0>
+# bytecode is stale for 'numpy.ctypeslib'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\ctypeslib.py
+import 'numpy.ctypeslib' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA066BE80>
+# bytecode is stale for 'numpy.ma'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\ma\__init__.py
+# bytecode is stale for 'numpy.ma.core'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\ma\core.py
+import 'numpy.ma.core' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0CA9B70>
+# bytecode is stale for 'numpy.ma.extras'
+# code object from C:\ProgramData\Anaconda3\lib\site-packages\numpy\ma\extras.py
+import 'numpy.ma.extras' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0C803C8>
+import 'numpy.ma' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0CA9860>
+import 'numpy' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0121780>
+# possible namespace for C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems
+import 'linear_systems' # None
+# code object from C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems\main.py
+import 'linear_systems.main' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA067F978>
+import 'tests' # <_frozen_importlib_external.SourceFileLoader object at 0x000001ADA0121240>
+##teamcity[testCount timestamp='2018-09-10T08:48:12.975' count='3']
+##teamcity[testSuiteStarted timestamp='2018-09-10T08:48:12.975' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests' name='tests' nodeId='1' parentNodeId='0']
+##teamcity[testSuiteStarted timestamp='2018-09-10T08:48:12.975' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.GaussTestCase' name='GaussTestCase' nodeId='2' parentNodeId='1']
+##teamcity[testStarted timestamp='2018-09-10T08:48:12.975' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.GaussTestCase.test_2_by_2' name='test_2_by_2' nodeId='3' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-10T08:48:12.976' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.GaussTestCase.test_2_by_2' name='test_2_by_2' nodeId='3' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-10T08:48:12.976' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.GaussTestCase.test_3_by_3' name='test_3_by_3' nodeId='4' parentNodeId='2']
+##teamcity[testFinished timestamp='2018-09-10T08:48:12.977' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.GaussTestCase.test_3_by_3' name='test_3_by_3' nodeId='4' parentNodeId='2']
+##teamcity[testStarted timestamp='2018-09-10T08:48:12.977' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.GaussTestCase.test_4_by_4' name='test_4_by_4' nodeId='5' parentNodeId='2']
+
+
+Ran 3 tests in 0.003s
+
+OK
 # clear builtins._
 # clear sys.path
 # clear sys.argv
@@ -309,7 +671,6 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # restore sys.stdin
 # restore sys.stdout
 # restore sys.stderr
-##teamcity[testSuiteStarted timestamp='2018-09-09T18:29:47.993' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests' name='tests' nodeId='1' parentNodeId='0']
 # cleanup[2] removing builtins
 # cleanup[2] removing sys
 # cleanup[2] removing _frozen_importlib
@@ -334,7 +695,6 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # cleanup[2] removing io
 # cleanup[2] removing abc
 # cleanup[2] removing _weakrefset
-##teamcity[testSuiteStarted timestamp='2018-09-09T18:29:47.993' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.MyTestCase' name='MyTestCase' nodeId='2' parentNodeId='1']
 # destroy _weakrefset
 # cleanup[2] removing warnings
 # cleanup[2] removing re
@@ -345,7 +705,6 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # cleanup[2] removing collections
 # cleanup[2] removing _collections_abc
 # cleanup[2] removing operator
-# destroy operator
 # cleanup[2] removing _operator
 # cleanup[2] removing keyword
 # destroy keyword
@@ -443,7 +802,6 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # cleanup[2] removing teamcity.common
 # cleanup[2] removing inspect
 # cleanup[2] removing ast
-##teamcity[testStarted timestamp='2018-09-09T18:29:47.993' captureStandardOutput='true' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.MyTestCase.test_something' name='test_something' nodeId='3' parentNodeId='2']
 # cleanup[2] removing _ast
 # cleanup[2] removing dis
 # cleanup[2] removing opcode
@@ -452,17 +810,166 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # cleanup[2] removing teamcity.diff_tools
 # cleanup[2] removing tests
 # destroy tests
+# cleanup[2] removing numpy
+# cleanup[2] removing __future__
+# destroy __future__
+# cleanup[2] removing numpy._globals
+# cleanup[2] removing numpy.__config__
+# cleanup[2] removing numpy.version
+# cleanup[2] removing numpy._import_tools
+# cleanup[2] removing numpy.add_newdocs
+# cleanup[2] removing numpy.lib
+##teamcity[testFinished timestamp='2018-09-10T08:48:12.978' duration='1' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.GaussTestCase.test_4_by_4' name='test_4_by_4' nodeId='5' parentNodeId='2']
+# cleanup[2] removing numpy.lib.info
+# destroy numpy.lib.info
+# cleanup[2] removing numpy.lib.type_check
+# cleanup[2] removing numpy.core
+# cleanup[2] removing numpy.core.info
+##teamcity[testSuiteFinished timestamp='2018-09-10T08:48:12.978' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.GaussTestCase' name='GaussTestCase' nodeId='2' parentNodeId='1']
+# cleanup[2] removing numpy.core.multiarray
+##teamcity[testSuiteFinished timestamp='2018-09-10T08:48:12.978' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests' name='tests' nodeId='1' parentNodeId='0']
+# cleanup[2] removing numpy.core.umath
+# cleanup[2] removing numpy.core._internal
+# cleanup[2] removing numpy.compat
+# cleanup[2] removing numpy.compat._inspect
+# cleanup[2] removing numpy.compat.py3k
+# cleanup[2] removing pathlib
+# destroy pathlib
+# cleanup[2] removing urllib
+# destroy urllib
+# cleanup[2] removing urllib.parse
+# destroy urllib.parse
+# cleanup[2] removing ctypes
+# cleanup[2] removing _ctypes
+# cleanup[2] removing ctypes._endian
+# cleanup[2] removing numpy.core.numerictypes
+# cleanup[2] removing numbers
+# cleanup[2] removing numpy.core.numeric
+# cleanup[2] removing pickle
+# cleanup[2] removing _compat_pickle
+# cleanup[2] removing _pickle
+# cleanup[2] removing numpy.core.fromnumeric
+# cleanup[2] removing numpy.core._methods
+# cleanup[2] removing numpy.core.arrayprint
+# cleanup[2] removing numpy.core.defchararray
+# cleanup[2] removing numpy.core.records
+# cleanup[2] removing numpy.core.memmap
+# destroy numpy.core.memmap
+# cleanup[2] removing numpy.core.function_base
+# cleanup[2] removing numpy.core.machar
+# cleanup[2] removing numpy.core.getlimits
+# cleanup[2] removing numpy.core.shape_base
+# cleanup[2] removing numpy.core.einsumfunc
+# cleanup[2] removing numpy.testing
+# cleanup[2] removing numpy.testing.decorators
+# cleanup[2] removing numpy.testing.nose_tools
+# cleanup[2] removing numpy.testing.nose_tools.decorators
+# cleanup[2] removing numpy.testing.nose_tools.utils
+# cleanup[2] removing shutil
+# cleanup[2] removing zlib
+# cleanup[2] removing bz2
+# destroy bz2
+# cleanup[2] removing _compression
+# cleanup[2] removing _bz2
+# cleanup[2] removing lzma
+# destroy lzma
+# cleanup[2] removing _lzma
+# cleanup[2] removing tempfile
+# destroy tempfile
+# cleanup[2] removing random
+# destroy random
+# cleanup[2] removing hashlib
+# destroy hashlib
+# cleanup[2] removing _hashlib
+# cleanup[2] removing _blake2
+# cleanup[2] removing _sha3
+# cleanup[2] removing bisect
+# cleanup[2] removing _bisect
+# cleanup[2] removing _random
+# cleanup[2] removing numpy.lib.utils
+# cleanup[2] removing numpy.testing.nosetester
+# cleanup[2] removing numpy.testing.nose_tools.nosetester
+# cleanup[2] removing numpy.testing.utils
+# cleanup[2] removing numpy.lib.ufunclike
+# cleanup[2] removing numpy.lib.index_tricks
+# cleanup[2] removing numpy.lib.function_base
+# cleanup[2] removing numpy.lib.twodim_base
+# cleanup[2] removing numpy.matrixlib
+# cleanup[2] removing numpy.matrixlib.defmatrix
+# cleanup[2] removing numpy.lib.stride_tricks
+# cleanup[2] removing numpy.lib.mixins
+# cleanup[2] removing numpy.lib.nanfunctions
+# cleanup[2] removing numpy.lib.shape_base
+# cleanup[2] removing numpy.lib.scimath
+# cleanup[2] removing numpy.lib.polynomial
+# cleanup[2] removing numpy.linalg
+# cleanup[2] removing numpy.linalg.info
+# cleanup[2] removing numpy.linalg.linalg
+# cleanup[2] removing numpy.linalg.lapack_lite
+# cleanup[2] removing numpy.linalg._umath_linalg
+# cleanup[2] removing numpy.lib.arraysetops
+# cleanup[2] removing numpy.lib.npyio
+# cleanup[2] removing numpy.lib.format
+# cleanup[2] removing numpy.lib._datasource
+# cleanup[2] removing numpy.lib._iotools
+# cleanup[2] removing numpy.lib.financial
+# cleanup[2] removing decimal
+# destroy decimal
+# cleanup[2] removing _decimal
+# cleanup[2] removing numpy.lib.arrayterator
+# cleanup[2] removing numpy.lib.arraypad
+# cleanup[2] removing numpy.lib._version
+# cleanup[2] removing numpy._distributor_init
+# cleanup[2] removing numpy._mklinit
+# cleanup[2] removing numpy.fft
+# cleanup[2] removing numpy.fft.info
+# cleanup[2] removing numpy.fft.fftpack
+# cleanup[2] removing numpy.fft.fftpack_lite
+# cleanup[2] removing numpy.fft.helper
+# cleanup[2] removing mkl_fft
+# destroy mkl_fft
+# cleanup[2] removing _cython_0_27_3
+# destroy _cython_0_27_3
+# cleanup[2] removing cython_runtime
+# destroy cython_runtime
+# cleanup[2] removing mkl_fft._pydfti
+# cleanup[2] removing numpy.core.multiarray_tests
+# cleanup[2] removing mkl_fft._numpy_fft
+# destroy mkl_fft._numpy_fft
+# cleanup[2] removing numpy.polynomial
+# cleanup[2] removing numpy.polynomial.polynomial
+# cleanup[2] removing numpy.polynomial.polyutils
+# cleanup[2] removing numpy.polynomial._polybase
+# cleanup[2] removing numpy.polynomial.chebyshev
+# cleanup[2] removing numpy.polynomial.legendre
+# cleanup[2] removing numpy.polynomial.hermite
+# cleanup[2] removing numpy.polynomial.hermite_e
+# cleanup[2] removing numpy.polynomial.laguerre
+# cleanup[2] removing numpy.random
+# cleanup[2] removing numpy.random.info
+# cleanup[2] removing mtrand
+# cleanup[2] removing numpy.random.mtrand
+# cleanup[2] removing numpy.ctypeslib
+# cleanup[2] removing numpy.ma
+# cleanup[2] removing numpy.ma.core
+# cleanup[2] removing numpy.ma.extras
+# cleanup[2] removing linear_systems
+# destroy linear_systems
+# cleanup[2] removing linear_systems.main
+# destroy linear_systems.main
+# destroy _sha3
+# destroy _blake2
+# destroy _bz2
 # destroy _ast
 # destroy _datetime
 # destroy zipimport
-##teamcity[testFailed timestamp='2018-09-09T18:29:47.994' actual='False' details='Traceback (most recent call last):|n  File "C:\Program Files\JetBrains\PyCharm Community Edition 2018.2.1\helpers\pycharm\teamcity\diff_tools.py", line 32, in _patched_equals|n    old(self, first, second, msg)|n  File "C:\ProgramData\Anaconda3\lib\unittest\case.py", line 829, in assertEqual|n    assertion_func(first, second, msg=msg)|n  File "C:\ProgramData\Anaconda3\lib\unittest\case.py", line 822, in _baseAssertEqual|n    raise self.failureException(msg)|nAssertionError: True != False|n|nDuring handling of the above exception, another exception occurred:|n|nTraceback (most recent call last):|n  File "C:\ProgramData\Anaconda3\lib\unittest\case.py", line 59, in testPartExecutor|n    yield|n  File "C:\ProgramData\Anaconda3\lib\unittest\case.py", line 605, in run|n    testMethod()|n  File "C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems\tests.py", line 6, in test_something|n    self.assertEqual(True, False)|n' expected='True' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.MyTestCase.test_something' message='|nFalse != True|n' name='test_something' nodeId='3' parentNodeId='2' type='comparisonFailure']
-##teamcity[testFinished timestamp='2018-09-09T18:29:47.994' duration='2' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.MyTestCase.test_something' name='test_something' nodeId='3' parentNodeId='2']
-##teamcity[testSuiteFinished timestamp='2018-09-09T18:29:47.995' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests.MyTestCase' name='MyTestCase' nodeId='2' parentNodeId='1']
-##teamcity[testSuiteFinished timestamp='2018-09-09T18:29:47.995' locationHint='python<C:\Users\NikitaSkybytskyi\Desktop\univ\3c1s\numerical-analysis\linear_systems>://tests' name='tests' nodeId='1' parentNodeId='0']
 # destroy _sitebuiltins
 # destroy teamcity.common
 # destroy teamcity.diff_tools
-# destroy math
+# destroy zlib
+# destroy _compression
+# destroy _lzma
+# destroy decimal
 # cleanup[3] wiping _frozen_importlib
 # cleanup[3] wiping _imp
 # cleanup[3] wiping _warnings
@@ -488,7 +995,6 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # cleanup[3] wiping io
 # cleanup[3] wiping abc
 # cleanup[3] wiping warnings
-# destroy _warnings
 # cleanup[3] wiping re
 # destroy sre_compile
 # destroy copyreg
@@ -496,13 +1002,12 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # cleanup[3] wiping types
 # cleanup[3] wiping functools
 # cleanup[3] wiping _functools
-# destroy _functools
 # cleanup[3] wiping collections
 # destroy heapq
 # destroy collections.abc
 # cleanup[3] wiping _collections_abc
+# cleanup[3] wiping operator
 # cleanup[3] wiping _operator
-# destroy _operator
 # cleanup[3] wiping _heapq
 # cleanup[3] wiping itertools
 # cleanup[3] wiping _collections
@@ -512,12 +1017,12 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # cleanup[3] wiping sre_parse
 # cleanup[3] wiping _locale
 # cleanup[3] wiping os
-# destroy errno
-# destroy ntpath
+# cleanup[3] wiping errno
 # cleanup[3] wiping stat
 # cleanup[3] wiping _stat
-# destroy _stat
+# cleanup[3] wiping ntpath
 # cleanup[3] wiping genericpath
+# cleanup[3] wiping os.path
 # cleanup[3] wiping importlib
 # destroy importlib.util
 # cleanup[3] wiping importlib._bootstrap
@@ -533,13 +1038,11 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # cleanup[3] wiping traceback
 # cleanup[3] wiping linecache
 # cleanup[3] wiping tokenize
-# destroy io
 # cleanup[3] wiping token
 # cleanup[3] wiping unittest.util
 # cleanup[3] wiping unittest.case
 # destroy difflib
 # destroy logging
-# destroy contextlib
 # cleanup[3] wiping time
 # cleanup[3] wiping _string
 # cleanup[3] wiping threading
@@ -551,38 +1054,141 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # destroy unittest.suite
 # destroy unittest.util
 # cleanup[3] wiping fnmatch
-# destroy posixpath
+# cleanup[3] wiping posixpath
+# destroy genericpath
 # cleanup[3] wiping argparse
-# destroy textwrap
 # cleanup[3] wiping copy
+# cleanup[3] wiping textwrap
 # cleanup[3] wiping locale
 # destroy encodings
 # destroy _locale
 # cleanup[3] wiping struct
 # cleanup[3] wiping _struct
-# destroy _struct
 # cleanup[3] wiping unittest.runner
 # destroy unittest.result
 # cleanup[3] wiping signal
 # destroy _signal
 # cleanup[3] wiping _jb_utils
-# destroy fnmatch
 # cleanup[3] wiping teamcity.messages
 # cleanup[3] wiping datetime
+# cleanup[3] wiping math
 # cleanup[3] wiping inspect
 # destroy abc
-# destroy ast
 # destroy dis
 # destroy enum
 # destroy importlib
-# destroy itertools
 # destroy linecache
 # destroy tokenize
 # destroy token
+# cleanup[3] wiping ast
 # cleanup[3] wiping _opcode
+# cleanup[3] wiping numpy
+# destroy numpy._globals
+# destroy numpy._import_tools
+# destroy numpy._distributor_init
+# destroy mklinit
+# destroy numpy.__config__
+# destroy numpy.version
+# destroy numpy.compat
+# destroy numpy.compat._inspect
+# destroy numpy.compat.py3k
+# destroy numpy.testing
+# destroy numpy.testing.nose_tools
+# destroy numpy.testing.nose_tools.utils
+# destroy numpy.testing.nose_tools.decorators
+# destroy numpy.testing.nose_tools.nosetester
+# destroy numpy.testing.decorators
+# destroy numpy.testing.nosetester
+# destroy numpy.testing.utils
+# destroy numpy.core
+# destroy numpy.lib
+# destroy numpy.lib.utils
+# destroy numpy.lib.ufunclike
+# destroy numpy.lib.type_check
+# destroy numpy.lib.twodim_base
+# destroy numpy.lib.stride_tricks
+# destroy numpy.lib.index_tricks
+# destroy numpy.lib.mixins
+# destroy numpy.lib.nanfunctions
+# destroy numpy.lib.shape_base
+# destroy numpy.lib.polynomial
+# destroy numpy.lib.arraysetops
+# destroy numpy.lib._datasource
+# destroy numpy.lib._iotools
+# destroy numpy.lib.npyio
+# destroy numpy.lib.financial
+# destroy numpy.lib.arrayterator
+# destroy numpy.lib.arraypad
+# destroy numpy.lib._version
+# destroy numpy.add_newdocs
+# destroy numpy.lib.scimath
+# destroy numpy.fft
+# destroy numpy.polynomial
+# destroy numpy.polynomial._polybase
+# destroy numpy.polynomial.polynomial
+# destroy numpy.polynomial.chebyshev
+# destroy numpy.polynomial.legendre
+# destroy numpy.polynomial.hermite
+# destroy numpy.polynomial.hermite_e
+# destroy numpy.polynomial.laguerre
+# destroy numpy.random
+# destroy numpy.ctypeslib
+# destroy numpy.ma
+# destroy numpy.ma.extras
+# cleanup[3] wiping numpy.core.info
+# cleanup[3] wiping numpy.core.multiarray
+# cleanup[3] wiping numpy.core.umath
+# cleanup[3] wiping numpy.core._internal
+# cleanup[3] wiping ctypes
+# destroy ctypes._endian
+# cleanup[3] wiping _ctypes
+# cleanup[3] wiping numpy.core.numerictypes
+# cleanup[3] wiping numbers
+# cleanup[3] wiping numpy.core.numeric
+# cleanup[3] wiping pickle
+# destroy _compat_pickle
+# destroy _struct
+# cleanup[3] wiping _pickle
+# cleanup[3] wiping numpy.core.fromnumeric
+# cleanup[3] wiping numpy.core._methods
+# cleanup[3] wiping numpy.core.arrayprint
+# cleanup[3] wiping numpy.core.defchararray
+# cleanup[3] wiping numpy.core.records
+# cleanup[3] wiping numpy.core.function_base
+# cleanup[3] wiping numpy.core.machar
+# cleanup[3] wiping numpy.core.getlimits
+# cleanup[3] wiping numpy.core.shape_base
+# cleanup[3] wiping numpy.core.einsumfunc
+# cleanup[3] wiping shutil
+# destroy stat
+# cleanup[3] wiping _hashlib
+# cleanup[3] wiping bisect
+# cleanup[3] wiping _bisect
+# destroy _bisect
+# cleanup[3] wiping _random
+# cleanup[3] wiping numpy.lib.function_base
+# cleanup[3] wiping numpy.matrixlib
+# destroy numpy.matrixlib.defmatrix
+# cleanup[3] wiping numpy.linalg
+# destroy numpy.linalg.info
+# destroy numpy.linalg.linalg
+# cleanup[3] wiping numpy.linalg.lapack_lite
+# cleanup[3] wiping numpy.linalg._umath_linalg
+# cleanup[3] wiping numpy.lib.format
+# cleanup[3] wiping numpy.fft.info
+# cleanup[3] wiping numpy.fft.fftpack
+# cleanup[3] wiping numpy.fft.fftpack_lite
+# cleanup[3] wiping numpy.fft.helper
+# cleanup[3] wiping mkl_fft._pydfti
+# cleanup[3] wiping numpy.core.multiarray_tests
+# cleanup[3] wiping numpy.polynomial.polyutils
+# cleanup[3] wiping numpy.random.info
+# cleanup[3] wiping mtrand
+# cleanup[3] wiping numpy.random.mtrand
+# cleanup[3] wiping numpy.ma.core
+# destroy textwrap
 # cleanup[3] wiping sys
 # cleanup[3] wiping builtins
-# destroy nt
 # destroy datetime
 # destroy _jb_utils
 # destroy teamcity.messages
@@ -595,28 +1201,75 @@ Launching unittests with arguments python -m unittest C:/Users/NikitaSkybytskyi/
 # destroy signal
 # destroy _sre
 # destroy sre_parse
+# destroy numpy.core.info
+# destroy numpy.core._internal
+# destroy numpy.core._methods
+# destroy numpy.core.fromnumeric
+# destroy numpy.core.arrayprint
+# destroy numpy.core.defchararray
+# destroy numpy.core.records
+# destroy numpy.core.function_base
+# destroy numpy.core.machar
+# destroy numpy.core.getlimits
+# destroy numpy.core.shape_base
+# destroy numpy.core.einsumfunc
+# destroy numpy.core.multiarray_tests
+# destroy numpy.lib.format
+# destroy pickle
+# destroy _pickle
+# destroy numpy.core.numerictypes
+# destroy numpy.lib.function_base
+# destroy numpy.matrixlib
+# destroy numpy.fft.info
+# destroy numpy.fft.fftpack_lite
+# destroy numpy.fft.helper
+# destroy numpy.fft.fftpack
+# destroy numpy.random.info
+# destroy numpy.random.mtrand
+# destroy ast
 # destroy locale
 # destroy copy
 # destroy struct
 # destroy _opcode
-# destroy _thread
-# destroy stat
-# destroy genericpath
-# destroy _heapq
-# destroy os
+# destroy _operator
+# destroy _functools
+# destroy operator
+# destroy contextlib
+# destroy numpy.linalg.lapack_lite
+# destroy numpy.linalg._umath_linalg
 # destroy io
+# destroy numpy.core.numeric
+# destroy mkl_fft._pydfti
+# destroy numbers
+# destroy numpy.linalg
+# destroy numpy.polynomial.polyutils
+# destroy numpy.ma.core
+# destroy numpy.core.umath
+# destroy _heapq
 # destroy traceback
-# destroy weakref
-# destroy collections
 # destroy threading
 # destroy _weakref
 # destroy atexit
 # destroy _imp
 # destroy importlib.abc
-# destroy functools
-# destroy types
-# destroy warnings
 # destroy time
+# destroy fnmatch
+# destroy _stat
+# destroy functools
+# destroy io
+# destroy shutil
+# destroy errno
+# destroy weakref
+# destroy _thread
+# destroy ntpath
+# destroy posixpath
+# destroy collections
 # destroy _string
-# destroy re
+# destroy _warnings
+# destroy math
+# destroy nt
+# destroy _hashlib
+# destroy itertools
+# destroy bisect
+# destroy _random
 # destroy _frozen_importlib
