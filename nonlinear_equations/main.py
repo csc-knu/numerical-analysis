@@ -7,6 +7,7 @@ Created on Sun Sep  9 10:05:30 2018
 Solving Nonlinear Equations
 """
 
+import numpy as np
 import functools
 import types
 import math
@@ -67,12 +68,17 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
         -s to Safety check
     :return: root of f on [a,b] if any
     """
+    np.set_printoptions(precision=10)
+    np.set_printoptions(suppress=True)
+
     if '-s' in options:
         if a >= b:
             raise BoundariesError(a, b)
 
     if '-m' in options:
         f = functools.lru_cache(maxsize=128)(f)
+
+    logs = np.array([0, 0, 0])
 
     if f(a) * f(b) > 0:
         raise ValueError(f'f(a) * f(b) = f({a}) * f({b}) = {f(a) * f(b)} > 0')
@@ -91,20 +97,26 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
 
     if '-i' in options:
         for i in range(math.ceil(math.log2((b - a) / eps)) + 1):
-            if '-l':
-                print(f'{xi:10.10f}')
+            if '-l' in options:
+                logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
             xi = step(xi)
     else:
+        i = 0
         while b - a > 2 * eps:
-            if '-l':
-                print(f'{xi:10.10f}')
+            i += 1
+            if '-l' in options:
+                logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
             xi = step(xi)
+
+    if '-l' in options:
+        print(logs)
 
     return (a + b) / 2
 
 
+# OK
 def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: float=1e-5,
                    tau: types.FunctionType=lambda x: x, options: str='-m -s -l -t -tau') -> float:
     """
@@ -123,6 +135,9 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
         -t to Threshold functions
     :return: root of f on [a,b] if any
     """
+    np.set_printoptions(precision=10)
+    np.set_printoptions(suppress=True)
+
     if '-1' in options and '-t' in options:
         raise ValueError('Cannot use both choices of phi simultaneously.')
 
@@ -131,6 +146,8 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
 
     if '-s' in options:
         safety_check(a, b, x0)
+
+    logs = np.array([0, 0, 0])
 
     def phi(x):
         if '-1' in options:
@@ -147,11 +164,17 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
 
     xi = x0
 
+    i = 0
     while abs(phi(xi) - xi) >= eps:
+        i += 1
         if '-l' in options:
+            logs = np.vstack((logs, np.array([i, xi, f(xi)])))
             print(f'{xi:10.10f}')
 
         xi = phi(xi)
+
+    if '-l' in options:
+        print(logs)
 
     return phi(xi)
 
@@ -172,6 +195,9 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
         -t to Threshold functions
     :return: root of f on [a, b] if any
     """
+    np.set_printoptions(precision=10)
+    np.set_printoptions(suppress=True)
+
     if '-s' in options:
         safety_check(a, b, x0)
 
@@ -184,13 +210,20 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     if '-m' in options:
         phi = functools.lru_cache(maxsize=128)(phi)
 
+    logs = np.array([0, 0, 0])
+
     xi = x0
 
+    i = 0
     while abs(phi(xi) - xi) >= eps:
+        i += 1
         if '-l' in options:
-            print(f'{xi:10.10f}')
+            logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
         xi = phi(xi)
+
+    if '-l' in options:
+        print(logs)
 
     return phi(xi)
 
@@ -211,6 +244,9 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
         -t to Threshold functions
     :return: root of f on [a, b] if any
     """
+    np.set_printoptions(precision=10)
+    np.set_printoptions(suppress=True)
+
     if '-s' in options:
         safety_check(a, b, x0)
 
@@ -225,15 +261,23 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
 
     xi = x0
 
+    logs = np.array([0, 0, 0])
+
+    i = 0
     while abs(step(xi) - xi) >= eps:
+        i += 1
         if '-l' in options:
-            print(f'{xi:10.10f}')
+            logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
         xi = step(xi)
+
+    if '-l' in options:
+        print(logs)
 
     return step(xi)
 
 
+# OK
 def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: float,
                     eps: float = 1e-5, options: str = '-m -l -s') -> float:
     """
@@ -250,6 +294,9 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
         -t to Threshold functions
     :return: root of f on [a, b] if any
     """
+    np.set_printoptions(precision=10)
+    np.set_printoptions(suppress=True)
+
     if '-s' in options:
         safety_check(a, b, x0)
 
@@ -264,15 +311,23 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
 
     xi = x0
 
+    logs = np.array([0, 0, 0])
+
+    i = 0
     while abs(step(xi) - xi) >= eps:
+        i += 1
         if '-l' in options:
-            print(f'{xi:10.10f}')
+            logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
         xi = step(xi)
+
+    if '-l' in options:
+        print(logs)
 
     return step(xi)
 
 
+# OK
 def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
            eps: float = 1e-5, options: str = '-m -l -s') -> float:
     """
@@ -288,6 +343,9 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
         -s to Safety check
     :return: root of f on [a, b] if any
     """
+    np.set_printoptions(precision=10)
+    np.set_printoptions(suppress=True)
+
     if '-s' in options:
         safety_check(a, b, x0)
         safety_check(a, b, x1)
@@ -305,10 +363,17 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
 
     now, prev = x1, x0
 
+    logs = np.array([0, 0, 0])
+
+    i = 0
     while abs(now - prev) >= eps:
+        i += 1
         if '-l' in options:
-            print(f'{now:10.10f}')
+            logs = np.vstack((logs, np.array([i, now, f(now)])))
 
         now = step(now)
+
+    if '-l' in options:
+        print(logs)
 
     return now

@@ -52,12 +52,12 @@ class DivideInTwoTestCase(unittest.TestCase):
             self.assertAlmostEqual(dit(f, a, b, eps), ans, delta=eps)
 
     def test_lab(self):
-        def f():
-            return ...
+        def f(x):
+            return x**4 - 4 * x**3 + 5.5 * x**2 - 3 * x + 0.5
 
-        a, b, ans = ..., ..., ...
+        a, b, ans = 0, 0.7, 0.292893
 
-        for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
+        for eps in [1e-6]:
             self.assertAlmostEqual(dit(f, a, b, eps), ans, delta=eps)
 
 
@@ -111,16 +111,13 @@ class SimpleIterateTestCase(unittest.TestCase):
             self.assertAlmostEqual(sit(f, x0, a, b, eps, tau), ans, delta=eps)
 
     def test_lab(self):
-        def f():
-            return ...
+        def f(x):
+            return x**4 - 4 * x**3 + 5.5 * x**2 - 3 * x + 0.5
 
-        def tau():
-            return ...
+        x0, a, b, ans = 0.5, 0, 0.7, 0.292893
 
-        x0, a, b, ans = ..., ..., ..., ...
-
-        for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(sit(f, x0, a, b, eps, tau), ans, delta=eps)
+        for eps in [1e-6]:
+            self.assertAlmostEqual(sit(f, x0, a, b, eps), ans, delta=eps)
 
 
 class RelaxateTestCase(unittest.TestCase):
@@ -161,13 +158,13 @@ class RelaxateTestCase(unittest.TestCase):
             self.assertAlmostEqual(rel(f, x0, a, b, eps), ans, delta=eps)
 
     def test_lab(self):
-        def f():
-            return ...
+        def f(x):
+            return x**4 - 4 * x**3 + 5.5 * x**2 - 3 * x + 0.5
 
-        x0, a, b, ans = ..., ..., ..., ...
+        x0, a, b, ans = 0.5, 0, 0.7, 0.292893
 
-        for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(rel(f, a, b, eps), ans, delta=eps)
+        for eps in [1e-6]:
+            self.assertAlmostEqual(rel(f, x0, a, b, eps), ans, delta=eps)
 
 
 class NewtonTestCase(unittest.TestCase):
@@ -220,15 +217,15 @@ class NewtonTestCase(unittest.TestCase):
             self.assertAlmostEqual(net(f, d, x0, a, b, eps), ans, delta=eps)
 
     def test_lab(self):
-        def f():
-            return ...
+        def f(x):
+            return x**4 - 4 * x**3 + 5.5 * x**2 - 3 * x + 0.5
 
-        def d():
-            return ...
+        def d(x):
+            return 4 * x**3 - 12 * x**2 + 11 * x - 3
 
-        x0, a, b, ans = ..., ..., ..., ...
+        x0, a, b, ans = 0.4, 0, 0.7, 0.292893
 
-        for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
+        for eps in [1e-6]:
             self.assertAlmostEqual(net(f, d, x0, a, b, eps), ans, delta=eps)
 
 
@@ -270,12 +267,12 @@ class ModifiedNewtonTestCase(unittest.TestCase):
             self.assertAlmostEqual(mne(f, dx0, x0, a, b, eps), ans, delta=eps)
 
     def test_lab(self):
-        def f():
-            return ...
+        def f(x):
+            return x**4 - 4 * x**3 + 5.5 * x**2 - 3 * x + 0.5
 
-        dx0, x0, a, b, ans = ..., ..., ..., ..., ...
+        dx0, x0, a, b, ans = -0.762, 0.3, 0, 0.7, 0.292893
 
-        for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
+        for eps in [1e-6]:
             self.assertAlmostEqual(mne(f, dx0, x0, a, b, eps), ans, delta=eps)
 
 
@@ -317,13 +314,13 @@ class SecantTestCase(unittest.TestCase):
             self.assertAlmostEqual(sec(f, x0, x1, a, b, eps), ans, delta=eps)
 
     def test_lab(self):
-        def f():
-            return ...
+        def f(x):
+            return x**4 - 4 * x**3 + 5.5 * x**2 - 3 * x + 0.5
 
-        x0, x1, a, b, ans = ..., ..., ..., ..., ...
+        x0, x1, a, b, ans = 0.5, 0.4, 0, 0.7, 0.292893
 
-        for eps in [1e-3, 1e-5, 1e-7, 1e-9]:
-            self.assertAlmostEqual(rel(f, a, b, eps), ans, delta=eps)
+        for eps in [1e-6]:
+            self.assertAlmostEqual(sec(f, x0, x1, a, b, eps), ans, delta=eps)
 
 
 if __name__ == '__main__':
