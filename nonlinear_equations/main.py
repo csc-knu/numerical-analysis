@@ -169,7 +169,6 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
         i += 1
         if '-l' in options:
             logs = np.vstack((logs, np.array([i, xi, f(xi)])))
-            print(f'{xi:10.10f}')
 
         xi = phi(xi)
 
