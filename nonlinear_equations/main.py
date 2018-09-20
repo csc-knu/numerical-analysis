@@ -311,19 +311,20 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     if '-m' in args:
         step = functools.lru_cache(maxsize=128)(step)
 
-    xi = x0
+    xi, x_prev = x0, x0 - 2 * eps
 
     logs = np.array([0, 0, 0])
 
     i = 0
-    while abs(step(xi) - xi) >= eps:
+    while abs(xi - x_prev) >= eps:
         i += 1
         if '-l' in args:
             logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
-        xi = step(xi)
+        xi, x_prev = step(xi), xi
 
     if '-l' in args:
+        logs = np.vstack((logs, np.array([i + 1, xi, f(xi)])))
         print(logs)
 
     return step(xi)
