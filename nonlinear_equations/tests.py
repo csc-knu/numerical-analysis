@@ -115,9 +115,9 @@ class SimpleIterateTestCase(unittest.TestCase):
             return x**4 - 4 * x**3 + 5.5 * x**2 - 3 * x + 0.5
 
         def tau(x):
-            return 0.1
+            return 0.6
 
-        x0, a, b, ans = 0.5, 0, 0.7, 0.292893
+        x0, a, b, ans = 0.1, 0, 0.4, 0.292893
 
         for eps in [1e-6]:
             self.assertAlmostEqual(sit(f, x0, a, b, eps, tau, '-s', '-m', '-l', '-t', '-tau'), ans, delta=eps)
