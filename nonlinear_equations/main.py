@@ -7,10 +7,11 @@ Created on Sun Sep  9 10:05:30 2018
 Solving Nonlinear Equations
 """
 
-import numpy as np
 import functools
-import types
 import math
+import types
+
+import numpy as np
 
 
 class BoundariesError(ValueError):
@@ -55,13 +56,14 @@ def threshold(func, low, high):
     return thr
 
 
-def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, options: str='-s -m -i -l') -> float:
+def divide_in_two(f: types.FunctionType, a: float, b: float,
+                  eps: float = 1e-5, *args) -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
     :param b: (hopefully) right endpoint
     :param eps: allowed error
-    :param options: string of options, can include the following:
+    :param args: string of args, can include the following:
         -i to pre-calculate number of Iterations
         -m to Memorize functions
         -l to Log the execution
@@ -71,11 +73,11 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
     np.set_printoptions(precision=10)
     np.set_printoptions(suppress=True)
 
-    if '-s' in options:
+    if '-s' in args:
         if a >= b:
             raise BoundariesError(a, b)
 
-    if '-m' in options:
+    if '-m' in args:
         f = functools.lru_cache(maxsize=128)(f)
 
     logs = np.array([0, 0, 0])
@@ -95,9 +97,9 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
 
     xi = (a + b) / 2
 
-    if '-i' in options:
+    if '-i' in args:
         for i in range(math.ceil(math.log2((b - a) / eps)) + 1):
-            if '-l' in options:
+            if '-l' in args:
                 logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
             xi = step(xi)
@@ -105,20 +107,20 @@ def divide_in_two(f: types.FunctionType, a: float, b: float, eps: float=1e-5, op
         i = 0
         while b - a > 2 * eps:
             i += 1
-            if '-l' in options:
+            if '-l' in args:
                 logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
             xi = step(xi)
 
-    if '-l' in options:
+    if '-l' in args:
         print(logs)
 
     return (a + b) / 2
 
 
 # OK
-def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: float=1e-5,
-                   tau: types.FunctionType=lambda x: x, options: str='-m -s -l -t -tau') -> float:
+def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float,
+                   eps: float = 1e-5, tau: types.FunctionType = lambda x: x, *args) -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
@@ -126,7 +128,7 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
     :param x0: starting point
     :param eps: allowed error
     :param tau: function of constant sigh on [a, b]
-    :param options: string of options, can include the following:
+    :param args: string of args, can include the following:
         -1 to use 1st type of phi: phi(x) = f(x) + x
         -tau to use tau in construction of phi: phi(x) = x + tau(x) * f(z)
         -m to Memorize functions
@@ -138,28 +140,28 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
     np.set_printoptions(precision=10)
     np.set_printoptions(suppress=True)
 
-    if '-1' in options and '-t' in options:
+    if '-1' in args and '-t' in args:
         raise ValueError('Cannot use both choices of phi simultaneously.')
 
-    if '-1' not in options and '-t' not in options:
-        raise ValueError('Choice of phi not specified in options parameter.')
+    if '-1' not in args and '-t' not in args:
+        raise ValueError('Choice of phi not specified in args parameter.')
 
-    if '-s' in options:
+    if '-s' in args:
         safety_check(a, b, x0)
 
     logs = np.array([0, 0, 0])
 
     def phi(x):
-        if '-1' in options:
+        if '-1' in args:
             return f(x) + x
 
-        if '-tau' in options:
+        if '-tau' in args:
             return f(x) * tau(x) + x
 
-    if '-t' in options:
+    if '-t' in args:
         phi = threshold(phi, a, b)
 
-    if '-m' in options:
+    if '-m' in args:
         phi = functools.lru_cache(maxsize=128)(phi)
 
     xi = x0
@@ -167,19 +169,19 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float, eps: fl
     i = 0
     while abs(phi(xi) - xi) >= eps:
         i += 1
-        if '-l' in options:
+        if '-l' in args:
             logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
         xi = phi(xi)
 
-    if '-l' in options:
+    if '-l' in args:
         print(logs)
 
     return phi(xi)
 
 
 def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
-             eps: float = 1e-5, tau: float = 1, options: str = '-m -s -l -t') -> float:
+             eps: float = 1e-5, tau: float = 1, *args) -> float:
     """
     :param f: function to find the root of
     :param a: (hopefully) left endpoint
@@ -187,7 +189,7 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     :param x0: starting point
     :param eps: allowed error
     :param tau: constant
-    :param options: string of options, can include the following:
+    :param args: string of args, can include the following:
         -m to Memorize functions
         -l to Log the execution
         -s to Safety check
@@ -197,16 +199,16 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     np.set_printoptions(precision=10)
     np.set_printoptions(suppress=True)
 
-    if '-s' in options:
+    if '-s' in args:
         safety_check(a, b, x0)
 
     def phi(x):
         return tau * f(x) + x
 
-    if '-t' in options:
+    if '-t' in args:
         phi = threshold(phi, a, b)
 
-    if '-m' in options:
+    if '-m' in args:
         phi = functools.lru_cache(maxsize=128)(phi)
 
     logs = np.array([0, 0, 0])
@@ -216,19 +218,19 @@ def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
     i = 0
     while abs(phi(xi) - xi) >= eps:
         i += 1
-        if '-l' in options:
+        if '-l' in args:
             logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
         xi = phi(xi)
 
-    if '-l' in options:
+    if '-l' in args:
         print(logs)
 
     return phi(xi)
 
 
 def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b: float,
-           eps: float = 1e-5, options: str = '-m -s -l -t') -> float:
+           eps: float = 1e-5, *args) -> float:
     """
     :param f: Function to find the root of
     :param d: Derivative of f
@@ -236,7 +238,7 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
     :param b: (hopefully) right endpoint
     :param x0: starting point
     :param eps: allowed error
-    :param options: string of options, can include the following:
+    :param args: string of args, can include the following:
         -m to Memorize functions
         -l to Log the execution
         -s to Safety check
@@ -246,16 +248,16 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
     np.set_printoptions(precision=10)
     np.set_printoptions(suppress=True)
 
-    if '-s' in options:
+    if '-s' in args:
         safety_check(a, b, x0)
 
     def step(x):
         return x - f(x) / d(x)
 
-    if '-t' in options:
+    if '-t' in args:
         step = threshold(step, a, b)
 
-    if '-m' in options:
+    if '-m' in args:
         step = functools.lru_cache(maxsize=128)(step)
 
     xi = x0
@@ -265,12 +267,12 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
     i = 0
     while abs(step(xi) - xi) >= eps:
         i += 1
-        if '-l' in options:
+        if '-l' in args:
             logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
         xi = step(xi)
 
-    if '-l' in options:
+    if '-l' in args:
         print(logs)
 
     return step(xi)
@@ -278,7 +280,7 @@ def newton(f: types.FunctionType, d: types.FunctionType, x0: float, a: float, b:
 
 # OK
 def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: float,
-                    eps: float = 1e-5, options: str = '-m -l -s') -> float:
+                    eps: float = 1e-5, *args) -> float:
     """
     :param f: Function to find the root of
     :param dx0: Derivative of f at x0
@@ -286,7 +288,7 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     :param b: (hopefully) right endpoint
     :param x0: starting point
     :param eps: allowed error
-    :param options: string of options, can include the following:
+    :param args: string of args, can include the following:
         -m to Memorize functions
         -l to Log the execution
         -s to Safety check
@@ -296,16 +298,16 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     np.set_printoptions(precision=10)
     np.set_printoptions(suppress=True)
 
-    if '-s' in options:
+    if '-s' in args:
         safety_check(a, b, x0)
 
     def step(x):
         return x - f(x) / dx0
 
-    if '-t' in options:
+    if '-t' in args:
         step = threshold(step, a, b)
 
-    if '-m' in options:
+    if '-m' in args:
         step = functools.lru_cache(maxsize=128)(step)
 
     xi = x0
@@ -315,12 +317,12 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
     i = 0
     while abs(step(xi) - xi) >= eps:
         i += 1
-        if '-l' in options:
+        if '-l' in args:
             logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
         xi = step(xi)
 
-    if '-l' in options:
+    if '-l' in args:
         print(logs)
 
     return step(xi)
@@ -328,7 +330,7 @@ def modified_newton(f: types.FunctionType, dx0: float, x0: float, a: float, b: f
 
 # OK
 def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
-           eps: float = 1e-5, options: str = '-m -l -s') -> float:
+           eps: float = 1e-5, *args) -> float:
     """
     :param f: Function to find the root of
     :param a: (hopefully) left endpoint
@@ -336,7 +338,7 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
     :param x0: starting point
     :param x1: second point
     :param eps: allowed error
-    :param options: string of options, can include the following:
+    :param args: string of args, can include the following:
         -m to Memorize functions
         -l to Log the execution
         -s to Safety check
@@ -345,11 +347,11 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
     np.set_printoptions(precision=10)
     np.set_printoptions(suppress=True)
 
-    if '-s' in options:
+    if '-s' in args:
         safety_check(a, b, x0)
         safety_check(a, b, x1)
 
-    if '-m' in options:
+    if '-m' in args:
         f = functools.lru_cache(maxsize=128)(f)
 
     def step(local_now):
@@ -367,12 +369,12 @@ def secant(f: types.FunctionType, x0: float, x1: float, a: float, b: float,
     i = 0
     while abs(now - prev) >= eps:
         i += 1
-        if '-l' in options:
+        if '-l' in args:
             logs = np.vstack((logs, np.array([i, now, f(now)])))
 
         now = step(now)
 
-    if '-l' in options:
+    if '-l' in args:
         print(logs)
 
     return now
