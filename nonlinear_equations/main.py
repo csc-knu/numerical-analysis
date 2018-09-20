@@ -164,20 +164,21 @@ def simple_iterate(f: types.FunctionType, x0: float, a: float, b: float,
     if '-m' in args:
         phi = functools.lru_cache(maxsize=128)(phi)
 
-    xi = x0
+    xi, x_prev = x0, x0 - 2 * eps
 
     i = 0
-    while abs(phi(xi) - xi) >= eps:
+    while abs(xi - x_prev) >= eps:
         i += 1
         if '-l' in args:
             logs = np.vstack((logs, np.array([i, xi, f(xi)])))
 
-        xi = phi(xi)
+        xi, x_prev = phi(xi), xi
 
     if '-l' in args:
+        logs = np.vstack((logs, np.array([i + 1, xi, f(xi)])))
         print(logs)
 
-    return phi(xi)
+    return xi
 
 
 def relaxate(f: types.FunctionType, x0: float, a: float, b: float,
