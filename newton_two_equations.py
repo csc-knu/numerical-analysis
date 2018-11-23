@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+""" implementation of a newton's method of solving system of two nonlinear equations 
+with unittest """
 from math import sin, cos, sqrt
 from typing import Callable, Tuple
 import unittest

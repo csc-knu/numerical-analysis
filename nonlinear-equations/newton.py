@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+""" implementation of a newton's method of solving nonlinear equations with unittest """
 from math import sin, cos
 from typing import Callable
 import unittest

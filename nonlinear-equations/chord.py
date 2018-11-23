@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+""" implementation of a chord method of solving nonlinear equations with unittest """
 from math import sin
 from typing import Callable
 import unittest
