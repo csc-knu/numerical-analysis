@@ -22,6 +22,7 @@ def interpolate_lagrange(f: Callable[[float], float], x: np.array, x_to: float) 
 
 	return float(pnx)
 
+
 class TestInterpolateLagrange(unittest.TestCase):
 	def test_0(self):
 		def f(x: float) -> float:

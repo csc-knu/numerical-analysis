@@ -6,13 +6,18 @@ from typing import Callable
 
 
 def interpolate_newton(f: Callable[[float], float], x: np.array, x_to: float) -> float:
-	f2 = np.vectorize(f)
-
+	"""
+	interpolates f(x_to) given f(x) with Newton's interpolatstion
+	:param f:  
+	:param x:
+	:param x_to:
+	:return: P_n(x_to)
+	"""
 	n = x.shape[0]
 
 	rr = np.zeros((n, n))
 
-	rr[0] = f2(x)
+	rr[0] = np.vectorize(f)(x)
 
 	for i in range(n - 1):
 		rr[i+1, :-1-i] = (rr[i, 1:n-i] - rr[i, :-1-i]) / (x[1+i:] - x[:-1-i])

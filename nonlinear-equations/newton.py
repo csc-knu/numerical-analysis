@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """ implementation of a newton's method of solving nonlinear equations with unittest """
+import unittest
 from math import sin, cos
 from typing import Callable
-import unittest
 
 
 def newton(f: Callable[[float], float], f_prime: Callable[[float], float], x0: float, 
