@@ -47,7 +47,7 @@ def interpolate_newton_equidistant(f: Callable[[float], float], x_to: float,
 	return pnx
 
 
-class TestInterpolateNewton(unittest.TestCase):
+class TestInterpolateNewtonEquidistant(unittest.TestCase):
 	def test_0(self):
 		def f(x: float) -> float:
 			return sqrt(sqrt(x + 2))
