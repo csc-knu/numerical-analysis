@@ -16,15 +16,15 @@ def chord(f: Callable[[float], float], a: float, b: float, m1: float, M1: float,
 	:param eps: precision wanted
 	:return: root of f(x) = 0
 	"""
-	x, x_prev, i = x0, x0 + 2 * eps, 0
+	x, x_prev, i = x0, x0 + 2 * eps, 1
 	
 	if f(a) < 0 and f(b) > 0:
 		some_condition = True  # change
-		while abs(f(x)) / m1 >= eps and abs(x - x_prev) * (M1 - m1) / m1 >= eps and i < kmax:
+		while abs(f(x)) / m1 >= eps and abs(x - x_prev) * (M1 - m1) / m1 >= eps and i <= kmax:
 			x, x_prev, i = x - f(x) / (f(b) - f(x)) * (b - x), x, i + 1
 
 	if f(b) < 0 and f(a) > 0:
-		while abs(f(x)) / m1 >= eps and abs(x - x_prev) * (M1 - m1) / m1 >= eps and i < kmax:
+		while abs(f(x)) / m1 >= eps and abs(x - x_prev) * (M1 - m1) / m1 >= eps and i <= kmax:
 			x, x_prev, i = x - f(x) / (f(x) - f(a)) * (x - a), x, i + 1
 
 	return x

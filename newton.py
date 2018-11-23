@@ -13,9 +13,9 @@ def newton(f: Callable[[float], float], f_prime: Callable[[float], float], x0: f
 	:param eps: precision wanted
 	:return: root of f(x) = 0
 	"""
-	x, x_prev, i = x0, x0 + 2 * eps, 0
+	x, x_prev, i = x0, x0 + 2 * eps, 1
 	
-	while abs(x - x_prev) >= eps and i < kmax:
+	while abs(x - x_prev) >= eps and i <= kmax:
 		x, x_prev, i = x - f(x) / f_prime(x), x, i + 1
 
 	return x
