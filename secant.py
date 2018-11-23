@@ -2,6 +2,7 @@ from math import sin
 from typing import Callable
 import unittest
 
+
 def secant(f: Callable[[float], float], x0: float, eps: float=1e-7, kmax: int=1e3) -> float:
 	"""
 	solves f(x) = 0 by Newton's method with precision eps
