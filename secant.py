@@ -5,7 +5,7 @@ import unittest
 
 def secant(f: Callable[[float], float], x0: float, eps: float=1e-7, kmax: int=1e3) -> float:
 	"""
-	solves f(x) = 0 by Newton's method with precision eps
+	solves f(x) = 0 by secant method with precision eps
 	:param f: f
 	:param x0: starting point
 	:param eps: precision wanted
