@@ -19,5 +19,9 @@ def integrate_trapezoid(f: Callable[[float], float], a: float, b: float) -> floa
 	return (b - a) / 2 * (f(a) + f(b))
 
 
+def integrate_simpson(f: Callable[[float], float], a: float, b: float) -> float:
+	return (b - a) / 6 * (f(a) + 4 * f(a + b) / 2 + f(b))
+
+
 if __name__ == '__main__':
     unittest.main()
