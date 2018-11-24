@@ -25,7 +25,7 @@ def linear_system_jordan(a: np.matrix) -> np.array:
 
 	for k in range(n): 
 		a[k] /= a[k, k]
-		for j in range(k):
+		for j in range(n):
 			if j != k:
 				a[j] -= a[k] * a[j, k]
 	
