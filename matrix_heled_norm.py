@@ -24,7 +24,7 @@ class TestMatrixHelderNorm(unittest.TestCase):
 	def test_inf(self):
 		a = np.matrix([[1, 2, -3], [4, -5, 6], [7, 8, -9]])
 
-		self.assertAlmostEqual(matrix_helder_norm(a, inf), 9)
+		self.assertEqual(matrix_helder_norm(a, inf), 9)
 
 
 if __name__ == '__main__':
