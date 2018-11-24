@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import numpy as np
 import unittest
-from math import inf, sqrt
+from math import inf
 
 
 def matrix_operator_norm(a: np.matrix, p: float) -> float:

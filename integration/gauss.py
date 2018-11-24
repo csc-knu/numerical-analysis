@@ -22,12 +22,12 @@ def integration_gauss_like(f: Callable[[float], float], n: int, mu: np.array) ->
 
 	x1, x2 = (-a1 - sqrt(a1**2 - 4 * a2)) / 2, (-a1 + sqrt(a1**2 - 4 * a2)) / 2
 
-	A1, A2 = (mu[1] - x2 * mu[0]) / (x[1] - x[2]), (mu[1] - x1 * mu[0]) / (x[1] - x[2])
+	A1, A2 = (mu[1] - x2 * mu[0]) / (x1 - x2), (mu[1] - x1 * mu[0]) / (x1 - x2)
 
 	return A1 * f(x1) + A2 * f(x2)
 
 
-def integration_meler(f: Callable[[float], float]) -> float:
+def integration_meler(f: Callable[[float], float], n: int) -> float:
 	return pi / n * sum(f(cos((2 * k + 1) / (2 * n) * pi)) for k in range(n))
 
 

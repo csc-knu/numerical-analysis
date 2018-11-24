@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import numpy as np
 import unittest
-from math import inf, sqrt
 from typing import Callable
 from numpy.linalg import inv
 from matrix_helder_norm import matrix_helder_norm

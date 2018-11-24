@@ -3,7 +3,7 @@ import unittest
 
 
 def interpolation_error(method: str, M_d_plus_1: float, a: float or None=None, 
-	b: float or None=None, n: int or None=None) -> float:
+	b: float or None=None, n: int or None=None, h: float or None=None) -> float:
 	if a is None:
 		a = b - h * n
 	if b is None:

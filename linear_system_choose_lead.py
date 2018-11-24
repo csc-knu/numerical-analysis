@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import numpy as np
 import unittest
-from math import sin, cos
 
 
 def linear_system_gauss_choose_colmax(a: np.matrix) -> np.array:
