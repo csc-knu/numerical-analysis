@@ -2,7 +2,7 @@
 import numpy as np
 import unittest
 from typing import Callable
-from math import sqrt
+from math import sqrt, cos, pi
 
 
 def integration_gauss(f: Callable[[float], float], n: int) -> float:
@@ -25,6 +25,10 @@ def integration_gauss_like(f: Callable[[float], float], n: int, mu: np.array) ->
 	A1, A2 = (mu[1] - x2 * mu[0]) / (x[1] - x[2]), (mu[1] - x1 * mu[0]) / (x[1] - x[2])
 
 	return A1 * f(x1) + A2 * f(x2)
+
+
+def integration_meler(f: Callable[[float], float]) -> float:
+	return pi / n * sum(f(cos((2 * k + 1) / (2 * n) * pi)) for k in range(n))
 
 
 if __name__ == '__main__':
