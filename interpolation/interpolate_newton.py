@@ -17,7 +17,7 @@ def interpolate_newton(f: Callable[[float], float], x: np.array, x_to: float) ->
 
 	rr = np.zeros((n, n))
 
-	rr[0] = np.vectorize(f)(x)
+	rr[0] = np.vectorize(f)(x)  # maybe change f to be np.array of values?
 
 	for i in range(n - 1):
 		rr[i+1, :-1-i] = (rr[i, 1:n-i] - rr[i, :-1-i]) / (x[1+i:] - x[:-1-i])

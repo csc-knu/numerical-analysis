@@ -13,7 +13,7 @@ def interpolate_lagrange(f: Callable[[float], float], x: np.array, x_to: float) 
 	:param x_to:
 	:return: P_n(x_to)
 	"""
-	fx = np.vectorize(f)(x)
+	fx = np.vectorize(f)(x)  # maybe change f to be np.array of values?
 
 	d, x_to_d = np.matrix(x).T - x, x_to - x
 
