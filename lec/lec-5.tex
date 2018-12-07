@@ -1,0 +1,132 @@
+\section{Проблема власних значень}
+
+Нехай задано матрицю $A$: $(n \times n)$. Тоді задача на власні значення ставиться так: знайти число $\lambda$ та вектор $\vec x \ne \vec 0$, що задовольняють рівнянню
+\begin{equation}
+	\label{eq:5.1}
+	A \vec x = \lambda \vec x.
+\end{equation}
+
+$\lambda$ називається власним значенням $A$, а $\vec x$ -- власним вектором. З (\ref{eq:5.1}) \[ \det (A - \lambda E) \equiv P_n(\lambda) \equiv (-1)^n \lambda^n + a_n \lambda^{n-1} + \ldots + a_0 = 0. \]
+
+Тут $P_n(\lambda)$ -– характеристичний багаточлен. \\
+
+Для розв’язання багатьох задач механіки, фізики, хімії потрібне знаходження всіх власних значень $\lambda_i$, $i=\overline{1,n}$, а іноді й всіх власних векторів $\vec x_i$, що відповідають $\lambda_i$. Цю задачу називають повною проблемою власних значень. \\
+
+В багатьох випадках потрібно знайти лише максимальне або мінімальне за модулем власне значення матриці. При дослідженні стійкості коливальних процесів іноді потрібно знайти два максимальних за модулем власних значення матриці. \\
+
+Останні дві задачі називають \textit{частковими проблемами власних значень}.
+
+\subsection{Степеневий метод}
+\begin{enumerate}
+	\item \textit{Знаходження} $\lambda_{\max}: |\lambda_1|\equiv\lambda_{\max}> |\lambda_2| \ge |\lambda_3| \ge \ldots$ \\
+
+	Нехай $\vec x^{(0)}$ -- заданий вектор, будемо послідовно обчислювати вектори
+	\begin{equation}
+		\label{eq:5.2}
+		\vec x^{(k+1)} = A \vec x^{(k)}, \quad k = 0, 1, \ldots
+	\end{equation}
+
+	Тоді $\vec x^{(k)} = A^k \vec x^{(0)}$. Нехай $\{\vec e_i\}_{i=1}^n$ -- система власних векторів. Представимо $\vec x^{(0)}$ у вигляді: \[ \vec x^{(0)} = \Sum_{i=1}^n c_i \vec e_i. \]
+
+	Оскільки $A \vec e_i = \lambda_i \vec e_i$, то $\vec x^{(k)} = \Sum_{i=1}^n c_i \lambda_i^k \vec e_i$. При великих $k$: $\vec x^{(k)} \approx c_1 \lambda_1^k \vec e_1$. Тому \[ \mu_1^{(k)} = \dfrac{\vec x_m^{(k+1)}}{\vec x_m^{(k)}} = \lambda_1 + O \left( \left| \dfrac{\lambda_2}{\lambda_1} \right|^k \right). \]
+
+	Значить $\mu_1^{(k)} \xrightarrow[k\to\infty]{} \lambda_1$. \\
+
+	Якщо матриця $A = A^T$ симетрична, то існує ортонормована система векторів $(\vec e_i, \vec e_j) = \delta_{i,j}$. Тому
+
+	\begin{multline*}
+		\mu_1^{(k)} = \dfrac{(\vec x^{(k+1)}, \vec x^{(k)})}{(\vec x^{(k)}, \vec x^{(k)})} = \dfrac{\left(\Sum_{i=1}^n c_i \lambda_i^(k+1) \vec e_i,\Sum_{j=1}^n c_j \lambda_j^k \vec e_j\right)}{\left(\Sum_{i=1}^n c_i \lambda_i^k \vec e_i,\Sum_{j=1}^n c_j \lambda_j^k \vec e_j\right)} = \dfrac{\Sum_i c_i^2 \lambda_i^{2k+1}}{\Sum_i c_i^2 \lambda_i^{2k}} = \\
+		= \dfrac{c_1^2\lambda_1^{2k+1}+c_2^2\lambda_2^{2k+1}+\ldots}{c_1^2\lambda_1^{2k}+c_2^2\lambda_2^{2k}+\ldots} = \lambda_1 + O \left( \left| \dfrac{\lambda_2}{\lambda_1} \right|^{2k} \right) \xrightarrow[k\to\infty]{} \lambda_1.
+	\end{multline*}
+
+	Це означає збіжність до максимального за модулем власного значення з квадратичною швидкістю.\\
+
+	Якщо $\lambda_1 > 1$, то при проведенні ітерацій відбувається зріст компонент вектора $\vec x^{(k)}$, що приводить до ``переповнення'' (overflow). Якщо ж $\lambda_1 < 1$, то це приводить до зменшення компонент (underflow). Позбутися негативу такого явища можна нормуючи вектори $\vec x^{(k)}$ на кожній ітерації. \\
+
+	\textbf{Алгоритм} степеневого методу знаходження максимального за модулем власного значення з точністю $\epsilon$ виглядає так:
+	\begin{enumerate}
+		\item $\vec x^{(0)} \to \vec e_0 = \frac{\vec x^{(0)}}{\|\vec x^{(0)}\|}$;
+
+		\item $\vec x^{(k+1)} = A \vec x^{(k)}$, $\mu_1^{(k)} = (\vec x^{(k+1)}, \vec e^{(k)})$, $\vec e^{(k+1)} = \frac{\vec x^{(k+1)}}{\|\vec x^{(k+1)}\|}$, $k = 0,1,\ldots$;
+
+		\item $|\mu_1^{(k+1)} - \mu_1^{(k)}| \ge \epsilon$ \verb|goto 2|;
+
+		\item $\lambda_1 \approx \mu_1^{(k+1)}$.
+	\end{enumerate}
+
+	За цим алгоритмом для симетричної матриці $A^T = A$ швидкість прямування $\mu_1^{(k)}$ до $\lambda_{\max}$ -- квадратична.
+
+	\item \textit{Знаходження} $\lambda_2: |\lambda_1| > |\lambda_2| > |\lambda_3| \ge \ldots$. Нехай $\lambda_1$, $\vec e_1$ відомі.
+
+	\begin{problem}
+		Довести, що якщо $|\lambda_1| > |\lambda_2| > |\lambda_3| \ge \ldots$, то
+		\[ \mu_2^{(k)} = \dfrac{\vec x_m^{(k+1) - \lambda_1 \vec x_m^{(k)}}}{\vec x_m^{(k) - \lambda_1 \vec x_m^{(k-1)}}} \xrightarrow[k\to\infty]{} \lambda_2, \quad \text{де } \vec x^{(k+1)} = A \vec x^{(k)}. \]
+		$x_m^{(k)}$ -- $m$-та компонента $\vec x^{(k)}$.
+	\end{problem}
+
+	\begin{problem}
+		Побудувати алгоритм обчислення $\lambda_2$, $\vec e_2$, використовуючи нормування векторів та скалярні добутки для обчислення $\mu_2^{(k)})$.
+	\end{problem}	
+
+	\item \textit{Знаходження мінімального власного числа} $\lambda_{\min}(A) = \min_i |\lambda_i(A)|$.
+
+	Припустимо , що $\lambda_i(A) > 0$ та відоме $\lambda_{\max}$. Розглянемо матрицю $B = \lambda_{\max} E - A$. Маємо \[ \forall i: \lambda_i(B) = \lambda_{\max} - \lambda_i(A). \]
+
+	Тому $\Max_i \lambda_i (B) = \lambda_{\max} - \Min_i \lambda_i(A)$. Звідси $\lambda_{\min}(A) = \lambda_{\max}(A) - \lambda_{\max}(B)$. \\
+
+	Якщо $\exists i: \lambda_i(A) < 0$, то будуємо матрицю $ \overline{A} = \sigma E + A$, $\sigma > 0$, $\overline{A} > 0$ і для неї попередній розгляд дає необхідний результат. Замість $\lambda_{\max}$ в матриці $B$ можна використовувати $\|A\|$. \\
+
+	Ще один спосіб обчислення мінімального власного значення полягає в використання обернених ітерацій:
+	\begin{equation}
+		\label{eq:5.3}
+		A \vec x^{(k+1)} = \vec x^k, \quad k = 0, 1, \ldots
+	\end{equation}
+
+	Але цей метод вимагає більшої кількості арифметичних операцій: складність методу на основі формули (\ref{eq:5.2}) $Q = O(n^2)$ , а на основі (\ref{eq:5.3}) -- $Q = O(n^3)$, оскільки треба розв'язувати СЛАР, але збігається метод (\ref{eq:5.3}) швидче.
+\end{enumerate}
+
+\subsection{Ітераційний метод обертання}
+Це метод розв'язання повної проблеми власних значень для симетричних матриць $A^T = A$. Існує матриця $U$, що приводить матрицю $A$ до діагонального виду:
+\begin{equation}
+	\label{eq:5.4}
+	A = U \Lambda U^T,
+\end{equation}
+де $\Lambda$ -- діагональна матриця, по діагоналі якої стоять власні значення $\lambda_i$; $U$ -- унітарна матриця, тобто: $U^{-1}=U^T$. \\
+
+З (\ref{eq:5.4}) маємо
+\begin{equation}
+	\label{eq:5.5}
+	\Lambda = U^T \Lambda U,
+\end{equation}
+Нехай $\exists \tilde U$ -- матриця, така що $\tilde \Lambda = \tilde U^T A \tilde U$ і $\tilde \Lambda = (\tilde \lambda_{i,j})_{i,j=1}^n$, $|\tilde \lambda_{i,j}| < \delta \ll 1$, $i \ne j$. \\
+
+Тоді діагональні елементи мало відрізняються від власних значень \[ |\tilde \lambda_{i,i} - \lambda_i(A) | < \epsilon = \epsilon(\delta). \]
+
+Введемо $t(A) = \Sum_{\substack{i, j = 1 \\ i \ne j}}^n a_{i,j}^2$. З малості величини $t(A)$ витікає, що діагональні елементи малі. По $A = A_0$ за допомогою матриць обертання % U_K
+що повертають систему векторів на кут $\phi$, побудуємо послідовність $\{A_k\}$ таку, що $A_k \to \Lambda$ при $k\to\infty$.
+
+\begin{problem}
+	Показати, що матриця обертання $U_k$ є унітарною: $U_k^{-1} = U_k^T$.
+\end{problem}
+
+Послідовно будуємо:
+\begin{equation}
+	\label{eq:5.6}
+	A_{k+1} = U_K^T A_k U_k,
+\end{equation}
+Процес (\ref{eq:5.6}) називається \textit{монотонним}, якщо: $t(A_{k+1})<t(A_k)$.
+
+\begin{problem}
+Довести, що для матриці (\ref{eq:5.6}) виконується:
+\begin{equation}
+	\label{eq:5.7}
+	a_{i,j}^{(k+1)} = a_{i,j}^{(k)} \cos 2 \phi + \dfrac12 (a_{j,j}^{(k)} - a_{i,i}^{(k)}) \sin 2 \phi,
+\end{equation}
+
+Показати, що $t(A_{k+1})=t(A_k)-2(a_{i,j}^{(k)})^2$, якщо вибирати $\phi$ з умови $a_{i,j}^{(k+1)} = 0$.
+\end{problem}
+
+Звідси $\phi = \phi_k = \frac12 \arctan(p^{(k)})$, $p^{(k)} = \frac{2a_{i,j}^{(k)}}{a_{i,i}^{(k)}-a_{j,j}^{(k)}}$, де $|a_{i,j}^{(k)}| = \Max_{\substack{m,l \\ m \ne l}} |a_{m,l}^{(k)}|$. Тоді
+$t(A_k) \to 0$, $\to \infty$. Чим більше $n$ тим більше ітерацій необхідно для зведення $A$ до $\Lambda$. \\
+
+Якщо матриця несиметрична, то застосовують $QR$, $QL$ методи.

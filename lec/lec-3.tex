@@ -1,0 +1,342 @@
+\section{Методи розв’язання СЛАР}
+
+Методи розв’язування СЛАР поділяються на прямі та ітераційні. При умові точного виконання обчислень прямі методи за скінчену кількість операцій в результаті дають точний розв’язок. Використовуються вони для невеликих та середніх СЛАР $n=10^2..10^4$. Ітераційні методи використовуються для великих СЛАР $n>10^5$, як правило розріджених. В результаті отримуємо
+послідовність наближень, яка збігається до розв’язку. \\
+
+\subsection{Метод Гаусса}
+
+Розглянемо задачу розв'язання СЛАР
+\begin{equation}
+	\label{eq:3.1}
+	A \vec x = \vec b,
+\end{equation}
+причому $A = (a_{i,j})_{i,j=1}^n$, $\det A \ne 0$, $\vec x = (x_i)_{i=1}^n$, $\vec b = (b_j)_{j=1}^n$. Метод Крамера з обчисленням визначників для такої системи має складність $Q = O(n! n)$. \\
+
+Запишемо СЛАР у вигляді
+\begin{equation}
+	\label{eq:3.2}
+	\left\{
+		\begin{matrix}
+			a_{1,1} x_1 + a_{1,2} x_2 + \ldots + a_{1,n} x_n = b_1 \equiv a_{1,n+1} \\
+			a_{2,1} x_1 + a_{2,2} x_2 + \ldots + a_{2,n} x_n = b_1 \equiv a_{2,n+1} \\
+			\ldots \\
+			a_{n,1} x_1 + a_{n,2} x_2 + \ldots + a_{n,n} x_n = b_1 \equiv a_{n,n+1}
+		\end{matrix}
+	\right.
+\end{equation}
+
+Якщо $a_{1,1} \ne 0$, то ділимо перше рівняння на нього і виключаємо $x_1$ з інших рівнянь: 
+
+\[\left\{
+	\begin{aligned}
+		x_1 + a_{1,2}^{(1)} x_2 + \ldots + a_{1,n}^{(1)} x_n = a_{1,n+1}^{(1)} &\\
+		a_{2,2}^{(1)} x_2 + \ldots + a_{2,n}^{(1)} x_n = a_{2,n+1}^{(1)} &\\
+		\ldots &\\
+		a_{n,2}^{(1)} x_2 + \ldots + a_{n,n}^{(1)} x_n = a_{n,n+1}^{(1)}&
+	\end{aligned}
+\right.\]
+
+Процес повторюємо для $x_2, \ldots, x_n$. В результаті отримуємо систему з трикутною матрицею
+\begin{equation}
+	\label{eq:3.3}
+	\left\{
+		\begin{aligned}
+		x_1 + a_{1,2}^{(1)} x_2 + \ldots + a_{1,n}^{(1)} x_n = a_{1,n+1}^{(1)}& \\
+		x_2 + \ldots + a_{2,n}^{(2)} x_n = a_{2,n+1}^{(2)}& \\
+		\ldots & \\
+		x_n = a_{n,n+1}^{(n)} &
+	\end{aligned}
+	\right.
+\end{equation}
+
+Це прямий хід методу Гаусса. Формули прямого ходу
+\[
+	\left\{
+		\begin{aligned}
+			& k = \overline{1, n-1}: \\
+			& a_{k,j}^{(k)} = \dfrac{a_{k,j}^{(k-1)}}{a_{k,k}^{(k-1)}}, \quad j =\overline{k+1,n+1}, \\
+			& a_{i,j}^{(k)} = a_{i,j}^{(k-1)} - a_{i,k}^{(k-1)} a_{k,j}^{(k)}, \\
+			& i = \overline{k+1, n}, \quad j = \overline{k +1, n + 1}.
+		\end{aligned}
+	\right.
+\]
+Звідси
+\begin{equation}
+	\label{eq:3.4}
+	x_n = a_{n,n+1}^{(n)}, \quad x_i = a_{i,n+1}^{(i)} - \Sum_{j=i+1}^n a_{i,j}^{(i)} x_j, \quad i = \overline{n-1,1}.
+\end{equation}
+
+Це формули оберненого ходу. \\
+
+Складність, тобто кількість операцій, яку необхідно виконати для реалізації методу, -- $Q_{\text{np}} = \frac23 n^3 + O(n^2)$ для прямого ходу, $Q_{\text{об}} = n^2 + O(n)$ для оберненого ходу. \\
+
+Умова $a_{k,k}^{(k-1)} \ne 0$ не суттєва, оскільки знайдеться $m$, для якого $|a_{m,k}^{(k-1)}| = \Max_i |a_{i,k}^{(k-1)}| \ne 0$ (оскільки $\det A \ne 0$). Тоді міняємо місцями рядки номерів $k$ і $m$ . Елемент $a_{k,k}^{(k-1)} \ne 0$ називається ведучим. \\
+
+Введемо матриці \[ M_k = \begin{pmatrix} 1 & & & & 0 \\ & \ddots & & & \\ 0 & & m_{k,k} & & \\ & & \vdots & \ddots & \\0 & & m_{n,k} & & 1 \end{pmatrix},\]
+елементи якої обчислюється так $m_{k,k} = \dfrac{1}{a_{k,k}^{(k-1)}}$, $m_{k,k}=-\dfrac{a_{i,k}^{(k-1)}}{a_{k,k}^{(k-1)}}$. \\
+
+Нехай на $k$-му кроці $A_{k-1}\vec x = \vec b_{k-1}$. Множимо цю СЛАР зліва на $M_k$: $M_k A_{k-1}\vec x = M_k \vec b_{k-1}$. Позначимо $A_k = M_k A_{k-1}$; $A_0 = A$. Тоді прямий хід методу Гаусса можна записати у вигляді \[ M_n M_{n-1} \ldots M_1 A \vec x = M_n M_{n-1} \ldots M_1 \vec b.\]
+
+Позначимо останню систему, яка співпадає з (\ref{eq:3.2}), так 
+\begin{equation}
+	\label{eq:3.5}
+	U \vec x = \vec c, \quad U = (u_{i,j})_{i,j=1}^n,
+\end{equation}
+причому \[ \left\{ \begin{aligned} & u_{i,i} = 1 \\ & u_{i,j} = 0, \quad i > j \end{aligned} \right.\]
+
+Таким чином $U = M_n M_{n-1} \ldots M_1 A$. Введемо матриці
+\[ L_k = \begin{pmatrix} 1 & & 0 & & 0 \\ & \ddots & & & \\ 0 & & a_{k,k}^{(k-1)} & & 0 \\ & & \vdots & \ddots & \\0 & & a_{n,k}^{(k-1)} & & 1 \end{pmatrix},\]
+
+Тоді \[A = L_1\ldots L_n U = LU; \quad  L = L_1\ldots L_n, \]
+$L$ -- нижня трикутня матриця, $U$ -- верхня трикутня матриця. Таким чином метод Гаусса можна трактувати, як розклад матриці $А$ в добуток двох трикутних матриць -- ($LU$)-розклад. \\
+
+Введемо матрицю $P_k$ перестановок на $k$-му кроці (це матриця, отримана з одиничної матриці перестановкою $k$-того і $m$-того рядка). Тоді при множені на неї матриці $A_{k-1}$ робимо ведучим елементом максимальний за модулем. \\ % P_k ? 
+
+За допомогою цих матриць перехід до трикутної системи (\ref{eq:3.3-1}) тепер має вигляд: \[ M_n M_{n-1} P_{n-1} \ldots M_1 P_1 A \vec x = M_n M_{n-1} P_{n-1} \ldots M_1 P_1 \vec b. \]
+
+\textbf{Твердження}: знайдеться така матриця $Р$ -- перестановок, що $PA = LU$ -- розклад матриці на нижню трикутну з ненульовими діагональними елементами і верхню трикутну матрицю з одиницями на діагоналі. \\
+
+\textbf{Висновки про переваги трикутного розкладу}:
+\begin{enumerate}
+	\item Розділення прямого і оберненого ходів дає змогу економно розв'язувати декілька систем з одноковою матрицею та різними правими частинами.
+	\item Зберігання $M$, або $L$ та $U$ на місці $A$.
+	\item Обчислюючи $l$ -- кількість перестановок, можна встановити знак визначника.
+\end{enumerate}
+
+\subsection{Метод квадратних коренів}
+Цей метод призначений для розв'язання систем рівнянь із симетричною матрицею
+\begin{equation}
+	\label{eq:3.6}
+	A \vec x = \vec b, \quad A^T = A.
+\end{equation}
+Він оснований на розкладі матриці $A$ в добуток:
+\begin{equation}
+	\label{eq:3.7}
+	A = S^T D S,
+\end{equation}
+$S$ -- верхня трикутна матриця, $S^T$ -- нижня трикутна матриця, $D$ -- діагональна матриця. \\
+
+Виникає питання: як обчислити $S$, $D$ по матриці $A$? Маємо
+\begin{equation}
+	\label{eq:3.8}
+	\begin{aligned}
+		& (DS)_{i,j} = \begin{cases} d_{i,i}s_{i,j}, & i \le j \\ 0, & i > j \end{cases} \\
+		& (S^TDS)_{i,j} = \Sum_{l=1}^n s_{i,l}^T d_{l,l} s_{l, j} = \Sum_{l=1}^{i-1} s_{l,i} s_{l, j} d_{l, l} + s_{i,i} s_{i,j} d_{i,i} + \\
+		& +\underset{=0}{\underbrace{\Sum_{l=i+1}^n s_{l, i} s_{l, j} s_{l,l}}} = a_{i,j}, \quad i,i = \overline{1,n}. 
+	\end{aligned}
+\end{equation}
+Якщо $i = j$, то \[ |s_{i,i}^2|d_{i,i} = a_{i,i} - \Sum_{l=1}^{i-1} |s_{l,i}^2| d_{l,l] \equiv p_i}.\]
+
+Тому \[ d_{i,i} = sign (p_i), \quad s_{i,i} = \sqrt{|p_i|}. \]
+
+Якщо $i < j$, то \[ s_{i,j} = \left( a_{i,j} - \Sum_{l=1}^{i-1} s_{l,i} d_{l,l} s_{l,j} \right) / (s_{i,i} d_{i,i}), \quad i = \overline{1, n}, \quad j = \overline{i+1, n}. \]
+
+Якщо $A > 0$ (тобто головні мінори матриці $A$ додатні), то всі $d_{i,i} = +1$. \\
+
+Знайдемо розв’язок рівняння (\ref{eq:3.2.1}). Враховуючи (\ref{eq:3.2.2}), маємо:
+\begin{equation}
+	\label{eq:3.9}
+	S^T D \vec y = \vec b
+\end{equation}
+\begin{equation}
+	\label{eq:3.10}
+	S \vec x = \vec y
+\end{equation}
+Оскільки $S$ -- верхня трикутна матриця, а $S^TD$ -- нижня трикутна матриця, то
+\begin{equation}
+	\label{eq:3.11}
+	y_i = \dfrac{b_i - \Sum_{j=1}^{i-1} s_{j,i}s_{j,j}y_j}{s_{i,i}d_{i,i}}, \quad i=\overline{1,n}
+\end{equation}
+\begin{equation}
+	\label{eq:3.12}
+	x_n = \dfrac{y_n}{s_{n,n}}, \quad x_i = \dfrac{y_i - \Sum_{j=1}^{i-1} s_{i,j} x_j}{s_{i,i}}, \quad i=\overline{n-1,1}.
+\end{equation}
+
+Метод застосовується лише для симетричних матриць. Його складність -- $Q = \frac13 n^3 + O(n^2)$. \\
+
+Переваги цього методу:
+\begin{enumerate}
+	\item він витрачає в 2 рази менше пам'яті ніж метод Гаусса для зберігання $A^T = A$ (необхідний об'єм пам'яті $\dfrac{n(n+1)}{2} \sim \dfrac{n^2}{2}$;
+	\item метод однорідний, без перестановок;
+	\item якщо матриця $A$ має багато нульових елементів, то і матриця $S$ також.
+\end{enumerate}
+Остання властивість дає економію в пам'яті та кількості арифметичних операцій. Наприклад, якщо $A$ має $m$ ненульових стрічок по діагоналі, то $Q = O(m^2n)$.
+
+\subsection{Обчислення визначника та оберненої матриці}
+
+Кількість операцій обчислення детермінанту за означенням -- $Q_{\det} = n!$. В методі Гаусса -- $PA = LU$. Тому 
+\begin{equation}
+	\label{eq:3.13} 
+	\det P \det A = \det L \det U \Rightarrow \det A = (-1)^l \det L \det U = (-1)^l \Prod_{k=1}^n a_{k,k}^{(k)},
+\end{equation}
+де $l$ -- кількість перестановок. Ясно, що за методом Гаусса \[Q_{\det} = \dfrac 23 n^3 + O (n^2) .\]
+
+В методі квадратного кореня $A = S^T D S$. Тому 
+\begin{equation}
+	\label{eq:3.14}
+	\det A = \det S^T \det D \det S = \Prod_{k=1}^n d_{k,k} \Prod_{k=1}^n s_{k,k}^2.
+\end{equation}
+
+Тепер $Q_{\det} = \frac 13 n^3 + O(n^2)$. \\
+
+За означенням 
+\begin{equation}
+	\label{eq:3.15}
+	AA^{-1} = E
+\end{equation}
+де $A^{-1}$ обернена до матриці $A$. Позначимо
+\[ A^{-1} = (\alpha_{i,j})_{i,j=1}^n.\] 
+
+Тоді $\vec \alpha_j = (\alpha_{i,j})_{i=1}^n$ -- вектор-стовпчик оберненої матриці. З (\ref{eq:3.15}) маємо
+\begin{equation}
+	\label{eq:3.16}
+	A \vec \alpha_j = \vec e_j, \quad j = \overline{1, n},
+\end{equation}
+$\vec e_j$ -- стовпчики одиничної матриці: $\vec e_j = (\delta_{i,j})_{i=1}^n$, $\delta_{i,j} = \begin{cases} 1, & i = j \\ 0, & i \ne j \end{cases}$. \\
+
+Для знаходження $А^{-1}$ необхідно розв'язати $n$ систем. Для знаходження $A^{-1}$ методом Гаусса необхідна кількість операцій $Q = 2n^3 + O(n^2)$.
+
+\subsection{Метод прогонки}
+
+Це економний метод для розв'язання СЛАР з три діагональною матрицею:
+\begin{equation}
+	\label{eq:3.17}
+	-c_0 y_0 + b_0 y_1 = - f_0,
+\end{equation}
+\begin{equation}
+	\label{eq:3.18}
+	a_i y_{i-1} - c_i y_i + b_i y_{i+1} = -f_i,
+\end{equation}
+\begin{equation}
+	\label{eq:3.19}
+	a_N y_{N-1} - c_N y_N = -f_N.
+\end{equation}
+Матриця системи
+\[ A = \begin{pmatrix} -c_0 & b_1 & & 0 \\ a_0 & -c_11 & \ddots & \\ & \ddots & \ddots & b_N \\ 0 & & a_N & -c_N \end{pmatrix}\]
+тридіагональна. \\
+
+Розв'язок представимо у вигляді
+\begin{equation}
+	\label{eq:3.20}
+	y_i = \alpha_{i+1} y_{i+1} + \beta_{i+1}, \quad i = \overline{0, N-1}.
+\end{equation}
+Замінимо в (\ref{eq:3.20}) $i \mapsto i-1$ і підставимо в (\ref{eq:3.18}), тоді \[ (a_i \alpha_i - c_i) y_i + b_i y_{i+1} = - f_i - a_i \beta_i. \]
+
+Звідси \[ y_i = \dfrac{b_i}{c_i - a_i\alpha_i} y_{i+1} + \dfrac{f_i + a_i \beta_i}{c_i - a_i \alpha_i}.\]
+
+Тому з (\ref{eq:3.18}) \[ \alpha_{i+1} = \dfrac{b_i}{c_i - a_i\alpha_i}, \quad \beta_{i+1} = \dfrac{f_i+a_i\beta_i}{c_i-a_i\alpha_i}, \quad i=\overline{1, N-1}.\]
+
+Умова розв'язності (\ref{eq:3.17}) $c_i - a_i \alpha_i \ne 0$. \\
+
+Щоб знайти всі $\alpha_i$, $\beta_i$, треба задати перші значення. З (\ref{eq:3.17}):
+\begin{equation}
+	\label{eq:3.21}
+	\alpha_1 = \dfrac{b_0}{c_0}, \quad \beta_1 = \dfrac{f_0}{c_0}.
+\end{equation}
+Після знаходження всіх $\alpha_i$, $\beta_i$ обчислюємо $y_N$ з системи
+\[ \left\{ \begin{aligned} & a_N y_N - c_n y_N = - f_N, \\ & y_{N-1} = \alpha_N y_N + \beta_N \end{aligned} \right. \]
+
+Звідси
+\begin{equation}
+	\label{eq:3.22}
+	y_N = \dfrac{f_N + a_n \beta_N}{c_N - a_N \alpha_N}.
+\end{equation}
+
+\textbf{Алгоритм}
+\begin{enumerate}
+	\item Покладемо $\alpha_1 = \frac{b_0}{c_0}$, $\beta_1 = \frac{f_0}{c_0}$.
+
+	\item Позначимо $z_i = c_i - a_i \alpha_i$, обчислимо $\alpha_{i+1} = \frac{b_i}{z_i}$, $\beta_{i+1} = \frac{f_i+a_i\beta_i}{z_i}$, для $i=\overline{1,N-1}$.
+
+	\item Знайдемо $y_N = \frac{f_N + a_N \beta_N}{c_N - a_N \alpha_N}$.
+
+	\item Обчислюємо $y_i = \alpha_{i+1} y_{i+1} + \beta_{i+1}$, $i=\overline{N-1,0}$.
+\end{enumerate}
+Складність алгоритму $Q = 8N - 2$. \\
+
+Метод можна застосовувати, коли $\forall i$: $c_i - a_i \alpha_i \ne 0$, $|\alpha_i| \le 1$. Якщо $|\alpha_i| \ge q > 1$, то $\Delta y_0 \ge q^N \Delta y_N$ (тут $\Delta y_i$ абсолютна похибка обчислення $y_i$), а це приводить до експоненціального накопичення похибок заокруглення, тобто нестійкості алгоритму прогонки.
+
+\begin{theorem}[про достатні умови стійкості метода прогонки]
+Нехай \[ \forall i: a_i, b_i \ne 0, \quad \text{та} \quad |c_i| \ge |a_i| + |b_i| \quad (a_0 = b_N = 0),\] та хоча би одна нерівність строга. Тоді \[ |\alpha_i| \le 1, \quad \text{та} \quad z_i = c_i - a_i \alpha_i \ne 0, \quad i = \overline{1,N}.\]
+\end{theorem}
+
+\begin{problem}
+	Довести теорему про стійкість методу прогонки.
+\end{problem}
+
+\subsection{Обумовленість систем лінійних алгебраїчних рівнянь}
+
+Нехай задано СЛАР
+\begin{equation}
+	\label{eq:3.23}
+	A \vec x = \vec b.
+\end{equation}
+
+Припустимо, що матриця і права частина системи задані неточно і фактично розв'язуємо систему
+\begin{equation}
+	\label{eq:3.24}
+	B \vec y = \vec h.
+\end{equation}
+де $B = A + C$, $\vec h = \vec b + \vec \eta$, $\vec y = \vec x + \vec z$. \\
+
+Малість детермінанту $\det A \ll 1$ не є необхідною умовою різкого збільшення похибки. Це ілюструє наступний приклад: \[A = diag(\epsilon), \quad a_{i,j} = \epsilon \Delta_{i,j}.\]
+
+Тоді $\det A = \epsilon^n \ll 1$, але $x_i = \frac{b_i}{\epsilon}$. Тому $\Delta x_i = \frac{\Delta b_i}{\epsilon}$. \\
+
+Оцінимо похибку розв’язку. Підставивши значення $B$, $\vec h$, та $\vec z = \vec y - \vec x$, отримаємо: \[ (A+C)(\vec x + \vec z) = \vec b +\vec \eta.\]
+
+Віднімемо від цієї рівності (\ref{eq:3.5.1}) $A \vec z + C \vec x + C \vec z = \vec \eta$. Тоді
+\[ A \vec z = \vec \eta - C \vec x - C \vec z, \quad \vec z = A^{-1}(\vec \eta - C \vec x - C \vec z).\]
+
+Введемо норми векторів: $\|\vec z\|$:
+\[ \|\vec z\|_1 = \Sum_{i=1}^n |z_i|, \quad \|\vec z\|_2 = \left(\Sum_{i=1}^n |z_i|^2\right)^{1/2}, \quad \|\vec z\|_\infty = \Max_i |z_i|. \]
+
+Норми матриці, що відповідають нормам вектора, тобто
+\[ \|A\|_m = \Sup_{\|\vec x\|_m \ne 0} \dfrac{\|A\vec x\|_m}{\|\vec x\|_m}, \quad m=1,2,\infty. \]
+такі: \[ \|A\|_1 = \Max_j \Sum_{i=1}^n |a_{i,j}|, \quad \|A\|_2 = \Max_i \sqrt{\lambda_i (A^TA)}, \quad \|A\|_\infty = \Max_i \Sum_{j=1}^n |a_{i,j}|, \]
+де $\lambda_i(B)$ -- власні значення матриці $B$. \\
+
+Позначимо $\delta(\vec x) = \frac{\|\vec z\|}{\|\vec x\|}$, $\delta(\vec b) = \frac{\|\vec \eta\|}{\|\vec b\|}$, $\delta(A) = \frac{\|C\|}{\|A\|}$ -- відносні похибки $\vec x$, $\vec b$, $A$, де $\|\cdot\|_k$ -- одна з введених вище норм. \\
+
+Для характеристики зв'язку між похибками правої частини та розв'язку вводять поняття обумовленості матриці системи. \\
+
+\textit{Число обумовленості матриці} $A$ -- $\cond (A) = \|A\|\|A^{-1}\|$.
+
+\begin{theorem}
+	Якщо $\exists A^{-1}$ та $\|A^{-1}\|\|C\|<1$, то
+	\begin{equation}
+		\label{eq:3.25}
+		\delta(\vec x) \le \dfrac{\cond (A)}{1-\cond (A)\delta(A)}(\delta(A)+\delta(\vec b)),
+	\end{equation}
+	де $\cond (A)$ -- число обумовленості.
+\end{theorem}
+\begin{proof}
+	\[A \vec z = \vec \eta - C \vec x - C \vec z, \quad \vec z = A^{-1} \vec \eta - A^{-1} C \vec x - A^{-1} C \vec z\]
+	\[ \|\vec z\| \le \|A^{-1}\vec \eta\|+\|A^{-1}C\vec x\| +\|A^{-1}C\vec z\| \le \|A^{-1}\|\cdot\|\vec \eta\|+\|A^{-1}\|\cdot \|C\|\cdot \|\vec x\| +\|A^{-1}\|\cdot \|C\|\cdot \|\vec z\|. \]
+	\[ \|\vec z\| \le \dfrac{\|A^{-1}\|(\|\vec\eta\|+\|C\|\cdot\|\vec x\|)}{1 - \|A^{-1}\| \cdot \|C\|} \]
+
+	Оцінка похибки
+	\begin{multline*}
+		\delta(\vec x) \le \dfrac{\|A^{-1}\|}{1-\|A^{-1}\| \cdot \|C\|} \left(\dfrac{\|\vec \eta\|}{\|\vec x\|}+\|C\| \right) = \\
+		= \dfrac{\|A^{-1}\|\cdot \|A\|}{1-\|A^{-1}\|\cdot\|A\|\cdot \dfrac{\|C\|}{\|A\|}} \left(\dfrac{\|\vec \eta\|}{\|A\|\cdot \|\vec x\|} + \delta(A) \right) \le \\
+		\le \dfrac{\cond (A)}{1-\cond (A)\delta(A)}\left(\dfrac{\|\vec\eta\|}{\|\vec x\|}+\delta(A)\right).
+	\end{multline*}
+\end{proof}
+
+\textbf{Наслідок}. Якщо $C \equiv 0$, то $\delta(\vec x) \le \cond  (A) \delta (\vec b)$. \\
+
+\textbf{Властивості} $\cond (A)$:
+\begin{enumerate}
+	\item $\cond (A)\ge1$;
+	\item $\cond (A)\ge\dfrac{\Max_i |\lambda_i(A)|}{\Min_i|\lambda_i(A)|}$;
+	\item $\cond (AB) \le \cond (A) \cdot \cond (B)$;
+	\item $A^T = A^{-1} \Rightarrow \cond (A) = 1$.
+\end{enumerate}
+
+Друга властивість має місце оскільки довільна норма матриці не менше її найбільшого за модулем власного значення. Значить $\|A\|\ge\max|\lambda_A|$. Оскільки власні значення матриць $A^{-1}$ та $A$ взаємно обернені, то \[ \|A^{-1}\| \ge \max \dfrac{1}{|\lambda_A|} = \dfrac{1}{\min|\lambda_A|}.\]
+
+Якщо $1\ll \cond (A)$, то система називається \textit{погано обумовленою}. \\
+
+Оцінка впливу похибок заокруглення при обчисленні розв‘язку СЛАР така (Дж. Уілкінсон): $\delta (A) = O(n\beta^{-t})$, $\delta(\vec b) = O(\beta^{-t})$, де $\beta$ -- розрядність ЕОМ, $t$ -- кількість розрядів, що відводиться під мантису числа. З оцінки (\ref{eq:3.5.3}) витікає: $\delta(\vec x) = \cond (A)\times O(n\beta^{-t})$. Висновок: найпростіший спосіб підвищити точність обчислення розв‘язку погано обумовленої СЛАР -- збільшити розрядність ЕОМ при обчисленнях. Інші способи пов'язані з розглядом цієї СЛАР як некоректної задачі із застосуванням відповідних методів її розв'язання. \\
+
+Приклад погано обумовленої системи -- системи з матрицею Гільберта  \[ H_n = \left(\dfrac{1}{i+j-1}\right)_{i,j=1}^n, \quad \text{наприклад }\cond (H_8)\approx 10^9.\]

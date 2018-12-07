@@ -18,5 +18,10 @@ def lu_decompose(a: np.matrix) -> Tuple[np.matrix, np.matrix]:
 	return L, U
 
 
+def det(a: np.matrix) -> float:
+	L, U = lu_decompose(a)
+	return float(np.product(L.diagonal()))
+
+
 if __name__ == '__main__':
 	unittest.main()
