@@ -1,0 +1,288 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,ukrainian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{verbatim}
+
+\usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry}
+
+\usepackage{float, graphicx}
+\usepackage{amsthm}
+\newtheorem{lemma}{Лема}
+\newtheorem*{lemma*}{Лема}
+\newtheorem{theorem}{Теорема}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{definition}{Визначення}
+\newtheorem*{definition*}{Визначення}
+\theoremstyle{definition}
+\newtheorem{remark}{Зауваження}
+\newtheorem*{remark*}{Зауваження}
+\newtheorem{example}{Приклад}
+\newtheorem*{example*}{Приклад}
+\newtheorem{problem}{Задача}
+\newtheorem*{problem*}{Задача}
+\newtheorem{solution}{Розв'язок}
+\newtheorem*{solution*}{Розв'язок}
+\newtheorem{corollary}{Наслідок}
+\newtheorem*{corollary*}{Наслідок}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Min}{\displaystyle\min\limits}
+\newcommand{\Max}{\displaystyle\max\limits}
+\newcommand{\Sup}{\displaystyle\sup\limits}
+\newcommand{\Sum}{\displaystyle\sum\limits}
+\newcommand{\Prod}{\displaystyle\prod\limits}
+\newcommand{\Int}{\displaystyle\int\limits}
+\newcommand{\Iint}{\displaystyle\iint\limits}
+\newcommand{\Lim}{\displaystyle\lim\limits}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\renewcommand{\bf}[1]{\textbf{#1}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\DeclareMathOperator{\signum}{sign}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rang}{rang}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\cond}{cond}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+
+\setlength\parindent{0pt}
+\allowdisplaybreaks
+
+\begin{center}
+\hfill \break
+Міністерство освіти та науки України \\
+Київський національний університет імені Тараса Шевченка \\ 
+Факультет комп'ютерних наук та кібернетики \\
+Кафедра обчислювальної математики \\
+\vfill 
+\large{Звіт до лабораторної роботи №2 на тему: \\ ``Розв'язування систем лінійних алгебраїчних рівнянь''} \\
+\vfill 
+\end{center}
+\begin{flushright}
+Виконав студент групи ОМ-3 \\
+Скибицький Нікіта
+\end{flushright}
+\vfill 
+\begin{center}
+    Київ, 2018 
+\end{center}
+\thispagestyle{empty}
+ 
+\newpage
+
+\section{Постановка задачі}
+
+Задана система лінійних алгебраїчних рівнянь $A \vec x = \vec b$ порядку $n = 5, 6, \ldots$
+
+\begin{enumerate}
+	\item Методом квадратних коренів знайти:
+	\begin{enumerate}
+		\item розв'язок системи $\vec x$;
+		\item нев'язку $\vec r = A \vec x - \vec b$;
+		\item число обумовленості матриці $A$;
+		\item визначник матриці $A$;
+		\item обернену матрицю $A^{-1}$ (вивести також матрицю $A^{-1} \cdot A$).
+	\end{enumerate}
+	\item Методом Зейделя:
+	\begin{enumerate}
+		\item розв'язок системи $\vec x$ з точністю $\epsilon = 10^{-4}$;
+		\item нев'язку $\vec r = A \vec x - \vec b$;
+		\item вивести кількість ітерацій методу.
+	\end{enumerate}
+\end{enumerate}
+
+\section{Теоретична частина}
+
+\subsection{Метод квадратних коренів}
+Цей метод призначений для розв'язання систем рівнянь із симетричною матрицею
+\begin{equation}
+	\label{eq:3.6}
+	A \vec x = \vec b, \quad A^T = A.
+\end{equation}
+Він оснований на розкладі матриці $A$ в добуток:
+\begin{equation}
+	\label{eq:3.7}
+	A = S^T D S,
+\end{equation}
+$S$ -- верхня трикутна матриця, $S^T$ -- нижня трикутна матриця, $D$ -- діагональна матриця. \\
+
+Виникає питання: як обчислити $S$, $D$ по матриці $A$? Маємо
+\begin{equation}
+	\label{eq:3.8}
+	\begin{aligned}
+		& (DS)_{i,j} = \begin{cases} d_{i,i}s_{i,j}, & i \le j \\ 0, & i > j \end{cases} \\
+		& (S^TDS)_{i,j} = \Sum_{l=1}^n s_{i,l}^T d_{l,l} s_{l, j} = \Sum_{l=1}^{i-1} s_{l,i} s_{l, j} d_{l, l} + s_{i,i} s_{i,j} d_{i,i} + \underset{=0}{\underbrace{\Sum_{l=i+1}^n s_{l, i} s_{l, j} s_{l,l}}} = a_{i,j}, \quad i,i = \overline{1,n}. 
+	\end{aligned}
+\end{equation}
+Якщо $i = j$, то \[ |s_{i,i}^2|d_{i,i} = a_{i,i} - \Sum_{l=1}^{i-1} |s_{l,i}^2| d_{l,l} \equiv p_i.\]
+
+Тому \[ d_{i,i} = \signum (p_i), \quad s_{i,i} = \sqrt{|p_i|}. \]
+
+Якщо $i < j$, то \[ s_{i,j} = \left( a_{i,j} - \Sum_{l=1}^{i-1} s_{l,i} d_{l,l} s_{l,j} \right) / (s_{i,i} d_{i,i}), \quad i = \overline{1, n}, \quad j = \overline{i+1, n}. \]
+
+Якщо $A > 0$ (тобто головні мінори матриці $A$ додатні), то всі $d_{i,i} = +1$. \\
+
+Знайдемо розв’язок рівняння (\ref{eq:3.6}). Враховуючи (\ref{eq:3.7}), маємо:
+\begin{equation}
+	\label{eq:3.9}
+	S^T D \vec y = \vec b
+\end{equation}
+\begin{equation}
+	\label{eq:3.10}
+	S \vec x = \vec y
+\end{equation}
+Оскільки $S$ -- верхня трикутна матриця, а $S^TD$ -- нижня трикутна матриця, то
+\begin{equation}
+	\label{eq:3.11}
+	y_i = \dfrac{b_i - \Sum_{j=1}^{i-1} s_{j,i}s_{j,j}y_j}{s_{i,i}d_{i,i}}, \quad i=\overline{1,n}
+\end{equation}
+\begin{equation}
+	\label{eq:3.12}
+	x_n = \dfrac{y_n}{s_{n,n}}, \quad x_i = \dfrac{y_i - \Sum_{j=1}^{i-1} s_{i,j} x_j}{s_{i,i}}, \quad i=\overline{n-1,1}.
+\end{equation}
+
+Метод застосовується лише для симетричних матриць. Його складність -- $Q = \frac13 n^3 + O(n^2)$. \\
+
+Переваги цього методу:
+\begin{enumerate}
+	\item він витрачає в 2 рази менше пам'яті ніж метод Гаусса для зберігання $A^T = A$ (необхідний об'єм пам'яті $\frac{n(n+1)}{2} \sim \frac{n^2}{2}$;
+	\item метод однорідний, без перестановок;
+	\item якщо матриця $A$ має багато нульових елементів, то і матриця $S$ також.
+\end{enumerate}
+Остання властивість дає економію в пам'яті та кількості арифметичних операцій. Наприклад, якщо $A$ має $m$ ненульових стрічок по діагоналі, то $Q = O(m^2n)$.
+
+\subsection{Обчислення визначника та оберненої матриці}
+
+Кількість операцій обчислення детермінанту за означенням -- $Q_{\det} = n!$. В методі Гаусса -- $PA = LU$. \\
+
+Тому 
+\begin{equation}
+	\label{eq:3.13} 
+	\det P \det A = \det L \det U \Rightarrow \det A = (-1)^l \det L \det U = (-1)^l \Prod_{k=1}^n a_{k,k}^{(k)},
+\end{equation}
+де $l$ -- кількість перестановок. Ясно, що за методом Гаусса \[Q_{\det} = \dfrac 23 n^3 + O (n^2) .\]
+
+В методі квадратного кореня $A = S^T D S$. Тому 
+\begin{equation}
+	\label{eq:3.14}
+	\det A = \det S^T \det D \det S = \Prod_{k=1}^n d_{k,k} \Prod_{k=1}^n s_{k,k}^2.
+\end{equation}
+
+Тепер $Q_{\det} = \frac 13 n^3 + O(n^2)$. \\
+
+За означенням 
+\begin{equation}
+	\label{eq:3.15}
+	AA^{-1} = E
+\end{equation}
+де $A^{-1}$ обернена до матриці $A$. Позначимо
+\[ A^{-1} = (\alpha_{i,j})_{i,j=1}^n.\] 
+
+Тоді $\vec \alpha_j = (\alpha_{i,j})_{i=1}^n$ -- вектор-стовпчик оберненої матриці. З (\ref{eq:3.15}) маємо
+\begin{equation}
+	\label{eq:3.16}
+	A \vec \alpha_j = \vec e_j, \quad j = \overline{1, n},
+\end{equation}
+$\vec e_j$ -- стовпчики одиничної матриці: $\vec e_j = (\delta_{i,j})_{i=1}^n$, $\delta_{i,j} = \begin{cases} 1, & i = j \\ 0, & i \ne j \end{cases}$. \\
+
+Для знаходження $А^{-1}$ необхідно розв'язати $n$ систем. Для знаходження $A^{-1}$ методом Гаусса необхідна кількість операцій $Q = 2n^3 + O(n^2)$.
+
+\subsubsection{Метод Зейделя}
+В компонентному вигляді ітераційний метод Зейделя записується так:
+\begin{equation}
+	\label{eq:4.10}
+	x_i^{(k+1)} = -\Sum_{j=1}^{i-1} \dfrac{a_{i,j}}{a_{i,i}} \cdot x_j^{(k+1)} - \Sum_{j=i+1}^n \dfrac{a_{i,j}}{a_{i,i}} \cdot x_j^{(k)} + \dfrac{b_i}{a_{i,i}}, \quad k = 0,1,\ldots, \quad i=\overline{1,n}.
+\end{equation}
+
+На відміну від методу Якобі на $k$-му-кроці попередні компоненти розв'язку беруться з $k+1$-ої ітерації. \\
+
+Достатня умова збіжності методу Зейделя -- $A^T = A > 0$.
+
+\subsubsection{Матрична інтерпретація методів Якобі і Зейделя}
+
+Подамо матрицю $A$ у вигляді \[ A = A_1 + D + A_2, \]
+де $A_1$ -- нижній трикутник матриці $A$, $A_2$ -- верхній трикутник матриці $A$, $D$ -- її
+діагональ. Тоді систему (\ref{eq:3.1}) запишемо у вигляді \[ D \vec x = A_1 \vec x + A_2 \vec x + \vec b,\]
+або
+\[ \vec x = D^{-1} A_1 \vec x + D^{-1} A_2 \vec x + D^{-1} \vec b,\]
+ 
+Матричний запис методу Якобі:
+\[ \vec x^{(k+1)} = D^{-1} A_1 \vec x^{(k)} + D^{-1} A_2 \vec x^{(k)} + D^{-1} \vec b,\]
+методу Зейделя:
+\[ \vec x^{(k+1)} = D^{-1} A_1 \vec x^{(k+1)} + D^{-1} A_2 \vec x^{(k)} + D^{-1} \vec b,\]
+
+Необхідна і достатня умова збіжності методу Якобі: всі корені рівняння $\det(D + \lambda(A_1 + A_2 )) = 0$ по модулю більше 1. \\
+
+Необхідна і достатня умова збіжності методу метода Зейделя: всі корені рівняння $\det(A_1 + D + \lambda A_2) = 0$ по модулю більше 1.
+
+\section{Практична частина}
+
+\[ b_i = 12 + 5 i, \quad i = \overline{1, n}. \]
+
+\[ \vec b = (17, 22, 27, 32, 37). \]
+
+\[ a_{i,j} = \begin{cases} \frac{i+j-1}{2n}, & i \ne j \\ n + 10 + \frac{i+j-1}{2n}, & i = j \end{cases}. \]
+
+\[ A = \begin{pmatrix} 15.1 & 0.2 & 0.3 & 0.4 & 0.5 \\ 0.2 & 15.3 & 0.4 & 0.5 & 0.6 \\ 0.3 & 0.4 & 15.5 & 0.6 & 0.7 \\ 0.4 & 0.5 & 0.6 & 15.7 & 0.8 \\ 0.5 & 0.6 & 0.7 & 0.8 & 15.9 \end{pmatrix}. \]
+
+\subsection{Метод квадратних коренів}
+
+Покажемо наочні результати для значення $n = 5$, хоча запрограмований алгоритм дає змогу отримати результати $\forall n \in \NN$:
+
+\begin{enumerate}
+
+\item В процесі розв’язання задачі, були отримані матриці $S$ та $S^T$, а також діагональна матриця $D$:
+
+\[ S = \begin{pmatrix} 3.88587185 & 0.0514685 & 0.07720275 & 0.102937 & 0.12867125 \\ 0. & 3.91118281 & 0.10125492 & 0.12648398 & 0.15171305 \\ 0. & 0. & 3.93494437 & 0.1472056 & 0.17146482 \\ 0. & 0. & 0. & 3.95622753 & 0.18763459 \\ 0. & 0. & 0. & 0. & 3.97439554 \end{pmatrix}. \]
+
+\[ D = \begin{pmatrix} 1. & 0. & 0. & 0. & 0. \\ 0. & 1. & 0. & 0. & 0. \\ 0. & 0. & 1. & 0. & 0. \\ 0. & 0. & 0. & 1. & 0. \\ 0. & 0. & 0. & 0. & 1. \end{pmatrix}. \]
+
+\[ S^T \cdot D \cdot S = \begin{pmatrix} 15.1 & 0.2 & 0.3 & 0.4 & 0.5 \\ 0.2 & 15.3 & 0.4 & 0.5 & 0.6 \\ 0.3 & 0.4 & 15.5 & 0.6 & 0.7 \\ 0.4 & 0.5 & 0.6 & 15.7 & 0.8 \\ 0.5 & 0.6 & 0.7 & 0.8 & 15.9 \end{pmatrix}. \]
+
+Далі отримаємо $\vec y$, який є допоміжним для знаходження вектору розв’язку $\vec x$:
+
+\[ \vec y = (4.37482261. 5.5673272, 6.63250353, 7.54990688, 8.31285785). \]
+
+Далі отримаємо шуканий вектор $\vec x$:
+
+\[ \vec x = (0.96183206, 1.24427481, 1.52671756, 1.80916031, 2.09160305). \]
+
+\item Знайдемо нев'язку $\vec r = A \vec x - \vec b$:
+\[ \vec r = (0., 0., 0., 0., 0.). \]
+
+З точністю, яку дає змогу отримати ЕОМ.  \\
+
+\item Число обумовленості $\cond(A)=\|A\|\cdot\|A^{-1}\|$, де за норму матриці беремо норму  узгоджену з нормою вектора $\|\cdot\|_1$:
+
+\[ \|A\| = \Max_j \Sum_{i=1}^n |a_{i,j}| = 18.5, \quad \|A^{-1}\| = 0.07318066157760814, \quad \cond(A) = 1.3538422391857505. \]
+
+\item Визначник \[ \det A = \det S^T \cdot \det D \cdot \det S = (\det S)^2 = 884249.99942042 \] (зауважимо що істинне значення 885250, на кілька десятитисячних більше). \\
+
+\item Також було отримано обернену матрицю
+
+\[ A^{-1} = \begin{pmatrix} 0.06636132 & -0.00071247 & -0.00111959 & -0.00152672 & -0.00193384 \\ -0.00071247 & 0.0655598 & -0.00150127 & -0.00189567 & -0.00229008 \\ -0.00111959 & -0.00150127 & 0.06478372 & -0.00226463 & -0.00264631 \\ -0.00152672 & -0.00189567 & -0.00226463 & 0.06403308 & -0.00300254 \\ -0.00193384 & -0.00229008 & -0.00264631 & -0.00300254 & 0.06330789 \end{pmatrix}. \]
+
+\[ A^{-1} \cdot A = \begin{pmatrix} 1. & 0. & 0. & 0. & 0. \\ 0. & 1. & 0. & 0. & 0. \\ 0. & 0. & 1. & 0. & 0. \\ 0. & 0. & 0. & 1. & 0. \\ 0. & 0. & 0. & 0. & 1. \end{pmatrix}. \]
+\end{enumerate}
+
+\subsection{Метод Зейделя}
+
+\begin{enumerate}
+\item Знайдемо розв'язок системи $\vec x$ з точністю $\epsilon = 10^{-4}$ застосовуючи рекурентне відношення методу Зейделя \[ \vec x = (0.96183443, 1.24427758, 1.52671812, 1.80915996, 2.09160287). \]
+
+\item Знайдемо нев'язку $\vec r = A \vec x - \vec b$: \[ \vec r = (0.0000363060931, 0.0000428437497, 0.0000101477201, -0.00000290943704, -7.10542736\cdot10^{-15}). \]
+
+\item Для досягнення заданої точності, було виконано 3 ітерації.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,238 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,ukrainian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{verbatim}
+
+\usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry}
+
+\usepackage{float, graphicx}
+\usepackage{amsthm}
+\newtheorem{lemma}{Лема}
+\newtheorem*{lemma*}{Лема}
+\newtheorem{theorem}{Теорема}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{definition}{Визначення}
+\newtheorem*{definition*}{Визначення}
+\theoremstyle{definition}
+\newtheorem{remark}{Зауваження}
+\newtheorem*{remark*}{Зауваження}
+\newtheorem{example}{Приклад}
+\newtheorem*{example*}{Приклад}
+\newtheorem{problem}{Задача}
+\newtheorem*{problem*}{Задача}
+\newtheorem{solution}{Розв'язок}
+\newtheorem*{solution*}{Розв'язок}
+\newtheorem{corollary}{Наслідок}
+\newtheorem*{corollary*}{Наслідок}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Min}{\displaystyle\min\limits}
+\newcommand{\Max}{\displaystyle\max\limits}
+\newcommand{\Sup}{\displaystyle\sup\limits}
+\newcommand{\Sum}{\displaystyle\sum\limits}
+\newcommand{\Prod}{\displaystyle\prod\limits}
+\newcommand{\Int}{\displaystyle\int\limits}
+\newcommand{\Iint}{\displaystyle\iint\limits}
+\newcommand{\Lim}{\displaystyle\lim\limits}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\renewcommand{\bf}[1]{\textbf{#1}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\DeclareMathOperator{\signum}{sign}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\rang}{rang}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\cond}{cond}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+
+\setlength\parindent{0pt}
+\allowdisplaybreaks
+
+\begin{center}
+\hfill \break
+Міністерство освіти та науки України \\
+Київський національний університет імені Тараса Шевченка \\ 
+Факультет комп'ютерних наук та кібернетики \\
+Кафедра обчислювальної математики \\
+\vfill 
+\large{Звіт до лабораторної роботи №3 на тему: \\ ``Проблема знаходження власних чисел матриці''} \\
+\vfill 
+\end{center}
+\begin{flushright}
+Виконав студент групи ОМ-3 \\
+Скибицький Нікіта
+\end{flushright}
+\vfill 
+\begin{center}
+    Київ, 2018 
+\end{center}
+\thispagestyle{empty}
+ 
+\newpage
+
+\section{Постановка задачі}
+
+Для матриці \[ a_{i,j} = \begin{cases} \frac{i+j-1}{2n}, & i \ne j \\ n + 10 + \frac{i+j-1}{2n}, & i = j \end{cases} \] порядку $n = 5, 6, \ldots$ знайти 
+\begin{enumerate}
+	\item $\lambda_{\max} = \Max_i|\lambda_i(A)|$;
+	\item $\lambda_{\min} = \Min_i \lambda_i(A)$;
+	\item $\hat \lambda_{\max} = \Min_i|\lambda_i(A)|$.
+\end{enumerate}
+методом скалярних добутків та всі власні значення -- методом обертання Якобі.
+
+\section{Теоретична частина}
+
+\subsection{Степеневий метод}
+\begin{enumerate}
+	\item \textit{Знаходження} $\lambda_{\max}: |\lambda_1|\equiv\lambda_{\max}> |\lambda_2| \ge |\lambda_3| \ge \ldots$ \\
+
+	Нехай $\vec x^{(0)}$ -- заданий вектор, будемо послідовно обчислювати вектори
+	\begin{equation}
+		\label{eq:5.2}
+		\vec x^{(k+1)} = A \vec x^{(k)}, \quad k = 0, 1, \ldots
+	\end{equation}
+
+	Тоді $\vec x^{(k)} = A^k \vec x^{(0)}$. Нехай $\{\vec e_i\}_{i=1}^n$ -- система власних векторів. Представимо $\vec x^{(0)}$ у вигляді: \[ \vec x^{(0)} = \Sum_{i=1}^n c_i \vec e_i. \]
+
+	Оскільки $A \vec e_i = \lambda_i \vec e_i$, то $\vec x^{(k)} = \Sum_{i=1}^n c_i \lambda_i^k \vec e_i$. При великих $k$: $\vec x^{(k)} \approx c_1 \lambda_1^k \vec e_1$. Тому \[ \mu_1^{(k)} = \dfrac{\vec x_m^{(k+1)}}{\vec x_m^{(k)}} = \lambda_1 + O \left( \left| \dfrac{\lambda_2}{\lambda_1} \right|^k \right). \]
+
+	Значить $\mu_1^{(k)} \xrightarrow[k\to\infty]{} \lambda_1$. \\
+
+	Якщо матриця $A = A^T$ симетрична, то існує ортонормована система векторів $(\vec e_i, \vec e_j) = \delta_{i,j}$. Тому
+
+	\begin{multline*}
+		\mu_1^{(k)} = \dfrac{(\vec x^{(k+1)}, \vec x^{(k)})}{(\vec x^{(k)}, \vec x^{(k)})} = \dfrac{\left(\Sum_{i=1}^n c_i \lambda_i^(k+1) \vec e_i,\Sum_{j=1}^n c_j \lambda_j^k \vec e_j\right)}{\left(\Sum_{i=1}^n c_i \lambda_i^k \vec e_i,\Sum_{j=1}^n c_j \lambda_j^k \vec e_j\right)} = \dfrac{\Sum_i c_i^2 \lambda_i^{2k+1}}{\Sum_i c_i^2 \lambda_i^{2k}} = \\
+		= \dfrac{c_1^2\lambda_1^{2k+1}+c_2^2\lambda_2^{2k+1}+\ldots}{c_1^2\lambda_1^{2k}+c_2^2\lambda_2^{2k}+\ldots} = \lambda_1 + O \left( \left| \dfrac{\lambda_2}{\lambda_1} \right|^{2k} \right) \xrightarrow[k\to\infty]{} \lambda_1.
+	\end{multline*}
+
+	Це означає збіжність до максимального за модулем власного значення з квадратичною швидкістю.\\
+
+	Якщо $\lambda_1 > 1$, то при проведенні ітерацій відбувається зріст компонент вектора $\vec x^{(k)}$, що приводить до ``переповнення'' (overflow). Якщо ж $\lambda_1 < 1$, то це приводить до зменшення компонент (underflow). Позбутися негативу такого явища можна нормуючи вектори $\vec x^{(k)}$ на кожній ітерації. \\
+
+	\textbf{Алгоритм} степеневого методу знаходження максимального за модулем власного значення з точністю $\epsilon$ виглядає так:
+	\begin{enumerate}
+		\item $\vec x^{(0)} \to \vec e_0 = \frac{\vec x^{(0)}}{\|\vec x^{(0)}\|}$;
+
+		\item $\vec x^{(k+1)} = A \vec x^{(k)}$, $\mu_1^{(k)} = (\vec x^{(k+1)}, \vec e^{(k)})$, $\vec e^{(k+1)} = \frac{\vec x^{(k+1)}}{\|\vec x^{(k+1)}\|}$, $k = 0,1,\ldots$;
+
+		\item $|\mu_1^{(k+1)} - \mu_1^{(k)}| \ge \epsilon$ \verb|goto 2|;
+
+		\item $\lambda_1 \approx \mu_1^{(k+1)}$.
+	\end{enumerate}
+
+	За цим алгоритмом для симетричної матриці $A^T = A$ швидкість прямування $\mu_1^{(k)}$ до $\lambda_{\max}$ -- квадратична.
+
+	\item \textit{Знаходження} $\lambda_2: |\lambda_1| > |\lambda_2| > |\lambda_3| \ge \ldots$. Нехай $\lambda_1$, $\vec e_1$ відомі. \\
+
+	Якщо $|\lambda_1| > |\lambda_2| > |\lambda_3| \ge \ldots$, то
+		\[ \mu_2^{(k)} = \dfrac{\vec x_m^{(k+1) - \lambda_1 \vec x_m^{(k)}}}{\vec x_m^{(k) - \lambda_1 \vec x_m^{(k-1)}}} \xrightarrow[k\to\infty]{} \lambda_2, \quad \text{де } \vec x^{(k+1)} = A \vec x^{(k)}. \]
+		$x_m^{(k)}$ -- $m$-та компонента $\vec x^{(k)}$.
+
+	Є алгоритм обчислення $\lambda_2$, $\vec e_2$, використовуючи нормування векторів та скалярні добутки для обчислення $\mu_2^{(k)})$.
+
+
+	\item \textit{Знаходження мінімального власного числа} $\lambda_{\min}(A) = \min_i |\lambda_i(A)|$.
+
+	Припустимо , що $\lambda_i(A) > 0$ та відоме $\lambda_{\max}$. Розглянемо матрицю $B = \lambda_{\max} E - A$. Маємо \[ \forall i: \lambda_i(B) = \lambda_{\max} - \lambda_i(A). \]
+
+	Тому $\Max_i \lambda_i (B) = \lambda_{\max} - \Min_i \lambda_i(A)$. Звідси $\lambda_{\min}(A) = \lambda_{\max}(A) - \lambda_{\max}(B)$. \\
+
+	Якщо $\exists i: \lambda_i(A) < 0$, то будуємо матрицю $ \overline{A} = \sigma E + A$, $\sigma > 0$, $\overline{A} > 0$ і для неї попередній розгляд дає необхідний результат. Замість $\lambda_{\max}$ в матриці $B$ можна використовувати $\|A\|$. \\
+
+	Ще один спосіб обчислення мінімального власного значення полягає в використання обернених ітерацій:
+	\begin{equation}
+		\label{eq:5.3}
+		A \vec x^{(k+1)} = \vec x^k, \quad k = 0, 1, \ldots
+	\end{equation}
+
+	Але цей метод вимагає більшої кількості арифметичних операцій: складність методу на основі формули (\ref{eq:5.2}) $Q = O(n^2)$ , а на основі (\ref{eq:5.3}) -- $Q = O(n^3)$, оскільки треба розв'язувати СЛАР, але збігається метод (\ref{eq:5.3}) швидче.
+\end{enumerate}
+
+\subsection{Ітераційний метод обертання}
+Це метод розв'язання повної проблеми власних значень для симетричних матриць $A^T = A$. Існує матриця $U$, що приводить матрицю $A$ до діагонального виду:
+\begin{equation}
+	\label{eq:5.4}
+	A = U \Lambda U^T,
+\end{equation}
+де $\Lambda$ -- діагональна матриця, по діагоналі якої стоять власні значення $\lambda_i$; $U$ -- унітарна матриця, тобто: $U^{-1}=U^T$. \\
+
+З (\ref{eq:5.4}) маємо
+\begin{equation}
+	\label{eq:5.5}
+	\Lambda = U^T \Lambda U,
+\end{equation}
+Нехай $\exists \tilde U$ -- матриця, така що $\tilde \Lambda = \tilde U^T A \tilde U$ і $\tilde \Lambda = (\tilde \lambda_{i,j})_{i,j=1}^n$, $|\tilde \lambda_{i,j}| < \delta \ll 1$, $i \ne j$. \\
+
+Тоді діагональні елементи мало відрізняються від власних значень \[ |\tilde \lambda_{i,i} - \lambda_i(A) | < \epsilon = \epsilon(\delta). \]
+
+Введемо $t(A) = \Sum_{\substack{i, j = 1 \\ i \ne j}}^n a_{i,j}^2$. З малості величини $t(A)$ витікає, що діагональні елементи малі. По $A = A_0$ за допомогою матриць обертання % U_K
+що повертають систему векторів на кут $\phi$, побудуємо послідовність $\{A_k\}$ таку, що $A_k \to \Lambda$ при $k\to\infty$. \\
+
+Матриця обертання $U_k$ є унітарною: $U_k^{-1} = U_k^T$. \\
+
+Послідовно будуємо:
+\begin{equation}
+	\label{eq:5.6}
+	A_{k+1} = U_K^T A_k U_k,
+\end{equation}
+Процес (\ref{eq:5.6}) називається \textit{монотонним}, якщо: $t(A_{k+1})<t(A_k)$.
+
+Для матриці (\ref{eq:5.6}) виконується:
+\begin{equation}
+	\label{eq:5.7}
+	a_{i,j}^{(k+1)} = a_{i,j}^{(k)} \cos 2 \phi + \dfrac12 (a_{j,j}^{(k)} - a_{i,i}^{(k)}) \sin 2 \phi,
+\end{equation}
+
+А також $t(A_{k+1})=t(A_k)-2(a_{i,j}^{(k)})^2$, якщо вибирати $\phi$ з умови $a_{i,j}^{(k+1)} = 0$. \\
+
+Звідси $\phi = \phi_k = \frac12 \arctan(p^{(k)})$, $p^{(k)} = \frac{2a_{i,j}^{(k)}}{a_{i,i}^{(k)}-a_{j,j}^{(k)}}$, де $|a_{i,j}^{(k)}| = \Max_{\substack{m,l \\ m \ne l}} |a_{m,l}^{(k)}|$. Тоді
+$t(A_k) \to 0$, $\to \infty$. Чим більше $n$ тим більше ітерацій необхідно для зведення $A$ до $\Lambda$. 
+
+\section{Практична частина}
+
+Покажемо наочні результати для значення $n = 5$ та для заданої точності $\epsilon = 10^{-6}$, хоча запрограмований алгоритм дає змогу отримати результати $\forall n \in \NN$:
+\[ A = \begin{pmatrix} 15.1 & 0.2 & 0.3 & 0.4 & 0.5 \\ 0.2 & 15.3 & 0.4 & 0.5 & 0.6 \\ 0.3 & 0.4 & 15.5 & 0.6 & 0.7 \\ 0.4 & 0.5 & 0.6 & 15.7 & 0.8 \\ 0.5 & 0.6 & 0.7 & 0.8 & 15.9 \end{pmatrix}. \]
+
+\subsection{Метод скалярних добутків}
+
+Почнемо з $\vec x^{(0)} = (1, 0, 0, 0, 0)$ щоб довго не думати.
+
+\begin{enumerate}
+
+	\item В процесі розв'язання задачі, були отримані відповідні результати для $\lambda_{\max} = \Max_i |\lambda_i(A)|$ та $\lambda_{\min} = \Min_i |\lambda_i(A)|$:
+
+		\[\lambda_{\max} = 17.686140661634397 \]
+
+	\item Для знаходження $\lambda_{\min}$ була використана допоміжна матриця, $B = \lambda_{\max} \cdot E - A$:
+
+	\[ B = \begin{pmatrix} 2.586140 & -0.2 & -0.3 & -0.4 & -0.5 \\ -0.2 & 2.486140 & -0.4 & -0.5 & -0.6 \\ -0.3 & -0.4 & 2.386140 & -0.6 & -0.7 \\ -0.4 & -0.5 & -0.6 & 2.286140 & -0.8 \\ -0.5 & -0.6 & -0.7 & -0.8 & 2.186140 \end{pmatrix}. \]
+
+	Для якої знаходимо $\lambda_{\min}(A) = \lambda_{\max}(A) - \lambda_{\max}(B)$:
+
+		\[\lambda_{\min} = 17.686140661634397 - 2.8722810782394337 = 14.813859583394963. \]
+
+	\item Для знаходження $\hat \lambda_{\min}$ була використана допоміжна матриця $C = E - \frac{A^2}{\lambda_{\max}^2	}$:
+
+	\[ C = \begin{pmatrix} -11.92254791 & -0.3788277 & -0.55693326 & -0.73503882 & -0.91314438 \\ -0.3788277 & -12.2815861 & -0.74069297 & -0.9216256 & -1.10255823 \\ -0.55693326 & -0.74069297 & -12.64627844 & -1.10821238 & -1.29197208 \\ -0.73503882 & -0.9216256 & -1.10821238 & -13.01662492 & -1.48138593 \\ -0.91314438 & -1.10255823 & -1.29197208 & -1.48138593 & -13.39262555 \end{pmatrix}\]	
+
+	\begin{multline*}\hat \lambda_{\min} = \Min_i |\lambda_i(A)| = \sqrt{\lambda_{\max}^2(A)(1-\lambda_{\max}(C))} = \\ =\sqrt{17.686140661634397^2(1-0.2984311005453412))}= 14.813859583394963. \end{multline*}
+
+\end{enumerate}
+
+\subsection{Метод обертання Якобі}
+
+Враховуючи теоретичний арсенал та застосовуючи заданий алгоритм отримаємо: \[ \lambda(A) = (14.813859, 14.999999, 14.999999, 14.999999, 17.686140)\]
+Ітерації виконуємо допоки не буде виконана умова зупинки: \[t(A_k) = \Sum_{\substack{i,j = 1\\i\ne j}}^n a_{i,j}^2 < \epsilon, \quad A_{k+1} = U_k^T \cdot A_k \cdot U_k \]
+На останній ітерації: $t(A_N) = 1.1086685175654626\cdot10^{-7}$. Кількість ітерацій $N = 11$
+
+\end{document}
