@@ -1,7 +1,7 @@
 import numpy as np
 from numpy.linalg import norm, eig
 
-n = 5
+n, k_eps = 5, 1e-5
 
 
 def a(i, j):
@@ -21,10 +21,19 @@ x = [np.matrix([1, 0, 0, 0, 0]).T]
 
 mu1 = []
 
-for iteration in range(0):
+x.append(A * (x[-1]))
+mu1.append(float(x[-1].T * x[-2]) / float(x[-2].T * x[-2]))
+x[-1] /= norm(x[-1], 2)
+x.append(A * (x[-1]))
+mu1.append(float(x[-1].T * x[-2]) / float(x[-2].T * x[-2]))
+x[-1] /= norm(x[-1], 2)
+
+iteration=0
+while abs(mu1[-1] - mu1[-2]) > k_eps: #for iteration in range(100):
+	iteration+=1
 	print(f'iteration = {iteration}')
 
-	print(f'xi = {x[-1]}')
+	#print(f'xi = {x[-1]}')
 
 	x.append(A * (x[-1]))
 
@@ -34,16 +43,17 @@ for iteration in range(0):
 
 	print(f'mu1i = {mu1[-1]}')
 
+
 B = 17.686140661634397 * np.eye(n) - A
 
 x = [np.matrix([1, 0, 0, 0, 0]).T]
 
 mu1 = []
 
-for iteration in range(0):
+while abs(mu1[-1] - mu1[-2]) > k_eps:
 	print(f'iteration = {iteration}')
 
-	print(f'xi = {x[-1]}')
+	#print(f'xi = {x[-1]}')
 
 	x.append(B * (x[-1]))
 
@@ -61,7 +71,7 @@ x = [np.matrix([1, 0, 0, 0, 0]).T]
 
 mu1 = []
 
-for iteration in range(100):
+for iteration in range(0):
 	print(f'iteration = {iteration}')
 
 	print(f'xi = {x[-1]}')

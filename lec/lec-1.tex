@@ -41,7 +41,7 @@
 
 Якщо задача (\ref{eq:1.1}) \textit{некоректна}, то або розв‘язок її не існує, або він неєдиний, або він нестійкий, тобто \[ \exists \epsilon > 0: \forall \delta > 0: \| A - \tilde A\|<\delta, \|f-\tilde f\| < \delta \Rightarrow \|u-\tilde u\| > \epsilon.\]
 
-\textit{Абсолютна похибка} $\Delta x \le | x - x^*|$. \\
+\textit{Абсолютна похибка} $\Delta x \le |x - x^*|$. \\
 
 \textit{Відносна похибка} $\delta x \le \dfrac{\Delta x}{|x|}$, або $\dfrac{\Delta x}{|x^*|}$. \\
 
@@ -67,10 +67,13 @@
 
 \subsection{Підрахунок похибок обчислення значення функції}
 
-Нехай задана функція $y = f(x_1, \ldots, x_n) \in C^1(\Omega)$.. Необхідно обчислити її значення при наближеному значенні аргументів $\vec x^* = (x_1^*, \ldots, x_n^*)$, де $|x_i - x_i^*| \le \Delta x_i$ та оцінити похибку обчислення значення функції $y^* = f(x_1^*, \ldots, x_n^*)$. Маємо \[ |y-y^*| = |f(\vec x) - f(\vec x^*)| = \left| \Sum_{i=1}^n \dfrac{\partial f}{\partial x_i} (\vec \xi) (x_i - x_i^*) \right| \le \Sum_{i=1}^n B_i \cdot \Delta x_i, \] 
-де $B_i = \Max_{\vec x \in U} \left| \dfrac{\partial f}{\partial x_i}(\vec x) \right|$. \\
+Нехай задана функція $y = f(x_1, \ldots, x_n) \in C^1(\Omega)$. Необхідно обчислити її значення при наближеному значенні аргументів $\vec x^* = (x_1^*, \ldots, x_n^*)$, де $|x_i - x_i^*| \le \Delta x_i$ та оцінити похибку обчислення значення функції $y^* = f(x_1^*, \ldots, x_n^*)$. Маємо 
+\[ |y-y^*| = |f\left(\vec x\right) - f\left(\vec x^*\right)| = \left| \Sum_{i=1}^n \dfrac{\partial f}{\partial x_i} \left(\vec \xi\right) (x_i - x_i^*) \right| \le \Sum_{i=1}^n B_i \cdot \Delta x_i, \] 
+де $B_i = \Max_{\vec x \in U} \left| \dfrac{\partial f}{\partial x_i}\left(\vec x\right) \right|$. \\
 
-Тут $U = \{ \vec x = (x_1, \ldots, x_n): |x_i - x_i^*| \le \Delta x_i\} \in \Omega$, $i=\overline{1,n}$. Отже з точністю до величин першого порядку малості по $\Delta x = \max_i \delta x_i$, $\Delta y = |y - y^*| \prec \Sum_{i=1}^n n_i \cdot \Delta x_i$, де $b_i = \left| \dfrac{\partial f}{\partial x_i}(\vec x^*) \right|$ та ``$\prec$'' означає приблизно менше. \\
+Тут $U = \left\{ \vec x = (x_1, \ldots, x_n): |x_i - x_i^*| \le \Delta x_i\right\} \in \Omega$, $i=\overline{1,n}$. Отже з точністю до величин першого порядку малості по $\Delta x = \Max_{i=\overline{1,n}} \Delta x_i$, 
+\[ \Delta y = |y - y^*| \prec \Sum_{i=1}^n n_i \cdot \Delta x_i,\]
+де $b_i = \left| \dfrac{\partial f}{\partial x_i}\left(\vec x^*\right) \right|$ та ``$\prec$'' означає приблизно менше. \\
 
 Розглянемо похибки арифметичних операцій.
 \begin{enumerate}
@@ -93,4 +96,7 @@
 
 \textit{Пряма задача} аналізу похибок: обчислення $\Delta y, \delta y$ по заданих $\Delta x_i$, $i = \overline{1, n}$. \\
 
-\textit{Обернена задача}: знаходження $\Delta x_i$, $i = \overline{1, n}$ по заданих $\Delta y, \delta y$. Якщо $n > 1$, маємо одну умову $\Sum_{i=1}^n b_i \Delta x_i < \epsilon$ для багатьох невідомих $\Delta x_i$. Вибирають їх із однієї з умов \[ \forall i: b_i \Delta x_i < \dfrac{\epsilon}{n} \quad \text{або} \quad \Delta x_i < \dfrac{\epsilon}{\Sum_{i=1}^n b_i}. \]
+\textit{Обернена задача}: знаходження $\Delta x_i$, $i = \overline{1, n}$ по заданих $\Delta y$, $\delta y$. Якщо $n > 1$, маємо одну умову 
+\[\Sum_{i=1}^n b_i \Delta x_i < \epsilon\]
+для багатьох невідомих $\Delta x_i$. Вибирають їх із однієї з умов 
+\[ \forall i: b_i \Delta x_i < \dfrac{\epsilon}{n} \quad \text{або} \quad \Delta x_i < \dfrac{\epsilon}{\Sum_{i=1}^n b_i}. \]

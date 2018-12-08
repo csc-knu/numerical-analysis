@@ -1,4 +1,4 @@
-% cls && pdflatex cmp.tex && cls && pdflatex cmp.tex && start cmp.pdf
+% cls && pdflatex lectures_raster.tex && cls && pdflatex lectures_raster.tex && start lectures_raster.pdf
 \documentclass[a5paper, 10pt]{article}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -21,6 +21,7 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=violet}
+\numberwithin{equation}{subsection}
 
 \usepackage{float, graphicx}
 \usepackage{amsthm}
@@ -46,6 +47,7 @@
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\Min}{\displaystyle\min\limits}
 \newcommand{\Max}{\displaystyle\max\limits}
+\newcommand{\Inf}{\displaystyle\inf\limits}
 \newcommand{\Sup}{\displaystyle\sup\limits}
 \newcommand{\Sum}{\displaystyle\sum\limits}
 \newcommand{\Prod}{\displaystyle\prod\limits}
@@ -60,6 +62,8 @@
 \renewcommand{\phi}{\varphi}
 
 \DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\signum}{sign}
 \DeclareMathOperator{\rang}{rang}
 \DeclareMathOperator{\const}{const}
 \DeclareMathOperator{\cond}{cond}
@@ -85,5 +89,7 @@
 \input{lec-4.tex}
 
 \input{lec-5.tex}
+
+\input{lec-6.tex}
 
 \end{document}

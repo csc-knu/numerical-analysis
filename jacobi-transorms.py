@@ -14,6 +14,7 @@ def a(i, j):
 
 A = np.matrix([[a(i, j) for j in range(1, n + 1)] for i in range(1, n + 1)])
 
+#print(f'Thoeretical eigenvalues {eig(A)}')
 
 def t(A):
 	return sum(sum(A[i,j]**2 if i != j else 0 for j in range(n)) for i in range(n))
