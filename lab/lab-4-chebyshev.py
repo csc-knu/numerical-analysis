@@ -1,9 +1,10 @@
+from math import cos, pi
 import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 22})
 
 
-def interpolate_newton_equidistant(y, a, b, n, h):
-	x = [a + i * h for i in range(n)]
+def interpolate_newton_chebyshev(y, a, b, n):
+	x = [(a + b) / 2 + (b - a) / 2 * cos(pi * (2 * i + 1) / (2 * n)) for i in range(n)]
 
 	print(f'Вузли інтерполяції:\n\t{[round(xi, _round) for xi in x]}\n')
 
@@ -37,11 +38,11 @@ def f(x: float) -> float:
 	return 1 / 2 * (abs(x - 4) + abs(x + 4))
 
 
-a, b, n, h, _round, k = -5, 7, 13, 1, 9, 1000
+a, b, n, _round, k = -5, 7, 13, 9, 1000
 
-y = [f(a + i * h) for i in range(n)]
+y = [f((a + b) / 2 + (b - a) / 2 * cos(pi * (2 * i + 1) / (2 * n))) for i in range(n)]
 
-pn = interpolate_newton_equidistant(y, a, b, n, h)
+pn = interpolate_newton_chebyshev(y, a, b, n)
 
 _x = [a + i * (b - a) / k for i in range(k + 1)]
 
@@ -56,7 +57,7 @@ plt.plot(_x, y, 'b-', label=f'$P_{{{n-1}}}(x)$')
 plt.plot(_x, _f, 'r--', label=f'$f(x)$')
 plt.plot(_x, omega, 'g-.', label=f'$\omega_{{{n-1}}}(x)$')
 
-_x = [a + i * h for i in range(n)]
+_x = [(a + b) / 2 + (b - a) / 2 * cos(pi * (2 * i + 1) / (2 * n)) for i in range(n)]
 y = [f(x) for x in _x]
 
 plt.scatter(_x, y, c='r', alpha=1)
