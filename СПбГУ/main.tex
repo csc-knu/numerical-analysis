@@ -1,0 +1,46 @@
+﻿% cd ..\..\users\nikitaskybytskyi\desktop\c3s1\numerical-analysis\СПбГУ
+% cls && pdflatex main.tex && cls && pdflatex main.tex && del *.out, *.log, *.aux && start main.pdf
+
+\documentclass[a4paper, 12pt]{article}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, ukrainian]{babel}
+\usepackage{amsmath, amssymb}
+%\usepackage[showframe]{geometry}
+
+\allowdisplaybreaks
+\setlength\parindent{0pt}
+
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=red}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Теорема}[section]
+\theoremstyle{definition}
+\newtheorem{remark}{Зауваження}[theorem]
+\newtheorem*{remark*}{Зауваження}
+\newtheorem{example}{Приклад}[section]
+
+\numberwithin{equation}{section}
+
+\newcommand{\Min}{\displaystyle\min\limits}
+\newcommand{\Max}{\displaystyle\max\limits}
+\newcommand{\Sum}{\displaystyle\sum\limits}
+\newcommand{\Prod}{\displaystyle\prod\limits}
+\newcommand{\Lim}{\displaystyle\lim\limits}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+\begin{document}
+
+\input{00.tex}
+
+\input{01.tex}
+
+\input{02.tex}
+
+\end{document}

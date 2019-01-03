@@ -14,7 +14,7 @@
 \end{equation}
 Назвемо $\delta_1 = u - \tilde u$ -- \textit{неусувною похибкою}. \\
 
-Застосування методу розв‘язання (\ref{eq:1.2}) приводить до рівняння
+Застосування методу розв‘язання \eqref{eq:1.2} приводить до рівняння
 \begin{equation}
 	\label{eq:1.3}
 	\tilde A_h \tilde u_h = \tilde f_h,
@@ -31,72 +31,183 @@
 Тоді \textit{повна похибка} $\delta = u - \tilde u_h^* = \delta_1 + \delta_2 + \delta_3$. \\
 
 \begin{definition}
-	Кажуть, що задача (\ref{eq:1.1}) \textit{коректна}, якщо
+	Кажуть, що задача \eqref{eq:1.1} \textit{коректна}, якщо
 	\begin{enumerate}
 		\item $\forall f \in F$ $\exists! u \in U$;
-		\item задача (\ref{eq:1.1}) \textit{стійка}, тобто
-		\[ \forall \epsilon > 0 \quad \exists \delta > 0: \|A-\tilde A\| < \delta, \|f-\tilde f\| < \delta \Rightarrow \|u - \tilde u\| < \epsilon. \]
+		\item задача \eqref{eq:1.1} \textit{стійка}, тобто
+		\begin{equation}
+			\label{eq:1.5}
+			\forall \epsilon > 0 \quad \exists \delta > 0: \|A-\tilde A\| < \delta, \|f-\tilde f\| < \delta \Rightarrow \|u - \tilde u\| < \epsilon.
+		\end{equation}
 	\end{enumerate}
 \end{definition}
 
-Якщо задача (\ref{eq:1.1}) \textit{некоректна}, то або розв‘язок її не існує, або він неєдиний, або він нестійкий, тобто \[ \exists \epsilon > 0: \forall \delta > 0: \| A - \tilde A\|<\delta, \|f-\tilde f\| < \delta \Rightarrow \|u-\tilde u\| > \epsilon.\]
+Якщо задача \eqref{eq:1.1} \textit{некоректна}, то або розв‘язок її не існує, або він неєдиний, або він нестійкий, тобто 
+\begin{equation}
+	\label{eq:1.6}
+	\exists \epsilon > 0: \forall \delta > 0: \exists A, f: \| A - \tilde A\|<\delta, \|f-\tilde f\| < \delta, \|u-\tilde u\| > \epsilon.
+\end{equation}
 
-\textit{Абсолютна похибка} $\Delta x \le |x - x^*|$. \\
+\textit{Абсолютна похибка} $\Delta (x^*) \ge \max_x |x - x^*|$. \\
 
-\textit{Відносна похибка} $\delta x \le \dfrac{\Delta x}{|x|}$, або $\dfrac{\Delta x}{|x^*|}$. \\
+\textit{Відносна похибка} $\delta (x^*) \ge \max_x \Delta (x^*) / |x^*|$. \\
 
 \textit{Значущими цифрами} називаються всі цифри, починаючи з першої ненульової зліва. \\
 
-\textit{Вірна цифра} -- це значуща, якщо абсолютна похибка за рахунок відкидання всіх молодших розрядів не перевищує одиниці розряду цієї цифри. Тобто, якщо \[x^* = \overline{\alpha_n \ldots \alpha_0.\alpha_{-1}\ldots\alpha_{-p}\ldots},\] то $\alpha_{-p}$ -- вірна, якщо $\Delta x \le 10^{-p}$ (інколи $\Delta x \le w \cdot 10^{-p}$, $\frac12 \le w < 1$, наприклад, $w = 0.55$).
+\textit{Вірна цифра} -- це значуща, якщо абсолютна похибка за рахунок відкидання всіх молодших розрядів не перевищує одиниці розряду цієї цифри. Тобто, якщо 
+\begin{equation}
+	\label{eq:1.7}
+	x^* = \overline{\alpha_n \ldots \alpha_0.\alpha_{-1}\ldots\alpha_{-p}\ldots},
+\end{equation}
+то $\alpha_{-p}$ -- вірна, якщо $\Delta (x^*) \le 10^{-p}$. \\
+
+Інколи $\Delta (x^*) \le w \cdot 10^{-p}$, $1/2 \le w < 1$, наприклад, $w = 0.55$.
 
 \subsection{Підрахунок похибок в ЕОМ}
 
 Підрахуємо відносну похибку заокруглення числа $x$ на ЕОМ з плаваючою комою. В $\beta$-ічній системі числення число представляється у вигляді
 \begin{equation}
-	\label{eq:1.5}
+	\label{eq:1.8}
 	x = \pm (\alpha_1 \beta^{-1} + \alpha_2 \beta^{-2} + \ldots + \alpha_t \beta^{-t} + \ldots) \beta^p,
 \end{equation}
-де $0 \le \alpha_k < \beta$, $\alpha_1 \ne 0$, $k = 1,2,\ldots$. \\
+де $0 \le \alpha_k < \beta$, $\alpha_1 \ne 0$, $k = 1,2,\ldots$ \\
 
-Якщо в ЕОМ $t$ розрядів, то при відкиданні молодших розрядів ми оперуємо з наближеним значенням \[x^* = \pm (\alpha_1 \beta^{-1} + \alpha_2 \beta^{-2} + \ldots + \alpha_t \beta^{-t}) \beta^p,\] 
-і відповідно похибка заокруглення $x - x^* = \pm \beta^p (\alpha_{t+1} \beta^{-t-1} + \ldots)$. Тоді її можна оцінити так \[ |x - x^*| \le \beta^{p-t-1}(\beta-1)(1 + \beta^{-1}+\ldots)\le \beta^{p-t-1}(\beta-1)\dfrac{1}{1-\beta^{-1}}=\beta^{p-t}.\]
+Якщо в ЕОМ $t$ розрядів, то при відкиданні молодших розрядів ми оперуємо з наближеним значенням 
+\begin{equation}
+	\label{eq:1.9}
+	x^* = \pm (\alpha_1 \beta^{-1} + \alpha_2 \beta^{-2} + \ldots + \alpha_t \beta^{-t}) \beta^p,
+\end{equation}
+і відповідно похибка заокруглення 
+\begin{equation}
+	\label{eq:1.9_1}
+	x - x^* = \pm \beta^p (\alpha_{t+1} \beta^{-t-1} + \ldots)
+\end{equation}
+Тоді її можна оцінити так
+\begin{multline}
+	\label{eq:1.10}
+	|x - x^*| \le \beta^{p-t-1} \cdot (\beta-1) \cdot (1 + \beta^{-1}+\ldots)\le\\
+	\le \beta^{p-t-1} \cdot (\beta-1) \cdot \dfrac{1}{1-\beta^{-1}}=\beta^{p-t}.
+\end{multline}
 
-Якщо в представлені (\ref{eq:1.5}) взяти $\alpha_1 = 1$, то $|x| \ge \beta^p \beta^{-1}$. Звідси остаточно \[\delta x \le \dfrac{\beta^{p-t}}{\beta^{p-1}}=\beta^{1-t}.\]
+Якщо в представлені \eqref{eq:1.8} взяти $\alpha_1 = 1$, то $|x| \ge \beta^p \cdot \beta^{-1}$. Звідси остаточно 
+\begin{equation}
+	\label{eq:1.11}
+	\delta (x^*) \le \dfrac{\beta^{p-t}}{\beta^{p-1}}=\beta^{1-t}.
+\end{equation}
 
-При більш точних способах заокруглення можна отримати оцінку $\delta x \le \frac12 \beta^{1-t} = \epsilon$. Число $\epsilon$ називається ``машинним іпсилон''. Наприклад, для $\beta = 2$, $t = 24$, $\epsilon = 2^{-24} \approx 10^{-7}$.
+При більш точних способах заокруглення можна отримати оцінку $\delta (x^*) \le \beta^{1-t} / 2 = \epsilon$. Число $\epsilon$ називається ``машинним іпсилон''. Наприклад, для $\beta = 2$, $t = 24$, $\epsilon = 2^{-24} \approx 10^{-7}$.
 
 \subsection{Підрахунок похибок обчислення значення функції}
 
-Нехай задана функція $y = f(x_1, \ldots, x_n) \in C^1(\Omega)$. Необхідно обчислити її значення при наближеному значенні аргументів $\vec x^* = (x_1^*, \ldots, x_n^*)$, де $|x_i - x_i^*| \le \Delta x_i$ та оцінити похибку обчислення значення функції $y^* = f(x_1^*, \ldots, x_n^*)$. Маємо 
-\[ |y-y^*| = |f\left(\vec x\right) - f\left(\vec x^*\right)| = \left| \Sum_{i=1}^n \dfrac{\partial f}{\partial x_i} \left(\vec \xi\right) (x_i - x_i^*) \right| \le \Sum_{i=1}^n B_i \cdot \Delta x_i, \] 
-де $B_i = \Max_{\vec x \in U} \left| \dfrac{\partial f}{\partial x_i}\left(\vec x\right) \right|$. \\
+Нехай задана функція 
+\begin{equation}
+	\label{eq:1.11_1}
+	y = f(x_1, \ldots, x_n) \in C^1(\Omega)
+\end{equation}
+Необхідно обчислити її значення при наближеному значенні аргументів 
+\begin{equation}
+	\label{eq:1.11_2}
+	\vec x^* = (x_1^*, \ldots, x_n^*),
+\end{equation}
+де $|x_i - x_i^*| \le \Delta (x_i^*)$ та оцінити похибку обчислення значення функції
+\begin{equation}
+	\label{eq:1.11_3}
+	y^* = f(x_1^*, \ldots, x_n^*).
+\end{equation}
 
-Тут $U = \left\{ \vec x = (x_1, \ldots, x_n): |x_i - x_i^*| \le \Delta x_i\right\} \in \Omega$, $i=\overline{1,n}$. Отже з точністю до величин першого порядку малості по $\Delta x = \Max_{i=\overline{1,n}} \Delta x_i$, 
-\[ \Delta y = |y - y^*| \prec \Sum_{i=1}^n n_i \cdot \Delta x_i,\]
-де $b_i = \left| \dfrac{\partial f}{\partial x_i}\left(\vec x^*\right) \right|$ та ``$\prec$'' означає приблизно менше. \\
+Маємо 
+\begin{equation}
+	\label{eq:1.12}
+	|y-y^*| = |f\left(\vec x\right) - f\left(\vec x^*\right)| = \left| \Sum_{i=1}^n \dfrac{\partial f}{\partial x_i} \left(\vec \xi\right) (x_i - x_i^*) \right| \le \Sum_{i=1}^n B_i \cdot \Delta (x_i^*), 
+\end{equation}
+де 
+\begin{equation}
+	\label{eq:1.13}
+	B_i = \Max_{\vec x \in U} \left| \dfrac{\partial f}{\partial x_i}\left(\vec x\right) \right|.
+\end{equation}
 
-Розглянемо похибки арифметичних операцій.
+Тут 
+\begin{equation}
+	\label{eq:1.14}
+	U = \left\{ \vec x = (x_1, \ldots, x_n): |x_i - x_i^*| \le \Delta (x_i^*)\right\} \in \Omega, \quad i=\overline{1,n}.
+\end{equation}
+Отже
+\begin{equation}
+	\label{eq:1.15}
+	\Delta (y^*) = |y - y^*| \prec \Sum_{i=1}^n n_i \cdot \Delta (x_i^*),
+\end{equation}
+з точністю до величин першого порядку малості по
+\begin{equation}
+	\label{eq:1.15_1}
+	\Delta (x^*) = \Max_{i=\overline{1,n}} \Delta (x_i^*),
+\end{equation}
+де
+\begin{equation}
+	\label{eq:1.16}
+	b_i = \left| \dfrac{\partial f}{\partial x_i}\left(\vec x^*\right) \right|
+\end{equation}
+та ``$\prec$'' означає приблизно менше. \\
+
+\subsubsection{Похибки арифметичних операцій}
+
 \begin{enumerate}
 	\item Сума: $y = x_1 + x_2$, $x_1, x_2 > 0$, 
-	\[ \Delta y \le \Delta x_1 + \Delta x_2, \quad \delta y \le \dfrac{\Delta x_1 + \Delta x_2}{x_1 + x_2} \le \max(\delta x_1, \delta x_2). \] 
+	\begin{equation}
+		\label{eq:1.17}
+		\begin{aligned}
+		\Delta (y^*) &\le \Delta (x_1^*) + \Delta (x_2^*), \\ 
+		\delta (y^*) &\le \dfrac{\Delta (x_1^*) + \Delta (x_2^*)}{x_1^* + x_2^*} \le \max\{\delta (x_1^*), \delta (x_2^*)\}.
+		\end{aligned}
+	\end{equation}
 	
 	\item Різниця: $y = x_1 - x_2$, $x_1 > x_2 > 0$,
-	\[ \Delta y \le \Delta x_1 + \Delta x_2, \quad \delta y \le \dfrac{x \delta x_1 + x_1 \delta x_2}{x_1 - x_2}. \]
+	\begin{equation}
+		\label{eq:1.18}
+		\begin{aligned}
+		\Delta (y^*) &\le \Delta (x_1^*) + \Delta (x_2^*), \\
+		\delta (y^*) &\le \dfrac{x_2^* \delta (x_1^*) + (x_1^*) \delta (x_2^*)}{x_1^* - x_2^*}.
+		\end{aligned}
+	\end{equation}
 	
-	При близьких $x_1$, $x_2$ зростає відносна похибка (за рахунок втрати вірних цифр).
+	При близьких $x_1^*$, $x_2^*$ зростає відносна похибка (за рахунок втрати вірних цифр).
 
 	\item Добуток: $y = x_1 \cdot x_2$, $x_1, x_2 > 0$,
-	\[ \Delta y \prec x_2 \Delta x_1 + x_1 \Delta x_2, \quad \delta y \le \delta x_1 + \delta x_2. \]
+	\begin{equation}
+		\label{eq:1.19}
+		\begin{aligned}
+		\Delta (y^*) &\prec x_2^* \Delta (x_1^*) + x_1^* \Delta (x_2^*), \\
+		\delta (y^*) &\le \delta (x_1^*) + \delta (x_2^*).
+		\end{aligned}
+	\end{equation}
 
 	\item Частка: $y = \dfrac{x_1}{x_2}$, $x_1, x_2 > 0$,
-	\[ \Delta y \prec \dfrac{x_2 \Delta x_1 + x_1 \Delta x_2}{x_2^2}, \quad \delta y \le \delta x_1 + \delta x_2. \]
+	\begin{equation}
+		\label{eq:1.20}
+		\begin{aligned}
+		\Delta (y^*) &\prec \dfrac{x_2^* \Delta (x_1^*) + x_1^* \Delta (x_2^*)}{(x_2^*)^2}, \\
+		\delta (y^*) &\le \delta (x_1^*) + \delta (x_2^*).
+		\end{aligned}
+	\end{equation}
 
-	При малих $x_2$ зростає абсолютна похибка (за рахунок зростання результату ділення). 
+	При малих $x_2^*$ зростає абсолютна похибка (за рахунок зростання результату ділення). 
 \end{enumerate}
 
-\textit{Пряма задача} аналізу похибок: обчислення $\Delta y, \delta y$ по заданих $\Delta x_i$, $i = \overline{1, n}$. \\
+\subsection{Обернена задача аналізу позибок}
 
-\textit{Обернена задача}: знаходження $\Delta x_i$, $i = \overline{1, n}$ по заданих $\Delta y$, $\delta y$. Якщо $n > 1$, маємо одну умову 
-\[\Sum_{i=1}^n b_i \Delta x_i < \epsilon\]
-для багатьох невідомих $\Delta x_i$. Вибирають їх із однієї з умов 
-\[ \forall i: b_i \Delta x_i < \dfrac{\epsilon}{n} \quad \text{або} \quad \Delta x_i < \dfrac{\epsilon}{\Sum_{i=1}^n b_i}. \]
+Нагадаємо, що \textit{пряма задача} аналізу похибок полягає у обчисленні $\Delta (y^*), \delta (y^*)$ по заданих $\Delta (x_i^*)$, $i = \overline{1, n}$. \\
+
+\textit{Обернена задача} полягає у знаходженні $\Delta (x_i^*)$, $i = \overline{1, n}$ по заданих $\Delta (y^*)$, $\delta (y^*)$. Якщо $n > 1$, маємо одну умову 
+\begin{equation}
+	\label{eq:1.21}
+	\Sum_{i=1}^n b_i \Delta (x_i^*) < \epsilon
+\end{equation}
+для багатьох невідомих $\Delta (x_i^*)$. Вибирають їх із однієї з умов 
+\begin{equation}
+	\label{eq:1.22}
+	b_i \Delta (x_i^*) < \dfrac{\epsilon}{n},
+\end{equation}
+або
+\begin{equation}
+	\label{eq:1.23}
+	\Delta (x_i^*) < \dfrac{\epsilon}{\Sum_{i=1}^n b_i}.
+\end{equation}

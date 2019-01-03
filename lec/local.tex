@@ -1,33 +1,28 @@
-% cls && pdflatex lectures_raster.tex && cls && pdflatex lectures_raster.tex && start lectures_raster.pdf
-\documentclass[a5paper, 10pt]{article}
+% pdflatex local.tex && pdflatex local.tex && del local.out && del local.log && del local.aux && del local.toc && start local.pdf
+\documentclass[a4paper, 12pt]{article}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, ukrainian]{babel}
 \usepackage{amsmath, amssymb}
-\usepackage[top = 2 cm, left = 1 cm, right = 1 cm, bottom = 2 cm]{geometry} 
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\lhead{Основи методів обчислень}
-\cfoot{\thepage}
 
 \allowdisplaybreaks
 \setlength\parindent{0pt}
-\numberwithin{equation}{subsection}
+
+\numberwithin{equation}{section}% reset equation counter for sections
 
 \title{{\Huge ОСНОВИ МЕТОДІВ ОБЧИСЛЕНЬ}}
-\date{}
+\author{Нікіта Скибицький}
+\date{\today}
 
 \usepackage{xcolor}
 \usepackage{hyperref}
-\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=violet}
-\numberwithin{equation}{subsection}
+\hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=red}
 
 \usepackage{float, graphicx}
 \usepackage{amsthm}
 \newtheorem{lemma}{Лема}
 \newtheorem*{lemma*}{Лема}
-\newtheorem{theorem}{Теорема}
+\newtheorem{theorem}{Теорема}[subsection]
 \newtheorem*{theorem*}{Теорема}
 \newtheorem{definition}{Визначення}
 \newtheorem*{definition*}{Визначення}
