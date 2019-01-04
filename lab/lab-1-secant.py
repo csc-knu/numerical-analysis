@@ -1,45 +1,56 @@
 #!/usr/bin/env python
-""" implementation of a secant method of solving nonlinear equations with unittest """
+"""lab-1-chord.py: solves nonlinear equation f(x) = 0 
+for x in [a, b] via secant method."""
 from math import sin
-from typing import Callable
-import unittest
 
 
-def secant(f: Callable[[float], float], x0: float, eps: float=1e-7, kmax: int=1e3) -> float:
+def secant(f, x0, eps=1e-7, kmax=1e3):
+	"""
+	:param f: function to find root of
+	:param x0: starting point
+	:param eps: desired precision
+	:param kmax: max number of iterations allowed
+	"""
 	x, x_prev, i = x0, x0 + 2 * eps, 1
 	
-	while abs(x - x_prev) >= eps and i <= kmax:
+	def _converged():
+		return abs(x - x_prev) < eps and f(x) < eps
+
+	def _log():
 		print(f'На ітерації {i} маємо:\n'
-			f'\tx = {x},\n'
-			f'\tDelta x = {abs(x - x_prev)}\n')
+			f'\t x = {x},\n'
+			f'\tΔx = {abs(x - x_prev)}\n')
+
+	def _next():
+		nonlocal x, x_prev, i
 		x, x_prev, i = x - f(x) / (f(x) - f(x_prev)) * (x - x_prev), x, i + 1
 
-
-	print(f'На ітерації {i} маємо:\n'
-		f'\tx = {x},\n'
-		f'\tDelta x = {abs(x - x_prev)}\n')
+	while not _converged() and i <= kmax:
+		_next(), _log()
 
 	return x
 
 
-class TestSecant(unittest.TestCase):
-	def test_0(self):
-		def f(x: float) -> float:
+if __name__ == '__main__':
+	def f(x):
 			return x**2 - 20 * sin(x)
 
+	x0, x_star = 2, 2.7529466338187049383
 
-		x0, x_star = 2, 2.7529466338187049383
+	print(f'\n"Справжній" розв\'язок x_star = {x_star}\n')
 
-		print(f'"Справжній" розв\'язок x_star = {x_star}\n')
+	x = secant(f, x0)
 
-		x = secant(f, x0)
+	print(f"Знайдений нами розв'язок x = {x}\n")
 
-		print(f"Знайдений нами розв'язок x = {x}\n")
-
-		print(f"Похибка: {abs(x - x_star)}")
-
-		self.assertAlmostEqual(x, x_star)
+	print(f"Похибка: {abs(x - x_star)}")
 
 
-if __name__ == '__main__':
-	unittest.main()
+__author__: "Nikita Skybytskyi"
+__copyright__ = "Copyright 2007, KNU"
+__credits__ = ["Nikita Skybytskyi"]
+__license__ = "MIT"
+__version__ = "1.1"
+__maintainer__ = "Nikita Skybytskyi"
+__email__ = "n.skybytskyi@knu.ua"
+__status__ = "Production"
