@@ -21,8 +21,8 @@ def simple_iterate(f, a, b, M1, x0, eps=1e-7, kmax=1e3):
 
 	def _log():
 		print(f'На ітерації {i} маємо:\n'
-			f'\tx = {x},\n'
-			f'\tr = {abs(x_star - x)}.\n')
+			f'\t x = {x},\n'
+			f'\tΔx = {abs(x - x_prev)}\n')
 
 	def phi(x):
 		return x - (1 / M1) * f(x)
@@ -56,7 +56,7 @@ __author__: "Nikita Skybytskyi"
 __copyright__ = "Copyright 2007, KNU"
 __credits__ = ["Nikita Skybytskyi"]
 __license__ = "MIT"
-__version__ = "1.1"
+__version__ = "1.1.1"
 __maintainer__ = "Nikita Skybytskyi"
 __email__ = "n.skybytskyi@knu.ua"
 __status__ = "Production"
