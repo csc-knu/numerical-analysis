@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-"""lab-1-chord.py: solves nonlinear equation f(x) = 0 
+# -*- coding: utf-8 -*-
+"""secant.py: solves nonlinear equation f(x) = 0 
 for x in [a, b] via secant method."""
 from math import sin
 
@@ -47,10 +48,10 @@ if __name__ == '__main__':
 
 
 __author__: "Nikita Skybytskyi"
-__copyright__ = "Copyright 2007, KNU"
+__copyright__ = "Copyright 2019, KNU"
 __credits__ = ["Nikita Skybytskyi"]
 __license__ = "MIT"
-__version__ = "1.1"
+__version__ = "1.1.1"
 __maintainer__ = "Nikita Skybytskyi"
 __email__ = "n.skybytskyi@knu.ua"
 __status__ = "Production"
