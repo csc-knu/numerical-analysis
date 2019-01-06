@@ -1,10 +1,18 @@
 #!usr/bin/env python
+# -*- coding: utf-8 -*-
+"""seidel.py: solves the system a x = b of linear equations with seidel 
+algortihm."""
 import numpy as np
-import unittest
 from numpy.linalg import inv, norm, solve
 
 
 def seidel(a, b, eps, max_iterations=1e3):
+	"""
+	:param a: matrix from linear system to solve
+	:param b: vector from linear system to solve
+	:param eps: desired precision
+	:param kmax: max number of iterations allowed
+	"""
 	n = a.shape[0]
 
 	d = np.triu(np.tril(a))
@@ -34,29 +42,52 @@ def seidel(a, b, eps, max_iterations=1e3):
 			x[i] = sum(h[i, j] * x[j] for j in range(i)) + \
 				sum(h[i, j] * x_prev[j] for j in range(i, n)) + g[i]
 
-		print(f'На ітерації {iteration} маємо:\n\tx = {x},\n\tr = {np.dot(a, x) - b}\n')
+		print(f'\nНа ітерації {iteration} маємо:\n'
+			f'\tx = {x},\n'
+			f'\tr = {np.dot(a, x) - b}\n\n')
 
 	return x
 
 
-def a(i, j):
+def _a(i, j):
+	"""
+	:param i: row of entry of a to generate
+	:param j: row of entry of a to generate
+	"""
 	if i != j:
 		return (i + j - 1) / (2 * n)
 	else:
 		return n + 10 + (i + j - 1) / (2 * n)
 
 
-n = 5
+if __name__ == '__main__':
+	np.set_printoptions(linewidth=90)
 
-A = np.matrix([[a(i, j) for j in range(1, n + 1)] for i in range(1, n + 1)])
+	n = 6
 
-b = np.array([17, 22, 27, 32, 37])
-x_true = solve(A, b)
+	A = np.matrix([[_a(i, j) for j in range(1, n)] for i in range(1, n)])
 
-print(f"\nЗнайдений бібліотечною функцією розв'язок:\n\t{x_true}\n")
+	b = np.arange(17, 17 + 5 * (n - 1), 5)
 
-x_seid = seidel(A, b, eps=1e-10)
+	x_true = solve(A, b)
 
-print(f"Знайдений нами розв'язок:\n\t{x_seid}\n")
+	x_seid = seidel(A, b, eps=1e-7)
 
-print(f'Вектор нев\'язки:\n\t{x_seid - x_true}\n')
+	print(f"\nЗнайдений бібліотечною функцією розв'язок:\n"
+		f"\tx = {x_true}\n\n")
+
+	print(f"Знайдений нами розв'язок:\n"
+		f"\tx = {x_seid}\n\n")
+
+	print(f'Вектор нев\'язки:\n'
+		f'\tr = {x_seid - x_true}\n')
+
+
+__author__: "Nikita Skybytskyi"
+__copyright__ = "Copyright 2019, KNU"
+__credits__ = ["Nikita Skybytskyi"]
+__license__ = "MIT"
+__version__ = "1.1"
+__maintainer__ = "Nikita Skybytskyi"
+__email__ = "n.skybytskyi@knu.ua"
+__status__ = "Production"
