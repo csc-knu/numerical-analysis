@@ -1,23 +1,18 @@
-% pdflatex local.tex && pdflatex local.tex && del local.out && del local.log && del local.aux && del local.toc && start local.pdf
+% pdflatex local.tex && pdflatex local.tex && del local.out, local.log, local.aux, local.toc && start local.pdf
 \documentclass[a4paper, 12pt]{article}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, ukrainian]{babel}
 \usepackage{amsmath, amssymb}
-
 \allowdisplaybreaks
 \setlength\parindent{0pt}
-
 \numberwithin{equation}{section}% reset equation counter for sections
-
 \title{{\Huge ОСНОВИ МЕТОДІВ ОБЧИСЛЕНЬ}}
 \author{Нікіта Скибицький}
 \date{\today}
-
 \usepackage{xcolor}
 \usepackage{hyperref}
 \hypersetup{unicode=true,colorlinks=true,linktoc=all,linkcolor=red}
-
 \usepackage{float, graphicx}
 \usepackage{amsthm}
 \newtheorem{lemma}{Лема}
@@ -37,7 +32,6 @@
 \newtheorem*{solution*}{Розв'язок}
 \newtheorem{corollary}{Наслідок}
 \newtheorem*{corollary*}{Наслідок}
-
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\Min}{\displaystyle\min\limits}
@@ -49,42 +43,28 @@
 \newcommand{\Int}{\displaystyle\int\limits}
 \newcommand{\Iint}{\displaystyle\iint\limits}
 \newcommand{\Lim}{\displaystyle\lim\limits}
-
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
-
 \renewcommand{\bf}[1]{\textbf{#1}}
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
-
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\signum}{sign}
 \DeclareMathOperator{\rang}{rang}
 \DeclareMathOperator{\const}{const}
 \DeclareMathOperator{\cond}{cond}
-
 \begin{document}
-
 \maketitle \thispagestyle{empty} \newpage 
-
 У ваших руках конспект лекцій з нормативного курсу ``Основи методів обчислень'', прочитаного доц., к.ф.-м.н. Риженком Андрієм Івановичем на третьому курсі спеціальності прикладна математика факультету комп'ютерних наук та кібернетики Київського національного університету імені Тараса Шевченка восени 2018-го року. \\
 
 Конспект у компактній формі відображає матеріал курсу, допомагає сформувати загальне уявлення про предмет вивчення, правильно зорієнтуватися в даній галузі знань. Конспект лекцій з названої дисципліни сприятиме більш успішному вивченню дисципліни, причому більшою мірою для студентів заочної форми, екстернату, дистанційного та індивідуального навчання. \\
 
 Комп'ютерний набір та верстка -- Скибицький Нікіта Максимович. \newpage
-
 \tableofcontents \newpage
-
 \input{lec-1.tex}
-
 \input{lec-2.tex}
-
 \input{lec-3.tex}
-
 \input{lec-4.tex}
-
 \input{lec-5.tex}
-
 \input{lec-6.tex}
-
 \end{document}
