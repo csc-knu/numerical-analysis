@@ -1,85 +1,153 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""scalar_products.py: finds several eigenvalues of a given matrix A."""
 import numpy as np
 from numpy.linalg import norm, eig
 
-n, k_eps = 5, 1e-5
 
-
-def a(i, j):
+def _a(i, j):
+	"""
+	:param i: row of entry of a to generate
+	:param j: row of entry of a to generate
+	"""
 	if i != j:
 		return (i + j - 1) / (2 * n)
 	else:
 		return n + 10 + (i + j - 1) / (2 * n)
 
 
-A = np.matrix([[a(i, j) for j in range(1, n + 1)] for i in range(1, n + 1)])
+def eig_max_abs(a, eps=1e-7, kmax=1e3, log=False):
+	""" 
+	:param a: matrix to find max by absolute value eigenvalue of
+	:param eps: desired precision
+	:param kmax: max number of iterations allowed
+	:param log: whether to log the iterations
+	"""
+	x_prev = np.zeros(a.shape[0])[np.newaxis].T
+	
+	x_prev[0] = 1.
 
-# print(f'A = {A}')
+	x = a * x_prev
 
-print(f'eig(A) = {eig(A)}')
+	mu = float(np.dot(x.T, x_prev) / np.dot(x_prev.T, x_prev))
 
-x = [np.matrix([1, 0, 0, 0, 0]).T]
+	mu_prev = mu + 2 * eps
 
-mu1 = []
+	x /= norm(x, 2)
 
-x.append(A * (x[-1]))
-mu1.append(float(x[-1].T * x[-2]) / float(x[-2].T * x[-2]))
-x[-1] /= norm(x[-1], 2)
-x.append(A * (x[-1]))
-mu1.append(float(x[-1].T * x[-2]) / float(x[-2].T * x[-2]))
-x[-1] /= norm(x[-1], 2)
+	def _next():
+		nonlocal mu_prev, mu, x_prev, x, i
+		i += 1
 
-iteration=0
-while abs(mu1[-1] - mu1[-2]) > k_eps: #for iteration in range(100):
-	iteration+=1
-	print(f'iteration = {iteration}')
+		x, x_prev = a * x, x
+		
+		mu, mu_prev = float(np.dot(x.T, x_prev) / np.dot(x_prev.T, x_prev)), mu
+		
+		x /= norm(x, 2)
 
-	#print(f'xi = {x[-1]}')
+	def _log():
+		print(f'\nНа ітерації {i} маємо \n'
+			f'\t x_i = {x.T}\n'
+			f'\tmu_i = {mu}\n')
 
-	x.append(A * (x[-1]))
+	i = 0
 
-	mu1.append(float(x[-1].T * x[-2]) / float(x[-2].T * x[-2]))
+	while abs(mu - mu_prev) > eps and i <= kmax:
+		_next()
+		if log:
+			_log()
 
-	x[-1] /= norm(x[-1], 2)
-
-	print(f'mu1i = {mu1[-1]}')
+	return mu
 
 
-B = 17.686140661634397 * np.eye(n) - A
+def eig_min(a, eps=1e-7, kmax=1e3, log=False):
 
-x = [np.matrix([1, 0, 0, 0, 0]).T]
+	""" 
+	:param a: matrix to find min eigenvalue of
+	:param eps: desired precision
+	:param kmax: max number of iterations allowed
+	:param log: whether to log the iterations
+	"""
+	mu_1 = eig_max_abs(a, eps, kmax, log)
 
-mu1 = []
+	return mu_1 - eig_max_abs(mu_1 * np.eye(a.shape[0]) - a, eps, kmax, log)
 
-while abs(mu1[-1] - mu1[-2]) > k_eps:
-	print(f'iteration = {iteration}')
 
-	#print(f'xi = {x[-1]}')
+def eig_min_abs(a, eps=1e-7, kmax=1e3, log=False):
 
-	x.append(B * (x[-1]))
+	""" 
+	:param a: matrix to find min by absolute value eigenvalue of
+	:param eps: desired precision
+	:param kmax: max number of iterations allowed
+	:param log: whether to log the iterations
+	"""
+	mu_1 = eig_max_abs(a, eps, kmax, log)
 
-	mu1.append(float(x[-1].T * x[-2]) / float(x[-2].T * x[-2]))
+	mu_2 = eig_max_abs(np.eye(a.shape[0]) - (a * a) / mu_1**2, eps, kmax, log)
 
-	x[-1] /= norm(x[-1], 2)
+	return np.sqrt(mu_1**2 * (1 - mu_2))
 
-	print(f'mu1i = {mu1[-1]}')
 
-C = np.eye(n) - (A * A) / 17.686140661634397**2
+if __name__ == '__main__':
+	np.set_printoptions(linewidth=90)
 
-print(f'C = {C}')
+	n = 6
 
-x = [np.matrix([1, 0, 0, 0, 0]).T]
+	a = np.matrix([[_a(i, j) for j in range(1, n)] for i in range(1, n)])
 
-mu1 = []
+	# part 1
 
-for iteration in range(0):
-	print(f'iteration = {iteration}')
+	lib_mu = np.max(np.abs(eig(a)[0]))
 
-	print(f'xi = {x[-1]}')
+	mu = eig_max_abs(a)
 
-	x.append(C * (x[-1]))
+	print(f'\nЗнайдене бібліотечною функцією найбільше (за модулем) '
+		f'власне значення:\n'
+		f'\tλ = {lib_mu}\n\n')
 
-	mu1.append(float(x[-1].T * x[-2]) / float(x[-2].T * x[-2]))
+	print(f'Знайдене нами найбільше за модулем власне значення:\n'
+		f'\tλ = {mu}\n\n')
 
-	x[-1] /= norm(x[-1], 2)
+	print(f'Похибка обчислень:\n'
+		f'\tr = {abs(lib_mu - mu)}\n\n')
 
-	print(f'mu1i = {mu1[-1]}')
+	# part 2
+
+	lib_mu = np.min(eig(a)[0])
+
+	mu = eig_min(a)
+
+	print(f'Знайдене бібліотечною функцією найменше власне значення:\n'
+		f'\tλ = {lib_mu}\n\n')
+
+	print(f'Знайдене нами найменше власне значення:\n'
+		f'\tλ = {mu}\n\n')
+
+	print(f'Похибка обчислень:\n'
+		f'\tr = {abs(lib_mu - mu)}\n\n')
+
+	# part 3
+
+	lib_mu = np.min(abs(eig(a)[0]))
+
+	mu = eig_min_abs(a)
+
+	print(f'Знайдене бібліотечною функцією найменше (за модулем) '
+		f'власне значення:\n'
+		f'\tλ = {lib_mu}\n\n')
+
+	print(f'Знайдене нами найменше за модулем власне значення:\n'
+		f'\tλ = {mu}\n\n')
+
+	print(f'Похибка обчислень:\n'
+		f'\tr = {abs(lib_mu - mu)}\n')
+
+
+__author__: "Nikita Skybytskyi"
+__copyright__ = "Copyright 2019, KNU"
+__credits__ = ["Nikita Skybytskyi"]
+__license__ = "MIT"
+__version__ = "1.1"
+__maintainer__ = "Nikita Skybytskyi"
+__email__ = "n.skybytskyi@knu.ua"
+__status__ = "Production"
