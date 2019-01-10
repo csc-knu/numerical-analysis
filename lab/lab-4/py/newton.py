@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""chebyshev.py: interpolates function f(x) 
+"""newton.py: interpolates function f(x) 
 by a give grid y of values for x in [a, b] 
 via Newton method with equidistant nodes."""
 import matplotlib.pyplot as plt
@@ -86,7 +86,7 @@ __author__: "Nikita Skybytskyi"
 __copyright__ = "Copyright 2019, KNU"
 __credits__ = ["Nikita Skybytskyi"]
 __license__ = "MIT"
-__version__ = "1.1.2"
+__version__ = "1.1.3"
 __maintainer__ = "Nikita Skybytskyi"
 __email__ = "n.skybytskyi@knu.ua"
 __status__ = "Production"
