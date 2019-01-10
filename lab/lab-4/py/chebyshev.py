@@ -8,20 +8,23 @@ import matplotlib.pyplot as plt
 
 
 
-def interpolate_newton_chebyshev(y, a, b, n):
+def interpolate_newton_chebyshev(y, a, b, n, log=False):
 	x = [(a + b) / 2 + (b - a) / 2 * cos(pi * (2 * i + 1) / (2 * n)) \
 		for i in range(n)]
 
-	print(f'\nВузли інтерполяції:\n'
-		f'\t{[round(xi, _round) for xi in x]}\n\n')
+	if log:
+		print(f'\nВузли інтерполяції:\n'
+			f'\t{[round(xi, _round) for xi in x]}\n\n')
 
-	print(f'Значення функції у вузлах:\n'
-		f'\t{[round(_, _round) for _ in y]}\n\n')
+	if log:
+		print(f'Значення функції у вузлах:\n'
+			f'\t{[round(_, _round) for _ in y]}\n\n')
 
 	rr = [x, [(y[i] - y[i + 1]) / (x[i] - x[i + 1]) for i in range(n - 1)]]
 
-	print(f'Розділені різниці 1-го порядку:\n'
-		f'\t{[round(_, _round) for _ in rr[1]]}\n\n')
+	if log:
+		print(f'Розділені різниці 1-го порядку:\n'
+			f'\t{[round(_, _round) for _ in rr[1]]}\n\n')
 
 	for i in range(2, n):
 		rr.append([0 for _ in range(n - i)])
@@ -29,8 +32,9 @@ def interpolate_newton_chebyshev(y, a, b, n):
 		for j in range(n - i):
 			rr[i][j] = (rr[i - 1][j] - rr[i - 1][j + 1]) / (x[j] - x[j + i])
 
-		print(f'Розділені різниці {i}-го порядку:\n'
-			f'\t{[round(_, _round) for _ in rr[i]]}\n\n')
+		if log:
+			print(f'Розділені різниці {i}-го порядку:\n'
+				f'\t{[round(_, _round) for _ in rr[i]]}\n\n')
 
 	pn = f'{round(rr[n - 1][0], _round)}'
 
@@ -39,8 +43,9 @@ def interpolate_newton_chebyshev(y, a, b, n):
 
 	pn = f'(x - {round(x[0], _round)}) * ({pn}) + {round(y[0], _round)}'
 
-	print(f'Інтерполюючий багаточлен:\n'
-		f'\tP_{n-1}(x) = {pn}\n')
+	if log:
+		print(f'Інтерполюючий багаточлен:\n'
+			f'\tP_{n-1}(x) = {pn}\n')
 
 	return pn
 
@@ -56,7 +61,7 @@ if __name__ == '__main__':
 	y = [f((a + b) / 2 + (b - a) / 2 * cos(pi * (2 * i + 1) / (2 * n))) \
 		for i in range(n)]
 
-	pn = interpolate_newton_chebyshev(y, a, b, n)
+	pn = interpolate_newton_chebyshev(y, a, b, n, log=True)
 
 	_x = [a + i * (b - a) / k for i in range(k + 1)]
 
@@ -88,7 +93,7 @@ __author__: "Nikita Skybytskyi"
 __copyright__ = "Copyright 2019, KNU"
 __credits__ = ["Nikita Skybytskyi"]
 __license__ = "MIT"
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 __maintainer__ = "Nikita Skybytskyi"
 __email__ = "n.skybytskyi@knu.ua"
 __status__ = "Production"
