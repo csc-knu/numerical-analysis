@@ -1,0 +1,254 @@
+% cd ..\..\Users\NikitaSkybytskyi\Desktop\c3s2\numerical-analysis
+% pdflatex lectures.tex && pdflatex lectures.tex && del lectures.out, lectures.log, lectures.aux, lectures.toc && start lectures.pdf
+
+\input{univ.sty}
+
+\title{Чисельні методи}
+\author{Нікіта Скибицький}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Чисельне диференціювання}
+
+Ми розглянемо постановку задачі і ідеологію розв'язання задачі. \\
+
+Нехай задані точки $x_i \in [a, b]$, $i = \overline{0, n}$. У цих точках задані значення, які ми будемо позначити одним з трьох способів: $y_i = f_i = f(x_i)$.\\
+
+Задача полягає у тому, що \textbf{необхідно} знайти значення $k$-ої похідної $f^{(k)}(x)$. \\
+
+Задачу будемо розв'язувати базуючись на інтерполяційному підході: подами функцію $f(x)$ у вигляді інтерполяційного поліному
+\begin{equation}
+	\label{eq:1}
+	f(x) = P_n(x) + r_n(x)
+\end{equation}
+
+Тут $P_n$ -- інтерполяційний поліном Ньютона, а $r_n$ -- залишковий член. Подамо залишковмий член у вигляді
+\begin{equation}
+	\label{eq:2}
+	r_n(x) = f(x, x_0, \ldots, x_n) \cdot \omega_n(x),
+\end{equation}
+де
+\begin{equation}
+	\label{eq:3}
+	\omega_n(x) = (x - x_0) \cdot \ldots \cdot (x - x_n).
+\end{equation}
+
+Тоді, виходячи з \eqref{eq:1}, будемо мати
+\begin{equation}
+	\label{eq:4}
+	f^{(k)}(x) = P_n^{(k)}(x) + r_n^{(k)}(x), \quad k \le n.
+\end{equation}
+
+Зрозуміло, що $k \le n$, бо інакше у нас недостатньо даних для проведення інтерполяції. \\
+
+Таким чином ми за наближене значення $k$-ої похідної будемо брати $k$-у похідну від інтерполяційного поліному:
+\begin{equation}
+	\label{eq:5}
+	f^{(n)}(x) \approx P_n^{(k)}(x).
+\end{equation}
+
+Оцінимо похибку $r_n^{(k)}(x)$: виходячи з \eqref{eq:2} можемо записати
+\begin{equation}
+	\label{eq:6}
+	r_n^{(k)}(x) = \Sum_{j=0}^k C_k^i \cdot f^{(j)} (x, x_0, \ldots, x_n) \cdot \omega^{(k - j)}(x).
+\end{equation}
+
+Тоді, за формулою зв'язку розділеної різниці і похідної (нагадаємо її для тих, хто не пам'ятає):
+\begin{equation*}
+	f(x_0, \ldots , x_n) = \frac{f^{(n)}(\xi)}{n!}
+\end{equation*}
+з \eqref{eq:6} маємо
+\begin{equation}
+	\label{eq:7}
+	f^{(j)}(x, x_0, \ldots, x_n) = j! \cdot f\left( \underset{j}{\underbrace{x, \ldots, x}}, x_0, \ldots, x_n \right) = \frac{j! \cdot f^{(n + j + 1)}(\xi)}{(n + j + 1!)}
+\end{equation}
+
+Підставимо це в \eqref{eq:6}:
+\begin{equation}
+	\label{eq:8}
+	r_n^{(k)}(x) = \Sum_{j = 0}^k \frac{k!}{(k-j)! \cdot (n+j+1)!} \cdot f^{(n + j + 1)}(\xi_j) \cdot \omega^{k - j}(x).
+\end{equation}
+
+Формула \eqref{eq:8} дасть нам оцінку похибки:
+\begin{equation}
+	\label{eq:9}
+	|r_n^{(k)}(x)| \le M \cdot \Sum_{j = 0}^k \frac{k!}{(k-j)! \cdot (n+j+1)!} \cdot \omega^{(k - j)}(x),
+\end{equation}
+де
+\begin{equation*}
+	M = \Max_{[a,b]} \Max_{j = \overline{0, k}} |f^{(n + j + 1)}(x)|
+\end{equation*}
+
+Давайте тепер з цієї оцінки отримаємо щось хороше, а то зараз на неї неприємно дивитися. Нехай точки $x_i$ рівновіддалені: $x_i = x_0 + i h$. З'ясуємо який порядок по $h$ матиме похибка. Тоді
+\begin{equation*}
+	x - x_i \approx O(h),
+\end{equation*}
+тому
+\begin{equation*}
+	\omega_n(x) = O(h^{n + 1}),
+\end{equation*}
+а також 
+\begin{equation*}
+	\omega_n'(x) = O(h^n).
+\end{equation*}
+Звідси, за індукцією,
+\begin{equation*}
+	\omega_n^{(k)}(x) = O(h^{n + 1 - k}).
+\end{equation*}
+
+Повернемося до формули \eqref{eq:8}. Виходячи з останніх зауважень з'ясуємо який же порядок по $h$ матиме $r_n^{(k)}$. Зрозуміло що найнижчий (тобто найгірший) порядок буде у доданку суми де $j = 0$, а саме:
+\begin{equation}
+	\label{eq:10}
+	r_n^{(k)}(x) \approx O(h^{n + 1 - k}).
+\end{equation}
+
+Розгялнемо ще одну особливість, таку як точки підвищеної точності.
+
+\subsection{Точки підвищеної точності}
+
+Давайте тепер формулу \eqref{eq:8} запишемо у двох частинах, окремо для $j = 0$:
+\begin{multline}
+	\label{eq:11}
+	r_n^{(k)}(x) = \frac{f^{(n + 1)}(\xi_0)}{(n + 1)!} \cdot \omega_n^{(k)}(x) + \\ + \Sum_{j = 1}^k \frac{k!}{(k-j)! \cdot (n+j+1)!} \cdot f^{(n + j + 1)}(\xi_j) \cdot \omega^{k - j}(x)
+\end{multline}
+
+З формули \eqref{eq:11} бачимо наступне: перший доданок має порядок $O(h^{n + 1 - k})$, а для другого додатку ``найгіршим'' випадком буде $j = 1$, причому його порядком буде $O(h^{n + 2 - k})$, звідки випливає таке спостержеення. \\
+
+Нехай $\bar x: \omega_n^{(k)}(\bar x) = 0$, тоді 
+\begin{equation}
+	\label{eq:12}
+	r_n^{(k)}(\bar x) \approx O({h^{n + k - 2}}).
+\end{equation}
+
+Такі точки називаються \textit{точками підвищеної точності}.
+
+\begin{example}
+	Побудувати формулу чисельного диференціювання для $n = 1$, $k = 1$ і знайти точки підвищеної точності. \\
+
+	Оскільки $n = 1$, то
+	\begin{equation}
+		\label{eq:14}
+		P_1(x) = f_0 + (x - x_0) \cdot \frac{f_1 - f_0}{h}
+	\end{equation}
+	де $h = x_1 - x_0$. \\
+
+	Тоді
+	\begin{equation}
+		\label{eq:15}
+		P_1'(x) = \frac{f_1 - f_0}{h}.
+	\end{equation}
+
+	Таким чином для $x \in [x_0, x_1]$ похідну можна знаходити за формулою \eqref{eq:15}. \\
+
+	Знайдемо тепер похибку. За формулою \eqref{eq:8} маємо
+	\begin{multline}
+		\label{eq:16}
+		r_1'(x) = \frac{f''(\xi_0)}{2!} \cdot \omega_1'(x) + \frac{f'''(\xi_1)}{3!} \cdot \omega_1(x) = \\ = \frac{f''(\xi_0)}{2} \cdot (2x - x_0 - x_1) + \frac{f'''(\xi_1)}{6} \cdot (x - x_0) \cdot (x - x_1).
+	\end{multline}
+
+	Отже порядок формули буде $O(h)$, тобто $r_1'(x) \approx O(h)$, $f \in C^{(2)}$.\\
+
+	Знайдемо точки підвищеної точності. Нехай $\omega_1'(x) = 0$, тоді
+	\begin{equation}
+		\label{eq:17}
+		\bar x = \frac{x_0 + x_1}{2},
+	\end{equation}
+	і похибка має порядок $O(h^2)$, 
+	\begin{equation}
+		\label{eq:18}
+		r_1'(\bar x) = - \frac{h^2}{24} \cdot f'''(\xi_1),
+	\end{equation}
+	або ж
+	\begin{equation}
+		\label{eq:19}
+		|r_1'(\bar x)| \le \frac{M_3 \cdot h^2}{24},
+	\end{equation}
+	де $M_3 = \Max_{[x_0, x_1]} |f'''(x)|$.
+\end{example}
+
+Таким чином, похідну на проміжку $x \in [x_0, x_1]$ можна знаходити ща формулою \eqref{eq:15}. Переведемо тепер цю формулу на проміжок $x \in [x_{i - 1}, x_i]$, отримаємо
+\begin{equation}
+	\label{eq:20}
+	f'(x) \approx \frac{f_i - f_{i - 1}}{h} \overset{\triangle}{=} f_{\bar x, i}.
+\end{equation}
+Її називають \textit{різницевою похідною назад в точці $x_i$}, або ще \textit{лівою різницевою похідною}. \\
+
+Якщо ж $x \in [x_i, x_{i+1}]$, то
+\begin{equation}
+	\label{eq:21}
+	f'(x) \approx \frac{f_{i + 1} - f_i}{h} \overset{\triangle}{=} f_{x, i}.
+\end{equation}
+Її називають \textit{різницевою похідною вперед в точці $x_i$}, або ще \textit{правою різницевою похідною}. 
+
+\begin{problem}
+	Побудувати формулу чисельного диференціювання для $n = 2$, $k = 1$ для випадку рівновіддалених вузлів. Знайти точки підвищенної точності.
+\end{problem}
+
+\begin{remark*}
+	Для формул \eqref{eq:20} та \eqref{eq:21} похибка має порядок $O(h)$, $r_1'(x) \approx O(h)$.
+\end{remark*}
+
+\begin{problem}
+	Нехай тепер
+	\begin{enumerate}
+		\item[а)] \begin{equation}
+			\label{eq:22}
+			f'(x_i) \approx f_{\bar x, i}
+		\end{equation}
+		\item[б)] \begin{equation}
+			\label{eq:23}
+			f'(x_i) \approx f_{x, i}
+		\end{equation}
+		\item[в)] \begin{equation}
+			\label{eq:24}
+			f'(x_i) \approx \frac{f_{i + 1} - f_{i - 1}}{2 h}, \quad x \in [x_{i - 1}, x_{i + 1}].
+		\end{equation}
+	\end{enumerate}
+
+	Визначити похибку чисельного диференціювання для формул \eqref{eq:22}-\eqref{eq:24}.
+\end{problem}
+\begin{hint}
+	Розв'язок можна безпосередньо отримати з формули \eqref{eq:16} якщо підставити замість $x$ потрібну точку ($x_0$, $x_1$, або $\frac{x_0+x_1}{2}$ відповідно).
+\end{hint}
+
+Розгялнемо ще один підхід як можна знайти похибку чисельного диференціювання.
+
+\subsection{Похибка через ряд Тейлора}
+
+\begin{example}
+	Для рівновіддалених точок побудувати формулу чисельного диференціювання для $n = 2$, $k = 2$ та визначити похибку цієї формули за допомогоб розвинення в ряд Тейлора:
+	\begin{equation*}
+		P_2(x) = f_0 + (x - x_0) \cdot \frac{f_1 - f_0}{2} + (x - x_0) \cdot (x - x_1) \cdot \frac{f_2 - 2 f_1 + f_2}{2 h^2}.
+	\end{equation*}
+
+	Тоді будемо мати, що 
+	\begin{equation}
+		\label{eq:25}
+		P_2''(x) = \frac{f_2 - 2 f_1 + f_0}{h^2}.
+	\end{equation}
+
+	Перепишемо тепер формулу \eqref{eq:25} для довільного вузла $x$:
+	\begin{equation}
+		\label{eq:27}
+		P_2''(x) = \frac{f_{i + 1} - 2 f_i + f_{i - 1}}{h^2}, \quad x \in [x_{i - 1}, x_{i + 1}] \overset{\triangle}{=} f_{\bar x x, i}.
+	\end{equation}	
+
+	Тоді, для формули \eqref{eq:27} матимемо
+	\begin{multline*}
+		r_2''(x) = f''(x) - \frac{f_{i + 1} - 2 f_i + f_{i - 1}}{h^2} = \\ = f''(x) - \frac{1}{h^2} \left( f_i + h f_i' + \frac{h^2}{2} f_i'' + \frac{h^3 f_i'''}{6} + \frac{h^4}{24} f_i^{(4)} - 2f_i \right. + \\ \left. + f_i - h f_i' + \frac{h^2}{2} f_i'' - \frac{h^3}{6} f_i''  + \frac{h^4}{24} f_i^{(4)} \right) + O(h^4) = \\ = f''(x) - f''(x_i) - \frac{h^2}{12} f^{(4)}(x_i) + O(h^4).
+	\end{multline*}
+
+	Таким чином, 
+	\begin{equation*}
+		r_2''(x_i) = -\frac{h^2}{12} f^{(4)} + O(h^4) \approx O(h^2).
+	\end{equation*}
+\end{example}
+
+Також зауважимо, що \eqref{eq:27} визначає \textit{другу різницеву похідну за трьома точками}
+ і позначається $f_{\bar x x,i}$.
+\end{document}
