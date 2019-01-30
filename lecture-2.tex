@@ -1,0 +1,287 @@
+% cd ..\..\Users\NikitaSkybytskyi\Desktop\c3s2\numerical-analysis
+% pdflatex lecture-2.tex && pdflatex lecture-2.tex && del lecture-2.out, lecture-2.log, lecture-2.aux, lecture-2.toc && start lecture-2.pdf
+
+% \input{univ.sty}
+
+% \title{Чисельні методи}
+% \author{Нікіта Скибицький}
+% \date{\today}
+
+% \begin{document}
+
+% \maketitle
+
+% \tableofcontents
+
+\subsection{Метод невизначених коефіцєнтів}
+
+Нехай задана сіткова функція $y = f(x)$, у вузлах $x_0, x_1, \ldots, x_n$. \\
+
+Побудуємо формулу для похідної:
+\begin{equation}
+	\label{eq:1.28}
+	y^{(k)} (x_i) \approx C_0 \cdot y_0 + C_1 \cdot y_1 + \ldots + C_n \cdot y_n = \Sum_{k = 0}^n C_k \cdot y(x_k).
+\end{equation}
+
+Запишемо тоді формулу для похибки:
+\begin{equation}
+	\label{eq:1.29}
+	r_n^{(k)} = y^{(k)} (x_i^\alpha) - \Sum_{k = 0}^n C_k \cdot x_k^\alpha = 0.
+\end{equation}
+
+Підставляючи $\alpha = \overline{0, n}$ отримуємо систему лінійних алгебраїчних рівнянь відносно $C_i$.
+
+\begin{example}
+	Побудувати формулу чисельного диференціювання у точці $x_1$ методом невизначених коефіцієнтів для $n = 3$ за значеннями $y_i$ у рівновіддалених вузлах $x_i = x_0 + i h$.
+\end{example}
+
+\begin{solution}
+$n = 3$, тому розглянемо функції $(x - x_0)^\alpha$, $\alpha = 0, 1, 2, 3$. Для точки $x_1$ маємо:
+
+\begin{equation*}
+	y'(x_1) = C_0 \cdot y_0 + C_1 \cdot y_1 + C_2 \cdot y_2 + C_3 \cdot y_3.
+\end{equation*}
+
+З \eqref{eq:1.29}
+
+\begin{equation}
+	\label{eq:1.30}
+	C_0 \cdot (x_0 - x_0)^\alpha + C_1 \cdot (x_1 - x_0)^\alpha + C_2 \cdot (x_2 - x_0)^\alpha + C_3 \cdot (x_3 - x_0)^\alpha = \left. \left( (x - x_0) \right) \right|_{x = x_1}.
+\end{equation}
+
+\begin{remark*}
+	Коли $y(x) = x^\alpha$:
+
+	\begin{equation}
+		\label{eq:1.29_prime}
+		\left( x_i^\alpha \right)^{(k)}  - \Sum_{i = 0}^n C_k \cdot x_k^\alpha = 0, \quad \alpha = \overline{0,n}
+	\end{equation}
+\end{remark*}
+
+Звідси отримуємо систему
+
+\begin{equation*}
+	\left\{
+		\begin{aligned}
+			C_0 + C_1 + C_2 + C_3 &= 0, \\
+			C_1 \cdot h + C_2 \cdot (2h) + C_3 \cdot (3h) &= 1, \\
+			C_1 \cdot h^2 + C_2 \cdot (2h)^2 + C_3 \cdot (3h)^2 &= 2h, \\
+			C_1 \cdot h^3 + C_2 \cdot (2h)^3 + C_3 \cdot (3h)^3 &= 3h^2.
+		\end{aligned}
+	\right.
+\end{equation*}
+
+Розв'язуючи її знаходимо
+
+\begin{equation*}
+	C_0 = \frac{1}{6h} \cdot (-2), \quad C_1 = \frac{1}{6h} \cdot (-3), \quad C_2 = \frac{1}{6h} \cdot (6), \quad C_0 = \frac{1}{6h} \cdot (-1), 
+\end{equation*}
+
+що дає наступну формулу
+\begin{equation*}
+	\left. \frac{\diff y}{\diff x} \right|_{x = x_1} \approx \frac{-2y_0-3y_1+6y_2-y_3}{6h}.
+\end{equation*}
+\end{solution}
+
+\subsection{Обчислювальна стійкість формул чисельного диференціювання}
+
+Сьогодні ми будемо ще говорити про таку річ як наближення функцій. Ситуація наступна: якщо у нас вхідні дані для сіткової функції задані з деякою похибкою. Як ця точність буде впливати на точність фомрули чисельного диференціювання
+
+\subsubsection{Приклад Адамара}
+
+Розглянемо довільну функцію $f(x)$ і модифікуємо її наступним чином:
+\begin{equation*}
+	\tilde f(x) = f(x) + \frac{1}{n} \cdot \sin( \omega x ),
+\end{equation*}
+де $n \to \infty$ -- параметр. Тоді з одного боку матимемо
+\begin{equation*}
+	\left\| \tilde f - f \right\|_C \le \frac{1}{n} \underset{n \to \infty}{\rightrightarrows} 0,
+\end{equation*}
+
+а з іншого
+\begin{equation*}
+	\tilde f'(x) = f' + \frac{\omega}{n} \cdot \cos (\omega x),
+\end{equation*}
+а тому якщо покласти $\omega = n^2$ то отримаємо
+\begin{equation*}
+	\left\| \tilde f' - f' \right\|_C \le \frac{\omega}{n} = n \underset{n \to \infty}{\rightarrow} \infty.
+\end{equation*}
+
+Тобто задача чисельного диференціювання не є стійкою, а тому і не є коректною.
+
+\begin{example*}
+	Нехай $f_i$ задані з похибкою $\epsilon_i$. Визначити обчислювальну похибку наступної формули чисельного диференціювання:
+	\begin{equation}
+		\label{eq:1.31}
+		f'(x_i) \approx f_{x, i} =  \frac{f_{i + 1} - f_i}{h}
+	\end{equation}
+\end{example*}
+
+\begin{solution}
+	Методом розвинення в ряд Тейлора знайдемо похибку апроксимації для формули \eqref{eq:1.31}:
+	\begin{multline*}
+		r_1'(x)i) = f'(x_i) - \frac{f_{i + 1} - f_i}{h} = f_i' - \frac{f_i + h \cdot f_i' + \frac{h^2}{2} \cdot f_i'' - f_i}{h} - O (h^2) = \\ = -\frac{h}{2} \cdot f_i'' + O(h^2) =: r_1'(x_1) + .
+	\end{multline*}
+
+	Давайте тепер подивимося на загальну похибку обчислень $R(h)$. Зрозуміло, що це буде похибка апроксимації і ще щось, а саме:
+	\begin{equation*}
+		\tilde f_i = f_i + \epsilon_i,
+	\end{equation*}
+	тому насправді ми будемо обчислювати
+	\begin{equation}
+		\label{eq:1.32}
+		\frac{\tilde f_{i + 1} - \tilde f_i}{h} = \frac{f_{i + 1} - f_i}{h} + \frac{\epsilon_{i + 1} - \epsilon_i}{h}
+	\end{equation}
+
+	Нехай у формулі \eqref{eq:1.32} усі $\epsilon_i$ не перевищують заданого $\epsilon$, а через $M_2$ позначимо, як заажди макс
+
+	Таким чином загальна похибка 
+	\begin{equation}
+		\label{eq:1.33}
+		R(h) = - \frac{h}{2} \cdot f''(x_i) + \frac{\epsilon_{i + 1} - \epsilon_i}{h}.
+	\end{equation}
+
+	Тоді
+	\begin{equation}
+		\label{eq:1.34}
+		| R(h) | \le \frac{h}{2} \cdot M_2 + \frac{2 \epsilon}{h}.
+	\end{equation}
+
+	Таким чином при $h \to 0$ перший доданок $\to 0$, а другий $\to +  \infty$. \\
+
+	Візьмемо функцію $g(h) = \frac{h \cdot M}{2} + \frac{2 \epsilon}{h}$, тоді
+	\begin{equation*}
+		g'(h) = \frac{M_2}{2} - \frac{2 \epsilon}{h^2} = 0,
+	\end{equation*}
+	звідки
+	\begin{equation*}
+		h_0 = 2 \cdot \sqrt{ \frac{\epsilon}{M_2} },
+	\end{equation*}
+	тобто оптимальне $h$, для якого $g$ буде оптимальною, а саме
+	\begin{equation}
+		\label{eq:1.35}
+		g(h_0) = 2 \sqrt{\epsilon \cdot M_2}.
+	\end{equation}
+\end{solution}
+
+Хочеться звернути увагу на те, що навіть якщо $\epsilon$ це позибка вводу даних до комп'ютера, то при обчисленні за нашою формулою ми будемо мати вже удвічі менше вірних цифр.
+
+\begin{problem}
+	Знайти обчислювальну похибну наступних формули чисельного диференціювання:
+	\begin{enumerate}
+		\item $f_i'' \approx f_{\bar x x, i}$;
+		\item $f_i \approx f_{\bar x, i}$;
+		\item $f_i' \approx f_{\mathring{x} x, i} = \frac{f_{i + 1} - f_{i - 1}}{2 h}$;
+	\end{enumerate}
+\end{problem}
+
+\section{Апроксимація функцій}
+
+Виникає наступне запитання: чого це ми маємо вимагати від поліному щоб він точно проходив через значення функції які ми навіть точно не знаємо? Отже постає задача: нехай є $f(x) in R$, хочемо побудувати функцію $\Phi(x)$ таку що $\| f(x) - \Phi(x) \| \le \epsilon$. Виникає ще багато запитань до цієї постановки.
+
+\subsection{Елементи найкращого наближення}
+
+Нехай $R$ -- лінійний нормований простір. У цьому просторі виберемо систему лінійно незалежних функції $\{\phi_i\}_{i=0}^n \subset R$ і позначимо наступну множину
+\begin{equation}
+	\label{eq:2.1}
+	M_n: \quad \Phi(x) = \Sum_{i = 0}^n C_i \cdot \phi_i,
+\end{equation}
+тоді
+\begin{equation}
+	\label{eq:2.2}
+	\Delta(d, \phi) = \| f - \Phi\|
+\end{equation}
+
+$f \in R$, $\Phi \in M_n$
+
+\begin{equation}
+	\label{eq:2.3}
+	\Delta(f) = \inf_{\Phi \in M_n} \Delta (f, \Phi)
+\end{equation}
+
+Елемент на якому досягається інфімум позначимо $\Phi_0$, тобто
+\begin{equation}
+	\label{eq:2.4}
+	\Delta (f) = \| f - \Phi_0 \| = \inf_{\Phi \in M_n} \Delta (f, \Phi).
+\end{equation}
+
+\begin{definition}
+	Елемент $\Phi_0$ з $M_n$ для якого виконується \eqref{eq:2.4} називаєтсья елементом найкращого наближення елементу $f$ простору $R$.
+\end{definition}
+
+\begin{theorem}
+	Для будь-якого елементу $f$ з лінійного нормованого простору $R$ існує елемент найкращого наближення $\Phi_0 \in M_n$, причому множина елементів найкращого наближення є опуклою. 
+\end{theorem}
+
+\begin{proof}
+	Розглянемо функцію
+	\begin{equation}
+		\label{eq:2.5}
+		\phi(C_0, C_1, \ldots, C_n) = \left\| f - \Sum_{i = 0}^n C_i \cdot \phi_i \right\|.
+	\end{equation}
+
+	Виходячи з виразу для $|\phi(C^1) - \phi(C^2)|$:
+	\begin{multline}
+		\label{eq:2.6}
+		\left| \left\| f - \Sum_{i = 0}^n C_i^1 \cdot \phi_i \right\| - \left\| f - \Sum_{i = 0}^n C_i^2 \cdot \phi_i \right\| \right| \le \\ \le \left\| \Sum_{i = 0}^n \left(C_i^1 - C_i^2\right) \cdot \phi_i \right\| \le \left\| \Sum_{i = 0}^n \left|C_i^1 - C_i^2\right| \cdot \phi_i \right\|
+	\end{multline}
+	маємо, що функція $\phi$ є неперервною функцією своїх аргументів $C_0, C_1, \ldots, C_n$. \\
+
+	Розглянемо множину таку, що $\| \Phi \| > 2 \| f \|$, тоді $\| f - \Phi \| \ge \| \Phi \| - \| f \| > 2 \| f \| - \| f \| = \| f \| \ge \Delta (f)$, де остання нерівність випливає з підстановки $C_0 = C_1 = \ldots = C_n = 0$. \\
+
+	Розглнемо другу область, $\| \Phi \| \le \| f \|$. На цьому компакті ми знаємо, що $\| \Phi \|$ досягає свого екстремуму, зокрема інфімуму, тобто елемент найкращого наближення існує. \\
+
+	Покажемо, тепер, що якщо $\Phi_0$ і $\tilde \Phi_0$ є елементами найкращого наближення, то і $\Phi_2 = a \cdot \Phi_0 + b \cdot \tilde \Phi_0$, де $a + b = 1$ буде елементом найкращого наближення. \\
+
+	Розгялнемо 
+	\begin{multline}
+		\label{eq:2.7}
+		\Delta(f) \le \| f - \Phi_2 \| = \| (a + b) \cdot f - (a \cdot \Phi_0 + b \cdot \tilde \Phi_0) \| \le \\ \le \| a \cdot \| f - \Phi_0 \| + b \cdot \| f - \tilde \Phi_0 \| = \\ = a \cdot \Delta(f) + b \cdot \Delta(f) = \Delta(f),
+	\end{multline}
+	тобто $\Phi_2$ -- елемент найкращого наближення.
+\end{proof}
+
+\begin{theorem}
+	Якщо $R$ -- гільбертів, то елемент найкращого наближення існує і єдиний.
+\end{theorem}
+
+Спочатку доведемо ось що: 
+\begin{lemma}
+	якщо $\Phi_0$ -- елемент найкращого наближення, то
+	\begin{equation}
+		\label{eq:2.8}
+		(f - \Phi_0, \Phi) = 0ь \quad \forall \Phi \in M_n.
+	\end{equation}
+\end{lemma}
+
+\begin{proof}
+	Справді, від супротивного, нехай існує $\Phi_1$ (без обмеження загальності $\|\Phi_1\| = 1$)такий, що 
+	\begin{equation}
+		\label{eq:2.9}
+		\left( f - \Phi_0, \Phi_1 \right) = \alpha \ne 0
+	\end{equation}
+
+	Тоді знайдеться краще наближення. Справді, розгялнемо
+	\begin{equation*}
+		\Phi_2 = \Phi_0 + \alpha \cdot \Phi_1 \in M_n,
+	\end{equation*}
+	тоді
+	\begin{multline}
+		\| f - \Phi_2 \|^2 = \left( f - \Phi_0 - \alpha \cdot \Phi_1, f - \Phi_0 - \alpha \cdot \Phi_1 \right) = \\ = \| f - \Phi_0 \|^2 - |\alpha| \cdot (f - \Phi_0, \Phi_1) - \alpha \cdot (\Phi_1, f - \Phi_0) + |\alpha^2| \cdot \| \Phi_1\|^2 = \\ = \| f - \Phi_0 \|^2 - |\alpha|^2,
+	\end{multline}
+	виходить протиріччя з тим, що $\Phi_0$ -- елемент найкращого наближення, бо
+	\begin{equation}
+		\label{eq:2.10}
+		\| f - \Phi_2 \| < \Delta(f).
+	\end{equation}
+\end{proof}
+
+Повернемося тепер до доведення теореми:
+
+\begin{proof}
+	Зрозуміло що він існує, бо гільбертів простір -- частковий випадок лінійного нормованого простору. \\
+
+	Покажемо тепер що він єдиний.
+\end{proof}
+
+% \end{document}
