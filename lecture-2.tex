@@ -206,7 +206,7 @@ $f \in R$, $\Phi \in M_n$
 \end{equation}
 
 \begin{definition}
-	Елемент $\Phi_0$ з $M_n$ для якого виконується \eqref{eq:2.4} називаєтсья елементом найкращого наближення елементу $f$ простору $R$.
+	Елемент $\Phi_0$ з $M_n$ для якого виконується \eqref{eq:2.4} називається елементом найкращого наближення елементу $f$ простору $R$.
 \end{definition}
 
 \begin{theorem}
@@ -250,7 +250,7 @@ $f \in R$, $\Phi \in M_n$
 	якщо $\Phi_0$ -- елемент найкращого наближення, то
 	\begin{equation}
 		\label{eq:2.8}
-		(f - \Phi_0, \Phi) = 0ь \quad \forall \Phi \in M_n.
+		(f - \Phi_0, \Phi) = 0, \quad \forall \Phi \in M_n.
 	\end{equation}
 \end{lemma}
 
@@ -281,7 +281,12 @@ $f \in R$, $\Phi \in M_n$
 \begin{proof}
 	Зрозуміло що він існує, бо гільбертів простір -- частковий випадок лінійного нормованого простору. \\
 
-	Покажемо тепер що він єдиний.
+	Покажемо тепер що він єдиний. Припустимо протилежне, тобто $\exists \Phi_0, \tilde \Phi_0$, тоді розглянемо
+	\begin{multline}
+		\label{eq:2.11}
+		( \Phi_0 - \tilde \Phi_0, \Phi_0 - \tilde \Phi_0 ) = ( \Phi_0 -f + f - \tilde \Phi_0, \Phi_0 - \tilde \Phi_0 ) = \\ = ( \Phi_0 - f, \Phi_0 - \tilde \Phi_0 ) + (f - \tilde \Phi_0, \Phi_0 - \tilde \Phi_0 ) = 0 + 0 = 0,
+	\end{multline}
+	отже $\Phi_0 = \tilde \Phi_0$.
 \end{proof}
 
 % \end{document}

@@ -1,0 +1,251 @@
+% % cd ..\..\Users\NikitaSkybytskyi\Desktop\c3s2\numerical-analysis
+% % pdflatex lecture-3.tex && pdflatex lecture-3.tex && del lecture-3.out, lecture-3.log, lecture-3.aux, lecture-3.toc && start lecture-3.pdf
+
+% \input{univ.sty}
+
+% \title{Чисельні методи}
+% \author{Нікіта Скибицький}
+% \date{\today}
+
+% \begin{document}
+
+% \maketitle
+
+% \tableofcontents
+
+\subsection{Елемент найкращого середньоквадратичного наближення}
+
+Ми зараз будемо розглядати елементи найкращого наближення в різних конкретних гілбертових просторах, але загальну теорію сформулюємо для абстрактного гільбертового простору $H$. \\
+
+Отже, нехай $R = H$, тоді $\exists !$ ЕНН. Тоді
+\begin{equation}
+	\label{eq:2.12}
+	\Delta(f, \Phi) = \| f - \Phi \|.
+\end{equation}
+А наша формальна задача набуває вигляду: знайти
+\begin{equation}
+	\label{eq:2.14}
+	\inf_{\Phi \in M_n} \Delta(f, \Phi) = \Delta(f).
+\end{equation}
+
+Тоді ЕНН $\Phi_0$ має вигляд:
+\begin{equation}
+	\label{eq:2.15}
+	\Phi = \sum_{i = 0}^n c_i \cdot \phi_i,
+\end{equation}
+де $\phi_i \in M_n$.
+
+\begin{equation}
+	\label{eq:2.16}
+	\left\| f - \sum_{i = 0}^n c_i \cdot \phi_i \right\|^2 = (f, f) + \sum_{i, j = 0}^n c_i c_j \cdot (\phi_i, \phi_j) - 2 \sum_{i = 0}^n c_i \cdot (f, \phi_i).
+\end{equation}
+
+Для ЕНН $\Phi_0$ з \eqref{eq:2.8} маємо:
+\begin{equation*}
+	(f - \Phi_0, \Phi = 0), \quad \forall \Phi \in M_n,
+\end{equation*}
+а тоді
+\begin{equation}
+	\label{eq:2.17}
+	(f - \Phi_0, \phi_i) = 0, \quad i = \overline{0, n}.
+\end{equation}
+
+Підставляючи в \eqref{eq:2.17} вираз \eqref{eq:2.15} будемо мати наступне:
+\begin{equation}
+	\label{eq:2.18}
+	\sum_{j = 0}^n c_j \cdot (\phi_j, \phi_i) = (f, \phi_i), \quad i = \overline{0, n}.
+\end{equation}
+Це є СЛАР відносно невідомих коефіцієнтів $c_j$. \\
+
+Якщо система функцій $\{\phi_i\}$ є лінійно-незалежною, то матриця $G = (g_{i, j})_{i, j = \overline{0, n}}$, то $det G \ne 0$ і система \eqref{eq:2.18} матиме єдиний розв'язок. \\
+
+Система \eqref{eq:2.18} має симетричну матрицю, тому доцільно розв'язувати \eqref{eq:2.18} методом квадратних коренів, тобто можемо записати її ще у такому вигляді:
+\begin{equation}
+	\label{eq:2.18_prime}
+	G \overline{c} = \overline{F},
+\end{equation}
+де
+\begin{equation*}
+	\overline{F} = \begin{pmatrix} (f, \phi_0) \\ (f, \phi_1) \\ \vdots \\ (f, \phi_n) \end{pmatrix}	
+\end{equation*}
+
+Відхилення ЕНН у цьому випадку визначатиметься за формулою:
+\begin{equation}
+	\label{eq:2.19}
+	\Delta(f) = \| f - \Phi_0\|.	
+\end{equation}
+
+\begin{remark*}
+	Систему вигляду \eqref{eq:2.18} можна отримати виходячи з \eqref{2.16}. Справді, якщо ми візьмемо праву частину \eqref{eq:2.16} і позначимо її через функціонал від $c$, $\Phi(c)$, і запишемо $\frac{\partial \Phi}{\partial c_i} = 0$.
+\end{remark*}
+
+Таким чином ми побудували алгоритм і нібито все добре, але нагадаємо таку річ як число обумовленості:
+\begin{equation*}
+	cond(A) = \|A^{-1}\| \cdot \|A\|.
+\end{equation*}
+
+Ситуація наступна: нехай $\{\phi_i\} = \{x^i\}_{i = 0}^\infty$, тоді якщо ми візьмемо
+\begin{equation*}
+	\Phi_n = \sum_{i = 0}^n c_i \cdot x^i
+\end{equation*}
+і будемо шукати ЕНН у такому вигляді, то для $H = L_2([0, 1])$. У цьому випадку 
+\begin{equation*}
+	g_{i, j} = \int_0^1 x^i \cdot x^j \diff x = \frac{1}{i + j + 1}, \quad i, j = \overline{0, n},
+\end{equation*}
+а тоді $cond(G) \approx 10^8$ при $n = 7$, $cond(G) \approx 10^9$ при $n = 8$ і так далі, тобто дуже швидко росте, тобто система \eqref{eq:2.18} буде дуже погано обумовленою.
+
+\begin{theorem}[Мюнца]
+	Система функцій $1, \{x^{n_i}\}$, $0 < n_1 < n_2 < \ldots $ буде повною якщо ряд
+	\begin{equation*}
+		\sum_{i=0}^\infty \frac{1}{n_i}
+	\end{equation*}
+	буде розбігатися.
+\end{theorem}
+
+Якщо ж у \eqref{eq:2.18} ми розглянемо ортогональну систему функцій $\{\phi_i\}$ простору $H$, то матриця $G$ системи \eqref{eq:2.18} буде діагональною, а $c_i$ можна буде знайти за формулами
+\begin{equation}
+	\label{eq:2.20}
+	c_i = \frac{(f, \phi_i)}{(\phi_i, \phi_i)}, \quad i = \overline{0, n},
+\end{equation}
+а $\Phi_0$ можна буде як і раніше знайти за формулою \eqref{eq:2.15}:
+\begin{equation*}
+	\Phi = \sum_{i = 0}^n c_i \cdot \phi_i.
+\end{equation*}
+
+Нагадаємо умови ортогональності:
+\begin{equation*}
+	(\phi_i, \phi_j) = \begin{cases} 0, & i \ne j, \\ \ne 0, & i = j. \end{cases}
+\end{equation*}
+
+У цьому випадку з \eqref{eq:2.16} будемо мати, що
+\begin{equation}
+	\label{eq:21}
+	\| f - \Phi\|^2 = \|f\|^2 - \sum_{i = 0}^n c_i^2 \cdot \|\phi_i\|^2.
+\end{equation}
+
+Якщо ж $\{\phi\}$ -- ортонормована ситсема функцій, тобто
+\begin{equation*}
+	(\phi_i, \phi_j) = \delta_{i, j} = \begin{cases} 0, & i \ne j, \\ 1, & i = j. \end{cases}
+\end{equation*}
+
+У цьому випадку розв'язок системи \eqref{eq:2.18} матиме вигляд
+\begin{equation}
+	\label{eq:2.22}
+	c_i = (f, \phi_i), \quad i = \overline{0, n},
+\end{equation}
+
+\begin{equation}
+	\label{eq:2.23}
+	\Phi_0 = \sum_{i = 0}^n c_i \cdot \phi_i,
+\end{equation}
+
+\begin{equation}
+	\label{eq:2.24}
+	\Delta^2 (f) = \|f - \Phi_0\|^2 = \|f\|^2 - \sum_{i = 0}^n c_i^2.
+\end{equation}
+
+Можемо записати розвинення функції $f$ в ряд Фур'є:
+\begin{equation}
+	\label{eq:2.25}
+	f = \sum_{i = 0}^\infty (f, \phi_i) \cdot \phi_i,
+\end{equation}
+
+\begin{equation*}
+	\|f\|^2 = \sum_{i = 0}^\infty c_i^2.
+\end{equation*}
+
+Тоді виходячи з \eqref{eq:2.24} будемо мати, що
+\begin{equation*}
+	\Delta^2(f) = \| f - \Phi_0\|^2 = \Sum_{i = n + 1}^\infty c_i^2 \xrightarrow[n \to \infty]{} 0.
+\end{equation*}
+
+\begin{remark*}
+	Якщо система функцій $\{\phi_i\}$ ортогональна з ваговим коефіцієнтом $\rho$, тобто 
+	\begin{equation*}
+		(\phi_i, \phi_j)_\rho = (\rho \phi_i, \phi_j) = \begin{cases} 0, & i \ne j, \\ \ne 0, & i = j, \end{cases}
+	\end{equation*}
+	то у цьому випадку формула \eqref{eq:2.20} набуде вигляду
+	\begin{equation}
+		\label{eq:2.27}
+		c_i = \frac{(f, \phi_i)_\rho}{(\phi_i, \phi_i)_\rho}, \quad i = \overline{0, n}.
+	\end{equation}
+\end{remark*}
+
+\subsubsection{Системи ортонормованих функцій}
+
+\begin{enumerate}
+	\item На $[-1, 1]$ з $\rho = 1$ є поліноми Лежандра.
+	\item На $[-1, 1]$ з $\rho = \frac{1}{\sqrt{1 - x^2}}$ є поліноми Чебишева.
+	\item На $[0, \infty)$ -- поліноми Ерміта.
+	\item поліноми Якобі
+	\item ...
+\end{enumerate}
+
+% \subsubsection{}
+
+% $H - L_2(a, b)$, у ньому $(u, v) = \frac{1}{b - a} \int_a^b u(x) v(x) \diff x$.
+
+\subsubsection{На дискретній множині точок}
+
+$H - \ell_2$, простір сіткових функцій, у ньому $(u, v) = \frac{1}{N} \sum_{i = 1}^N u_i v_i$,
+
+тоді $Q_n(x) = \sum_{j = 0}^n a_j \cdot x^j$. \\
+
+Система функцій $\{\phi_i\} = \{x^i\}$ буде лінійно незалежною якщо $n \le N - 1$. У свою чергу при $n \ge N$ поліном $Q(x) = (x - x_1) \cdot \ldots \cdot (x - x_n)$ може обертатися в 0 на всій сітці якщо в якості $x_i$ взяти вузли сітки оскільки $n \ge N$.
+
+\subsubsection{Для періодичних функцій}
+
+Нехай $x \in [0, 2 \pi)$ і розглянемо функцію $\{\phi_k\} = \{1, \cos x, \sin x, \ldots, \cos kx, \sin k x \}$, тоді тригонометричним поліномом степеню $m$ назвемо
+\begin{equation}
+	\label{eq:2.28}
+	T_m(x) = \sum_{k = 0}^m (a_k \cdot \cos k x + b_k \cdot \sin k x).
+\end{equation}
+
+\begin{align}
+	\label{eq:2.29}
+	(\sin k x, \sin m x) &= \begin{cases} 0, & k = m \\ \pi, & k \ne m, \end{cases} \\
+	(\sin k x, \cos m x) &= 0, \nonumber \\
+	(\cos k x, \cos m x) &= \begin{cases} 2 \pi , & k = m = 0 \\ \pi, & k = m \ne 0 \\ 0, & k \ne m. \end{cases} \nonumber 
+\end{align}
+
+\begin{equation}
+	\label{eq:2.30}
+	a_0 = \frac{1}{2 \pi} \int_0^{2 \pi} f(x) \diff x,
+\end{equation}
+
+\begin{align}
+	\label{eq:2.31}
+	a_k &= \frac{1}{\pi} \int_0^{2\pi} f(x) \cdot \cos (k x) \diff x, \quad k = \overline{1, m}, \\
+	\label{eq:2.32}
+	b_k &= \frac{1}{\pi} \int_0^{2\pi} f(x) \cdot \sin (k x) \diff x, \quad k = \overline{1, m}.
+\end{align}
+
+\begin{remark*}
+	Якщо функція періодична не на $[0, 2 \pi]$, то потрібно зводити або функцію на відповіний проміжок, або систему функцій.
+\end{remark*}
+
+\begin{remark*}
+	Якщо функція $f$ парна відносно точки $\pi$, то $b_k = 0$, а
+	\begin{equation*}
+		a_k = \frac{2}{\pi} \int_0^{\pi} f(x) \cdot \cos (k x) \diff x, \quad k = \overline{1, m},
+	\end{equation*}
+	а якщо непарна, то $a_k = 0$, а
+	\begin{equation*}
+		b_k = \frac{2}{\pi} \int_0^{\pi} f(x) \cdot \sin (k x) \diff x, \quad k = \overline{1, m}.
+	\end{equation*}
+\end{remark*}
+
+\begin{problem}
+	Показати, що тригонометрчина система функцій до $\sin m x, \cos m x$ на множині рівновіддалених точок $x_i = i \cdot \frac{2 \pi}{n}$, $i = \overline{1, n}$, $x_i \in (0, 2 \pi]$ є ортогональною, та ортонормувати її.
+\end{problem}
+
+\begin{remark*}
+	У нас степінь полінома $2 m \le n - 1$, а тоді тригонометричний поліном на дискретній множині точок ми можемо записати у вигляді \eqref{eq:2.28} з коефіцієнтами
+	\begin{align*}
+		a_0 &= \frac1n \sum_{j = 1}^n f(x_j), \\
+		a_k &= \frac2n \sum_{j = 1}^n f(x_j) \cdot \cos(k x_j), \\
+		b_k &= \frac2n \sum_{j = 1}^n f(x_j) \cdot \sin(k x_j).
+	\end{align*}
+\end{remark*}
+
+% \end{document}
