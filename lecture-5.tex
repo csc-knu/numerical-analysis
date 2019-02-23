@@ -1,0 +1,221 @@
+% cd ..\..\Users\NikitaSkybytskyi\Desktop\c3s2\numerical-analysis
+% pdflatex lecture-5.tex && pdflatex lecture-5.tex && del lecture-5.out, lecture-5.log, lecture-5.aux, lecture-5.toc && start lecture-5.pdf
+
+\input{univ.sty}
+
+\title{Чисельні методи}
+\author{Нікіта Скибицький}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\begin{theorem}[прос Чебишовський альтернанс]
+	$f(x_i) - 	Q_n^0 (x_i) = \alpha (-1)^i \|f- Q_n^0\|_C$, де
+	$\alpha = +\pm 1$. \\
+
+	Точок має бути хоча б $n + 2$.
+\end{theorem}
+
+\begin{example}
+	$f(x) \in C'[a, b]$, опукла. Побудувати поліном $Q(x) = c_0 + c_1 x$ найкращого рівномірного наближення.
+\end{example}
+
+\begin{solution}
+	Має бути хоча б три точки Чебишовського альтернансу: $a$, $b$ і ще якась $\xi$. Давайте позначимо $L = \Delta(f) = \|f - Q_1^0\|_{C[a,b]}$. \\
+
+	$f(a) - Q_1(a) = - L$, тому $\alpha = -1$. Маємо систему
+	\begin{equation}
+		\label{eq:5.3}
+		\begin{aligned}
+			f(a) - Q_1(a) &= -L, \\
+			f(\xi) - Q_1(\xi) &= L, \\
+			f(b) - Q_1(b) &= -L,
+		\end{aligned}
+	\end{equation}
+	а також, якщо $\phi(x) = f(x) - Q_1(x)$, то $\phi'(\xi) = 0$, додається до системи \eqref{eq:5.3}. Розв'язуємо систему \eqref{eq:5.3} і знаходимо всі змінні, зокрема $c_0$, $c_1$ і $L$. \\
+
+	\begin{remark}
+		Якщо віднімемо від третього рівняння перше, то отримаємо, що $\frac{f(b) - f(a)}{b - a} = c_1$. Окрім того, $Q_1'(x) = c_1$. Тобто січна через кінці графіку паралельна поліному найкращого наближення, а також дотичній в точці $\xi$, з чого випливає геометричний підхід до побудови поліному найкращого наближення.
+	\end{remark}
+\end{solution}
+
+\begin{example}
+	Для $f(x) = x^{n + 1}$, $x \in [-1, 1]$, побудувати $Q_n$.
+\end{example}
+
+\begin{solution}
+	Виходячи з визначення, $f(x) - Q_n(x) = \bar P_{n + 1}(x)$. Тут риска означає, що поліном $P_{n + 1}$ унітарний. Враховуючи що наша задача $\|f - Q_n\|_C \to \min$, тобто $\bar \|P_{n + 1}\|_C \to \min$, тобто $\bar P_{n + 1}$ -- унітарний поліном Чебишова степеню $n + 1$. Звідси випливає, що $f(x) - Q_n^0 (x) = \bar T_{n + 1}(x)$, тобто $Q_n^0 (x) = f(x) - \bar T_{n + 1}(x)$.
+\end{solution}
+
+\begin{example}
+	Нехай $f(x) = P_{n + 1}(x)$, $x \in [a, b]$. Знайти $Q_n(x)$ НРН.
+\end{example}
+
+\begin{solution}
+	Нехай $P_{n + 1}(x) = a_{n + 1} x^{n + 1} + a_n x^n + \ldots + a_0$. Тоді
+	\begin{equation}
+		\label{eq:5.4}
+		P_{n + 1}(x) - Q^0_n(x) = a_{n + 1} \bar T_{n + 1}^{[a, b]}(x)
+	\end{equation}
+	Нагадаємо, що (з мінімізації похибки інтерполяційного поліному) маємо $\bar T_{n + 1}^{[a, b]} (x) = (x - x_0) \cdot (x - x_n) = \ldots = \frac{(b - a)^{n + 1}}{2^{n + 1}} \bar T_{n + 1}^{[-1, 1]} (t) = \frac{(b - a)^{n + 1}}{2^{2 n + 1}} T_{n + 1}^{[-1, 1]} (t)$. Тому з формули \eqref{Peq:5.4} маємо 
+	\begin{equation}
+		\label{eq:5.5}
+		P_{n + 1}(x) - Q_n^0(x) = a_{n + 1} \cdot \frac{(b - a)^{n + 1}}{2^{2n + 1}} \cdot T_{n + 1}^{[a, b]} \left( \frac{2x - b - a}{b - a}\right)
+	\end{equation}
+\end{solution}
+
+Розгялнемо ситуацію у якій ми не можемо побудувати ЕНН, але хочемо розв'язати задачу $\|f - Q_n(x)\|\le \epsilon$, і нехай  $f \in C^{n + 1}[a, b]$, і хочемо невелике $n$.
+
+\begin{example}
+	Нехай задача $f(x)$, де $x \in [-1, 1]$. Побудувати поліном якомога меншого степеню який би наближав функцію  $f$ з точністю  $\epsilon$ в нормі $C$.
+\end{example}
+
+\begin{solution}
+	Запишемо розвинення в ряд, причому із ``запасом'': $f(x) = P_n(x) - r_n(x)$, де $P_n(x) = \sum_{k = 0}^n a_k x6k = a_0 + a_1 x + \ldots + a_n x^n$, причому $n$ беремо таким, щоб $\|f - P_n\| \le \frac\epsilon2$. Наблизимо тепер на проміжку $[-1, 1]$ поліном $P_n(x)$ поліномом $P_{n - 1}(x)$ як НРН. Тоді 
+	\begin{equation}
+		\label{eq:5.6}
+		P_n - P_{n - 1} = a_n \cdot \bar T_n (x) = \frac{a_n}{2^{n - 1}} \cdot T_n(x),
+	\end{equation}
+	тоді
+	\begin{equation}
+		\label{eq:5.7}
+		\|P_n - P_{n - 1}\|_C \le \frac{a_n}{2^{n - 1}},
+	\end{equation}
+	а тоді 
+	\begin{equation}
+		\label{eq:5.8}
+		P_{n - 1}(x) = P_n(x) - \frac{a_n}{2^{n - 1}} \cdot T_n(x),
+	\end{equation}
+	а тому
+	$\|f - P_{n - 1}\| \le \|f - P_n + P_n - P_{n - 1} \| \le \|f - P_n\| + \|P_n - P_{n - 1}\| \le \frac\epsilon2 + \frac{a_n}{2^{n - 1}}$. \\
+
+	Якщо останнє число менше за $\esilon$, то можемо $P_n$ замінити на $P_{n - 1}$.
+\end{solution}
+
+...
+
+\section{Чисельне інтегрування}
+
+\begin{equation}
+	\label{eq:6.1}
+	I = I(f) = \int_a^b \rho(x) f(x) \diff x,
+\end{equation}
+де $\rho > 0$. \\
+
+Введемо сітку $\omega_h = \{ x_i = a + i h \}$, де $h = \frac{b - a}{N}$, $i = \overline{0, N}$. Можемо побудувати наступну квадратурну суму:
+\begin{equation}
+	\label{eq:6.2}
+	I_n (f) = \sum_{k = 0}^n f(\xi_k) \Delta x_k,
+\end{equation}
+де $\Delta_k = x_k - x_{k - 1}$. \\
+
+Як бачимо $I_n(f) \xrightarrow[\Delta x_k \to 0]{} I(f)$. У згальному випадку ми тепер можемо записати наступним чином: 
+\begin{equation}
+	\label{eq:6.3}
+	I_n(f) = \sum_{k = 0}^m c_k \cdot f(x_k),
+\end{equation}
+яка називається \textit{квадратнурною сумою} або \textit{квадратурною формою}. А квадратурна формула має вигляд
+\begin{equation}
+	\label{eq:6.4}
+	I(f) \approx I_n(f).
+\end{equation}
+
+\begin{definition}
+	Величина 
+	\begin{equation}
+		\label{eq:6.5}
+		R_n(f) = I(f) - I_n(f)
+	\end{equation}
+	називається \textit{похибкою квадратурної формули}.
+\end{definition}
+
+\begin{definition}
+	Будемо говорити, що квадратична формула \textit{має $m$-ий алгебраїчний степінь точності} якщо вона є точною на алгебраїчних поліномах степеню до $m$ включно:
+	\begin{equation}
+		\label{eq:6.6}
+		R_n(P_m(x)) = 0,
+	\end{equation}
+	але не на степені $m + 1$:
+	\begin{equation}
+		\label{eq:6.7}
+		\exists P_{m + 1}: R_n(P_{m + 1}(x)) \ne 0.
+	\end{equation}
+\end{definition}
+
+Зрозуміло, що можна перевіряти еквівалентні умови:
+\begin{equation}
+	\label{eq:6.6_prime}
+	R_n(x^\alpha) = 0, \quad \alpha = \overline{0, m}
+\end{equation}
+\begin{equation}
+	\label{eq:6.7_prime}
+	R_n(x^{m + 1}) \ne 0.
+\end{equation}
+
+\subsection{Еквівалентні квадратурні формули}
+
+Зрозуміло, що можемо записати:
+\begin{equation}
+	\label{eq:6.8}
+	I = \int_a^b \rho(x) f(x) \diff x = \sum_{i = 1}^N \int_{x_{i-1}}^{x_i} \rho(x) f(x) \diff x
+\end{equation}
+
+\subsection{Інтерполяційний підхід}
+
+Подамо $f(x)$ у вигляді f(x) = L_n(x) + r_n(x)$, тоді будемо мати, що 
+\begin{equation}
+	\label{eq:6.9}
+	I(f) = I(L_n + r_n) = I(L_n) + I(r_n) = I_n(f) + R_n(f),
+\end{equation}
+зрозуміло, що 
+\begin{align}
+	\label{eq:6.10}
+	I(L_n) &= I_n(f), \\
+	\label{eq:6.11}
+	I(r_n) &= R_n(f).
+\end{align}
+
+Причому, враховуючи $r_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!} \cdot \omega_n(x)$, ортримуємо
+\begin{equation}
+	\label{eq:6.12}
+	R_n(x) = \int_a^b \frac{f^{(n + 1)}(\xi)}{(n + 1)!} \cdot \omega_n(x) \diff x
+\end{equation}
+
+Це так звана \textit{головна формула}. У свою чергу є \textit{складена формула}:
+\begin{equation}
+	\label{eq:6.14}
+	I_h(f) = \sum_{1 = 1}^N \int_{x_{i - 1}}^{x_i} \rho(x) f(x) \diff x = \sum_{i = 1}^N I_{n, i}(f).
+\end{equation}
+
+Перейдемо до розгляду найпростіших головних та складених квадратурних форм. Для геометричних інтерпретацій покладемо $\rho \equiv 1$.
+
+\subsection{Формули прямокутників}
+
+\textbf{Формула лівих прямокутників} ($n = 0$): $L_0(x) = f(x_{i - 1})$, 
+\begin{align}
+	\label{eq:6.15}
+	I_i(f) &= \int_{x_{i-1}}^{x_i} f(x) \diff x, \\
+	\label{eq:6.16}
+	I_{h, i}^L (f) &= h \cdot f(x_{i - 1}), \\
+	\label{eq:6.17}
+	R_{h, i}^L (F) &= \int_{x_{i - 1}}^{x_i} f'(\xi_i) (x - x_{i - 1}) \diff x \approx \frac{h^2 \cdot f'(\eta_i)}{2}.
+\end{align}
+
+Алгебраїчний степінь точності цієї формули -- 0. Справді
+$I_i(1) = x_i - x_{i - 1} = h = I_{h, i} (1)$, але $I_i(x) = \frac{x_i^2 - x_{i - 1}^2}{2} = \frac{h(x_i + x_{i - 1})}{2} \ne h x_{i - 1} = I_{i, h}(x)$. \\
+
+Алгебраїчну степінь точності можна ще визначити з формули \eqref{eq:6.17}.
+
+\begin{problem}
+	Формула правих прямокутників.
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\end{document}
