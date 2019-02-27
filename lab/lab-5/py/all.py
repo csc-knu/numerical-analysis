@@ -274,26 +274,25 @@ def spline_interpolation(n: int, a0: float, b0: float) -> None:
 
     a = np.zeros((n + 1, n + 1))
     b = np.zeros(n + 1)
-    for i in range(n+1):
-        if i == 0:
-            a[i, i] = 1
-        elif i == n:
+
+    for i in range(n + 1):
+        if i == 0 or i == n:
             a[i, i] = 1
         else:
             a[i, i - 1] = h[i - 1] / 6
             a[i, i] = (h[i - 1] + h[i]) / 3
-            a[i, i + 1] = h[i]/6
-            b[i] = (f(x[i + 1]) - f(x[i])) / h[i] + (f(x[i]) - f(x[i - 1])) / h[i - 1]
+            a[i, i + 1] = h[i] / 6
+            b[i] = (f(x[i + 1]) - f(x[i])) / h[i] - (f(x[i]) - f(x[i - 1])) / h[i - 1]
 
     m = np.linalg.solve(a, b)
 
     def f_sol(x0):
-        for i in range(1, n + 1):
-            if x[i] >= x0 >= x[i - 1]:
-                return m[i - 1] * ((x[i] - x0)**3) / (6 * h[i - 1]) + \
-                    m[i] * ((x[i] - x0)**3) / (6 * h[i - 1]) + \
-                    (f(x[i - 1]) - m[i - 1] * (h[i - 1]**2) / 6) * (x[i] - x0) / h[i - 1] + \
-                    (f(x[i]) - m[i] * (h[i - 1]**2) / 6) * (x0 - x[i - 1]) / h[i - 1]
+        for i in range(n):
+            if x[i + 1] >= x0 >= x[i]:
+                return m[i] * ((x[i + 1] - x0)**3) / (6 * h[i]) + \
+                    m[i + 1] * ((x0 - x[i])**3) / (6 * h[i]) + \
+                    (f(x[i]) - m[i] * h[i]**2 / 6) * (x[i + 1] - x0) / h[i] + \
+                    (f(x[i + 1]) - m[i + 1] * h[i]**2 / 6) * (x0 - x[i]) / h[i]
 
     x1 = np.linspace(a0, b0, 100 + 1)
     y = [f_sol(xi) for xi in x1]
