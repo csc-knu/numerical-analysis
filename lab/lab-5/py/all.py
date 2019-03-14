@@ -60,6 +60,7 @@ def root_mean_square_approximation(n: int, a0: float, b0: float,
         plt.plot(x, f(x), 'b.', label='True function')
         plt.xlabel('x')
         plt.ylabel('y')
+        plt.ylim((3,11))
         plt.legend()
         plt.grid(True)
         plt.get_current_fig_manager().full_screen_toggle() 
@@ -260,6 +261,7 @@ def root_mean_square_approximation_polinomial_discrete(m: int, a0: float,
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title("Polynomial discrete interpolation")
+    plt.ylim((3,11))
     plt.legend()
     plt.grid(True)
     plt.get_current_fig_manager().full_screen_toggle() 
@@ -268,12 +270,22 @@ def root_mean_square_approximation_polinomial_discrete(m: int, a0: float,
     return f_sol
 
 
-def spline_interpolation(n: int, a0: float, b0: float) -> None:
+def spline_interpolation(n: int, a0: float, b0: float, 
+    f: Callable[[float], float]) -> None:
     x = np.linspace(a0, b0, n + 1)
     h = x[1:] - x[:-1]
 
+    R = np.eye(n + 1)
+
+    H = np.zeros((n + 1, n + 1))
+
+    for i in range(1, n):
+        H[i][i - 1] = 1 / h[i - 1]
+        H[i][i] = - (1 / h[i - 1] + 1 / h[i])
+        H[i][i + 1] = 1 / h[i]
+
     a = np.zeros((n + 1, n + 1))
-    b = np.zeros(n + 1)
+    b = np.zeros(n + 1)    
 
     for i in range(n + 1):
         if i == 0 or i == n:
@@ -284,15 +296,17 @@ def spline_interpolation(n: int, a0: float, b0: float) -> None:
             a[i, i + 1] = h[i] / 6
             b[i] = (f(x[i + 1]) - f(x[i])) / h[i] - (f(x[i]) - f(x[i - 1])) / h[i - 1]
 
-    m = np.linalg.solve(a, b)
+    m = np.linalg.solve(a + np.dot(H, H.T), b)
 
-    def f_sol(x0):
+    f_u = f(x) - np.dot(H.T, m).T
+
+    def f_sol(x0: float) -> float:
         for i in range(n):
             if x[i + 1] >= x0 >= x[i]:
                 return m[i] * ((x[i + 1] - x0)**3) / (6 * h[i]) + \
                     m[i + 1] * ((x0 - x[i])**3) / (6 * h[i]) + \
-                    (f(x[i]) - m[i] * h[i]**2 / 6) * (x[i + 1] - x0) / h[i] + \
-                    (f(x[i + 1]) - m[i + 1] * h[i]**2 / 6) * (x0 - x[i]) / h[i]
+                    (f_u[i] - m[i] * h[i]**2 / 6) * (x[i + 1] - x0) / h[i] + \
+                    (f_u[i + 1] - m[i + 1] * h[i]**2 / 6) * (x0 - x[i]) / h[i]
 
     x1 = np.linspace(a0, b0, 100 + 1)
     y = [f_sol(xi) for xi in x1]
@@ -302,13 +316,14 @@ def spline_interpolation(n: int, a0: float, b0: float) -> None:
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title("Spline interpolation")
-    plt.grid(True)
+    plt.ylim((3,11))
     plt.legend()
+    plt.grid(True)
     plt.get_current_fig_manager().full_screen_toggle() 
     plt.show()
 
 
-n, m, a0, b0 = 4, 20, -10, 10
+n, m, a0, b0 = 4, 15, -10, 10
 
 
 def f(x: float) -> float:
@@ -317,9 +332,9 @@ def f(x: float) -> float:
 
 matplotlib.rcParams.update({'font.size': 20})
 
-root_mean_square_approximation_polinomial(n, a0, b0, f, True)
+# root_mean_square_approximation_polinomial(n, a0, b0, f, True)
 
-root_mean_square_approximation_exponent(n, a0, b0, f, True)
+# root_mean_square_approximation_exponent(n, a0, b0, f, True)
 
 root_mean_square_approximation_trigonometric(n, a0, b0, f, True)
 
@@ -327,4 +342,4 @@ root_mean_square_approximation_chebyshev(n, a0, b0, f, True)
 
 root_mean_square_approximation_polinomial_discrete(m, a0, b0)
 
-spline_interpolation(m, a0, b0)
+spline_interpolation(m, a0, b0, f)
