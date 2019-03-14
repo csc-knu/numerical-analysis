@@ -1,4 +1,5 @@
-% cls && pdflatex lab-5-report.tex && cls && pdflatex lab-5-report.tex && start lab-5-report.pdf
+% cd ..\..\Users\NikitaSkybytskyi\Desktop\c3s2\numerical-analysis\lab\lab-5\tex
+% cls && pdflatex report.tex && cls && pdflatex report.tex && start report.pdf
 \input{lab.sty}
 
 \begin{document}
@@ -33,15 +34,15 @@
 
 \subsection{Найкраще середньоквадратичне наближення}
 
-Наблизимо функцію $f: \HH \to \RR$ з гільбертового простору $\HH$ функціями зі скінченновимірного підпростору $M_n$ простору $\HH$. Скалярний добуток у просторі $\HH$ ми будемо позначати як $(u, v)$, відповідну норму -- як $\|u\| = \sqrt{(u, u)}$. \\
+Наблизимо функцію $f: \HH \to \RR$ з гільбертового простору $\HH$ функціями зі скінченновимірного підпростору $M_n$ простору $\HH$. Скалярний добуток у просторі $\HH$ ми будемо позначати як $(u, v)$, відповідну норму -- як $\|u\| = \sqrt{(u, u)}$. \medskip
 
-Нехай $\{\phi_i\}_{i=0}^\infty$ -- лінійно-незалежна система функцій $\HH \to \RR$. Розглянемо її скінченну підсистему $\{\phi_i\}_{i=0}^n$. Позначимо лінійну оболонку цієї підсистеми за $M_n \subset \HH$. \\
+Нехай $\{\phi_i\}_{i=0}^\infty$ --- лінійно-незалежна система функцій $\HH \to \RR$. Розглянемо її скінченну підсистему $\{\phi_i\}_{i=0}^n$. Позначимо лінійну оболонку цієї підсистеми за $M_n \subset \HH$. \medskip
 
 Нагадаємо визначення ЕНН $\Phi$: \[ \|f - \Phi\| = \sqrt{(f - \Phi, f - \Phi)} = \inf_{\phi \in M_n} \|f - \phi\|. \] Якщо $\Phi$ -- ЕНН, то $(f - \Phi, \phi) = 0$ для довільного $\phi \in M_n$, тому можна записати $f = \Phi + \psi$, де $\Phi \in M_n$, $\psi \in M_n^\perp$, тому будемо шукати наближення у вигляді \[ \Phi = \sum_{i = 0}^n c_i \cdot \phi_i. \]
 
 Для виконання $(f - \Phi, \phi) = 0$ достатньо, щоб \[ (f - \Phi, \phi_j) = 0, \quad j = \overline{0, n}, \] що у свою чергу дає \[ \left(f - \sum_{i = 0}^n c_i \cdot \phi_i, \phi_j \right) = 0, \quad j = \overline{0, n}. \] Звідси маємо СЛАР на $c_i$: \[ \sum_{i=0}^n c_i \cdot (\phi_i, \phi_j) = (f, \phi_j), \quad j = \overline{0, n}. \]
 
-Матриця цієї СЛАР -- $G = \|g_{ij}\|_{i,j=1}^{n}$, де $g_{ij} = (\phi_i, \phi_j)$ -- матриця Грамма лінійно-незалежної системи функцій $\{\phi_i\}_{i=0}^n$, що доводить існування та єдиність ЕНН. Оскільки $G^T = G$, то для розв'язування цієї СЛАР використовують метод квадратних коренів. У багатьох випадках матриця $G$ погано обумовлена, у цих випадках систему функцій ортонормують, тобто досягають того, щоб $(\phi_i, \phi_j) = \delta_{ij}$. \\
+Матриця цієї СЛАР --- $G = \|g_{ij}\|_{i,j=1}^{n}$, де $g_{ij} = (\phi_i, \phi_j)$ --- матриця Грамма лінійно-незалежної системи функцій $\{\phi_i\}_{i=0}^n$, що доводить існування та єдиність ЕНН. Оскільки $G^T = G$, то для розв'язування цієї СЛАР використовують метод квадратних коренів. У багатьох випадках матриця $G$ погано обумовлена, у цих випадках систему функцій ортонормують, тобто досягають того, щоб $(\phi_i, \phi_j) = \delta_{ij}$. \medskip
 
 Явно запишемо розв'язок СЛАР: \[ \Phi = \sum_{i = 0}^n (f, \phi_i) \cdot \phi_i, \] звідки у випадку ортонормованої системи функцій маємо наступний вираз відхилення: \[ \Delta^2(f) = \|f - \Phi\|^2 = \|f\| - \|\Phi\|^2 = \|f\| - \sum_{i=0}^n c_i^2.\] У випадку ортогональної але не нормалізованої системи відхилення шукається наступним чином: \[ \Delta^2(f) = \|f - \Phi\|^2 = \|f\| - \|\Phi\|^2 = \|f\| - \sum_{i=0}^n c_i^2 \cdot \|\phi_i\|^2.\]
 
@@ -49,35 +50,59 @@
 
 Нехай в результаті вимірювань функції $f(x)$ маємо таблицю значень: \[ y_i \approx f(x_i), \quad x_i \in [a, b], \quad i = \overline{0, m}.\] За даними цієї таблиці треба побудувати аналітичну формулу $\Phi(x; a_1, a_2, \ldots, a_n)$ таку, що \[ \phi(x_i; a_1, a_2, \ldots, a_n) \approx y_i, \quad i = \overline{0, m}.\] 
 
-Розв'язувати цю задачу інтерполюванням (тобто задавати ``$=$'' замість ``$\approx$'') не раціонально, адже $m \gg n$ і отримана система буде перевизначена, її розв'язки як правило не існують. \\
+Розв'язувати цю задачу інтерполюванням (тобто задавати ``$=$'' замість ``$\approx$'') не раціонально, адже $m \gg n$ і отримана система буде перевизначена, її розв'язки як правило не існують. \medskip
 
-Параметри $a_1, a_2, \ldots, a_n$ визначають з міркувань \[I(a_1, a_2, \ldots, a_n) = \sum_{i = 0}^m (y_i - \phi(x_i; a_1, a_2, \ldots, a_n)^2 \to \min,\] тому метод і називається методом найменших (суми) квадратів (відхилень). \\
+Параметри $a_1, a_2, \ldots, a_n$ визначають з міркувань \[I(a_1, a_2, \ldots, a_n) = \sum_{i = 0}^m (y_i - \phi(x_i; a_1, a_2, \ldots, a_n)^2 \to \min,\] тому метод і називається методом найменших (суми) квадратів (відхилень). \medskip
 
-Для досягнення мінімуму достатньо $\partial I / \partial a_i = 0$, для $i = \overline{0, n}$. Зокрема, якщо $\phi$ лінійно залежить від параметрів $a_1, a_2, \ldots, a_n$, то отримаємо СЛАР \[ \sum_{j = 0}^n a_j \cdot \phi_j(x_i) = y_i, \quad i = \overline{0, m},\] яку називають системою умовних рівнянь. \\
+Для досягнення мінімуму достатньо $\partial I / \partial a_i = 0$, для $i = \overline{0, n}$. Зокрема, якщо $\phi$ лінійно залежить від параметрів $a_1, a_2, \ldots, a_n$, то отримаємо СЛАР \[ \sum_{j = 0}^n a_j \cdot \phi_j(x_i) = y_i, \quad i = \overline{0, m},\] яку називають системою умовних рівнянь. \medskip
 
 МНК рівносильний знаходженню ЕНН у гільбертовому просторі функцій $f: X \to \RR$ над дискретною множиною $X = \{x_0, x_1, \ldots, x_m\}$, у якому скалярний добуток визначається наступним чином: \[ (u, v) = \sum_{i = 0}^m u(x_i) \cdot v(x_i). \] Якщо відомі оцінки похибок $\epsilon_i$ для значень $y_i$ то скалярний добуток задають у вигляді \[ (u, v) = \sum_{i = 0}^m \frac{u(x_i) \cdot v(x_i)}{\epsilon_i^2}. \]
 
 \subsection{Кубічні згладжувальні сплайни}
 
-Нехай деяка функція $f(x)$ задана на відрізку $[a, b]$, що розбитий на сегменти $[x_i, x_{i + 1}]$. Природнім кубічним сплайном називається функція $S(x)$ така, що:
-\begin{enumerate}
-    \item на кожному відрізку $[x_i, x_{i + 1}]$ є поліномом степеню не вище третього;
-    \item має неперервні першу і другу похідну на усьому $[a, b]$;
-    \item у точках $x_i$ виконується $S(x_i) = f(x_i)$, тобто сплайн $S$ інтерполює функцію $f$ у точках $x_i$;
-    \item $S''(a) = S''(b) = 0$, умова природності.
-\end{enumerate}
+Розглянемо функціонал: \[ \Phi_1(u) = \Phi(u) + \sum_{i = 0}^n \rho \left( \tilde{f_i} - u(x_i) \right)^2,\] де $\rho_i > 0$ --- деякі числа, та \[\Phi(u) = \int_a^b (u''(x))^2 \diff x.\]
 
-Побудуємо природній сплайн. З перших двох умов: \[ S''(x) = m_i \cdot \frac{x_{i + 1} - x}{h_i} + m_{i + 1} \cdot \frac{x - x_i}{h_i}; \quad m_i = S''(x_i), \quad h_i = x_{i + 1} - x_i. \] 
+Згладжуючим сплайном назвемо функцію $g$, яка є розв'язком задачі: \[ \Phi_1(g) = \inf_{u \in W_2^2(a, b)} \Phi_1(u).\]
 
-Двічі інтегруючи це співвідношення знаходимо: \[ S(x) = m_i \cdot \frac{(x_{i + 1} - x)^3}{6 h_i} + m_{i + 1} \cdot \frac{(x - x_i)^3}{6 h_i} + A_i \cdot \frac{x_{i + 1} - x}{h_i} + B_i \cdot \frac{x - x_i}{h_i}. \] 
+Позначимо \[ \mu_i = g(x_i), \quad i = \overline{0, n}, \quad m_i = g''(x_i), \quad i = \overline{1, n - 1}.\]
 
-Константи $A_i, B_i$ можна знайти з умов $S(x_i) = f_i$. Остаточний вигляд кубічного сплайну: \begin{multline*} S(x) = m_i \cdot \frac{(x_{i + 1} - x)^3}{6 h_i} + m_{i + 1} \cdot \frac{(x - x_i)^3}{6 h_i} + \\ + \left( f_i - \frac{m_i \cdot h_i^2}{6} \right) \cdot \frac{x_{i + 1} - x}{h_i} + \left( f_{i + 1} - \frac{m_{i + 1} \cdot h_i^2}{6}\right) \cdot \frac{x - x_i}{h_i}, \quad x \in [x_i, x_{i + 1}], \quad h_i = x_{i + 1} - x_i. \end{multline*}
+Позначимо: \[ A = \begin{pmatrix}
+    1 & 0 & 0 & 0 & \cdots & 0 & 0 \\
+    0 & \frac{h_1 + h_2}{3} & \frac{h_2}{6} & 0 & \cdots & 0 & 0 \\
+    0 & \frac{h_2}{6} & \frac{h_2 + h_3}{3} & \frac{h_3}{6} & \cdots & 0 & 0 \\
+    \vdots & \ddots & \ddots & \ddots & \ddots & \vdots & \vdots \\
+    \vdots & \vdots & \ddots & \ddots & \ddots & \ddots & \vdots \\
+    0 & 0 & \cdots & 0 & \frac{h_{n - 2}}{6} & \frac{h_{n - 2} + h_{n - 1}}{3} & \frac{h_{n - 1}}{6} \\
+    0 & 0 & 0 & \cdots & 0 & \frac{h_{n - 1}}{6} & \frac{h_{n - 1} + h_n}{3} \\
+    0 & 0 & 0 & 0 & \cdots & 0 & 1
+\end{pmatrix} \]
+а також
+\[ H = \begin{pmatrix}
+    0 & 0 & 0 & 0 & \cdots & 0 & 0 \\
+    \frac{1}{h_1} & - \left( \frac{1}{h_1} + \frac{1}{h_2} \right) & \frac{1}{h_2} & 0 & \cdots & 0 & 0 \\
+    0 & \frac{1}{h_2} & - \left( \frac{1}{h_2} + \frac{1}{h_3} \right) & \frac{1}{h_3} & \cdots & 0 & 0 \\
+    \vdots & \vdots & \ddots & \ddots & \ddots & \vdots & \vdots \\
+    \vdots & \vdots & \vdots & \ddots & \ddots & \ddots & \vdots \\
+    0 & 0 & \cdots & 0 & \frac{1}{h_{n - 1}} & - \left( \frac{1}{h_{n - 1}} + \frac{1}{h_n} \right) & \frac{1}{h_n} \\
+    0 & 0 & 0 & 0 & \cdots & 0 & 0
+\end{pmatrix} \]
 
-Причому, враховуючи, що $S'(x_i - 0) = S'(x_i + 0)$ і умову природності, отримаємо СЛАР для знаходження всіх $M_i = S''(x_i)$: \[ \left\{ \begin{aligned} & m_0 = 0 \\ & \frac{h_i}{6} \cdot m_{i -1 } + \frac{h_i - h_{i + 1}}{3} \cdot m_i + \frac{h_{i + 1}}{6} \cdot m_{i + 1} = \frac{f_{i + 1} - f_i}{h_{i + 1}} - \frac{f_i - f_{i - 1}}{h_i}, \quad i = \overline{1, n - 1} \\ & m_n = 0. \end{aligned} \right. \]
+Якби значення $\mu_i$ були б відомі, то для побудови $g$ достатньо було б розв'язати систему \[ A \vec m = H \vec \mu \] та записати $g(x)$ за формулою:
+\begin{multline} 
+    \label{eq}
+    g(x) = m_i \cdot \frac{(x_{i + 1} - x)^3}{6 h_i} + m_{i + 1} \cdot \frac{(x - x_i)^3}{6 h_i} + \\
+    + \left( \mu_i - \frac{m_i \cdot h_i^2}{6} \right) \cdot \frac{x_{i + 1} - x}{h_i} + \left( \mu_{i + 1} - \frac{m_{i + 1} \cdot h_i^2}{6}\right) \cdot \frac{x - x_i}{h_i}, 
+\end{multline}
+де $x \in [x_i, x_{i + 1}]$, $h_i = x_{i + 1} - x_i$, $i = \overline{0, n - 1}$. \medskip
 
-Ця СЛАР розв'язується методом прогонки адже її матриця три-діагональна.
+Тому нам треба знайти $\mu$. Позначимо $R = \diagonal \rho_i$ (діагональна матриця), тоді знаходимо $m$ з матричної рівності: \[ (A + H R^{-1} H^T) \vec m = H \vec f.\]
 
-% мінімізаційні властивості природнього кубічного згладжувального сплайну
+Після цього можемо знайти $\vec \mu$ за формулою: \[\vec \mu = \vec f - R^{-1} H^{T} \vec m.\] В результаті отримуємо згладжуючий сплайн за формулою \eqref{eq}:
+\begin{multline*}
+    g(x) = m_i \cdot \frac{(x_{i + 1} - x)^3}{6 h_i} + m_{i + 1} \cdot \frac{(x - x_i)^3}{6 h_i} + \\
+    + \left( \mu_i - \frac{m_i \cdot h_i^2}{6} \right) \cdot \frac{x_{i + 1} - x}{h_i} + \left( \mu_{i + 1} - \frac{m_{i + 1} \cdot h_i^2}{6}\right) \cdot \frac{x - x_i}{h_i}, 
+\end{multline*}
+де $x \in [x_i, x_{i + 1}]$, $h_i = x_{i + 1} - x_i$, $i = \overline{0, n - 1}$.
 
 \section{Практична частина}
 
@@ -90,31 +115,34 @@
 % \end{figure}
 % \[ \Delta^2(f) = \texttt{1.3515894719986394}. \]
 
-\subsubsection{Поліноми Чебишева}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{3.png}
-\end{figure}
-\[ \Delta^2(f) = \texttt{0.135158947199864}. \]
+% \subsubsection{Експоненційна система функцій}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{2.png}
+% \end{figure}
+% \[ \Delta^2(f) = \texttt{4.20306095641598}. \]
 
 \subsubsection{Тригонометрична система функцій}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{2.png}
+    \includegraphics[width=\textwidth]{3.png}
 \end{figure}
-\[ \Delta^2(f) = \texttt{0.10740063553045082}. \]
 
-% \subsubsection{Експоненційна система функцій}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth]{6.png}
-% \end{figure}
-% \[ \Delta^2(f) = \texttt{4.20306095641598}. \]
+Порахуємо відхилення за загальною формолою, тобто за формулою $\|f - \Phi_0\|^2$ та отримуємо: \[ \Delta^2(f) = \texttt{0.10740063553045082}. \]
 
+\subsubsection{Поліноми Чебишева}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{4.png}
+\end{figure}
+
+Порахуємо відхилення за загальною формолою, тобто за формулою $\|f - \Phi_0\|^2$ та отримуємо: \[ \Delta^2(f) = \texttt{0.135158947199864}. \]
+
+\newpage
 
 \subsection{Метод найменших квадратів}
 
-Маємо таблицю значень:
+Нехай дано точки що ділить відрізок $[-10, 10]$ на 20 рівних частин та значення функції в них:
 
 \begin{table}[H]
     \centering
@@ -148,24 +176,28 @@
         6 & 0.0024510823676256385 \\ \hline
         7 & 0.0026396271651353076 \\ \hline
         8 & 0.0008506324753000230 \\ \hline
-        9 & 0.0009279627003272968 \\ \hline
+        % 9 & 0.0009279627003272968 \\ \hline
     \end{tabular}
 \end{table}
 
-Як бачимо, стабілізація відбувається починаючи з $n = 2$.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{4.png}
-\end{figure}
-
-Відповідна ``похибка'' (у лапках бо взята із ваговим коефіцієнтом): \[ \sigma_2 = \texttt{0.004422562774965524}. \]
-
-\subsection{Кубічні згладжувальні сплайни}
-
+Поліном найкращого середньоквадратичного наближення оптимального степеня та отримуємоб що $m = m^\star = 2$, тобто з моменту коли наступна величина стабілізується або почне зростати: \[\sigma^2 = \sqrt{\frac{1}{n - m} \sum_{k = 0}^m( P_m(x_k) - y_k)^2}.\] 
+\vspace{-1.5em}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{5.png}
+\end{figure}
+\vspace{-.5em}
+Відповідна ``похибка'' (у лапках бо взята із ваговим коефіцієнтом): \[ \sigma_2 = \texttt{0.004422562774965524}. \]
+
+\newpage
+
+\subsection{Кубічні згладжувальні сплайни}
+
+Будуємо кубічний сплайн для $n = 15$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{6.png}
 \end{figure}
 
 \end{document}
