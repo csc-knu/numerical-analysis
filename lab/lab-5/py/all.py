@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python -W ignore
 import numpy as np
 from scipy import integrate
 import matplotlib
@@ -8,7 +8,7 @@ from typing import Callable, List
 
 
 def scalar_product_int(f1: Callable[[float], float], f2: Callable[[float], float], 
-    a: float, b: float) -> float:
+    a: float, b: float, rho: Callable[[float], float]=lambda x: 1) -> float:
     """
     :param f1: first function
     :param f2: second function
@@ -16,12 +16,12 @@ def scalar_product_int(f1: Callable[[float], float], f2: Callable[[float], float
     :param b: right endpoint of the integration interval
     :return: scalar product of f1 and f2 in L2 on [a, b]
     """
-    return integrate.quad(lambda x: f1(x) * f2(x), a, b)[0]
+    return integrate.quad(lambda x: f1(x) * f2(x) * rho(x), a, b)[0]
 
 
 def root_mean_square_approximation(n: int, a0: float, b0: float, 
     f: Callable[[float], float], phi: Callable[[int, float], float], 
-    plot: bool) -> Callable[[float], float]:
+    plot: bool, rho: Callable[[float], float]=lambda x: 1) -> Callable[[float], float]:
     """
     :param n: "degree" of approximation polynomial
     :param a0: left endpoint of approximation interval
@@ -32,7 +32,7 @@ def root_mean_square_approximation(n: int, a0: float, b0: float,
     :return: approximation function
     """
     b = np.array([
-        scalar_product_int(f, lambda x: phi(i, x), a0, b0)
+        scalar_product_int(f, lambda x: phi(i, x), a0, b0, rho)
         for i in range(n)
     ])
 
@@ -41,7 +41,7 @@ def root_mean_square_approximation(n: int, a0: float, b0: float,
             scalar_product_int(
                 lambda x: phi(i, x),
                 lambda x: phi(j, x),
-                a0, b0
+                a0, b0, rho
             )
             for j in range(n)
         ]
@@ -55,7 +55,7 @@ def root_mean_square_approximation(n: int, a0: float, b0: float,
 
     if plot:
         x = np.linspace(a0, b0, 100)
-
+        plt.figure(figsize=(20, 10))
         plt.plot(x, f_sol(x), 'r--', label='Approximation function')
         plt.plot(x, f(x), 'b.', label='True function')
         plt.xlabel('x')
@@ -63,8 +63,6 @@ def root_mean_square_approximation(n: int, a0: float, b0: float,
         plt.ylim((3,11))
         plt.legend()
         plt.grid(True)
-        plt.get_current_fig_manager().full_screen_toggle() 
-        plt.show()
 
     return f_sol
 
@@ -86,6 +84,9 @@ def root_mean_square_approximation_polinomial(n: int, a0: float, b0: float,
         plt.title("Polynomial approximation")
 
     f_sol = root_mean_square_approximation(n + 1, a0, b0, f, phi, plot)
+
+    if plot:
+        plt.savefig('../tex/polynomial.png', bbox_inches='tight')
 
     print(f'Polynomial approximation error = '
         f'{integrate.quad(lambda x: (f_sol(x) - f(x))**2, a0, b0)[0]}')
@@ -126,6 +127,9 @@ def root_mean_square_approximation_trigonometric(n: int, a0: float, b0: float,
 
     f_sol = root_mean_square_approximation((n << 1) + 1, a0, b0, f, phi, plot)
 
+    if plot:
+        plt.savefig('../tex/trigonometric.png', bbox_inches='tight')
+
     print(f'Trigonometric approximation error = '
         f'{integrate.quad(lambda x: (f_sol(x) - f(x))**2, a0, b0)[0]}')
 
@@ -149,6 +153,9 @@ def root_mean_square_approximation_exponent(n: int, a0: float, b0: float,
         plt.title("Exponential approximation")
 
     f_sol = root_mean_square_approximation((n << 1) + 1, a0, b0, f, phi, plot)
+
+    if plot:
+        plt.savefig('../tex/exponent.png', bbox_inches='tight')
 
     print(f'Exponential approximation error = '
         f'{integrate.quad(lambda x: (f_sol(x) - f(x))**2, a0, b0)[0]}')
@@ -174,7 +181,11 @@ def root_mean_square_approximation_chebyshev(n: int, a0: float, b0: float,
     if plot:
         plt.title("Chebyshev approximation")
 
-    f_sol = root_mean_square_approximation(n + 1, a0, b0, f, phi, plot)
+    f_sol = root_mean_square_approximation(n + 1, a0, b0, f, phi, plot,
+        lambda x: 1 / np.sqrt(1 - x**2))
+
+    if plot:
+        plt.savefig('../tex/chebyshev.png', bbox_inches='tight')
 
     print(f'Chebyshev approximation error = '
         f'{integrate.quad(lambda x: (f_sol(x) - f(x))**2, a0, b0)[0]}')
@@ -197,8 +208,8 @@ def root_mean_square_approximation_polinomial_discrete(m: int, a0: float,
     b0: float) -> Callable[[float], float]:
     x = np.linspace(a0, b0, m + 1)
     
-    cost = [np.inf for _ in range(10)]
-    for n in range(1, 10):
+    cost = [np.inf for _ in range(15)]
+    for n in range(1, 15):
         b = np.array([
             scalar_product_discrete(f, lambda x: x**i, x)
         for i in range(n + 1)])
@@ -255,7 +266,7 @@ def root_mean_square_approximation_polinomial_discrete(m: int, a0: float,
         return f(x) - f_sol(x)
 
     x = np.linspace(a0, b0, 100)
-    
+    plt.figure(figsize=(20, 10))
     plt.plot(x, f_sol(x), 'r--', label='Approximation function')
     plt.plot(x, f(x), 'b.', label='True function')
     plt.xlabel('x')
@@ -264,8 +275,7 @@ def root_mean_square_approximation_polinomial_discrete(m: int, a0: float,
     plt.ylim((3,11))
     plt.legend()
     plt.grid(True)
-    plt.get_current_fig_manager().full_screen_toggle() 
-    plt.show()
+    plt.savefig('../tex/discrete.png', bbox_inches='tight')
 
     return f_sol
 
@@ -275,7 +285,8 @@ def spline_interpolation(n: int, a0: float, b0: float,
     x = np.linspace(a0, b0, n + 1)
     h = x[1:] - x[:-1]
 
-    R = np.eye(n + 1)
+    rho = 3e+2
+    R = rho * np.eye(n + 1)
 
     H = np.zeros((n + 1, n + 1))
 
@@ -296,9 +307,9 @@ def spline_interpolation(n: int, a0: float, b0: float,
             a[i, i + 1] = h[i] / 6
             b[i] = (f(x[i + 1]) - f(x[i])) / h[i] - (f(x[i]) - f(x[i - 1])) / h[i - 1]
 
-    m = np.linalg.solve(a + np.dot(H, H.T), b)
+    m = np.linalg.solve(a + np.dot(H, np.dot(np.linalg.inv(R), H.T)), b)
 
-    f_u = f(x) - np.dot(H.T, m).T
+    f_u = f(x) - np.dot(np.linalg.inv(R), np.dot(H.T, m).T)
 
     def f_sol(x0: float) -> float:
         for i in range(n):
@@ -310,20 +321,23 @@ def spline_interpolation(n: int, a0: float, b0: float,
 
     x1 = np.linspace(a0, b0, 100 + 1)
     y = [f_sol(xi) for xi in x1]
-
+    plt.figure(figsize=(20, 10))
     plt.plot(x1, y, 'r--', label='Approximation function')
     plt.plot(x1, f(x1), 'b.', label='True function')
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.title("Spline interpolation")
+    plt.title(f"Spline interpolation, $\\rho_i = {rho}$")
     plt.ylim((3,11))
     plt.legend()
     plt.grid(True)
-    plt.get_current_fig_manager().full_screen_toggle() 
-    plt.show()
+    plt.savefig(f'../tex/spline_{rho}.png', bbox_inches='tight')
+
+    print(f'Spline approximation error = '
+        f'{integrate.quad(lambda x: (f_sol(x) - f(x))**2, a0, b0)[0]}')
 
 
-n, m, a0, b0 = 4, 15, -10, 10
+
+n, m, a0, b0 = 4, 20, -10, 10
 
 
 def f(x: float) -> float:
@@ -336,10 +350,10 @@ matplotlib.rcParams.update({'font.size': 20})
 
 # root_mean_square_approximation_exponent(n, a0, b0, f, True)
 
-root_mean_square_approximation_trigonometric(n, a0, b0, f, True)
+# root_mean_square_approximation_trigonometric(n, a0, b0, f, True)
 
-root_mean_square_approximation_chebyshev(n, a0, b0, f, True)
+# root_mean_square_approximation_chebyshev(n, a0, b0, f, True)
 
-root_mean_square_approximation_polinomial_discrete(m, a0, b0)
+# root_mean_square_approximation_polinomial_discrete(m, a0, b0)
 
 spline_interpolation(m, a0, b0, f)

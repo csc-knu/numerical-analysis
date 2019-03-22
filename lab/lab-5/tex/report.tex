@@ -17,14 +17,14 @@
 Побудувати поліном найкращого середньоквадратичного наближення $Q_n(x)$ для функції $f(x)$ на проміжку $[a, b]$, вибравши в якості лінійно незалежних функцій систему функцій $\phi_i(x)$, для $i=\overline{0,n}$. Системи функцій які будуть розглянуті:
 \begin{enumerate}
     % \item $\phi_i(x) = x^i$;
-    \item $\phi_i(x) = T_i(x)$;
+    \item $\phi_i(x) = T_i(x)$ --- поліноми Чебишова;
     % \item експоненційна;
     \item тригонометрична.
 \end{enumerate}
 
 \subsection{Метод найменших квадратів}
 
-Функція $y = f(x)$ задана таблицею значень $y_0, y_1, \ldots, y_m$ у точках $x_0, x_1, \ldots, x_m$. Використовуючи метод найменших квадратів (МНК), знайти поліном $Q_n(x) = a_0 + a_1 \cdot x + \ldots + a_n \cdot x^n$ найкращого середньоквадратичного наближення оптимального степеня $n = n^\star$. За оптимальне значення $n^\star$ будемо вважати той степінь поліному, починаючи з якого величина \[ \sigma_n = \sqrt{\frac{1}{m - n} \cdot \sum_{k = 0}^m (Q_n(x_k)^2 - y_k)^2} \] стабілізується або починає зростати.
+Функція $y = f(x)$ задана таблицею значень $y_0, y_1, \ldots, y_m$ у точках $x_0, x_1, \ldots, x_m$. Використовуючи метод найменших квадратів (МНК), знайти поліном $Q_n(x) = a_0 + a_1 \cdot x + \ldots + a_n \cdot x^n$ найкращого середньоквадратичного наближення оптимального степеня $n = n^\star$. За оптимальне значення $n^\star$ будемо вважати той степінь поліному, починаючи з якого величина \[ \sigma_n = \sqrt{\frac{1}{m - n} \cdot \sum_{k = 0}^m (Q_n(x_k) - y_k)^2} \] стабілізується або починає зростати.
 
 \subsection{Кубічні згладжувальні сплайни}
 
@@ -38,13 +38,15 @@
 
 Нехай $\{\phi_i\}_{i=0}^\infty$ --- лінійно-незалежна система функцій $\HH \to \RR$. Розглянемо її скінченну підсистему $\{\phi_i\}_{i=0}^n$. Позначимо лінійну оболонку цієї підсистеми за $M_n \subset \HH$. \medskip
 
-Нагадаємо визначення ЕНН $\Phi$: \[ \|f - \Phi\| = \sqrt{(f - \Phi, f - \Phi)} = \inf_{\phi \in M_n} \|f - \phi\|. \] Якщо $\Phi$ -- ЕНН, то $(f - \Phi, \phi) = 0$ для довільного $\phi \in M_n$, тому можна записати $f = \Phi + \psi$, де $\Phi \in M_n$, $\psi \in M_n^\perp$, тому будемо шукати наближення у вигляді \[ \Phi = \sum_{i = 0}^n c_i \cdot \phi_i. \]
+Нагадаємо визначення ЕНН $\Phi$: \[ \|f - \Phi\| = \sqrt{(f - \Phi, f - \Phi)} = \inf_{\phi \in M_n} \|f - \phi\|. \] Якщо $\Phi$ --- ЕНН, то $(f - \Phi, \phi) = 0$ для довільного $\phi \in M_n$, тому можна записати $f = \Phi + \psi$, де $\Phi \in M_n$, $\psi \in M_n^\perp$, тому будемо шукати наближення у вигляді \[ \Phi = \sum_{i = 0}^n c_i \cdot \phi_i. \]
 
-Для виконання $(f - \Phi, \phi) = 0$ достатньо, щоб \[ (f - \Phi, \phi_j) = 0, \quad j = \overline{0, n}, \] що у свою чергу дає \[ \left(f - \sum_{i = 0}^n c_i \cdot \phi_i, \phi_j \right) = 0, \quad j = \overline{0, n}. \] Звідси маємо СЛАР на $c_i$: \[ \sum_{i=0}^n c_i \cdot (\phi_i, \phi_j) = (f, \phi_j), \quad j = \overline{0, n}. \]
+Для виконання $(f - \Phi, \phi) = 0$ достатньо, щоб \[ (f - \Phi, \phi_j) = 0, \quad j = \overline{0, n}, \] що у свою чергу дає \[ \left(f - \sum_{i = 0}^n c_i \cdot \phi_i, \phi_j \right) = 0, \quad j = \overline{0, n}. \] Звідси маємо СЛАР на $c_i$: \[ \sum_{i=0}^n c_i \cdot (\phi_i, \phi_j)_\rho = (f, \phi_j)_\rho, \quad j = \overline{0, n}. \]
 
-Матриця цієї СЛАР --- $G = \|g_{ij}\|_{i,j=1}^{n}$, де $g_{ij} = (\phi_i, \phi_j)$ --- матриця Грамма лінійно-незалежної системи функцій $\{\phi_i\}_{i=0}^n$, що доводить існування та єдиність ЕНН. Оскільки $G^T = G$, то для розв'язування цієї СЛАР використовують метод квадратних коренів. У багатьох випадках матриця $G$ погано обумовлена, у цих випадках систему функцій ортонормують, тобто досягають того, щоб $(\phi_i, \phi_j) = \delta_{ij}$. \medskip
+Матриця цієї СЛАР --- $G = \|g_{ij}\|_{i,j=1}^{n}$, де $g_{ij} = (\phi_i, \phi_j)_\rho$ --- матриця Грамма лінійно-незалежної системи функцій $\{\phi_i\}_{i=0}^n$, що доводить існування та єдиність ЕНН. Оскільки $G^T = G$, то для роз\-в'яз\-у\-ва\-ння цієї СЛАР використовують метод квадратних коренів. У багатьох випадках матриця $G$ погано обумовлена, у цих випадках систему функцій вибирають ортогональною з ваговим коефіцієнтом $\rho$. \medskip
 
-Явно запишемо розв'язок СЛАР: \[ \Phi = \sum_{i = 0}^n (f, \phi_i) \cdot \phi_i, \] звідки у випадку ортонормованої системи функцій маємо наступний вираз відхилення: \[ \Delta^2(f) = \|f - \Phi\|^2 = \|f\| - \|\Phi\|^2 = \|f\| - \sum_{i=0}^n c_i^2.\] У випадку ортогональної але не нормалізованої системи відхилення шукається наступним чином: \[ \Delta^2(f) = \|f - \Phi\|^2 = \|f\| - \|\Phi\|^2 = \|f\| - \sum_{i=0}^n c_i^2 \cdot \|\phi_i\|^2.\]
+% TODO
+
+Явно запишемо розв'язок СЛАР: \[ \Phi = \sum_{i = 0}^n (f, \phi_i)_\rho \cdot \phi_i, \] звідки у випадку ортонормованої системи функцій маємо наступний вираз відхилення: \[ \Delta^2(f) = \|f - \Phi\|^2 = \|f\| - \|\Phi\|^2 = \|f\| - \sum_{i=0}^n c_i^2.\] У випадку ортогональної але не нормалізованої системи відхилення шукається наступним чином: \begin{equation} \label{delta} \Delta^2(f) = \|f - \Phi\|^2 = \|f\| - \|\Phi\|^2 = \|f\| - \sum_{i=0}^n c_i^2 \cdot \|\phi_i\|^2. \end{equation}
 
 \subsection{Метод найменших квадратів}
 
@@ -87,7 +89,7 @@
     0 & 0 & 0 & 0 & \cdots & 0 & 0
 \end{pmatrix} \]
 
-Якби значення $\mu_i$ були б відомі, то для побудови $g$ достатньо було б розв'язати систему \[ A \vec m = H \vec \mu \] та записати $g(x)$ за формулою:
+Якби значення $\mu_i$ були б відомі, то для побудови $g$ достатньо було б розв'язати систему \begin{equation} \label{amhmu} A \vec m = H \vec \mu \end{equation} та записати $g(x)$ за формулою:
 \begin{multline} 
     \label{eq}
     g(x) = m_i \cdot \frac{(x_{i + 1} - x)^3}{6 h_i} + m_{i + 1} \cdot \frac{(x - x_i)^3}{6 h_i} + \\
@@ -95,11 +97,7 @@
 \end{multline}
 де $x \in [x_i, x_{i + 1}]$, $h_i = x_{i + 1} - x_i$, $i = \overline{0, n - 1}$. \medskip
 
-Тому нам треба знайти $\mu$. Позначимо $R = \diagonal \rho_i$ (діагональна матриця), тоді знаходимо $m$ з матричної рівності: \[ (A + H R^{-1} H^T) \vec m = H \vec f.\]
-
-Після цього можемо знайти $\vec \mu$ за формулою: \[\vec \mu = \vec f - R^{-1} H^{T} \vec m.\] В результаті отримуємо сплайн що згладжує за формулою \eqref{eq}: \[ g(x) = m_i \cdot \frac{(x_{i + 1} - x)^3}{6 h_i} + m_{i + 1} \cdot \frac{(x - x_i)^3}{6 h_i} + \left( \mu_i - \frac{m_i \cdot h_i^2}{6} \right) \cdot \frac{x_{i + 1} - x}{h_i} + \left( \mu_{i + 1} - \frac{m_{i + 1} \cdot h_i^2}{6}\right) \cdot \frac{x - x_i}{h_i}, \] де $x \in [x_i, x_{i + 1}]$, $h_i = x_{i + 1} - x_i$, $i = \overline{0, n - 1}$.
-
-\newpage
+З умови мінімізації функціоналу $\Phi_1$ отримуємо систему рівнянь \[ 2 (H^T m)_i + 2 \rho_i (\mu_i - \tilde f_i) = 0. \] Позначимо $R = \diagonal \rho_i$ (діагональна матриця), тоді попередню формулу можна записати у матричному вигляді як \[ H^T \cdot \vec m + R \cdot \vec \mu = R \cdot \vec f.\] Помноживши зліва на $H \cdot R^{-1}$, отримаємо \[ H \cdot R^{-1} \cdot H^T \cdot \vec m + H \cdot \vec \mu = H \cdot \vec f. \] Враховуючи співвідношення \eqref{amhmu} маємо СЛАР на $m$: \[ (A + H \cdot R^{-1} \cdot H^T) \cdot \vec m = H \cdot \vec f.\] Після цього можемо знайти $\vec \mu$ за формулою: \[\vec \mu = \vec f - R^{-1} \cdot H^{T} \cdot \vec m.\] В результаті отримуємо сплайн що згладжує за формулою \eqref{eq}: \[ g(x) = m_i \cdot \frac{(x_{i + 1} - x)^3}{6 h_i} + m_{i + 1} \cdot \frac{(x - x_i)^3}{6 h_i} + \left( \mu_i - \frac{m_i \cdot h_i^2}{6} \right) \cdot \frac{x_{i + 1} - x}{h_i} + \left( \mu_{i + 1} - \frac{m_{i + 1} \cdot h_i^2}{6}\right) \cdot \frac{x - x_i}{h_i}, \] де $x \in [x_i, x_{i + 1}]$, $h_i = x_{i + 1} - x_i$, $i = \overline{0, n - 1}$.
 
 \section{Практична частина}
 
@@ -108,36 +106,38 @@
 % \subsubsection{Степенева система функцій}
 % \begin{figure}[H]
 %     \centering
-%     \includegraphics[width=\textwidth]{1.png}
+%     \includegraphics[width=\textwidth]{polynomial.png}
 % \end{figure}
 % \[ \Delta^2(f) = \texttt{1.3515894719986394}. \]
 
 % \subsubsection{Експоненційна система функцій}
 % \begin{figure}[H]
 %     \centering
-%     \includegraphics[width=\textwidth]{2.png}
+%     \includegraphics[width=\textwidth]{exponent.png}
 % \end{figure}
 % \[ \Delta^2(f) = \texttt{4.20306095641598}. \]
 
 \subsubsection{Тригонометрична система функцій}
-\vspace{-1.5em}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{3.png}
-\end{figure}
-\vspace{-1.5em}
-Порахуємо відхилення за загальною формулою, тобто за формулою $\|f - \Phi_0\|^2$ та отримуємо: \[ \Delta^2(f) = \texttt{0.10740063553045082}. \]
 
-\subsubsection{Поліноми Чебишева}
-\vspace{-1.5em}
+Система функцій $\{1, \sin x, \cos x, \sin 2x, \cos 2x, \ldots$, ортогональні без вагового множника на $[-\pi,\pi]$.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{4.png}
+    \includegraphics[width=\textwidth]{trigonometric.png}
 \end{figure}
-\vspace{-1.5em}
-Порахуємо відхилення за загальною формулою, тобто за формулою $\|f - \Phi_0\|^2$ та отримуємо: \[ \Delta^2(f) = \texttt{0.135158947199864}. \]
+Порахуємо відхилення на $[-\pi, \pi]$ за формулою \eqref{delta} та отримуємо: \[ \Delta^2(f) = \texttt{0.10740063553045082}. \] Відхилення на $[-10, 10]$ дорівнює: \[ \Delta^2(f) = \texttt{0.341866841}. \]
 
 \newpage
+
+\subsubsection{Поліноми Чебишева}
+
+Система функцій --- $\phi_n(x) = \cos (n \cdot \arccos(x))$, ортогональні з множником $\rho(x) = \dfrac{1}{\sqrt{1 - x^2}}$ на $[-1,1]$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{chebyshev.png}
+\end{figure}
+Порахуємо відхилення на $[-1, 1]$ за формулою \eqref{delta} та отримуємо: \[ \Delta^2(f) = \texttt{0.135158947199864}. \] Відхилення на $[-10, 10]$ дорівнює: \[ \Delta^2(f) = \texttt{1.35158947199864}. \]
 
 \subsection{Метод найменших квадратів}
 
@@ -167,36 +167,57 @@
     \centering
     \begin{tabular}{|c|c|} \hline
         $n$ & $\sigma_n$ \\ \hline
-        1 & 0.2456140350877193000 \\ \hline
-        2 & 0.0044225627749655240 \\ \hline
-        3 & 0.0046827135264340840 \\ \hline
-        4 & 0.0049553959299550940 \\ \hline
-        5 & 0.0052857556586187580 \\ \hline
-        6 & 0.0024510823676256385 \\ \hline
-        7 & 0.0026396271651353076 \\ \hline
-        8 & 0.0008506324753000230 \\ \hline
-        % 9 & 0.0009279627003272968 \\ \hline
+         1 & 0.2456140350877193000 \\ \hline 
+         2 & 0.0044225627749655220 \\ \hline 
+         3 & 0.0046827135264340820 \\ \hline 
+         4 & 0.0049553959299550900 \\ \hline 
+         5 & 0.0052857556586187624 \\ \hline 
+         6 & 0.0024510823676256372 \\ \hline 
+         7 & 0.0026396271651353016 \\ \hline 
+         8 & 0.0008506324753000206 \\ \hline 
+         9 & 0.0009279627003272911 \\ \hline 
+        10 & 0.0007896501165176935 \\ \hline 
+        11 & 0.0008773890183529924 \\ \hline 
+        12 & 0.0008200149552223944 \\ \hline 
+        13 & 0.0009371599488255855 \\ \hline 
+        14 & 0.0004570848289908443 \\ \hline 
     \end{tabular}
 \end{table}
 
-Поліном найкращого середньоквадратичного наближення оптимального степеня та отримуємоб що $m = m^\star = 2$, тобто з моменту коли наступна величина стабілізується або почне зростати: \[\sigma^2 = \sqrt{\frac{1}{n - m} \sum_{k = 0}^m( P_m(x_k) - y_k)^2}.\] 
-\vspace{-1.5em}
+Поліном найкращого середньоквадратичного наближення оптимального степеня та отримуємо, що $m = m^\star = 2$, тобто з моменту коли наступна величина стабілізується або почне зростати: \[\sigma^2 = \sqrt{\frac{1}{n - m} \sum_{k = 0}^n (P_m(x_k) - y_k)^2}.\] 
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{5.png}
+    \includegraphics[width=\textwidth]{discrete.png}
 \end{figure}
-\vspace{-.5em}
+
 Відповідна ``похибка'' (у лапках бо взята із ваговим коефіцієнтом): \[ \sigma_2 = \texttt{0.004422562774965524}. \]
 
-\newpage
+
 
 \subsection{Кубічні згладжувальні сплайни}
 
-Будуємо кубічний сплайн для $n = 15$.
+Будуємо кубічний сплайн для $n = 15$ та різних $\rho$.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{6.png}
+    \includegraphics[width=\textwidth]{{spline_1}.png}
 \end{figure}
+
+Відхилення на $[-10, 10]$ дорівнює: \[ \Delta^2(f) = \texttt{0.15336142100936748}. \]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{{spline_0.003}.png}
+\end{figure}
+
+Відхилення на $[-10, 10]$ дорівнює: \[ \Delta^2(f) = \texttt{18.429578862891297}. \]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{{spline_300.0}.png}
+\end{figure}
+
+Відхилення на $[-10, 10]$ дорівнює: \[ \Delta^2(f) = \texttt{0.012596258104766956}. \]
 
 \end{document}
