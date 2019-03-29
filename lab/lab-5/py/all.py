@@ -117,6 +117,7 @@ def root_mean_square_approximation_trigonometric(n: int, a0: float, b0: float,
     :param plot: whether to plot the true and approximation functions
     :return: approximation function
     """
+    old_a, old_b = a0, b0
     a0, b0, f = -pi, pi, rescale_function(a0, b0, f, -pi, pi)
 
     def phi(i: int, x: float) -> float:
@@ -129,9 +130,15 @@ def root_mean_square_approximation_trigonometric(n: int, a0: float, b0: float,
 
     if plot:
         plt.savefig('../tex/trigonometric.png', bbox_inches='tight')
-
-    print(f'Trigonometric approximation error = '
+    
+    print(f'Trigonometric approximation error on [-pi, pi] = '
         f'{integrate.quad(lambda x: (f_sol(x) - f(x))**2, a0, b0)[0]}')
+
+    f = rescale_function(-pi, pi, f, old_a, old_b)
+    f_sol = rescale_function(-pi, pi, f_sol, old_a, old_b)
+
+    print(f'Trigonometric approximation error on [{old_a}, {old_b}] = '
+        f'{integrate.quad(lambda x: (f_sol(x) - f(x))**2, old_a, old_b)[0]}')
 
     return f_sol
 
@@ -239,7 +246,7 @@ def root_mean_square_approximation_polinomial_discrete(m: int, a0: float,
         print(f'n = {n}, cost = {cost[n]}')
 
     # true value of n
-    n = 2  # cost.index(min(cost))
+    n = 8  # cost.index(min(cost))
 
     b = np.array([
         scalar_product_discrete(f, lambda x: x**i, x)
@@ -350,10 +357,10 @@ matplotlib.rcParams.update({'font.size': 20})
 
 # root_mean_square_approximation_exponent(n, a0, b0, f, True)
 
-# root_mean_square_approximation_trigonometric(n, a0, b0, f, True)
+root_mean_square_approximation_trigonometric(n, a0, b0, f, True)
 
 # root_mean_square_approximation_chebyshev(n, a0, b0, f, True)
 
 # root_mean_square_approximation_polinomial_discrete(m, a0, b0)
 
-spline_interpolation(m, a0, b0, f)
+# spline_interpolation(m, a0, b0, f)
