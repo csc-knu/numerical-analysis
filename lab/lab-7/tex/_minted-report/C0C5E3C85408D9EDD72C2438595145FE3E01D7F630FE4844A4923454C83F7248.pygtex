@@ -1,0 +1,80 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/usr/bin/env python}
+\PYG{k+kn}{from} \PYG{n+nn}{dashpot} \PYG{k+kn}{import} \PYG{n}{Dashpot}
+\PYG{k+kn}{from} \PYG{n+nn}{car} \PYG{k+kn}{import} \PYG{n}{Car}
+\PYG{k+kn}{from} \PYG{n+nn}{road} \PYG{k+kn}{import} \PYG{n}{Road}
+
+
+\PYG{k}{class} \PYG{n+nc}{Stage}\PYG{p}{:}
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{car}\PYG{p}{:} \PYG{n}{Car}\PYG{p}{,} \PYG{n}{road}\PYG{p}{:} \PYG{n}{Road}\PYG{p}{):}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}car}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}road} \PYG{o}{=} \PYG{n}{car}\PYG{p}{,} \PYG{n}{road}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}t} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{car}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}car}
+    
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{x}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{car}\PYG{o}{.}\PYG{n}{x}
+
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{dot\PYGZus{}x}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{car}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x}
+
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{road}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}road}
+
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{t}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}t}
+    
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{r}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{car}\PYG{o}{.}\PYG{n}{r}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{road}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x\PYGZus{}0}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t}\PYG{p}{))}
+
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{xi}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{car}\PYG{o}{.}\PYG{n}{xi}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{road}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x\PYGZus{}0}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t}\PYG{p}{))}
+
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{x\PYGZus{}0}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{road}\PYG{o}{.}\PYG{n}{x\PYGZus{}0}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t}\PYG{p}{)}
+
+    \PYG{n+nd}{@property}
+    \PYG{k}{def} \PYG{n+nf}{dot\PYGZus{}x\PYGZus{}0}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{road}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x\PYGZus{}0}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t}\PYG{p}{)}
+
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}repr\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+        \PYG{k}{return} \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Stage(t=\PYGZob{}self.t:.7f\PYGZcb{}, car=\PYGZob{}self.car\PYGZcb{}, road=\PYGZob{}self.road\PYGZcb{})\PYGZsq{}}
+
+    \PYG{k}{def} \PYG{n+nf}{move}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{dt}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{):}
+        \PYG{k}{def} \PYG{n+nf}{f}\PYG{p}{(}\PYG{n}{t}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{y}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+            \PYG{k}{return} \PYG{n}{y}
+
+        \PYG{k}{def} \PYG{n+nf}{g}\PYG{p}{(}\PYG{n}{t}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{x}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{y}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+            \PYG{k}{return} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1} \PYG{o}{/} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{car}\PYG{o}{.}\PYG{n}{m} \PYG{o}{*} \PYG{p}{(}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{car}\PYG{o}{.}\PYG{n}{dashpot}\PYG{o}{.}\PYG{n}{k} \PYG{o}{*} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x\PYGZus{}0}\PYG{p}{)} \PYG{o}{+} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{r} \PYG{o}{*} \PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x\PYGZus{}0}\PYG{p}{)}
+            \PYG{p}{)}
+
+        \PYG{n}{k1} \PYG{o}{=} \PYG{n}{dt} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x}\PYG{p}{)}
+        \PYG{n}{q1} \PYG{o}{=} \PYG{n}{dt} \PYG{o}{*} \PYG{n}{g}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x}\PYG{p}{)}
+
+        \PYG{n}{k2} \PYG{o}{=} \PYG{n}{dt} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t} \PYG{o}{+} \PYG{n}{dt} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{k1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x} \PYG{o}{+} \PYG{n}{q1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{q2} \PYG{o}{=} \PYG{n}{dt} \PYG{o}{*} \PYG{n}{g}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t} \PYG{o}{+} \PYG{n}{dt} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{k1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x} \PYG{o}{+} \PYG{n}{q1} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+
+        \PYG{n}{k3} \PYG{o}{=} \PYG{n}{dt} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t} \PYG{o}{+} \PYG{n}{dt} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{k2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x} \PYG{o}{+} \PYG{n}{q2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+        \PYG{n}{q3} \PYG{o}{=} \PYG{n}{dt} \PYG{o}{*} \PYG{n}{g}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t} \PYG{o}{+} \PYG{n}{dt} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{k2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x} \PYG{o}{+} \PYG{n}{q2} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{)}
+
+        \PYG{n}{k4} \PYG{o}{=} \PYG{n}{dt} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t} \PYG{o}{+} \PYG{n}{dt}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{k3}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x} \PYG{o}{+} \PYG{n}{q3}\PYG{p}{)}
+        \PYG{n}{q4} \PYG{o}{=} \PYG{n}{dt} \PYG{o}{*} \PYG{n}{g}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t} \PYG{o}{+} \PYG{n}{dt}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x} \PYG{o}{+} \PYG{n}{k3}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x} \PYG{o}{+} \PYG{n}{q3}\PYG{p}{)}
+
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{\PYGZus{}t}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{car}\PYG{o}{.}\PYG{n}{\PYGZus{}x}\PYG{p}{,} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{car}\PYG{o}{.}\PYG{n}{\PYGZus{}dot\PYGZus{}x} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{t} \PYG{o}{+} \PYG{n}{dt}\PYG{p}{,} \PYGZbs{}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{x} \PYG{o}{+} \PYG{p}{(}\PYG{n}{k1} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{k2} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{k3} \PYG{o}{+} \PYG{n}{k4}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{6}\PYG{p}{,} \PYGZbs{}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x} \PYG{o}{+} \PYG{p}{(}\PYG{n}{q1} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{q2} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{q3} \PYG{o}{+} \PYG{n}{q4}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{6}
+
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{:}
+    \PYG{k}{pass}  \PYG{c+c1}{\PYGZsh{} TODO(nsk): write tests and unittest main}
+\end{Verbatim}

@@ -1,0 +1,87 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/usr/bin/env python}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k+kn}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{from} \PYG{n+nn}{dashpot} \PYG{k+kn}{import} \PYG{n}{Dashpot}
+\PYG{k+kn}{from} \PYG{n+nn}{car} \PYG{k+kn}{import} \PYG{n}{Car}
+\PYG{k+kn}{from} \PYG{n+nn}{road} \PYG{k+kn}{import} \PYG{n}{Road}
+\PYG{k+kn}{from} \PYG{n+nn}{stage} \PYG{k+kn}{import} \PYG{n}{Stage}
+
+
+\PYG{k}{def} \PYG{n+nf}{splot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{):}
+    \PYG{k}{if} \PYG{n}{save}\PYG{p}{:}
+        \PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{20}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{))}
+
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}t\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+
+
+\PYG{k}{def} \PYG{n+nf}{fplot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{):}
+    \PYG{k}{global} \PYG{n}{\PYGZus{}IMG}
+    \PYG{n}{\PYGZus{}IMG} \PYG{o}{+=} \PYG{l+m+mi}{1}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{grid}\PYG{p}{(}\PYG{n+nb+bp}{True}\PYG{p}{)}
+        
+    \PYG{k}{if} \PYG{n}{save}\PYG{p}{:}
+        \PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}../tex/\PYGZob{}\PYGZus{}IMG\PYGZcb{}.png\PYGZsq{}}\PYG{p}{,} \PYG{n}{bbox\PYGZus{}inches}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}tight\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{plt}\PYG{o}{.}\PYG{n}{get\PYGZus{}current\PYGZus{}fig\PYGZus{}manager}\PYG{p}{()}\PYG{o}{.}\PYG{n}{full\PYGZus{}screen\PYGZus{}toggle}\PYG{p}{()}
+        \PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{:}
+    \PYG{n}{\PYGZus{}IMG} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{T\PYGZus{}MAX} \PYG{o}{=} \PYG{l+m+mi}{5} \PYG{o}{+} \PYG{l+m+mf}{1e\PYGZhy{}7}
+    \PYG{n}{h\PYGZus{}t}\PYG{p}{,} \PYG{n}{h\PYGZus{}x}\PYG{p}{,} \PYG{n}{h\PYGZus{}x\PYGZus{}0}\PYG{p}{,} \PYG{n}{h\PYGZus{}dot\PYGZus{}x}\PYG{p}{,} \PYG{n}{h\PYGZus{}xi} \PYG{o}{=} \PYG{p}{[],} \PYG{p}{[],} \PYG{p}{[],} \PYG{p}{[],} \PYG{p}{[]}
+    \PYG{n}{dt} \PYG{o}{=} \PYG{o}{.}\PYG{l+m+mo}{0001}
+    \PYG{n}{stage} \PYG{o}{=} \PYG{n}{Stage}\PYG{p}{(}
+        \PYG{n}{car}\PYG{o}{=}\PYG{n}{Car}\PYG{p}{(}\PYG{n}{m}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n}{dashpot}\PYG{o}{=}\PYG{n}{Dashpot}\PYG{p}{(}\PYG{n}{k}\PYG{o}{=}\PYG{l+m+mi}{640}\PYG{p}{,} \PYG{n}{r\PYGZus{}0}\PYG{o}{=}\PYG{l+m+mi}{160}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)),} 
+        \PYG{n}{road}\PYG{o}{=}\PYG{n}{Road}\PYG{p}{(}\PYG{n}{a}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{omega}\PYG{o}{=}\PYG{l+m+mi}{7}\PYG{p}{)}
+    \PYG{p}{)}
+
+    \PYG{k}{while} \PYG{n}{stage}\PYG{o}{.}\PYG{n}{t} \PYG{o}{\PYGZlt{}=} \PYG{n}{T\PYGZus{}MAX}\PYG{p}{:}
+        \PYG{n}{h\PYGZus{}t}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{stage}\PYG{o}{.}\PYG{n}{t}\PYG{p}{)}
+        \PYG{n}{h\PYGZus{}x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{stage}\PYG{o}{.}\PYG{n}{x}\PYG{p}{)}
+        \PYG{n}{h\PYGZus{}x\PYGZus{}0}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{stage}\PYG{o}{.}\PYG{n}{x\PYGZus{}0}\PYG{p}{)}
+        \PYG{n}{h\PYGZus{}dot\PYGZus{}x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{stage}\PYG{o}{.}\PYG{n}{dot\PYGZus{}x}\PYG{p}{)}
+        \PYG{n}{h\PYGZus{}xi}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{stage}\PYG{o}{.}\PYG{n}{xi}\PYG{p}{)}
+        \PYG{k}{print}\PYG{p}{(}\PYG{n}{stage}\PYG{p}{)}
+        \PYG{n}{stage}\PYG{o}{.}\PYG{n}{move}\PYG{p}{(}\PYG{n}{dt}\PYG{p}{)}
+
+    \PYG{n}{splot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}
+        \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Solution plot with Runge\PYGZhy{}Kutta on \PYGZdl{}[\PYGZob{}h\PYGZus{}t[0]:.2f\PYGZcb{}, \PYGZob{}h\PYGZus{}t[\PYGZhy{}1]:.2f\PYGZcb{}]\PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(0) = \PYGZob{}h\PYGZus{}x[0]:.2f\PYGZcb{}, }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{dot x(0) = \PYGZob{}h\PYGZus{}dot\PYGZus{}x[0]:.2f\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{20}
+    \PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(t), }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{dot x(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{h\PYGZus{}t}\PYG{p}{,} \PYG{n}{h\PYGZus{}x}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}r\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{h\PYGZus{}t}\PYG{p}{,} \PYG{n}{h\PYGZus{}dot\PYGZus{}x}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{dot x(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{fplot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+
+    \PYG{n}{splot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}
+        \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Solution plot with Runge\PYGZhy{}Kutta on \PYGZdl{}[\PYGZob{}h\PYGZus{}t[0]:.2f\PYGZcb{}, \PYGZob{}h\PYGZus{}t[\PYGZhy{}1]:.2f\PYGZcb{}]\PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(0) = \PYGZob{}h\PYGZus{}x[0]:.2f\PYGZcb{}, }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{dot x(0) = \PYGZob{}h\PYGZus{}dot\PYGZus{}x[0]:.2f\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{20}
+    \PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(t), x\PYGZus{}0(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{h\PYGZus{}t}\PYG{p}{,} \PYG{n}{h\PYGZus{}x}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}r\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{h\PYGZus{}t}\PYG{p}{,} \PYG{n}{h\PYGZus{}x\PYGZus{}0}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x\PYGZus{}0(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{fplot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+
+    \PYG{n}{splot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}
+        \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Dashpot influence with Runge\PYGZhy{}Kutta on \PYGZdl{}[\PYGZob{}h\PYGZus{}t[0]:.2f\PYGZcb{}, \PYGZob{}h\PYGZus{}t[\PYGZhy{}1]:.2f\PYGZcb{}]\PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(0) = \PYGZob{}h\PYGZus{}x[0]:.2f\PYGZcb{}, }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{dot x(0) = \PYGZob{}h\PYGZus{}dot\PYGZus{}x[0]:.2f\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{20}
+    \PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(t) \PYGZhy{} x\PYGZus{}0(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{h\PYGZus{}t}\PYG{p}{,} \PYG{p}{[}\PYG{n}{h\PYGZus{}x}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{h\PYGZus{}x\PYGZus{}0}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{h\PYGZus{}t}\PYG{p}{))],} 
+        \PYG{l+s+s1}{\PYGZsq{}g\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(t) \PYGZhy{} x\PYGZus{}0(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{fplot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+
+    \PYG{n}{splot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}
+        \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}Dashpot load with Runge\PYGZhy{}Kutta on \PYGZdl{}[\PYGZob{}h\PYGZus{}t[0]:.2f\PYGZcb{}, \PYGZob{}h\PYGZus{}t[\PYGZhy{}1]:.2f\PYGZcb{}]\PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x(0) = \PYGZob{}h\PYGZus{}x[0]:.2f\PYGZcb{}, }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{dot x(0) = \PYGZob{}h\PYGZus{}dot\PYGZus{}x[0]:.2f\PYGZcb{}\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{20}
+    \PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{xi(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{16}\PYG{p}{)}
+    \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{h\PYGZus{}t}\PYG{p}{,} \PYG{n}{h\PYGZus{}xi}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}g\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s1}{xi(t)\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{fplot}\PYG{p}{(}\PYG{n}{save}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+\end{Verbatim}

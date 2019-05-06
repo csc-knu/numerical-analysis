@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Stage}\PYG{p}{(}\PYG{n}{t}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,}
+	\PYG{n}{car}\PYG{o}{=}\PYG{n}{Car}\PYG{p}{(}
+		\PYG{n}{x}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{dot\PYGZus{}x}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{m}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{p}{,}
+		\PYG{n}{dashpot}\PYG{o}{=}\PYG{n}{Dashpot}\PYG{p}{(}\PYG{n}{k}\PYG{o}{=}\PYG{l+m+mi}{640}\PYG{p}{,} \PYG{n}{r\PYGZus{}0}\PYG{o}{=}\PYG{l+m+mi}{160}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+	\PYG{p}{),}
+	\PYG{n}{road}\PYG{o}{=}\PYG{n}{Road}\PYG{p}{(}\PYG{n}{a}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{omega}\PYG{o}{=}\PYG{l+m+mi}{7}\PYG{p}{)}
+\PYG{p}{)}
+\end{Verbatim}
