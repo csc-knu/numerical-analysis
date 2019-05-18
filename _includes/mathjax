@@ -9,6 +9,7 @@
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Int: "\\displaystyle\\int\\limits",
 					Sum: "\\displaystyle\\sum\\limits",
+					Min: "\\displaystyle\\min\\limits",
 					Max: "\\displaystyle\\max\\limits",
 					Lim: "\\displaystyle\\lim\\limits"
 				}
