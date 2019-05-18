@@ -7,7 +7,9 @@
 				Macros: {
 					RR: "{\\mathbb{R}}",
 					diff: "\\mathop{}\\!\\mathrm{d}",
-					Int: "\\displaystyle\\int\\limits"
+					Int: "\\displaystyle\\int\\limits",
+					Sum: "\\displaystyle\\sum\\limits",
+					Max: "\\displaystyle\\max\\limits"
 				}
 			}
 		});
