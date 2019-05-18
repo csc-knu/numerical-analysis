@@ -9,7 +9,8 @@
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Int: "\\displaystyle\\int\\limits",
 					Sum: "\\displaystyle\\sum\\limits",
-					Max: "\\displaystyle\\max\\limits"
+					Max: "\\displaystyle\\max\\limits",
+					Lim: "\\displaystyle\\lim\\limits"
 				}
 			}
 		});
