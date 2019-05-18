@@ -11,7 +11,8 @@
 					Sum: "\\displaystyle\\sum\\limits",
 					Min: "\\displaystyle\\min\\limits",
 					Max: "\\displaystyle\\max\\limits",
-					Lim: "\\displaystyle\\lim\\limits"
+					Lim: "\\displaystyle\\lim\\limits",
+					Prod: "\\displaystyle\\prod\\limits"
 				}
 			}
 		});
