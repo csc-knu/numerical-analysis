@@ -6,8 +6,11 @@
 				equationNumbers: { autoNumber: "AMS" },
 				Macros: {
 					RR: "{\\mathbb{R}}",
+					cond: "\\mathop{cond}",
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Int: "\\displaystyle\\int\\limits",
+					Inf: "\\displaystyle\\inf\\limits",
+					Sup: "\\displaystyle\\sup\\limits",
 					Sum: "\\displaystyle\\sum\\limits",
 					Min: "\\displaystyle\\min\\limits",
 					Max: "\\displaystyle\\max\\limits",
