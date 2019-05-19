@@ -29,18 +29,39 @@ header h1 {
 }
 
 header h2 {
-	width: 700px;
+	color: #5e8499;
 }
 
 @media only screen and (min-width: 960px) {
 	header h2 {
+		width: 700px;
 		font-size: 36px;
+	}
+	header h1 {
+		width: 700px;
+		font-size: 72px;
 	}
 }
 
 @media only screen and (max-width: 959px) and (min-width: 768px) {
 	header h2 {
+		width: 600px;
 		font-size: 30px;
+	}
+	header h1 {
+		width: 600px;
+		font-size: 60px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	header h2 {
+		font-size: 24px;
+		width: 400px;
+	}
+	header h1 {
+		font-size: 48px;
+		width: 400px;
 	}
 }
 
