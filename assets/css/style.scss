@@ -32,12 +32,14 @@ header h2 {
 	width: 700px;
 }
 
-@media only screen and (min-width: 960px)
-header h2 {
-	font-size: 36px;
+@media only screen and (min-width: 960px) {
+	header h2 {
+		font-size: 36px;
+	}
 }
 
-@media only screen and (max-width: 959px) and (min-width: 768px)
-header h2 {
-	font-size: 30px;
+@media only screen and (max-width: 959px) and (min-width: 768px) {
+	header h2 {
+		font-size: 30px;
+	}
 }
