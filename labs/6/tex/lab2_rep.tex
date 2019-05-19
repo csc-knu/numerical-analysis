@@ -1,0 +1,172 @@
+\documentclass[12pt]{extarticle}
+%Some packages I commonly use.
+\usepackage[english, ukrainian]{babel}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{units}
+\usepackage{xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1 in,bottom=1in, left=1 in, right=1 in]{geometry}
+
+%A bunch of definitions that make my life easier
+\newcommand{\matlab}{{\sc Matlab} }
+\newcommand{\cvec}[1]{{\mathbf #1}}
+\newcommand{\rvec}[1]{\vec{\mathbf #1}}
+\newcommand{\ihat}{\hat{\textbf{\i}}}
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+\newcommand{\khat}{\hat{\textbf{k}}}
+\newcommand{\minor}{{\rm minor}}
+\newcommand{\trace}{{\rm trace}}
+\newcommand{\spn}{{\rm Span}}
+\newcommand{\rem}{{\rm rem}}
+\newcommand{\ran}{{\rm range}}
+\newcommand{\range}{{\rm range}}
+\newcommand{\mdiv}{{\rm div}}
+\newcommand{\proj}{{\rm proj}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\attn}[1]{\textbf{#1}}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{note}{Note}
+\newtheorem{exercise}{Exercise}
+\newcommand{\bproof}{\bigskip {\bf Proof. }}
+\newcommand{\eproof}{\hfill\qedsymbol}
+\newcommand{\Disp}{\displaystyle}
+\newcommand{\qe}{\hfill\(\bigtriangledown\)}
+\setlength{\columnseprule}{1 pt}
+
+\newcommand{\thickhat}[1]{\mathbf{\hat{\text{$#1$}}}}
+\newcommand{\thickbar}[1]{\mathbf{\bar{\text{$#1$}}}}
+\newcommand{\thicktilde}[1]{\mathbf{\tilde{\text{$#1$}}}}
+
+\graphicspath{ {images/} }
+
+\title{Звіт до лабораторної роботи №2 \\ Чисельне інтегрування}
+\author{ОМ-3, Бабієнка Іллі}
+\date{Березень 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Постановка задачі}
+
+Нехай задана функція $f(x)$. Необхідно наближено обчислити інтеграл $I=\int_{b}^{a}f(x)dx$ від $f(x)$ на заданому інтервалі $[a,b]$, де $a < b \wedge a,b \in \bar{\R}$.\\
+Вивести отримане наближене значення інтегралу $I_h$, похибку $R_{h}^{\circ}$ та кінцевий крок розбиття інтервалу $h$.\\
+(За замовчуванням використовуємо рівномірно-розподілені вузли)\\
+Для обчислень використати формулу Сімпсона, принцип Рунге, формулу Річардсона, та апріорні оцінки похибки для квадратурних формул.
+\begin{equation}
+	f(x) = \frac{1}{x^2+x-2}, \space a = 2, \space b = +\infty
+\end{equation}
+
+\vspace{1cm}
+
+\section{Теоретичні відомості}
+\subsection{Формула Сімпсона}
+
+Нехай $x_{0}=a, x_{1}=\frac{a+b}{2},x_{2}=b$. Замість \textit{f} викроистаємо $L_{2}(x)$. Тоді отримаємо квадратурну формулу:
+
+\begin{equation}
+	I_{2}(x) = \frac{b-a}{6}\left[f(a)+4f(\frac{a+b}{2})+f(b) \right]
+\end{equation}
+
+Це \textit{квадратурна формула Сімпсона}.
+Для $f \in C^{4}[a,b]$ залишковий член квадратури має представлення:
+
+\begin{equation}
+	R_{2}(f)=\frac{1}{24}\int_{a}^{b}(x-a)(x-\frac{a+b}{2})^{2}(x-b)f^{(4)}(\xi)dx=\frac{f^{(4)}(\xi)}{2880}(b-a)^{5},
+\end{equation}
+
+та вірна оцінка ($M_{4} = \underset{x \in [a,b]}{\max}|f^{(4)}(x)|$):
+
+\begin{equation}
+	|R_{2}(f)|\leq \frac{M_{4}}{2880}(b-a)^{5}
+\end{equation}
+
+Складена формула Сімпсона (отримана застосуванням звичайної формули до кожного з інтервалів рівномірної сітки, на які поділений початковий інтервал):
+
+\begin{equation}
+	I_{h}(f) = \sum\limits_{i=1}^{N}\frac{h}{6}\left[f(x_{i-1}) + 4f(\frac{x_{i-1}+x_{i}}{2}) + f(x_{i})\right]
+\end{equation}
+
+
+Для неї справджуються наступні оцінки (апріорні):
+
+\begin{itemize}
+
+\item $f \in C^{4}[a,b]:$
+\begin{equation}
+|R_{h}(f)| \leq \frac{M_4}{2880}(b-a)h^4
+\end{equation}
+
+\item $f \in C^{6}[a,b]:$
+\begin{equation}
+ R_{h}(f)=R_{h}^{\circ}(f)+\alpha(h), \;  \text{де} \; R_{h}^{\circ}(f)=\frac{h^4}{2880}\int\limits_{a}^{b}f^{(4)}(x)dx, \; \alpha(h)=O(h^6) 
+\end{equation}
+
+\end{itemize}
+
+\subsection{Принцип Рунге. Формула Річардсона}
+\begin{center}
+	% \makebox[width=0.8\textwidth]{\includegraphics[width=\paperwidth]{simpson1.png}}
+	\includegraphics[width=\textwidth]{runge1.png}
+\end{center}
+
+\pagebreak
+
+\begin{center}
+	\includegraphics[width=\textwidth]{runge2.png}
+	\includegraphics[width=\textwidth]{runge3.png}
+	\includegraphics[width=\textwidth]{runge4.png}
+\end{center}
+
+Для формули Сімпсона (для якої $m=4$), формула Річардсона матиме вигляд:
+
+\begin{equation}
+	\thicktilde{I}_{h/2}=\frac{16}{15}I_{h/2}-\frac{1}{15}I_{h}, \quad I_h-\thicktilde{I}_{h/2}=O(h^6)
+\end{equation}
+
+\vspace{1cm}
+
+\section{Практична частина}
+
+Даний інтеграл є невласним інтегралом першого роду: $I = \int\limits_{2}^{\infty}\frac{dx}{x^2+x-2}$.
+Перепишемо $f(x)$ як $\frac{1}{(x+2)(x-1)}$. Бачимо, що особливостей на області інтегрування немає (вони є в точках $x=-2$ та $x=1$, які лежать поза областю інтегрування). \\
+Зробимо заміну: $t = \frac{x-2}{x},\ x=\frac{2}{1-t}, \ dx = \frac{2dt}{(1-t)^2}; \rightarrow \ I=\int\limits_{2}^{\infty}\frac{dx}{(x+2)(x-1)} = \int\limits_{0}^{1}\frac{dt}{(2-t)(1+t)} \quad (9)$ \\
+Тоді інтеграл набуде вигляду (9), де $g(t) = \frac{1}{(2-t)(1+t)}$ - нова підінтегральна фунція, $[0,1]$ - новий проміжок інтегрування.
+Отриманий інтеграл є власним інтегралом. Отже його можна обчислювати формулами Сімпсона та Річардсона напряму (без попередніх досліджень чи перетворень).
+
+Також помітимо, що початковий (як і отриманий) інтеграл можна знайти аналітично: $f(x) = \frac{1}{(x+2)(x-1)} = \frac{1}{3}\left(\frac{1}{x-1} - \frac{1}{x+2}\right)$ - не складно інтегрується безпосереднім знаходженням первісної. Справжнє значення інтегралу рівне $\ln(4)/3 \approx 0.46209812037329687294..$.
+
+
+Для обчислення апріорної похибки обчислень, нам необхідно оцінити четверту похідну фунції $g(t)$.
+$g^{(4)}=\frac{24}{3}\left( \frac{1}{(2-t)^5} + \frac{1}{(1+t)^5}\right)$ \\
+Вона є обмеженою та додатньою на всьому інтервалі інтегрування.\\
+П'ята похідна $g^{(5)}=\frac{120}{3}\left( \frac{1}{(2-t)^6} - \frac{1}{(1+t)^6}\right)$
+більша за 0 коли $t>1/2$ та менша за 0 коли $t<1/2$
+Отже (локальні) максимуми доягаються на кінцях: $g^{(4)}(0)=g^{(4)}(1)=\nicefrac{33}{32}$.
+Отже $M_4 = 33/32, $ та $|R_{2}(f)|\leq \frac{M_{4}}{2880}(b-a)^{5} = \frac{33}{32*2880} \approx 0.00035807291(6)$.\\
+В методі Рунге виставимо точність $\epsilon = 10^{-3}$ та кількість ітерацій не більше 20. 
+
+Результати:\\
+% \begin{center}
+\includegraphics[scale=0.8]{lab2_res.png}
+% \end{center}
+
+
+\end{document}
