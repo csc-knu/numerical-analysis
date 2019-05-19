@@ -6,7 +6,7 @@
 				equationNumbers: { autoNumber: "AMS" },
 				Macros: {
 					RR: "{\\mathbb{R}}",
-					cond: "\\mathop{cond}",
+					cond: "\\mathrm{cond}\mathop{}",
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Int: "\\displaystyle\\int\\limits",
 					Inf: "\\displaystyle\\inf\\limits",
