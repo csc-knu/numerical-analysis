@@ -1,4 +1,4 @@
-## Список рекомендованої літератури:
+# Література
 
 - И.&nbsp;С.&nbsp;Березин и Н.&nbsp;П.&nbsp;Жидков, &laquo;Методы вычислений&raquo;, том&nbsp;І, видання 1962&nbsp;р.: [pdf](berezin-zhidkov-i-1962.pdf), [djvu](berezin-zhidkov-i-1962.djvu)
 
