@@ -54,7 +54,7 @@ header h2 {
 	}
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) and (min-width: 600px) {
 	header h2 {
 		font-size: 24px;
 		width: 400px;
@@ -64,6 +64,18 @@ header h2 {
 		width: 400px;
 	}
 }
+
+@media only screen and (max-width: 599px) {
+	header h2 {
+		font-size: 20px;
+		width: 400px;
+	}
+	header h1 {
+		font-size: 40px;
+		width: 400px;
+	}
+}
+
 
 header {
 	background: url(https://raw.githubusercontent.com/Sky-Nik/numerical-analysis/master/bg.png);
