@@ -12,7 +12,7 @@
 
 - Голубєва Катерина Миколаївна, katerina.golubeva<span style="font-family:monospace;">@</span>unicyb.kiev.ua [розклад](https://mytimetable.live/teacher/Golybieva-KM/)
 
-Сайт і конспекти &mdash; Скибицький Нікіта Максимович, n.skybytskyi<span style="font-family:monospace;">@</span>gmail.com
+<!-- Сайт і конспекти &mdash; Скибицький Нікіта Максимович, n.skybytskyi<span style="font-family:monospace;">@</span>gmail.com -->
 
 ### Розподіл балів
 
