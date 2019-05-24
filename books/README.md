@@ -8,6 +8,8 @@
 
 - А.&nbsp;А.&nbsp;Самарский, А.&nbsp;В.&nbsp;Гулин, &laquo;Численные методы&raquo; видання 1989&nbsp;р.: [pdf](samarskyi-gulin-1989.pdf), [djvu](samarskyi-gulin-1989.djvu)
 
+- Н.&nbsp;С.&nbsp;Бахвалов, Н.&nbsp;П.&nbsp;Жидков, Г.&nbsp;М.&nbsp;Кобельков, &laquo;Численные методы&raquo;, видання 2015&nbsp;р.: [pdf](bahvalov-zhidkov-kobelkov-2015.pdf)
+
 _Пулл-реквести з додаванням нової літератури вітаються._
 
 [Назад на головну](../README.md)
