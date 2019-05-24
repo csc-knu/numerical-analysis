@@ -41,6 +41,9 @@ header h2 {
 		width: 700px;
 		font-size: 72px;
 	}
+	p {
+		font-size: 12px;
+	}
 }
 
 @media only screen and (max-width: 959px) and (min-width: 768px) {
@@ -51,6 +54,9 @@ header h2 {
 	header h1 {
 		width: 600px;
 		font-size: 60px;
+	}
+	p {
+		font-size: 10px;
 	}
 }
 
@@ -63,6 +69,9 @@ header h2 {
 		font-size: 48px;
 		width: 400px;
 	}
+	p {
+		font-size: 9px;
+	}
 }
 
 @media only screen and (max-width: 599px) {
@@ -73,6 +82,9 @@ header h2 {
 	header h1 {
 		font-size: 40px;
 		width: 400px;
+	}
+	p {
+		font-size: 8px;
 	}
 }
 
