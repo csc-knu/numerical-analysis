@@ -18,10 +18,12 @@
         font-weight: bold;
     }
     blockquote {
-        padding: 0 1rem;
+        padding: 0 0 0 1rem;
         margin-left: 0;
         color: #232323;
-        border-left: 0.3rem solid #232323;
+        border-left: 0.5rem solid #232323;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
     }
 }
 
