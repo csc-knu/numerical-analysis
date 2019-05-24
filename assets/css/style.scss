@@ -3,31 +3,6 @@
 
 @import "{{ site.theme }}";
 
-#main-content h1, #main-content h2, #main-content h3, #main-content h4, #main-content h5, #main-content h6 {
-	font-family: 'Helvetica Neue', Helvetica, Arial, serif;
-}
-
-pre, code {
-	background-color: #f8f8f8;
-}
-
-pre code {
-	background-color: #f8f8f8;
-}
-
-header {
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
-header h1 {
-	width: 700px;
-}
-
-header h2 {
-	color: #5e8499;
-}
-
 @media only screen and (min-width: 960px) {
 	header h2 {
 		width: 700px;
@@ -126,7 +101,4 @@ header h2 {
 
 header {
 	background: url(https://raw.githubusercontent.com/Sky-Nik/numerical-analysis/master/bg.png);
-	a.button {
-		background-color: #236;
-	}
 }
