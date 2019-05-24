@@ -7,10 +7,6 @@
 	font-family: 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
-p {
-    margin-bottom: 12px;
-}
-
 pre, code {
 	background-color: #f8f8f8;
 }
@@ -42,7 +38,12 @@ header h2 {
 		font-size: 72px;
 	}
 	p {
-		font-size: 12px;
+		font-size: 15px;
+	    margin-bottom: 15px;
+	}
+	blockquote {
+	    margin-inline-start: 15px;
+	    margin-inline-end: 15px;
 	}
 }
 
@@ -56,7 +57,12 @@ header h2 {
 		font-size: 60px;
 	}
 	p {
-		font-size: 10px;
+		font-size: 14px;
+		margin-bottom: 14px;
+	}
+	blockquote {
+	    margin-inline-start: 14px;
+	    margin-inline-end: 14px;
 	}
 }
 
@@ -70,7 +76,12 @@ header h2 {
 		width: 400px;
 	}
 	p {
-		font-size: 9px;
+		font-size: 12px;
+		margin-bottom: 12px;
+	}
+	blockquote {
+	    margin-inline-start: 12px;
+	    margin-inline-end: 12px;
 	}
 }
 
@@ -84,14 +95,18 @@ header h2 {
 		width: 400px;
 	}
 	p {
-		font-size: 8px;
+		font-size: 10px;
+		margin-bottom: 10px;
+	}
+	blockquote {
+	    margin-inline-start: 10px;
+	    margin-inline-end: 10px;
 	}
 }
 
 header {
 	background: url(https://raw.githubusercontent.com/Sky-Nik/numerical-analysis/master/bg.png);
-}
-
-header a.button {
-	background-color: #236;
+	a.button {
+		background-color: #236;
+	}
 }
