@@ -49,6 +49,10 @@ header h2 {
 	    margin-inline-start: 15px;
 	    margin-inline-end: 15px;
 	}
+	.main-content {
+		width: 700px;
+
+	}
 }
 
 @media only screen and (max-width: 959px) and (min-width: 768px) {
@@ -125,8 +129,4 @@ header {
 	a.button {
 		background-color: #236;
 	}
-}
-
-.site-footer {
-	padding: 2rem;
 }
