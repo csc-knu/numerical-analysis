@@ -18,7 +18,6 @@
 					Prod: "\\displaystyle\\prod\\limits",
 					void: "\\left.\\right.\\!"
 				},
-				extensions: ["AMS-setcounter.js"]
 			}
 		});
 	</script>
