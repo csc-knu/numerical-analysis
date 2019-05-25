@@ -16,7 +16,7 @@
 					Max: "\\displaystyle\\max\\limits",
 					Lim: "\\displaystyle\\lim\\limits",
 					Prod: "\\displaystyle\\prod\\limits",
-					void: "\\left.\\right.\\!"
+					void: "\\,\\!"
 				},
 			}
 		});
