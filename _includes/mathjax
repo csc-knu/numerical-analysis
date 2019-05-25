@@ -17,11 +17,10 @@
 					Lim: "\\displaystyle\\lim\\limits",
 					Prod: "\\displaystyle\\prod\\limits",
 					void: "\\left.\\right.\\!"
-				}
+				},
 				extensions: ["AMS-setcounter.js"]
 			}
 		});
 	</script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-	<script src="https://gist.github.com/pkra/749f8a3106ae52fd979a.js"></script>
 </head>
