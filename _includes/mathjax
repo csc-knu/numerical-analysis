@@ -15,7 +15,8 @@
 					Min: "\\displaystyle\\min\\limits",
 					Max: "\\displaystyle\\max\\limits",
 					Lim: "\\displaystyle\\lim\\limits",
-					Prod: "\\displaystyle\\prod\\limits"
+					Prod: "\\displaystyle\\prod\\limits",
+					void: "\\left.\\right."
 				}
 			}
 		});
