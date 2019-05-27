@@ -12,6 +12,8 @@
 					diam: "\\mathrm{diam}\\mathop{}",
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Int: "\\displaystyle\\int\\limits",
+					Iint: "\\displaystyle\\iint\\limits",
+					Iiint: "\\displaystyle\\iiint\\limits",
 					Inf: "\\displaystyle\\inf\\limits",
 					Sup: "\\displaystyle\\sup\\limits",
 					Sum: "\\displaystyle\\sum\\limits",
