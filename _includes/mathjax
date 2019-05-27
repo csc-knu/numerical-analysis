@@ -7,6 +7,7 @@
 				Macros: {
 					RR: "{\\mathbb{R}}",
 					cond: "\\mathrm{cond}\\mathop{}",
+					rang: "\\mathrm{rang}\\mathop{}",
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Int: "\\displaystyle\\int\\limits",
 					Inf: "\\displaystyle\\inf\\limits",
@@ -16,7 +17,7 @@
 					Max: "\\displaystyle\\max\\limits",
 					Lim: "\\displaystyle\\lim\\limits",
 					Prod: "\\displaystyle\\prod\\limits",
-					void: "\\,\\!"
+					void: "\\!"
 				},
 			}
 		});
