@@ -8,6 +8,7 @@
 					RR: "{\\mathbb{R}}",
 					cond: "\\mathrm{cond}\\mathop{}",
 					rang: "\\mathrm{rang}\\mathop{}",
+					diag: "\\mathrm{diag}\\mathop{}",
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Int: "\\displaystyle\\int\\limits",
 					Inf: "\\displaystyle\\inf\\limits",
