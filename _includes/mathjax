@@ -9,6 +9,7 @@
 					cond: "\\mathrm{cond}\\mathop{}",
 					rang: "\\mathrm{rang}\\mathop{}",
 					diag: "\\mathrm{diag}\\mathop{}",
+					sign: "\\mathrm{sgn}\\mathop{}",
 					diam: "\\mathrm{diam}\\mathop{}",
 					diff: "\\mathop{}\\!\\mathrm{d}",
 					Int: "\\displaystyle\\int\\limits",
