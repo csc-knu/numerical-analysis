@@ -4,4 +4,6 @@
 
 - Принцип Рунге і формула Річардсона: [web](runge-richardson.md)
 
+- Формула Річардсона і формула трапеції: [web](richardson-trapezoid.md)
+
 [Назад на головну](../README.md)
