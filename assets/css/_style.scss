@@ -3,18 +3,13 @@
 
 @import "{{ site.theme }}";
 
-.page-header {
-    background: url(https://raw.githubusercontent.com/Sky-Nik/numerical-analysis/master/bg.png);
-    padding-top: 1rem;
-    padding-bottom: 0.01rem;
-    color: #fff;
-    text-align: center;
-    background-size: cover;
+body {
+    color: #232323;
 }
 
 .main-content {
     h1, h2, h3, h4, h5, h6 {
-        color: #008;
+        color: #232323;
         font-weight: bold;
     }
     blockquote {
