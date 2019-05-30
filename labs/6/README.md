@@ -45,7 +45,7 @@ _Можливо з часом тут будуть розміщені ще зві
 Запишемо
 
 \begin{equation}
-	\Int_{0}^{1} \frac{\ln \left(2 + \sqrt[3]{x} \right)}{\sqrt[3]{x}} = \Int_{0}^{1} \underset{\rho(x)}{\underbrace{\frac{1}{\sqrt[3]{x}}}} \cdot \underset{f(x)}{\underbrace{\ln \left(2 + \sqrt[3]{x}\right)}} \diff x
+	\Int_{0}^{1} \frac{\ln \left(2 + \sqrt[3]{x} \right)}{\sqrt[3]{x}} \diff x = \Int_{0}^{1} \underset{\rho(x)}{\underbrace{\frac{1}{\sqrt[3]{x}}}} \cdot \underset{f(x)}{\underbrace{\ln \left(2 + \sqrt[3]{x}\right)}} \diff x
 \end{equation}
 
 Знайдемо сім'ю багаточленів які ортогональні з вагою $$\rho(x) = x^{-1/3}$$.
@@ -99,7 +99,7 @@ _Можливо з часом тут будуть розміщені ще зві
 Зауважимо, що 
 
 \begin{equation}
-	\Int_{0}^{1} \frac{\ln \left(2 + \sqrt[3]{x} \right)}{\sqrt[3]{x}} \approx 1.465 127 784 353 178\ldots
+	\Int_{0}^{1} \frac{\ln \left(2 + \sqrt[3]{x} \right)}{\sqrt[3]{x}} \diff x\approx 1.465 127 784 353 178\ldots
 \end{equation}
 
 
