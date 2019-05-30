@@ -80,9 +80,13 @@ _Можливо з часом тут будуть розміщені ще зві
 	\begin{equation}
 		\begin{aligned}
 			P_3 &= x^3 - \frac{\Int_{0}^{1} x^{8/3} \diff x}{\Int_{0}^{1} x^{-1/3} \diff x} \cdot {\bf 1} - \frac{\Int_{0}^{1} x^{8/3} \left(x - \frac{2}{5} \right) \diff x}{\Int_{0}^{1} x^{-1/3} \left(x - \frac{2}{5} \right)^2 \diff x} \cdot \left(x - \frac{2}{5} \right) - \frac{\Int_{0}^{1} x^{8/3} \left(x^2 - \frac{10 x}{11} + \frac{5}{44} \right) \diff x}{\Int_{0}^{1} x^{-1/3} \left(x^2 - \frac{10 x}{11} + \frac{5}{44} \right)^2 \diff x} \cdot \left(x^2 - \frac{10 x}{11} + \frac{5}{44} \right) = \newline
-			&= 
+			&= x^3 - \frac{3/11}{3/2} \cdot {\bf 1} - \frac{81/770}{27/200} \cdot \left(x - \frac{2}{5}\right) - \frac{729/57596}{243/27104} \cdot \left(x^2 - \frac{10 x}{11} + \frac{5}{44} \right) = \newline
+			&= x^3 - \frac{2}{11} \cdot {\bf 1} - \frac{60}{77} \cdot \left(x - \frac{2}{5}\right) - \frac{24}{17} \cdot \left(x^2 - \frac{10 x}{11} + \frac{5}{44} \right) = \newline
+			&= x^3 - \frac{24 x^2}{17} + \frac{60 x}{199} - \frac{40}{1309}.
 		\end{aligned}
 	\end{equation}
+
+Обмежимося цими поліномами.
 
 <!-- \frac{15}{2} \cdot \ln 3 - 6  -->
 
