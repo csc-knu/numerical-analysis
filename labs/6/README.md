@@ -123,7 +123,8 @@ _Можливо з часом тут будуть розміщені ще зві
 		\Int_{a}^{b} f(x) \diff x &= \Int_{a}^{b} (x - x_0)^{-\alpha} \varphi(x) \diff x = \newline
 		&= \Int_{a}^{b} (x - x_0)^{-\alpha} \left( c_0 + c_1(x - x_0) + c_2 (x - x_0)^2 + \ldots \right) \diff x = \newline
 		&= \Int_{a}^{b} \left( (x - x_0)^{-\alpha} \left( c_0 + c_1 (x - x_0) + \ldots + c_n (x - x_0)^n \right) \right. + \newline
-		& \quad + 
+		& \quad + \left. (x - x_0)^{-\alpha} \left( c_{n + 1} (x - x_0)^{n + 1} + \ldots \right) \right) \diff x = \newline
+		&=
 	\end{aligned}
 \end{equation}
 
