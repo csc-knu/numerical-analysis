@@ -130,6 +130,21 @@ _Можливо з часом тут будуть розміщені ще зві
 	\end{aligned}
 \end{equation}
 
+Далі
+
+\begin{equation}
+	\Int_{a}^{b} g(x) \diff x
+\end{equation}
+
+беремо &laquo;руками&raquo; а
+
+\begin{equation}
+	\Int_{a}^{b} \psi(x) \diff x
+\end{equation}
+
+&mdash; чисельно.
+
+
 
 
 [Назад до лаб](../README.md)
