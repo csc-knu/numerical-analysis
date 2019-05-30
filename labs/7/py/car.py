@@ -6,7 +6,7 @@ class Car:
     def __init__(self, m: float, dashpot: Dashpot):
         assert m > 0, "m must be positive"
         self._m, self._dashpot = m, dashpot
-        self._x, self._dot_x = 0, 0
+        self._x, self._dot_x = 2, 0  # h_0, 0
 
     @property
     def m(self):

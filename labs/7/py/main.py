@@ -32,7 +32,7 @@ if __name__ == '__main__':
     h_t, h_x, h_x_0, h_dot_x, h_xi = [], [], [], [], []
     dt = .0001
     stage = Stage(
-        car=Car(m=10, dashpot=Dashpot(k=640, r_0=160, c=1)), 
+        car=Car(m=100, dashpot=Dashpot(k=100, r_0=160, c=1)), 
         road=Road(a=2, omega=7)
     )
 
