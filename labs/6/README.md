@@ -54,7 +54,7 @@ _Можливо з часом тут будуть розміщені ще зві
 
 - $$P_0 = {\bf 1}$$;
 
-- $P_1 = x - \frac{\langle {\bf 1}, x\rangle}{\langle {\bf 1}, {\bf 1} \rangle} \cdot {\bf 1}$$. 
+- $$P_1 = x - \frac{\langle {\bf 1}, x\rangle}{\langle {\bf 1}, {\bf 1} \rangle} \cdot {\bf 1}$$. 
 
 	Враховуючи визначення скалярного добутку маємо:
 
@@ -62,12 +62,15 @@ _Можливо з часом тут будуть розміщені ще зві
 		P_1 = x - \frac{\Int_{0}^{1} x^{4/3} \diff x}{\Int_{0}^{1} x^{1/3} \diff x} \cdot x = x - \frac{3/7}{3/4} \cdot {\bf 1} = x - \frac{4}{7}.
 	\end{equation}
 
-- $P_2 = x^2 - \frac{\langle {\bf 1}, x^2\rangle}{\langle {\bf 1}, {\bf 1} \rangle} \cdot {\bf 1} - \frac{\langle x - 4/7, x^2\rangle}{\langle x - 4/7, x - 4/7 \rangle} \cdot (x - 4/7)$$. 
+- $$P_2 = x^2 - \frac{\langle {\bf 1}, x^2\rangle}{\langle {\bf 1}, {\bf 1} \rangle} \cdot {\bf 1} - \frac{\langle x - 4/7, x^2\rangle}{\langle x - 4/7, x - 4/7 \rangle} \cdot (x - 4/7)$$. 
 
 	Враховуючи визначення скалярного добутку маємо:
 
 	\begin{equation}
-		P_2 = x^2 - \frac{\Int_{0}^{1} x^{7/3} \diff x}{\Int_{0}^{1} x^{1/3} \diff x} \cdot {\bf 1} - \frac{\Int_{0}^{1} x^{7/3} (x - 4/7) \diff x}{\Int_{0}^{1} x^{1/3} (x - 4/7)^2 \diff x} \cdot (x - 4/7) = x^2 - \frac{3/10}{3/4} \cdot {\bf 1} - \frac{27/455}{27/490} \cdot (x - 4/7) = x^2 - \frac{2}{5} - \frac{14}{13} \cdot (x - 4/7) = x^2 - \frac{14 x}{13} + \frac{14}{65}
+		\begin{aligned}
+			P_2 &= x^2 - \frac{\Int_{0}^{1} x^{7/3} \diff x}{\Int_{0}^{1} x^{1/3} \diff x} \cdot {\bf 1} - \frac{\Int_{0}^{1} x^{7/3} \left(x - \frac{4}{7} \right) \diff x}{\Int_{0}^{1} x^{1/3} \left(x - \frac{4}{7} \right)^2 \diff x} \cdot \left(x - \frac{4}{7} \right) = \newline
+			&= x^2 - \frac{3/10}{3/4} \cdot {\bf 1} - \frac{27/455}{27/490} \cdot \left(x - \frac{4}{7} \right) = x^2 - \frac{2}{5} - \frac{14}{13} \cdot \left(x - \frac{4}{7} \right) = x^2 - \frac{14 x}{13} + \frac{14}{65}.
+		\end{aligned}
 	\end{equation}
 
 <!-- \frac{15}{2} \cdot \ln 3 - 6  -->
