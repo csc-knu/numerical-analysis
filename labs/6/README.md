@@ -73,6 +73,17 @@ _Можливо з часом тут будуть розміщені ще зві
 		\end{aligned}
 	\end{equation}
 
+- $$P_3 = x^3 - \frac{\langle {\bf 1}, x^3\rangle}{\langle {\bf 1}, {\bf 1} \rangle} \cdot {\bf 1} - \frac{\langle x - 2/5, x^3\rangle}{\langle x - 2/5, x - 2/5 \rangle} \cdot (x - 2/5) - \frac{\langle x^2 - 10/11 x + 5/44, x^3\rangle}{\langle x^2 - 10/11 x + 5/44, x^2 - 10/11 x + 5/44 \rangle} \cdot (x^2 - 10/11 x + 5/44)$$. 
+
+	Враховуючи визначення скалярного добутку маємо:
+
+	\begin{equation}
+		\begin{aligned}
+			P_3 &= x^3 - \frac{\Int_{0}^{1} x^{8/3} \diff x}{\Int_{0}^{1} x^{-1/3} \diff x} \cdot {\bf 1} - \frac{\Int_{0}^{1} x^{8/3} \left(x - \frac{2}{5} \right) \diff x}{\Int_{0}^{1} x^{-1/3} \left(x - \frac{2}{5} \right)^2 \diff x} \cdot \left(x - \frac{2}{5} \right) - \frac{\Int_{0}^{1} x^{8/3} \left(x^2 - \frac{10 x}{11} + \frac{5}{44} \right) \diff x}{\Int_{0}^{1} x^{-1/3} \left(x^2 - \frac{10 x}{11} + \frac{5}{44} \right)^2 \diff x} \cdot \left(x^2 - \frac{10 x}{11} + \frac{5}{44} \right) = \newline
+			&= 
+		\end{aligned}
+	\end{equation}
+
 <!-- \frac{15}{2} \cdot \ln 3 - 6  -->
 
 - метод обрізання границі
