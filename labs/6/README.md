@@ -48,7 +48,7 @@ _Можливо з часом тут будуть розміщені ще зві
 	\Int_{0}^{1} \frac{\ln \left(2 + \sqrt[3]{x} \right)}{\sqrt[3]{x}} = \Int_{0}^{1} \underset{\rho(x)}{\underbrace{\frac{1}{\sqrt[3]{x}}}} \cdot \underset{f(x)}{\underbrace{\ln \left(2 + \sqrt[3]{x}\right)}} \diff x
 \end{equation}
 
-Знайдемо сім'ю багаточленів які ортогональні з вагою $$\rho(x) = \sqrt[3]{x}$$.
+Знайдемо сім'ю багаточленів які ортогональні з вагою $$\rho(x) = x^{-1/3}$$.
 
 Для цього візьмемо сім'ю $$1, x, x^2, \ldots$$ і &laquo;пропустимо&raquo; її через процес ортогоналізації Грама-Шмідта:
 
@@ -59,17 +59,17 @@ _Можливо з часом тут будуть розміщені ще зві
 	Враховуючи визначення скалярного добутку маємо:
 
 	\begin{equation}
-		P_1 = x - \frac{\Int_{0}^{1} x^{4/3} \diff x}{\Int_{0}^{1} x^{1/3} \diff x} \cdot x = x - \frac{3/7}{3/4} \cdot {\bf 1} = x - \frac{4}{7}.
+		P_1 = x - \frac{\Int_{0}^{1} x^{2/3} \diff x}{\Int_{0}^{1} x^{-1/3} \diff x} \cdot x = x - \frac{3/5}{3/2} \cdot {\bf 1} = x - \frac{2}{5}.
 	\end{equation}
 
-- $$P_2 = x^2 - \frac{\langle {\bf 1}, x^2\rangle}{\langle {\bf 1}, {\bf 1} \rangle} \cdot {\bf 1} - \frac{\langle x - 4/7, x^2\rangle}{\langle x - 4/7, x - 4/7 \rangle} \cdot (x - 4/7)$$. 
+- $$P_2 = x^2 - \frac{\langle {\bf 1}, x^2\rangle}{\langle {\bf 1}, {\bf 1} \rangle} \cdot {\bf 1} - \frac{\langle x - 2/5, x^2\rangle}{\langle x - 2/5, x - 2/5 \rangle} \cdot (x - 2/5)$$. 
 
 	Враховуючи визначення скалярного добутку маємо:
 
 	\begin{equation}
 		\begin{aligned}
-			P_2 &= x^2 - \frac{\Int_{0}^{1} x^{7/3} \diff x}{\Int_{0}^{1} x^{1/3} \diff x} \cdot {\bf 1} - \frac{\Int_{0}^{1} x^{7/3} \left(x - \frac{4}{7} \right) \diff x}{\Int_{0}^{1} x^{1/3} \left(x - \frac{4}{7} \right)^2 \diff x} \cdot \left(x - \frac{4}{7} \right) = \newline
-			&= x^2 - \frac{3/10}{3/4} \cdot {\bf 1} - \frac{27/455}{27/490} \cdot \left(x - \frac{4}{7} \right) = x^2 - \frac{2}{5} - \frac{14}{13} \cdot \left(x - \frac{4}{7} \right) = x^2 - \frac{14 x}{13} + \frac{14}{65}.
+			P_2 &= x^2 - \frac{\Int_{0}^{1} x^{5/3} \diff x}{\Int_{0}^{1} x^{-1/3} \diff x} \cdot {\bf 1} - \frac{\Int_{0}^{1} x^{5/3} \left(x - \frac{2}{5} \right) \diff x}{\Int_{0}^{1} x^{-1/3} \left(x - \frac{2}{5} \right)^2 \diff x} \cdot \left(x - \frac{2}{5} \right) = \newline
+			&= x^2 - \frac{3/8}{3/2} \cdot {\bf 1} - \frac{27/220}{27/200} \cdot \left(x - \frac{2}{5} \right) = x^2 - \frac{1}{4} - \frac{10}{11} \cdot \left(x - \frac{2}{5} \right) = x^2 - \frac{10 x}{11} + \frac{5}{44}.
 		\end{aligned}
 	\end{equation}
 
