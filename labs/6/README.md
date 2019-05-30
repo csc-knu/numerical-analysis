@@ -117,6 +117,16 @@ _Можливо з часом тут будуть розміщені ще зві
 - метод виділення особливостей
  -->
 
+
+\begin{equation}
+	\begin{aligned}
+		\Int_{a}^{b} f(x) \diff x &= \Int_{a}^{b} (x - x_0)^{-\alpha} \varphi(x) \diff x = \newline
+		&=
+	\end{aligned}
+\end{equation}
+
+
+
 [Назад до лаб](../README.md)
 
 [Назад на головну](../../README.md)
