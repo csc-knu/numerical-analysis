@@ -1,19 +1,471 @@
-﻿\[\displaystlye\int\limits_{-1}^1 \frac{\ln \left(2 + \sqrt[3]{x}\right)}{\sqrt[3]{x}}\,\mathrm{d}x\]
+\input{lab.sty}
 
-\[\displaystlye\int\limits_{-1}^1 \underset{\rho(x)}{\underbrace{\frac{1}{\sqrt[3]{x}}}} \cdot \underset{f(x)}{\underbrace{\ln \left(2 + \sqrt[3]{x}\right)}} \, \mathrm{d}x\]
+\begin{document}
 
-Знайдемо сім'ю багаточленів які ортогональні з вагою $\rho(x) = \sqrt[3]{x}$. \medskip
+\cover{6}{Квадратурні формули}
 
-Для цього візьмемо сім'ю $1, x, x^2, \ldots$ і ``пропустимо'' її через процес ортогоналізації Грама-Шмідта: \newline
+\tableofcontents
+
+\section{Постановка задачі}
+
+Обчислити невласний інтеграл 
+
+\begin{equation}
+	I(f) = \Int_{-1}^1 \frac{\ln (2 + \sqrt[3]{x})}{\sqrt[3]{x}} \diff x.
+\end{equation}
+
+з точністю $\varepsilon = 10^{-5}$. \medskip
+
+Для обчислень використати:
 
 \begin{enumerate}
-	\item $P_0 = 1$;
+	\item формули:
+	\begin{enumerate}
+		\item середніх прямокутників;
+		\item трапецій;
+		\item Сімпсона (парабол).
+	\end{enumerate}
+	\item прицип Рунге;
+	\item формулу Річардсона;
+	\item апріорні оцінки похибки.
+\end{enumerate}
 
-	\item $P_1 = x - \frac{}{}$
+Вивести:
+
+\begin{enumerate}
+	\item кінцевий крок інтегрування $h$;
+	\item апріорну оцінку тчоності інтегрування;
+	\item наближені значення інтегралу $I_h$, $I_{h/2}$;
+	\item оцінку похибки інтегрування за принципом Рунге;
+	\item уточнене значення інтегралу за формулою Річардсона.
+\end{enumerate}
+
+\section{Теоретичні відомості}
+
+\subsection{Невласність}
+
+Від невласності можна позбутися адитивним методом, тобто представивши підінтегральну функцію у вигляді суми функції з особливістю яку інтегруємо аналітично та не особливої функції яку інтегруємо чисельно:
+
+\begin{align*}
+	\Int_{a}^{b} f(x) \diff x &= \Int_{a}^{b} (x - x_0)^{-\alpha} \varphi(x) \diff x = \\
+	&= \Int_{a}^{b} (x - x_0)^{-\alpha} \Sum_{k = 0}^\infty c_k (x - x_0)^k \diff x = \\
+	&= \Int_{a}^{b} (x - x_0)^{-\alpha} \left( \Sum_{k = 0}^n c_k (x - x_0)^k + \Sum_{k = 1}^\infty c_{n + k} (x - x_0)^{n + k} \right) \diff x = \\
+	&= \Int_{a}^{b} (x - x_0)^{-\alpha} \Sum_{k = 0}^n c_k (x - x_0)^k \diff x + \Int_{a}^{b} (x - x_0)^{-\alpha} \Sum_{k = 1}^\infty c_{n + k} (x - x_0)^{n + k} \diff x = \\
+	&= \Int_{a}^{b} g(x) \diff x + \Int_{a}^{b} (x - x_0)^{-\alpha} \Sum_{k = 1}^\infty c_{n + k} (x - x_0)^{n + k} \diff x = \\
+	&= \Int_{a}^{b} g(x) \diff x + \Int_{a}^{b} (x - x_0)^{-\alpha} \left( \Sum_{k = 0}^\infty c_{k} (x - x_0)^{k} - g(x) \right) \diff x = \\
+	&= \Int_{a}^{b} g(x) \diff x + \Int_{a}^{b} (x - x_0)^{-\alpha} \left( \phi(x) - g(x) \right) \diff x = \\
+	&= \Int_{a}^{b} g(x) \diff x + \Int_{a}^{b} \psi(x) \diff x,
+\end{align*}
+
+далі 
+
+\begin{equation}
+	\Int_{a}^{b} g(x) \diff x = \Int_{a}^{b} (x - x_0)^{-\alpha} \Sum_{k = 0}^n c_k (x - x_0)^k \diff x
+\end{equation}
+
+беремо аналітично а
+
+\begin{equation}
+	\Int_{a}^{b} \psi(x) \diff x = \Int_{a}^{b} \Sum_{k = 1}^{\infty} c_{n + k} (x - x_0)^{n + k - \alpha} \diff x
+\end{equation}
+
+--- чисельно. \medskip
+
+Такий підхід у нашому випадку працює погано, адже для апріорної оцінки похибки чисельного інтегрування необхідна принаймні скінченна друга похідна у $\psi$, а для цього в $g$ доводиться брати багато (6) членів ряду Тейлора. А це у свою чергу призводить до малості $\psi$, що ускладнює точне обчислення її інтегралу за рахунок зростання відносної машинної похибки. \medskip
+
+Тому ми просто зробимо заміну і зведемо інтеграл до власного.
+
+\subsection{Квадратурні формули}
+
+\subsubsection{Середніх прямокутників}
+
+\begin{equation}
+	I_0 = (b - a) \cdot f(x_0), \quad x_0 = \frac{a + b}{2}
+\end{equation}
+
+Знайдемо алгебраїчну степінь точності цієї квадратурниої формули:
+
+\begin{align}
+	I_0(1) &= (b - a) \cdot 1 = I(x), \\
+	I_0(x) &= (b - a) \cdot \frac{a + b}{2} = I(x), \\
+	I_0(x^2) &= (b - a) \cdot \left(\frac{a + b}{2}\right)^2 \ne \frac{b^3 - a^3}{3} = \Int_a^b x^2 \diff x = I(x^2),
+\end{align}
+
+тому $m = 1$. \medskip
+
+Оцінимо для неї похибку. Взагалі для формули інтерполяційного типу:
+
+\begin{equation}
+	R_n(f) = I(f) - I_n(f) = I(f) - I(L_n) = I(f - L_n) = I(r_n) = \Int_a^b r_n(x) \diff x,
+\end{equation}
+
+де $r_n(x)$ --- залишковий член інтерполяції. Далі
+
+\begin{equation}
+	|R_n(f)| \le (b - a) \cdot \Max_x |r_n(x)| \le (b - a) \cdot \frac{M_{n + 1}}{n + 1} \cdot \Max_x |\omega_n(x)|.
+\end{equation}
+
+Для $I_0$:
+
+\begin{equation}
+	\begin{aligned}
+		|R_0(f)| &= \left| \Int_a^n r_0(x) \diff x \right| \le \Int_a^b |r_0(x)| \diff x \le \Int_a^b \frac{M_1}{1!} |x - x_0| \diff x = \\
+		&= M_1 \Int_a^b |x - x_0| \diff x \le M_1 \cdot \frac{b^2 - a^2}{4}.
+	\end{aligned}
+\end{equation}
+
+Але це погана оцінка, вона не використовує той факт, що квадратурна формула має степінь точності на одиницю вищу. Отримаємо кращу оцінку. Маємо при $f \in C^2([a,b])$:
+
+\begin{equation}
+	f(x) = f(x_0) + (x - x_0) \cdot f'(x_0) + \frac{(x - x_0)^2}{2} \cdot f''(\xi),
+\end{equation}
+
+де $x_0 \equiv \frac{a + b}{2}$, а $\xi \in [a, b]$. Тоді
+
+\begin{equation}
+	\begin{aligned}
+		R_0(f) &= \Int_a^b f(x) \diff x  \Int_a^b L_0(x) \diff x = \Int_a^b (f(x) - f(x_0)) \diff x = \\
+		&= \Int_a^b \left((x - x_0) f'(x_0) + \frac{(x - x_0)^2}{2} f''(\xi)\right) \diff x = \\
+		&= \Int_a^b \frac{(x - x_0)^2}{2} \cdot f''(\xi) \diff x = f''(\eta) \Int_a^b \frac{(x - x_0)^2}{2} \diff x = \frac{f''(\eta)}{24} \cdot (b - a)^3.
+	\end{aligned}
+\end{equation}
+
+Таким чином
+
+\begin{equation}
+	|R_0(f)| \le \frac{M_2}{24} \cdot (b - a)^3
+\end{equation}
+
+Але тут у нас немає впливу на точність (величину похибки). Тому використовують формулу складеного типу. Якщо сітка рівномірна, то складена квадратурна формула прямокутників має вигляд
+
+\begin{equation}
+	I(f) = \Sum_{i = 1}^n \Int_{x_{i - 1}}^{x_i} f(x) \diff x \approx \Sum_{i = 1}^N h \cdot f ( \bar x_i) = I_h(f),
+\end{equation}
+
+де $\bar x_i = x_{i - 1/2} = x_i - h/2$. \medskip
+
+Оцінимо похибку цієї квадратурної формули:
+
+\begin{equation}
+	R_h(f) = I(f) - I_h(f) = \Sum_{i = 1}^N \Int_{x_{i - 1}}^{x_i} (f(x) - f(\bar x_i)) \diff x = \Sum_{i = 1}^N f''(\eta_i) \cdot \frac{h^3}{24},
+\end{equation}
+
+\begin{equation}
+	|R_h(f)| \le \frac{M_2}{24} n h^3 = \frac{M_2 h^2 (b - a)}{24}.
+\end{equation}
+
+Тобто ця формула має степінь точності $p = 2$ по кроку $h$. (Не слід плутати з алгебраїчним степенем точності $m = 1$ для цієї формули).
+
+\subsubsection{Трапецій}
+
+Нехай $x_0 = a$, $x_1 = b$, $L_1(x) = f(x)$. Тоді отримаємо формулу:
+
+\begin{equation}
+	I_1(f) = \frac{b - a}{2} \cdot (f(a) + f(b))
+\end{equation}
+
+Формула має алгебраїчний степінь точності $m = 1$, оскільки $I(x^2) \ne I_1(x^2)$. Це формула замкненого типу. Залишковий член:
+
+\begin{equation}
+	R_1(f) = \Int_a^b \frac{f''(\xi)(x - a)(x - b)}{2} \diff x = - \frac{(b - a)^3}{12} \cdot f''(\xi).
+\end{equation}
+
+Оцінка залишкового члена:
+
+\begin{equation}
+	|R_1(f)| \le M_2 \cdot \frac{(b - a)^3}{12}.
+\end{equation}
+
+З геометричної точки зору замінюється площа криволінійної трапецій площею звичайної трапеції. \medskip
+
+Складена квадратурна формула трапецій:
+
+\begin{equation}
+	\begin{aligned}
+		I_h(f) &= \Sum_{i = 1}^N \frac{h}{2} \cdot (f(x_{i - 1}) + f(x_i)) = \\
+		&= \frac{h}{2} \cdot f(a) + \Sum_{i = 1}^{N - 1} h \cdot f(x_i) + \frac{h}{2} \cdot f(b),
+	\end{aligned}
+\end{equation}
+
+де $x_i = a + i h$, $h = \frac{b - a}{N}$, $i = \overline{0, N}$ та
+
+\begin{equation}
+	|R_h(f)| \le M_2 \cdot \frac{b - a}{12} \cdot h^2, \quad f \in C^2([a,b]).
+\end{equation}
+
+\subsubsection{Сімпсона (парабол)}
+
+Нехай $x_0 = a$, $x_1 = \frac{a + b}{2}$, $x_2 = b$. Замість $f$ використовуємо $L_2(x)$. Тоді отримаємо квадратурну формулу:
+
+\begin{equation}
+	I_2(f) = \frac{b - a}{6} \left( f(a) + 4 f \left( \frac{a + b}{2} \right) + f(b) \right).
+\end{equation}
+
+Це \textit{квадратурна формула Сімпсона}. \medskip
+
+Алгебраїчна степінь точності квадратурної формули Сімпсона $m = 3$. \medskip
+
+Для $f \in C^4([a,b])$ залишковий член квадратурної формули Сімпсона має місце представлення:
+
+\begin{equation}
+	R_2(f) = \frac{1}{24} \Int_a^b (x - a) \left( x - \frac{a + b}{2} \right)^2 (x - b) f^{(4)}(\xi) \diff x = \frac{f^{(4)}(\xi)}{2880} \cdot (b - a)^5,
+\end{equation}
+
+та вірна оцінка:
+
+\begin{equation}
+	|R_2(f)| \le \frac{M_4}{2880} \cdot (b - a)^5.
+\end{equation}
+
+Складена квадратурна формула Сімпсона має вигляд:
+
+\begin{equation}
+	\begin{aligned}
+		I_h(f) &= \Sum_{i = 1}^N \frac{h}{6} \left( f(x_{i - 1}) + 4 f (x_{i - 1/2}) + f(x_i) \right) = \\
+		&= \frac{h}{6} ( f(x_0) + 4 f(x_{1/2}) + 2 f(x_1) + \ldots + 2 f(x_{N - 1}) + 4 f(x_{N-1/2}) + f(x_N) ).
+	\end{aligned}
+\end{equation}
+
+Якщо $f \in C^4([a,b])$, то має місце оцінка:
+
+\begin{equation}
+	|R_h(f)| \le \frac{M_4}{2880} \cdot (b - a) \cdot h^4, \quad p = 4.
+\end{equation}
+
+\subsection{Принцип Рунге і формула Річардсона}
+
+Нехай задана деяка величина $I$ (сіткова функція, інтеграл, неперервна функція). Нехай $I_h \approx I$ та $I_n \to I$ при $h \to 0$. Нехай похибка послідовності $I_h$ представляється у вигляді:
+
+\begin{equation}
+	\label{eq:9.5.1}
+	R_h = I - I_h = \overset{\circ} R_h + \alpha(h),
+\end{equation}
+
+де $\overset{\circ}{R}_h = C \cdot h^m$ --- головний член похибки, $C$ не залежить від $h$, $\alpha(h) = o(h^m)$. Обчислимо $I_{h/2}$. З \eqref{eq:9.5.1} випливає, що
+
+\begin{align}
+	I &= I_h + C h^m + \alpha(h), \\
+	I &= I_{h/2} + C \cdot \frac{h^m}{2^m} + \alpha(h).
+\end{align}
+
+Звідси
+
+\begin{equation}
+	I_{h/2} - I_h = \frac{C h^m}{2^m} \cdot (2^m - 1) + \alpha(h).
+\end{equation}
+
+З \eqref{eq:9.5.1}:
+
+\begin{equation}
+	\label{eq:9.5.2}
+	\overset{\circ} R_{h/2} = \frac{C h^m}{2^m} = \frac{I_{h/2} - I_h}{2^m - 1},
+\end{equation}
+
+та
+
+\begin{equation}
+	\overset{\circ} R_h = \frac{2^m}{2^m - 1} \cdot (I_{h/2} - I_h).
+\end{equation}
+
+Формула \eqref{eq:9.5.2} носить назву \textit{апостеріорної оцінки} похибки обчислення $I$ за допомогою наближення $I_{h/2}$. (\textit{Апріорні оцінки} це оцінки отримані до обчислення величини $I_h$, \textit{апостеріорні оцінки} --- під час її обчислення). \medskip
+
+З формули \eqref{eq:9.5.2} впливає такий алгоритм обчислення інтегралу із заданою точністю $\varepsilon$:
+
+\begin{enumerate}
+	\item обчислюємо $I_h$, $I_{h/2}$, $\overset{\circ} R_{h/2}$; 
+
+	\item перевіряємо чи $\left\vert \overset{\circ} R_{h/2} \right\vert < \varepsilon$.
+
+	\item Якщо так, то $I \approx I_{h/2}$;
+
+	\item Якщо ж ні, то:
+
+	\begin{enumerate}
+		\item обчислюємо $I_{h/2}$, $I_{h/4}$, $\overset{\circ} R_{h/4}$; 
+
+		\item перевіряємо $\left\vert \overset{\circ} R_{h/4} \right\vert < \varepsilon$ і т. д.
+	\end{enumerate}
+
+	\item Процес продовжуємо поки не буде виконана умова $\left\vert \overset{\circ} R_{h/2^k} \right\vert < \varepsilon$, $k = 1,2, \ldots$.
 \end{enumerate}
 
 
-% \[ = \frac{15}{2} \cdot \ln 3 - 6 \]
+\textbf{Зауваження}: Ми даємо оцінку не похибки, а її головного члена з точністю $\alpha(h)$, тому такий метод може давати збої, якщо не виконана умова
 
-- метод обрізання границі
-- метод виділення особливостей
+\begin{equation}
+	|\alpha(h)| \ll \left| \overset{\circ} R_{h/2^k} \right|.
+\end{equation}
+
+За допомогою головного члена похибки можна отримати краще значення для $I$:
+
+\begin{equation}
+	\label{eq:9.5.3}
+	\tilde I_{h/2} = I_{h/2}^{(1)} = I_{h/2} + \overset{\circ} R_{h/2} = \frac{2^m}{2^m - 1} \cdot I_{h/2} - \frac{1}{2^m - 1} \cdot I_h.
+\end{equation}
+
+Це \textit{екстраполяційна формула Річардсона}: $I_h - \tilde I_{h/2} = \alpha(h)$. \medskip
+
+Для квадратурної формули трапецій $p = 2$ і 
+
+\begin{align}
+	I - I_h &= C h^2 + O(h^4), \\
+	\overset{\circ} R_{h/2} &= \frac{I_{h/2} - I_h}{3}.
+\end{align}
+
+Маємо
+
+\begin{equation}
+	R_h = - \frac{h^2}{12} \Int_a^b f''(x) \diff x + O(h^4) = O(h^2).
+\end{equation}
+
+Отже, якщо застосовувати екстраполяційну формулу Річардсона, то
+
+\begin{equation}
+	\label{eq:9.5.4}
+	\tilde I_{h/2} = \frac{4}{3} \cdot I_{h/2} - \frac{1}{3} \cdot I_h,
+\end{equation}
+
+і $I_h - \tilde I_{h/2} = O(h^4)$. \medskip
+
+Цей принцип застосовується і для формули Сімпсона $m = 4$. Головна частина залишкового члена для цієї формули:
+
+\begin{equation}
+	\overset{\circ} R_{h/2} = \frac{I_{h/2} - I_h}{15}.
+\end{equation}
+
+\begin{equation}
+	\tilde I_{h/2} = \frac{16}{15} \cdot I_{h/2} - \frac{1}{15} \cdot I_h,
+\end{equation}
+
+\begin{equation}
+	I_h - \tilde I_{h/2} = O(h^6).
+\end{equation}
+
+\section{Практична частина}
+
+\subsection{Невласність}
+
+Перш за все зробимо заміну:
+
+\begin{equation}
+	\Int_{-1}^1 \frac{\ln(2 + \sqrt[3]{x})}{\sqrt[3]{x}} \diff x = \left| t = \sqrt[3]{x}, x = t^3, \diff x = 3 t^2 \diff t \right| = \Int_{-1}^1 3 t \ln(2 + t) \diff t.
+\end{equation}
+
+Таким чином ми звели інтеграл до власного.
+
+\subsection{Квадратурні формули}
+
+Були написані наступні функції для обчислення квадратурних формул:
+
+\inputminted[firstline=6]{python}{../py/integrate.py}
+
+\subsection{Апріорні оцінки похибки}
+
+Були написані наступні функції для обчислення апріорних оцінок похибок:
+
+\inputminted[firstline=4]{python}{../py/apriori_error.py}
+
+Тут нам знадобляться $M_2$ і $M_4$, знайдемо їх:
+
+\begin{equation}
+	M_2 = \Max_{-1 \le t \le 1} \left| \frac{\diff^2 f(t)}{\diff t^2} \right|, \quad M_4 = \Max_{-1 \le t \le 1} \left| \frac{\diff^4 f(t)}{\diff t^4} \right|.
+\end{equation}
+
+Послідовно знаходимо:
+
+\begin{align}
+	\frac{\diff f(t)}{\diff t} &= 3 \left( \frac{t}{t + 2} + \ln (t + 2) \right), \\
+	\frac{\diff^2 f(t)}{\diff t^2} &= \frac{3 (t + 4)}{(t + 2)^2}, \\
+	\frac{\diff^3 f(t)}{\diff t^3} &= - \frac{3 (t + 6)}{(t + 2)^2}, \\
+	\frac{\diff^4 f(t)}{\diff t^4} &= \frac{6 (t + 8)}{(t + 2)^4}, \\
+	\frac{\diff^5 f(t)}{\diff t^5} &= - \frac{18 (t + 10)}{(t + 2)^5}.
+\end{align}
+
+Як бачимо $\diff^3 f(t) / \diff t^3 < 0$ на $[-1,1]$, тому $M_2$ досягається або в $-1$, або в $1$. Підставляючи знаходимо $f''(-1) = 9$, $f(1) = 5 / 3$, тому $M_2 = 9$. \medskip
+
+Як бачимо $\diff^5 f(t) / \diff t^5 < 0$ на $[-1,1]$, тому $M_4$ досягається або в $-1$, або в $1$. Підставляючи знаходимо $f^{(4)}(-1) = 42$, $f^{(4)}(1) = 2 / 3$, тому $M_4 = 42$.
+
+\subsection{Принцип Рунге}
+
+Були написані наступні функції для обчислення похибки за принципом Рунге:
+
+\inputminted[firstline=7]{python}{../py/runge.py}
+
+\subsection{Формула Річардсона}
+
+Були написані наступні функції для обчислення уточненого значення інтегралу за екстраполяційною формулою Річардсона:
+
+\inputminted[firstline=7]{python}{../py/richardson.py}
+
+\subsection{Програми-драйвери}
+
+Були написані наступні програми-драйвери:
+
+\inputminted[firstline=10, lastline=18]{python}{../py/main.py}
+\inputminted[firstline=35, lastline=43]{python}{../py/main.py}
+\inputminted[firstline=60, lastline=68]{python}{../py/main.py}
+\inputminted[firstline=85]{python}{../py/main.py}
+
+\subsection{Результати}
+
+Тут 
+
+\begin{itemize}
+	\item {\tt h} --- кінцевий крок інтегрування;
+	\item {\tt I\_true} --- справжнє значення інтегралу;
+	\item {\tt I\_h} --- значення інтегралу за відповідною квадратурною формулою для кроку $h$;
+	\item {\tt R\_h\_true} --- відхилення {\tt I\_h} від {\tt I\_true};
+	\item {\tt I\_half\_h} --- значення інтегралу за відповідною квадратурною формулою для кроку $h / 2$;
+	\item {\tt R\_half\_h\_true} --- відхилення {\tt I\_half\_h} від {\tt I\_true};
+	\item {\tt R\_runge} --- оцінка відхилення {\tt I\_h} від {\tt I\_true} за принципом Рунге;
+	\item {\tt I\_richardson} --- уточнене значення інтегралу за екстраполяційною формулою Річардсона;
+	\item {\tt R\_richardson\_true} --- відхилення {\tt I\_richardson} від {\tt I\_true};
+	\item {\tt apriori\_error} --- апріорна оцінка відхилення {\tt I\_h} від {\tt I\_true}.
+\end{itemize}
+
+\subsubsection{Для формули середніх прямокутників}
+
+\begin{minted}{python}
+h                 = 0.00390625
+I_true            = 1.0562447009935063
+I_h               = 1.0562400624293735
+R_h_true          = 4.638564132797285e-06
+I_half_h          = 1.0562435413517188
+R_half_h_true     = 1.1596417874848441e-06
+R_runge           = 1.1596407817708136e-06
+I_richardson      = 1.0562447009925007
+R_richardson_true = 1.0056400157054668e-12
+apriori_error     = 1.1444091796875e-05
+\end{minted}
+
+\subsubsection{Для формули трапецій}
+
+\begin{minted}{python}
+h                 = 0.00390625
+I_true            = 1.0562447009935063
+I_h               = 1.0562539781252218
+R_h_true          = 9.277131715501596e-06
+I_half_h          = 1.0562470202772976
+R_half_h_true     = 2.3192837912411335e-06
+R_runge           = 2.319282641420154e-06
+I_richardson      = 1.0562447009946563
+R_richardson_true = 1.1499690089067371e-12
+apriori_error     = 2.288818359375e-05
+\end{minted}
+
+\subsubsection{Для формули Сімпсона (парабол)}
+
+\begin{minted}{python}
+h                 = 0.125
+I_true            = 1.0562447009935063
+I_h               = 1.0562459003461577
+R_h_true          = 1.199352651415353e-06
+I_half_h          = 1.056244776246562
+R_half_h_true     = 7.525305578681696e-08
+R_runge           = 7.49399730419024e-08
+I_richardson      = 1.056244701306589
+R_richardson_true = 3.130826708996892e-10
+apriori_error     = 7.120768229166667e-06
+\end{minted}
+
+\end{document}

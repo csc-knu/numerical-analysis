@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{h}                 \PYG{o}{=} \PYG{l+m+mf}{0.0078125}
+\PYG{n}{I\PYGZus{}true}            \PYG{o}{=} \PYG{l+m+mf}{1.0562447009935063}
+\PYG{n}{I\PYGZus{}h}               \PYG{o}{=} \PYG{l+m+mf}{1.056226146785264}
+\PYG{n}{R\PYGZus{}h\PYGZus{}true}          \PYG{o}{=} \PYG{l+m+mf}{1.8554208242260728e\PYGZhy{}05}
+\PYG{n}{I\PYGZus{}half\PYGZus{}h}          \PYG{o}{=} \PYG{l+m+mf}{1.0562400624293735}
+\PYG{n}{R\PYGZus{}half\PYGZus{}h\PYGZus{}true}     \PYG{o}{=} \PYG{l+m+mf}{4.638564132797285e\PYGZhy{}06}
+\PYG{n}{R\PYGZus{}runge}           \PYG{o}{=} \PYG{l+m+mf}{4.638548036487815e\PYGZhy{}06}
+\PYG{n}{I\PYGZus{}richardson}      \PYG{o}{=} \PYG{l+m+mf}{1.05624470097741}
+\PYG{n}{R\PYGZus{}richardson}\PYG{o}{.}\PYG{n}{true} \PYG{o}{=} \PYG{l+m+mf}{1.6096235455620445e\PYGZhy{}11}
+\PYG{n}{apriori\PYGZus{}error}     \PYG{o}{=} \PYG{l+m+mf}{4.57763671875e\PYGZhy{}05}
+\end{Verbatim}

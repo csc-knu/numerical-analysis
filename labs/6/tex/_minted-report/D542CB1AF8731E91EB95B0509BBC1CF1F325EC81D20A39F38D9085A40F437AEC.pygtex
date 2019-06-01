@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/usr/bin/env python}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{from} \PYG{n+nn}{typing} \PYG{k+kn}{import} \PYG{n}{Callable}
+
+
+\PYG{k}{def} \PYG{n+nf}{rectangle}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{f}\PYG{p}{:} \PYG{n}{Callable}\PYG{p}{[[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} 
+        \PYG{n}{h}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{h} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)))}
+
+
+\PYG{k}{def} \PYG{n+nf}{trapezoid}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{f}\PYG{p}{:} \PYG{n}{Callable}\PYG{p}{[[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} 
+        \PYG{n}{h}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{h}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)))} \PYG{o}{+} \PYG{n}{f}\PYG{p}{(}\PYG{n}{b}\PYG{p}{))}
+
+
+\PYG{k}{def} \PYG{n+nf}{simpson}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{f}\PYG{p}{:} \PYG{n}{Callable}\PYG{p}{[[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} 
+        \PYG{n}{h}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{6} \PYG{o}{*} \PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{h}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)))} \PYG{o}{+} 
+        \PYG{l+m+mi}{4} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{a} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{b} \PYG{o}{+} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)))} \PYG{o}{+} \PYG{n}{f}\PYG{p}{(}\PYG{n}{b}\PYG{p}{))}
+\end{Verbatim}
