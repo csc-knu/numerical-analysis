@@ -1,0 +1,114 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+ch}{\PYGZsh{}!/usr/bin/env python}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{from} \PYG{n+nn}{typing} \PYG{k+kn}{import} \PYG{n}{Callable}
+\PYG{k+kn}{import} \PYG{n+nn}{apriori\PYGZus{}error}
+\PYG{k+kn}{import} \PYG{n+nn}{integrate}
+\PYG{k+kn}{import} \PYG{n+nn}{runge}
+\PYG{k+kn}{import} \PYG{n+nn}{richardson}
+\PYG{k+kn}{import} \PYG{n+nn}{adaptive}
+
+
+\PYG{k}{def} \PYG{n+nf}{rectangle}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{f}\PYG{p}{:} \PYG{n}{Callable}\PYG{p}{[[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{h}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} 
+        \PYG{n}{I\PYGZus{}True}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{M\PYGZus{}2}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb+bp}{None}\PYG{p}{:}
+	\PYG{k}{while} \PYG{n}{runge}\PYG{o}{.}\PYG{n}{rectangle}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{:}
+		\PYG{n}{h} \PYG{o}{/=} \PYG{l+m+mi}{2}
+
+	\PYG{n}{h} \PYG{o}{/=} \PYG{l+m+mi}{2}
+
+	\PYG{n}{I\PYGZus{}h}\PYG{p}{,} \PYG{n}{I\PYGZus{}half\PYGZus{}h}\PYG{p}{,} \PYG{n}{I\PYGZus{}richardson} \PYG{o}{=} \PYG{n}{integrate}\PYG{o}{.}\PYG{n}{rectangle}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{),} \PYGZbs{}
+		\PYG{n}{integrate}\PYG{o}{.}\PYG{n}{rectangle}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{),} \PYG{n}{richardson}\PYG{o}{.}\PYG{n}{rectangle}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)}
+
+	\PYG{n}{I\PYGZus{}adaptive} \PYG{o}{=} \PYG{n}{adaptive}\PYG{o}{.}\PYG{n}{rectangle}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{eps}\PYG{p}{)}
+
+	\PYG{k}{print}\PYG{p}{(}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{RECTANGLE:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{h                 = \PYGZob{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}true            = \PYGZob{}I\PYGZus{}true\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}h               = \PYGZob{}I\PYGZus{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}h\PYGZus{}true          = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}half\PYGZus{}h          = \PYGZob{}I\PYGZus{}half\PYGZus{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}half\PYGZus{}h\PYGZus{}true     = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}half\PYGZus{}h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}runge           = \PYGZob{}runge.rectangle(a, b, f, h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}richardson      = \PYGZob{}I\PYGZus{}richardson\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}richardson\PYGZus{}true = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}richardson)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{apriori\PYGZus{}error     = \PYGZob{}apriori\PYGZus{}error.rectangle(a, b, M\PYGZus{}2, h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}apadtive        = \PYGZob{}I\PYGZus{}adaptive\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}apadtive        = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}adaptive)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+	\PYG{p}{)}
+
+
+\PYG{k}{def} \PYG{n+nf}{trapezoid}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{f}\PYG{p}{:} \PYG{n}{Callable}\PYG{p}{[[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{h}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} 
+        \PYG{n}{I\PYGZus{}True}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{M\PYGZus{}2}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb+bp}{None}\PYG{p}{:}
+	\PYG{k}{while} \PYG{n}{runge}\PYG{o}{.}\PYG{n}{trapezoid}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{:}
+		\PYG{n}{h} \PYG{o}{/=} \PYG{l+m+mi}{2}
+
+	\PYG{n}{h} \PYG{o}{/=} \PYG{l+m+mi}{2}
+
+	\PYG{n}{I\PYGZus{}h}\PYG{p}{,} \PYG{n}{I\PYGZus{}half\PYGZus{}h}\PYG{p}{,} \PYG{n}{I\PYGZus{}richardson} \PYG{o}{=} \PYG{n}{integrate}\PYG{o}{.}\PYG{n}{trapezoid}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{),} \PYGZbs{}
+		\PYG{n}{integrate}\PYG{o}{.}\PYG{n}{trapezoid}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{),} \PYG{n}{richardson}\PYG{o}{.}\PYG{n}{trapezoid}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)}
+
+	\PYG{n}{I\PYGZus{}adaptive} \PYG{o}{=} \PYG{n}{adaptive}\PYG{o}{.}\PYG{n}{trapezoid}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{eps}\PYG{p}{)}
+
+	\PYG{k}{print}\PYG{p}{(}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}TRAPEZOID:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{h                 = \PYGZob{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}true            = \PYGZob{}I\PYGZus{}true\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}h               = \PYGZob{}I\PYGZus{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}h\PYGZus{}true          = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}half\PYGZus{}h          = \PYGZob{}I\PYGZus{}half\PYGZus{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}half\PYGZus{}h\PYGZus{}true     = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}half\PYGZus{}h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}runge           = \PYGZob{}runge.trapezoid(a, b, f, h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}richardson      = \PYGZob{}I\PYGZus{}richardson\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}richardson\PYGZus{}true = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}richardson)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{apriori\PYGZus{}error     = \PYGZob{}apriori\PYGZus{}error.trapezoid(a, b, M\PYGZus{}2, h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}apadtive        = \PYGZob{}I\PYGZus{}adaptive\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}apadtive        = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}adaptive)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+	\PYG{p}{)}
+
+
+\PYG{k}{def} \PYG{n+nf}{simpson}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{f}\PYG{p}{:} \PYG{n}{Callable}\PYG{p}{[[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{],} \PYG{n}{h}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} 
+        \PYG{n}{I\PYGZus{}True}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,} \PYG{n}{M\PYGZus{}4}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb+bp}{None}\PYG{p}{:}
+	\PYG{k}{while} \PYG{n}{runge}\PYG{o}{.}\PYG{n}{simpson}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{eps}\PYG{p}{:}
+		\PYG{n}{h} \PYG{o}{/=} \PYG{l+m+mi}{2}
+
+	\PYG{n}{h} \PYG{o}{/=} \PYG{l+m+mi}{2}
+
+	\PYG{n}{I\PYGZus{}h}\PYG{p}{,} \PYG{n}{I\PYGZus{}half\PYGZus{}h}\PYG{p}{,} \PYG{n}{I\PYGZus{}richardson} \PYG{o}{=} \PYG{n}{integrate}\PYG{o}{.}\PYG{n}{simpson}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{),} \PYGZbs{}
+		\PYG{n}{integrate}\PYG{o}{.}\PYG{n}{simpson}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{),} \PYG{n}{richardson}\PYG{o}{.}\PYG{n}{simpson}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{)}
+
+	\PYG{n}{I\PYGZus{}adaptive} \PYG{o}{=} \PYG{n}{adaptive}\PYG{o}{.}\PYG{n}{simpson}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{eps}\PYG{p}{)}
+
+	\PYG{k}{print}\PYG{p}{(}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}SIMPSON:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{h                 = \PYGZob{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}true            = \PYGZob{}I\PYGZus{}true\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}h               = \PYGZob{}I\PYGZus{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}h\PYGZus{}true          = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}half\PYGZus{}h          = \PYGZob{}I\PYGZus{}half\PYGZus{}h\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}half\PYGZus{}h\PYGZus{}true     = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}half\PYGZus{}h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}runge           = \PYGZob{}runge.simpson(a, b, f, h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}richardson      = \PYGZob{}I\PYGZus{}richardson\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}richardson\PYGZus{}true = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}richardson)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{apriori\PYGZus{}error     = \PYGZob{}apriori\PYGZus{}error.simpson(a, b, M\PYGZus{}4, h)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{I\PYGZus{}apadtive        = \PYGZob{}I\PYGZus{}adaptive\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+		\PYG{n}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s+s1}{R\PYGZus{}apadtive        = \PYGZob{}abs(I\PYGZus{}true \PYGZhy{} I\PYGZus{}adaptive)\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}
+	\PYG{p}{)}
+
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{:}
+	\PYG{k}{def} \PYG{n+nf}{f}\PYG{p}{(}\PYG{n}{t}\PYG{p}{):}
+		\PYG{k}{return} \PYG{l+m+mi}{3} \PYG{o}{*} \PYG{n}{t} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{t}\PYG{p}{)}
+
+	\PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}
+	\PYG{n}{I\PYGZus{}true} \PYG{o}{=} \PYG{l+m+mi}{6} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{9} \PYG{o}{/} \PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{)}
+
+	\PYG{n}{M\PYGZus{}2}\PYG{p}{,} \PYG{n}{M\PYGZus{}4} \PYG{o}{=} \PYG{l+m+mi}{9}\PYG{p}{,} \PYG{l+m+mi}{42}
+
+	\PYG{n}{h} \PYG{o}{=} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{a}
+	\PYG{n}{eps} \PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}5}
+	
+	\PYG{n}{rectangle}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{,} \PYG{n}{I\PYGZus{}true}\PYG{p}{,} \PYG{n}{M\PYGZus{}2}\PYG{p}{)}
+	\PYG{n}{trapezoid}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{,} \PYG{n}{I\PYGZus{}true}\PYG{p}{,} \PYG{n}{M\PYGZus{}2}\PYG{p}{)}
+	\PYG{n}{simpson}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{h}\PYG{p}{,} \PYG{n}{I\PYGZus{}true}\PYG{p}{,} \PYG{n}{M\PYGZus{}4}\PYG{p}{)}
+\end{Verbatim}
