@@ -465,7 +465,9 @@
 	\item {\tt R\_runge} --- оцінка відхилення {\tt I\_h} від {\tt I\_true} за принципом Рунге;
 	\item {\tt I\_richardson} --- уточнене значення інтегралу за екстраполяційною формулою Річардсона;
 	\item {\tt R\_richardson\_true} --- відхилення {\tt I\_richardson} від {\tt I\_true};
-	\item {\tt apriori\_error} --- апріорна оцінка відхилення {\tt I\_h} від {\tt I\_true}.
+	\item {\tt apriori\_error} --- апріорна оцінка відхилення {\tt I\_h} від {\tt I\_true};
+	\item {\tt I\_adaptive} --- значення інтегралу обчислене за адаптивною квадратурною формулою;
+	\item {\tt R\_adaptive} ---  відхилення {\tt I\_adaptive} від {\tt I\_true}.
 \end{itemize}
 
 \subsubsection{Для формули середніх прямокутників}
@@ -481,6 +483,8 @@ R_runge           = 1.1596407817708136e-06
 I_richardson      = 1.0562447009925007
 R_richardson_true = 1.0056400157054668e-12
 apriori_error     = 1.1444091796875e-05
+I_apadtive        = 1.0562229991183867
+R_apadtive        = 2.170187511962851e-05
 \end{minted}
 
 \subsubsection{Для формули трапецій}
@@ -496,6 +500,8 @@ R_runge           = 2.319282641420154e-06
 I_richardson      = 1.0562447009946563
 R_richardson_true = 1.1499690089067371e-12
 apriori_error     = 2.288818359375e-05
+I_apadtive        = 1.0562667298228325
+R_apadtive        = 2.2028829326226074e-05
 \end{minted}
 
 \subsubsection{Для формули Сімпсона (парабол)}
@@ -511,6 +517,8 @@ R_runge           = 7.49399730419024e-08
 I_richardson      = 1.056244701306589
 R_richardson_true = 3.130826708996892e-10
 apriori_error     = 7.120768229166667e-06
+I_apadtive        = 1.0562928260704325
+R_apadtive        = 4.812507692619761e-05
 \end{minted}
 
 \end{document}
