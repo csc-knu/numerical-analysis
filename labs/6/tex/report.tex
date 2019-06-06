@@ -27,7 +27,8 @@
 	\end{enumerate}
 	\item прицип Рунге;
 	\item формулу Річардсона;
-	\item апріорні оцінки похибки.
+	\item апріорні оцінки похибки;
+	\item адаптивні квадратурні формули.
 \end{enumerate}
 
 Вивести:
@@ -341,6 +342,44 @@
 	I_h - \tilde I_{h/2} = O(h^6).
 \end{equation}
 
+\subsection{Адаптивні квадратурні формули}
+
+Розглянемо використання так званих \textit{адаптивних квадратурних формул}, в яких змінний крок вибирається за принципом Рунге. Для цього запишемо формулу трапецій із змінним кроком:
+
+\begin{equation}
+	I_h(f) = \Sum_{i = 1}^N \frac{h_i}{2} \cdot (f(x_{i-1}) + f(x_i)),
+\end{equation}
+
+де $h_i = x_i - x_{i-1}$. \medskip
+
+Оцінимо похибку на кожному інтервалі:
+
+\begin{equation}
+	\begin{aligned}
+		R_{h_i} &= I_i - I_{h_i} = \\
+		&= \Int_{x_{i - 1}}^{x_i} f(x) \diff x - \frac{h_i}{2} (f(x_{i-1}) + f(x_i)) = \\
+		&=  - \frac{h_i^3}{6} \cdot f''(x_{i-1/2}) + O(h_i^5).
+	\end{aligned}
+\end{equation}
+
+Таким чином $p = 3$ і головний член похибки:
+
+\begin{equation}
+	\overset{\circ} R_{h/2} = \frac{I_{h_i/2} - I_{h_i}}{7}.
+\end{equation}
+
+Умова припинення ділення навпіл проміжку $[x_{i-1}, x_i]$:
+
+\begin{equation}
+	\left| \overset{\circ} R_{h_i/2} \right| \le \frac{\varepsilon \cdot h_i}{b - a}.
+\end{equation}
+
+Це забезпечує точність на всьому інтервалі
+
+\begin{equation}
+	\left| \overset{\circ} R_{h/2} \right| = \left| \Sum_{i=1}^N R_{h_i/2} \right| \le \Sum_{i=1}^N \frac{\varepsilon \cdot h_i}{b - a} = \varepsilon \cdot \frac{b - a}{b - a} = \varepsilon.
+\end{equation}
+
 \section{Практична частина}
 
 \subsection{Невласність}
@@ -397,14 +436,20 @@
 
 \inputminted[firstline=7]{python}{../py/richardson.py}
 
+\subsection{Адаптивні квадратурні формули}
+
+Були написані наступні функції для обчислення значення інтегралу за адаптивними формулами:
+
+\inputminted[firstline=8]{python}{../py/adaptive.py}
+
 \subsection{Програми-драйвери}
 
 Були написані наступні програми-драйвери:
 
-\inputminted[firstline=10, lastline=18]{python}{../py/main.py}
-\inputminted[firstline=35, lastline=43]{python}{../py/main.py}
-\inputminted[firstline=60, lastline=68]{python}{../py/main.py}
-\inputminted[firstline=85]{python}{../py/main.py}
+\inputminted[firstline=11, lastline=21]{python}{../py/main.py}
+\inputminted[firstline=40, lastline=50]{python}{../py/main.py}
+\inputminted[firstline=69, lastline=79]{python}{../py/main.py}
+\inputminted[firstline=98]{python}{../py/main.py}
 
 \subsection{Результати}
 

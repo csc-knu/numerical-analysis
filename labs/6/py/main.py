@@ -5,6 +5,7 @@ import apriori_error
 import integrate
 import runge
 import richardson
+import adaptive
 
 
 def rectangle(a: float, b: float, f: Callable[[np.array], np.array], h: float, 
@@ -16,6 +17,8 @@ def rectangle(a: float, b: float, f: Callable[[np.array], np.array], h: float,
 
 	I_h, I_half_h, I_richardson = integrate.rectangle(a, b, f, h), \
 		integrate.rectangle(a, b, f, h / 2), richardson.rectangle(a, b, f, h)
+
+	I_adaptive = adaptive.rectangle(a, b, f, eps)
 
 	print(
 		f'\nRECTANGLE:\n'
@@ -29,6 +32,8 @@ def rectangle(a: float, b: float, f: Callable[[np.array], np.array], h: float,
 		f'\tI_richardson      = {I_richardson}\n'
 		f'\tR_richardson_true = {abs(I_true - I_richardson)}\n'
 		f'\tapriori_error     = {apriori_error.rectangle(a, b, M_2, h)}\n'
+		f'\tI_apadtive        = {I_adaptive}\n'
+		f'\tR_apadtive        = {abs(I_true - I_adaptive)}\n'
 	)
 
 
@@ -42,6 +47,8 @@ def trapezoid(a: float, b: float, f: Callable[[np.array], np.array], h: float,
 	I_h, I_half_h, I_richardson = integrate.trapezoid(a, b, f, h), \
 		integrate.trapezoid(a, b, f, h / 2), richardson.trapezoid(a, b, f, h)
 
+	I_adaptive = adaptive.trapezoid(a, b, f, eps)
+
 	print(
 		f'TRAPEZOID:\n'
 		f'\th                 = {h}\n'
@@ -54,6 +61,8 @@ def trapezoid(a: float, b: float, f: Callable[[np.array], np.array], h: float,
 		f'\tI_richardson      = {I_richardson}\n'
 		f'\tR_richardson_true = {abs(I_true - I_richardson)}\n'
 		f'\tapriori_error     = {apriori_error.trapezoid(a, b, M_2, h)}\n'
+		f'\tI_apadtive        = {I_adaptive}\n'
+		f'\tR_apadtive        = {abs(I_true - I_adaptive)}\n'
 	)
 
 
@@ -67,6 +76,8 @@ def simpson(a: float, b: float, f: Callable[[np.array], np.array], h: float,
 	I_h, I_half_h, I_richardson = integrate.simpson(a, b, f, h), \
 		integrate.simpson(a, b, f, h / 2), richardson.simpson(a, b, f, h)
 
+	I_adaptive = adaptive.simpson(a, b, f, eps)
+
 	print(
 		f'SIMPSON:\n'
 		f'\th                 = {h}\n'
@@ -79,6 +90,8 @@ def simpson(a: float, b: float, f: Callable[[np.array], np.array], h: float,
 		f'\tI_richardson      = {I_richardson}\n'
 		f'\tR_richardson_true = {abs(I_true - I_richardson)}\n'
 		f'\tapriori_error     = {apriori_error.simpson(a, b, M_4, h)}\n'
+		f'\tI_apadtive        = {I_adaptive}\n'
+		f'\tR_apadtive        = {abs(I_true - I_adaptive)}\n'
 	)
 
 
