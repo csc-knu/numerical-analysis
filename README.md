@@ -8,7 +8,7 @@
 
 - Риженко Андрій Іванович, rai-ku<span style="font-family:monospace;">@</span>ukr.net, [розклад](https://mytimetable.live/teacher/Rizhenko-AI/)
 
-- Черній Дмитро Іванович, Dmitro.Cherniy<span style="font-family:monospace;">@</span>gmail.com, [розклад](https://mytimetable.live/teacher/Chernii-DI/)
+- Черній Дмитро Іванович,  [розклад](https://mytimetable.live/teacher/Chernii-DI/) <!-- Dmitro.Cherniy<span style="font-family:monospace;">@</span>gmail.com -->
 
 - Голубєва Катерина Миколаївна, katerina.golubeva<span style="font-family:monospace;">@</span>unicyb.kiev.ua, [розклад](https://mytimetable.live/teacher/Golybieva-KM/)
 
